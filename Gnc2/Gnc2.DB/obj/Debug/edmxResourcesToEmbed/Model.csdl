@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TurkcellGnc2Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Gnc2Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="AdminAuths" EntityType="TurkcellGnc2Model.AdminAuths" />
+    <EntitySet Name="Admins" EntityType="TurkcellGnc2Model.Admins" />
+    <EntitySet Name="AdminTransaction" EntityType="TurkcellGnc2Model.AdminTransaction" />
+    <EntitySet Name="Banners" EntityType="TurkcellGnc2Model.Banners" />
+    <EntitySet Name="Campaigns" EntityType="TurkcellGnc2Model.Campaigns" />
+    <EntitySet Name="CatalogCategories" EntityType="TurkcellGnc2Model.CatalogCategories" />
+    <EntitySet Name="Catalogs" EntityType="TurkcellGnc2Model.Catalogs" />
+    <EntitySet Name="CatalogVarieties" EntityType="TurkcellGnc2Model.CatalogVarieties" />
+    <EntitySet Name="Code" EntityType="TurkcellGnc2Model.Code" />
+    <EntitySet Name="Invitations" EntityType="TurkcellGnc2Model.Invitations" />
+    <EntitySet Name="Moduls" EntityType="TurkcellGnc2Model.Moduls" />
+    <EntitySet Name="ModulTypes" EntityType="TurkcellGnc2Model.ModulTypes" />
+    <EntitySet Name="PromoCodeArchives" EntityType="TurkcellGnc2Model.PromoCodeArchives" />
+    <EntitySet Name="PromoCodes" EntityType="TurkcellGnc2Model.PromoCodes" />
+    <EntitySet Name="PromoCodeTypes" EntityType="TurkcellGnc2Model.PromoCodeTypes" />
+    <EntitySet Name="Refunds" EntityType="TurkcellGnc2Model.Refunds" />
+    <EntitySet Name="sysdiagrams" EntityType="TurkcellGnc2Model.sysdiagrams" />
+    <EntitySet Name="test" EntityType="TurkcellGnc2Model.test" />
+    <EntitySet Name="UserCampaigns" EntityType="TurkcellGnc2Model.UserCampaigns" />
+    <EntitySet Name="UserOrders" EntityType="TurkcellGnc2Model.UserOrders" />
+    <EntitySet Name="Users" EntityType="TurkcellGnc2Model.Users" />
+    <EntitySet Name="UserTransaction" EntityType="TurkcellGnc2Model.UserTransaction" />
+    <AssociationSet Name="FK_Categories_CatalogCategories" Association="TurkcellGnc2Model.FK_Categories_CatalogCategories">
+      <End Role="CatalogCategories" EntitySet="CatalogCategories" />
+      <End Role="Catalogs" EntitySet="Catalogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogCategories_ModulTypes" Association="TurkcellGnc2Model.FK_CatalogCategories_ModulTypes">
+      <End Role="ModulTypes" EntitySet="ModulTypes" />
+      <End Role="Catalogs" EntitySet="Catalogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogVarieties_Catalogs" Association="TurkcellGnc2Model.FK_CatalogVarieties_Catalogs">
+      <End Role="Catalogs" EntitySet="Catalogs" />
+      <End Role="CatalogVarieties" EntitySet="CatalogVarieties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PromoCodes_Catalogs" Association="TurkcellGnc2Model.FK_PromoCodes_Catalogs">
+      <End Role="Catalogs" EntitySet="Catalogs" />
+      <End Role="PromoCodes" EntitySet="PromoCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PromoCodes_PromoCodeTypes" Association="TurkcellGnc2Model.FK_PromoCodes_PromoCodeTypes">
+      <End Role="PromoCodeTypes" EntitySet="PromoCodeTypes" />
+      <End Role="PromoCodes" EntitySet="PromoCodes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AdminAuths">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ModulId" Nullable="false" />
+    <Property Type="Int32" Name="AdminId" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FileName" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="FullAuth" Nullable="false" />
+    <Property Type="DateTime" Name="LastLoginDate" Precision="3" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdminTransaction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+    <Property Type="Int32" Name="TransactionId" Nullable="false" />
+    <Property Type="String" Name="TableName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="TransactionType" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Banners">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="FileName" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Title" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="URL" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="StartDate" Precision="3" />
+    <Property Type="DateTime" Name="EndDate" Precision="3" />
+    <Property Type="String" Name="Order" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="WindowTypeCode" />
+    <Property Type="Int32" Name="PositionCode" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Campaigns">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Image" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Header" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Content" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogCategories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <NavigationProperty Name="Catalogs" Relationship="TurkcellGnc2Model.FK_Categories_CatalogCategories" FromRole="CatalogCategories" ToRole="Catalogs" />
+  </EntityType>
+  <EntityType Name="Catalogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Header" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CatalogName" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CatalogPoint" Nullable="false" />
+    <Property Type="String" Name="CatalogFeatures" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CatalogStartDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="CatalogEndDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="CatalogImage" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CatalogCondition" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CatalogCategoriesId" Nullable="false" />
+    <Property Type="Int32" Name="ModuleTypeId" Nullable="false" />
+    <Property Type="DateTime" Name="CatalogCreateDate" Precision="3" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <NavigationProperty Name="CatalogCategories" Relationship="TurkcellGnc2Model.FK_Categories_CatalogCategories" FromRole="Catalogs" ToRole="CatalogCategories" />
+    <NavigationProperty Name="ModulTypes" Relationship="TurkcellGnc2Model.FK_CatalogCategories_ModulTypes" FromRole="Catalogs" ToRole="ModulTypes" />
+    <NavigationProperty Name="CatalogVarieties" Relationship="TurkcellGnc2Model.FK_CatalogVarieties_Catalogs" FromRole="Catalogs" ToRole="CatalogVarieties" />
+    <NavigationProperty Name="PromoCodes" Relationship="TurkcellGnc2Model.FK_PromoCodes_Catalogs" FromRole="Catalogs" ToRole="PromoCodes" />
+  </EntityType>
+  <EntityType Name="CatalogVarieties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="CatalogId" />
+    <Property Type="String" Name="VarietyName" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="VarietyStock" />
+    <Property Type="String" Name="VarietyImageUrl" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" />
+    <Property Type="Boolean" Name="IsDeleted" />
+    <NavigationProperty Name="Catalogs" Relationship="TurkcellGnc2Model.FK_CatalogVarieties_Catalogs" FromRole="CatalogVarieties" ToRole="Catalogs" />
+  </EntityType>
+  <EntityType Name="Code">
+    <Key>
+      <PropertyRef Name="CodeId" />
+    </Key>
+    <Property Type="Int32" Name="CodeId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CodeName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Invitations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="InviterUserFbId" Nullable="false" />
+    <Property Type="String" Name="InvitedUserFbId" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="InvitationDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="InvitationCode" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsMember" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Moduls">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ParentId" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AdminPath" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsInAdminMenu" Nullable="false" />
+    <Property Type="Boolean" Name="IsSubEndItem" Nullable="false" />
+    <Property Type="Boolean" Name="HasLivePage" Nullable="false" />
+    <Property Type="String" Name="LivePageUrl" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="String" Name="Order" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModulTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ModulTypeName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDelete" Nullable="false" />
+    <NavigationProperty Name="Catalogs" Relationship="TurkcellGnc2Model.FK_CatalogCategories_ModulTypes" FromRole="ModulTypes" ToRole="Catalogs" />
+  </EntityType>
+  <EntityType Name="PromoCodeArchives">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="CatalogId" />
+      <PropertyRef Name="PromoCodeName" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="IsDeleted" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="PromoCodeTypeId" />
+    <Property Type="Int32" Name="CatalogId" Nullable="false" />
+    <Property Type="String" Name="PromoCodeName" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PromoCodes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="PromoCodeTypeId" Nullable="false" />
+    <Property Type="Int32" Name="CatalogsId" Nullable="false" />
+    <Property Type="String" Name="PromoCodeName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsUsed" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <NavigationProperty Name="Catalogs" Relationship="TurkcellGnc2Model.FK_PromoCodes_Catalogs" FromRole="PromoCodes" ToRole="Catalogs" />
+    <NavigationProperty Name="PromoCodeTypes" Relationship="TurkcellGnc2Model.FK_PromoCodes_PromoCodeTypes" FromRole="PromoCodes" ToRole="PromoCodeTypes" />
+  </EntityType>
+  <EntityType Name="PromoCodeTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="PromoCodeTypeName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <NavigationProperty Name="PromoCodes" Relationship="TurkcellGnc2Model.FK_PromoCodes_PromoCodeTypes" FromRole="PromoCodeTypes" ToRole="PromoCodes" />
+  </EntityType>
+  <EntityType Name="Refunds">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="OrderId" Nullable="false" />
+    <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="principal_id" Nullable="false" />
+    <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="version" />
+    <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="test">
+    <Key>
+      <PropertyRef Name="testid" />
+    </Key>
+    <Property Type="Int32" Name="testid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="tone" Nullable="false" Precision="3" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserCampaigns">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="Int32" Name="CampaignId" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserOrders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="Int32" Name="CatalogId" Nullable="false" />
+    <Property Type="String" Name="PromoCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DocumentNumber" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProjectNumber" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ShippingCode" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="StockCode" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Town" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TaxOffice" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Msisdn" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FbId" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Surname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ProfileImage" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="BirthDate" Precision="3" />
+    <Property Type="Int32" Name="Gender" />
+    <Property Type="DateTime" Name="LoginDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CityCode" Nullable="false" />
+    <Property Type="Boolean" Name="Ispermissions" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="FbProfileImage" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserTransaction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="RegisterDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="RegisterType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LoginType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Msisdn" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Categories_CatalogCategories">
+    <End Type="TurkcellGnc2Model.CatalogCategories" Role="CatalogCategories" Multiplicity="1" />
+    <End Type="TurkcellGnc2Model.Catalogs" Role="Catalogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Catalogs">
+        <PropertyRef Name="CatalogCategoriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogCategories_ModulTypes">
+    <End Type="TurkcellGnc2Model.ModulTypes" Role="ModulTypes" Multiplicity="1" />
+    <End Type="TurkcellGnc2Model.Catalogs" Role="Catalogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModulTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Catalogs">
+        <PropertyRef Name="ModuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogVarieties_Catalogs">
+    <End Type="TurkcellGnc2Model.Catalogs" Role="Catalogs" Multiplicity="0..1" />
+    <End Type="TurkcellGnc2Model.CatalogVarieties" Role="CatalogVarieties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Catalogs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CatalogVarieties">
+        <PropertyRef Name="CatalogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PromoCodes_Catalogs">
+    <End Type="TurkcellGnc2Model.Catalogs" Role="Catalogs" Multiplicity="1" />
+    <End Type="TurkcellGnc2Model.PromoCodes" Role="PromoCodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Catalogs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PromoCodes">
+        <PropertyRef Name="CatalogsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PromoCodes_PromoCodeTypes">
+    <End Type="TurkcellGnc2Model.PromoCodeTypes" Role="PromoCodeTypes" Multiplicity="1" />
+    <End Type="TurkcellGnc2Model.PromoCodes" Role="PromoCodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PromoCodeTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PromoCodes">
+        <PropertyRef Name="PromoCodeTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

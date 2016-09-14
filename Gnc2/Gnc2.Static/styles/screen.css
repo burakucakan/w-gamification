@@ -1,0 +1,112 @@
+﻿.gnc2Container .boxSmall .boxContent .desc { width:100%; height:auto; float:left; margin-top:5px; border-bottom:#f2f2f2 1px solid; padding-bottom:15px; margin-bottom:12px; }
+.gnc2Container .boxSmall .boxContent .desc .descTitle { width:100%; float:left; font-size:16px; color:#414044; }
+.gnc2Container .boxSmall .boxContent .desc .descContent { width:100%; float:left; font-size:12px; color:#414044; font-family:Arial; margin-top:4px; }
+.gnc2Container .boxSmall .boxContent .caruselArea { height: 283px; width: 198px; margin-left: 25px; }
+.gnc2Container .boxSmall .boxContent .ballon { width:372px; height:195px;}
+.gnc2Container .boxSmall .boxContent .ballon .tip .tipContent { width:100%; height:225px; float:left; }
+
+.gnc2Container .boxSmall .boxContent .offers { width:372px; height:354px;}
+.gnc2Container .boxSmall .boxContent .offers .tip .tipContent { width:100%; height:354px; float:left; }
+
+.gnc2Container .boxSmall .boxContent .leaderBoard { width:100%; float:left; margin-top:9px; padding-bottom:2px; border-bottom:#f2f2f2 1px solid; margin-bottom:12px; }
+.gnc2Container .boxSmall .boxContent .leaderBoard ul, .gnc2Container .box .boxContent .leaderBoard ul li{ float:left; width:100%; }
+.gnc2Container .boxSmall .boxContent .leaderBoard ul li a { float:left; width:100%; margin-bottom:15px; clear:none; }
+.gnc2Container .boxSmall .boxContent .leaderBoard ul li a .order { float:left; width:34px; height:34px; background:url('../images/global/board-order-bg.png') no-repeat; z-index:2; font-size:18px; color:#4e4e4e; padding:16px 0px 0px 7px; clear:none; position:relative; }
+.gnc2Container .boxSmall .boxContent .leaderBoard ul li a:hover .order { background-position:0 -50px; }
+.gnc2Container .boxSmall .boxContent .leaderBoard ul li a .image { float:left; width:50px; height:50px; z-index:1; margin-left:-10px; clear:none; }
+.gnc2Container .boxSmall .boxContent .leaderBoard ul li a .userName { float:left; width:100px; margin-left:10px; padding-top:10px; font-size:14px; color:#000000; font-family:Arial; line-height:16px;  clear:none;}
+.gnc2Container .boxSmall .boxContent .leaderBoard ul li a .userPoint { float:right; width:78px; padding:2px 0px 0px 3px; font-size:24px; color:#009cff; text-align:right; clear:none; }
+.gnc2Container .boxSmall .boxContent .leaderBoard ul li a .userPoint .userPointType { width:100%; float:left; text-align:right; font-size:13px; clear:none; } 
+
+/* --- carouFredSel --- */
+.gray .grayContent .gnc2Container .listCarousel { width: 920px; float: left; margin-left: 10px;  }
+#badgeCarousel { margin: 0; padding: 0; list-style: none; display: block; }
+.caroufredsel_wrapper { margin-left: 30px !important;}
+#badgeCarousel li { float:left; }
+#badgeCarousel li a {width: 100px; height: 130px; margin-right:15px; display: block; float: left; text-align:center; }
+#badgeCarousel li a .image { width:100%; height:80px; float:left; margin-top:18px; margin-bottom:12px; }
+/*#badgeCarousel li a .image img.badge { width:80px; height:79px; position:relative; z-index:1; }*/
+#badgeCarousel li a .image img.badge { width:0px; height:0px; position:relative; z-index:1; margin:77px 0px 0px 40px; }
+#badgeCarousel li a .image img.new { width:32px; height:33px; position:relative; z-index:0; margin-top: -66px; margin-left: 24px; display:none; }
+#badgeCarousel li a .image img.locked { width:25px; height:31px; position:relative; z-index:2; margin-top: -55px; }
+#badgeCarousel li a .name { width:100%; float:left; font-size:12px; color:#909891; font-family:Arial; opacity:0; -moz-opacity:0; margin-top:-5px;}
+#badgeCarousel li a:hover .name { color:#ffffff; }
+#badgeCarousel li a .tooltip { width: 292px; height: 116px; position: relative; background: url('../images/global/badge-tooltip-bg.png') no-repeat; margin-top: -206px; float: left; z-index: 3; margin-left: -92px; display:none; }
+#badgeCarousel li a .tooltip .fLeft { width:86px; clear:none; text-align:center; padding-top:18px; line-height:22px; font-size:14px; color:#272530; }
+#badgeCarousel li a .tooltip .fLeft img { width:68px; height:68px; }
+#badgeCarousel li a .tooltip .fRight { width: 185px; clear: none; margin-right: 5px; padding-top: 10px; font-family: Arial; color: #221f1f; text-align: left; }
+#badgeCarousel li a .tooltip .fRight .title { width: 100%; height: auto; float: left; font-size: 14px; font-weight: bold; margin-bottom: 5px; }
+#badgeCarousel li a .tooltip .fRight .desc { width: 100%; float: left; font-size: 12px; line-height: 14px; }
+
+.gray .grayContent .gnc2Container .listCarousel.responsive { width: auto; margin-left: 0; }
+.gray .grayContent .gnc2Container .listCarousel .clearfix { float: none; clear: both; }
+.gray .grayContent .gnc2Container .listCarousel .prev { float: left; background:url('../images/icons/carou-arrow.png') no-repeat; width:22px; height:44px; text-indent:-9999px; margin-top:-93px; position:absolute; z-index:2; }
+.gray .grayContent .gnc2Container .listCarousel :hover.prev { background-position: 0px -44px; }
+.gray .grayContent .gnc2Container .listCarousel .next { float: right; background:url('../images/icons/carou-arrow.png') no-repeat 0px -88px; width:22px; height:44px; text-indent:-9999px; position:relative; z-index:2; right: -65px; margin-top:-93px;  }
+.gray .grayContent .gnc2Container .listCarousel :hover.next { background-position: 0px -132px; }
+.gray .grayContent .gnc2Container .listCarousel .leftShadow { width:75px; height:129px; float:left; background:url('../images/global/left-shadow.png') no-repeat; position:relative; margin-top: -124px; z-index:1; margin-left:-15px; }
+.gray .grayContent .gnc2Container .listCarousel .rightShadow { width:75px; height:129px; float:right; background:url('../images/global/right-shadow.png') no-repeat; position:relative; margin-top: -124px; margin-right: -60px; z-index:1; }
+
+.gray .grayContent .gnc2Container .newsFeed { width:960px; float:left; margin:4px 0px 0px 0px; }
+.gray .grayContent .gnc2Container .newsFeed .feed { width:300px; height:50px; float:left; margin:10px 19px 5px 0px; font-family:Arial; clear:none; opacity:0; filter:alpha(opacity=0); }
+.gray .grayContent .gnc2Container .newsFeed .feed .fLeft { width:50px; height:50px; clear:none; }
+.gray .grayContent .gnc2Container .newsFeed .feed .fLeft img { width:50px; height:50px; }
+.gray .grayContent .gnc2Container .newsFeed .feed .fRight { width:233px; padding-top:11px; clear:none; font-size:14px; }
+.gray .grayContent .gnc2Container .newsFeed .feed .fRight .ballon { width: 24px; height: 22px; position: absolute; text-align: center; padding-top: 8px; color: #272530; background: url('../images/global/yellow-ballon.png') no-repeat; font-size: 11px; float: left; margin-top: -22px; margin-left: -30px; } 
+.gray .grayContent .gnc2Container .newsFeed .feed .fRight .name { width:100%; height:auto; float:left; margin-bottom:7px; color:#efeded; }
+.gray .grayContent .gnc2Container .newsFeed .feed .fRight .desc { width:100%; height:auto; float:left; color:#8d8c95;  }
+
+.gnc2Container .boxMedium .boxContent .campaing { width:216px; height:205px; float:left; margin-right:15px; clear:none; overflow:hidden; }
+.gnc2Container .boxMedium .boxContent .campaing a { width:216px; height:205px; float:left; }
+.gnc2Container .boxMedium .boxContent .campaing a:hover { background-position: 0 -205px; }
+
+.gnc2Container .boxMedium .boxContent .share { width:216px; height:205px; float:left; clear:none; }
+.gnc2Container .boxMedium .boxContent .share .top { width:196px; height:95px; background:#272530; float:left; clear:none; padding:17px 0px 0px 20px; }
+.gnc2Container .boxMedium .boxContent .share .top.fbHover { background:#394c8c !important; }
+.gnc2Container .boxMedium .boxContent .share .top.twHover { background:#35b5eb !important; }
+.gnc2Container .boxMedium .boxContent .share .top .text { width:100%; height:auto; float:left;}
+.gnc2Container .boxMedium .boxContent .share .top .text1 { font-size:22px; color:#ffffff; margin-bottom:3px; }
+.gnc2Container .boxMedium .boxContent .share .top .text2 { font-size:32px; color:#ffffff; margin-bottom:3px; }
+.gnc2Container .boxMedium .boxContent .share .top .text3 { font-size:20px; color:#ffffff; }
+.gnc2Container .boxMedium .boxContent .share a.fb { width:108px; height:93px; float:left; background:url(../images/icons/fb-login-icon.png) no-repeat #394c8c 46px center; clear:none; }
+.gnc2Container .boxMedium .boxContent .share a.tw { width:108px; height:93px; float:left; background:url(../images/icons/tw-login-icon.png) no-repeat #35b5eb 38px center; clear:none; }
+
+.gnc2Container .catalogFilters { width:100%; float:left; margin:20px 0px;  }
+.gnc2Container .catalogFilters .categories { width: 855px; float: right; padding-top: 5px;}
+
+.gnc2Container .boxLarge .catalogs { width:100%; float:left; margin-top: 20px; margin-left: 6px; }
+.gnc2Container .boxLarge .catalogs a.catalog { width: 292px; height: 218px; float: left; border: #cecece 1px solid; padding: 1px; margin-right: 14px; margin-bottom: 11px; }
+.gnc2Container .boxLarge .catalogs a.catalog img { position: absolute; z-index: 1; width: 292px; height: 218px; }
+.gnc2Container .boxLarge .catalogs a.catalog .catalogInfo { width: 272px; height: auto; float: left; padding: 11px 10px 13px 10px; background: url(../images/global/black-transparent-bg.png); position: absolute; z-index: 2; margin-top: 143px; }
+.gnc2Container .boxLarge .catalogs a.catalog .catalogInfo .title { width:100%; float:left; font-size:16px; color:#ffffff;  }
+.gnc2Container .boxLarge .catalogs a.catalog .catalogInfo .point { width:100%; float:left; font-size:25px; margin-top:10px; color:#fef200; }
+.gnc2Container .boxLarge .catalogTotal {  width:auto; float:left; color:#777777; font-size:14px; margin-top: 15px; }
+
+.gnc2Container .boxLarge .catalogsSmall { width:100%; float:left; margin-top: 20px; }
+.gnc2Container .boxLarge .catalogsSmall a.catalog { width: 217px; height: 163px; float: left; border: #cecece 1px solid; padding: 1px; margin-right: 11px; }
+.gnc2Container .boxLarge .catalogsSmall a.catalog img { position: absolute; z-index: 1; width: 217px; height: 163px; }
+.gnc2Container .boxLarge .catalogsSmall a.catalog .catalogInfo { width: 203px; height: auto; float: left; padding: 7px; background: url(../images/global/black-transparent-bg.png); position: absolute; z-index: 2; margin-top: 98px; }
+.gnc2Container .boxLarge .catalogsSmall a.catalog .catalogInfo .title { width:100%; float:left; font-size:16px; color:#ffffff;  }
+.gnc2Container .boxLarge .catalogsSmall a.catalog .catalogInfo .point { width:100%; float:left; font-size:25px; margin-top:10px; color:#fef200;  }
+
+.gnc2Container .boxLarge .catalogNav { width: 100%; float: left; font-family: Arial; font-size: 12px; color: #8e8e8e; margin-bottom: 12px; margin-top: 2px; }
+.gnc2Container .boxLarge .catalogNav a { color:#8e8e8e; }
+.gnc2Container .boxLarge .catalogNav a:hover { color:#676767; }
+
+.gnc2Container .boxLarge .fields .radioBtn { margin-top:13px; }
+.gnc2Container .boxLarge .fields .order { width: 300px; font-size: 14px; color: #777777; margin-left: 107px; }
+.gnc2Container .boxLarge .fields .order label { float:left; margin-right:10px; margin-top:15px; }
+.gnc2Container .boxLarge .fields .search { width:271px; }
+.gnc2Container .boxLarge .fields .search input { font-size:14px; position:relative; z-index:1; }
+.gnc2Container .boxLarge .fields .search .s-icon { width: 20px; height: 21px; background: url('../images/icons/catalog-search-icon.png') no-repeat; position: relative; z-index: 2; float: right; margin-right: 10px; margin-top: -33px; opacity:0.5; -moz-opacity:0.5; }
+
+.gnc2Container .boxLarge .catalogImage { width:446px; height:334px; margin-bottom:25px; }
+.gnc2Container .boxLarge .catalogImage img { width:446px; height:334px; }
+.gnc2Container .boxLarge .catalogDetail { width:465px; height:auto; min-height:294px; }
+.gnc2Container .boxLarge .catalogDetail .catalogName { width:100%; float:left; font-size:32px; color:#000000; margin-bottom:8px; }
+.gnc2Container .boxLarge .catalogDetail .stockUnits { width:100%; float:left; font-size:15px; color:#1f1e27; margin-bottom:13px; }
+.gnc2Container .boxLarge .catalogDetail .desc { width:100%; float:left; font-size:15px; color:#545454; font-family:Arial; line-height:19px; margin-bottom:30px; }
+.gnc2Container .boxLarge .catalogDetail .gncPoint { width:auto; padding:11px; font-size:31px; color:#1f1e27; border:#242425 3px solid; }
+.gnc2Container .boxLarge .catalogDetail a.buyBtn { width:auto; height:42px; font-size:27px; color:#ffffff; padding:16px 60px 0px 14px; background:url(../images/global/buy-btn-arrow.png) no-repeat right -1px #ec008c; margin-left:10px; }
+.gnc2Container .boxLarge .catalogDetail a:hover.buyBtn { background:url(../images/global/buy-btn-arrow.png) no-repeat right -59px #b8026e; }
+.gnc2Container .boxLarge .catalogSocialShare { width: 114px; }

@@ -1,0 +1,95 @@
+﻿@model Gnc2.DB.Catalogs
+@{
+    ViewBag.Title = Model.CatalogName + " / " + Model.CatalogCategories.CategoryName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Gnc2.Com.Helpers;
+@using Gnc2.App_Manager;
+
+<section class="gnc2Container fReg">
+    <h3 class="grayTitle">PUAN KATALOĞU</h3>
+
+    <ins class="space20"></ins>
+    
+    <section class="boxLarge fReg fLeft">
+        <nav class="catalogNav">
+            <a href="@PathHelper.UrlWeb">Anasayfa</a> / 
+            <a href="@PathHelper.UrlWeb/Catalogs?Id=@Model.CatalogCategories.Id">@Model.CatalogCategories.CategoryName</a> / 
+            <a href="@PathHelper.UrlWeb/Catalogs/Detail/@Model.Id">@Model.CatalogName</a>
+        </nav>
+
+        <section class="catalogImage fLeft">
+            <img src="@PathHelper.UrlStatic/images/catalogs/@Model.CatalogImage" id="catalogImage" />
+        </section>
+
+        <section class="catalogDetail fRight">
+
+            <section class="catalogName">@Model.CatalogName</section>
+            <section class="stockUnits">STOK 20 ADET</section>
+            <section class="desc">@Model.Header</section>
+
+            <section class="gncPoint fLeft">@Model.CatalogPoint GNCPUAN</section>
+
+            <a href="javascript:;" class="buyBtn fLeft">HEDİYEYİ AL</a>
+
+        </section>
+
+        <section class="catalogSocialShare fRight">
+            @Html.Partial("Common/AddThis")
+        </section>
+
+        <ins></ins>
+
+        <section class="tabNav">
+            <a href="javascript:;" data-active="productInfo" class="active">ÜRÜN ÖZELLİKLERİ</a>
+            <a href="javascript:;" data-active="terms">KOŞULLAR</a>
+        </section>
+        <section class="tabDetails" id="productInfo" style="display:block;">
+            @MvcHtmlString.Create(Model.CatalogFeatures)
+        </section>
+        <section class="tabDetails" id="terms">            @MvcHtmlString.Create(Model.CatalogCondition)
+        </section>
+    </section>
+
+    <ins class="space20"></ins>
+
+    <section class="boxLarge fReg fLeft">
+        <h3 class="grayTitle">YAKIN PUANA SAHİP ÜRÜNLER</h3>
+        
+        <section class="catalogsSmall">
+            <a href="@PathHelper.UrlWeb/Catalogs/Detail/1" class="catalog">
+                <img src="@PathHelper.UrlStatic/images/catalogs/image.jpg" />
+                <aside class="catalogInfo">
+                    <span class="title">URBANEARS KULAKLIK</span>
+                    <span class="point">100 GNCPUAN</span>
+                </aside>
+            </a>
+
+            <a href="@PathHelper.UrlWeb/Catalogs/Detail/1" class="catalog">
+                <img src="@PathHelper.UrlStatic/images/catalogs/image.jpg" />
+                <aside class="catalogInfo">
+                    <span class="title">URBANEARS KULAKLIK</span>
+                    <span class="point">100 GNCPUAN</span>
+                </aside>
+            </a>
+
+            <a href="@PathHelper.UrlWeb/Catalogs/Detail/1" class="catalog">
+                <img src="@PathHelper.UrlStatic/images/catalogs/image.jpg" />
+                <aside class="catalogInfo">
+                    <span class="title">URBANEARS KULAKLIK</span>
+                    <span class="point">100 GNCPUAN</span>
+                </aside>
+            </a>
+
+            <a href="@PathHelper.UrlWeb/Catalogs/Detail/1" class="catalog">
+                <img src="@PathHelper.UrlStatic/images/catalogs/image.jpg" />
+                <aside class="catalogInfo">
+                    <span class="title">URBANEARS KULAKLIK</span>
+                    <span class="point">100 GNCPUAN</span>
+                </aside>
+            </a>
+        </section>
+
+    </section>
+
+</section>

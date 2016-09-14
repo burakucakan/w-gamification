@@ -1,0 +1,200 @@
+﻿@{
+    Layout = null;
+}
+@using Gnc2.Com.Helpers
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    
+    <title>Login</title>
+
+    @Html.Partial("_PopupStyles")
+
+    @Html.Partial("_PopupScripts")
+
+    
+<script>
+
+    console.log(_appId);
+
+    // Load the SDK Asynchronously
+    (function (d) {
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/tr_TR/all.js";
+        ref.parentNode.insertBefore(js, ref);
+    }(document));
+
+    window.fbAsyncInit = function () {
+        //FB._secure = true;
+        FB.init({
+            appId: _appId, // App ID
+            status: true, // check login status
+            cookie: true, // enable cookies to allow the server to access the session
+            xfbml: true
+        });
+    }    function fbUsage() {
+        FB.getLoginStatus(function (response) {
+            if (response.status === 'connected') {
+                console.log("connected");
+                FbLogin(response);
+            }
+            else {
+                console.log("not connected");
+                FB.login(function (response) {
+                    FbLogin(response);
+                }, { scope: 'email,user_birthday' });
+            }
+        });
+    }
+
+    function FbLogin(response) {
+        if (response.authResponse) {
+            FB.api('/me?fields=name,first_name,last_name,birthday,email,gender,picture.height(250).width(250)', function (response) {
+                console.log(response);
+                var postData = { JsonData: $.toJSON(response) };
+                console.log(postData);
+                $.ajax({
+                    url: '/Login/FbLogin',
+                    type: "POST",
+                    data: postData,
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.result == '0') {
+                            goIn();
+                        }
+                        else {
+                            parent.userLogin();
+                        }
+                    },
+                    error: function (response) {
+                        // location.href = '/Error/AppOffline';
+                    }
+                });
+            });
+        } else {
+            console.log('iptal');
+        }
+    }
+    function goIn() {
+        window.location = '/Login/SpecialForYou';
+    }
+
+
+</script>
+
+</head>
+
+<body>
+    <section class="loginTypeContent">
+
+        <h3 class="grayTitle fReg">hEMEN GİRİŞ YAP</h3>
+
+        <section class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu fermentum eros, a gravida. Lorem ipsum dolor sit amet, consectetur adipis Vcing elit. Fusce eu.</section>
+        
+        <ins></ins>
+        
+        <section class="fbLogin fReg loginBtn"><a href="javascript:fbUsage()"><span>Bağlan</span><em></em></a></section>
+
+        <section class="tcellLogin fReg loginBtn"><a href="SsoResult"><span>GİRİŞ</span><em></em></a></section>
+
+        <ins class="space"></ins>
+
+        <section class="banners">
+
+            <script>
+                var _loginFlipBoxDurationSpeed = 4000;
+                var _loginFlipBoxAnimateSpeed = 500;
+                var _loginAutoFlipBox;
+                var loginBanners = [
+                      { "id": "1", "leftBanner": "@PathHelper.UrlStatic/images/contents/login-banner.png", "rightBanner": "@PathHelper.UrlStatic/images/_offline/login-right-banner.png" },
+                      { "id": "2", "leftBanner": "@PathHelper.UrlStatic/images/contents/login-banner-2.png", "rightBanner": "@PathHelper.UrlStatic/images/_offline/login-right-banner.png" },
+                      { "id": "3", "leftBanner": "@PathHelper.UrlStatic/images/contents/login-banner-3.png", "rightBanner": "@PathHelper.UrlStatic/images/_offline/login-right-banner.png" },
+                      { "id": "4", "leftBanner": "@PathHelper.UrlStatic/images/contents/login-banner-4.png", "rightBanner": "@PathHelper.UrlStatic/images/_offline/login-right-banner.png" },
+                      { "id": "5", "leftBanner": "@PathHelper.UrlStatic/images/contents/login-banner-5.png", "rightBanner": "@PathHelper.UrlStatic/images/_offline/login-right-banner.png" }
+                ];
+
+                var loginBannerId = 1;
+                $(function () {
+                    getFirstLoginFlipBox();
+                    autoLoginFlipBox();
+                });
+
+                function getFirstLoginFlipBox() {
+                    var template = $("#rightTemplate").html();
+                    template = template.replace("#= id #", loginBanners[0].id);
+                    template = template.replace("#= image #", loginBanners[0].rightBanner);
+
+                    var userMain = $(".right").html();
+                    $(".right").html(userMain + template);
+                }
+
+                function autoFlipBox() {
+                    _loginAutoFlipBox = setInterval(function () {
+                        loginFlipBoxChange();
+                    }, _loginFlipBoxDurationSpeed);
+                }
+
+                function loginFlipBoxChange() {
+                    loginFlipBox();
+                }
+
+                function autoLoginFlipBox() {
+                    var newBanner = parseInt(loginBannerId + 1);
+                    var exBanner = parseInt(newBanner - 1);
+                    loginBannerId += 1;
+                    if (loginBanners[loginBannerId] == undefined) {
+                        loginBannerId = 1;
+                    }
+
+                    var template = $("#rightTemplate").html();
+                    template = template.replace("#= image #", loginBanners[loginBannerId].rightBanner);
+                    template = template.replace("#= id #", loginBanners[loginBannerId].id);
+
+                    $(".loginFlipbox").flippy({
+                        color_target: "transparent",
+                        duration: "" + _loginFlipBoxAnimateSpeed + "",
+                        verso: template
+                    });
+
+
+                    $(".left > section[id=" + newBanner + "]").animate({
+                        marginLeft: "-356px"
+                    }, 500);
+
+                    if (newBanner == loginBanners.length) {
+                        $(".left > section").css("margin-left", "0px");
+                    }
+                }
+            </script>
+
+            <script type="text/template" id="rightTemplate">
+                <section class="loginFlipbox">
+                    <img src="#= image #" data-id="#= id #" id="loginFlipImage" />
+                </section>
+            </script>
+
+            <script type="text/template" id="leftTemplate">
+                <section id="#= id #" #= style #><img src="#= image #" /></section>
+            </script>
+
+            <section class="left">
+                <section id="1"><img src="@PathHelper.UrlStatic/images/contents/login-banner.png" /></section>
+                <section id="2"><img src="@PathHelper.UrlStatic/images/contents/login-banner-2.png" /></section>
+                <section id="3"><img src="@PathHelper.UrlStatic/images/contents/login-banner-3.png" /></section>
+                <section id="4"><img src="@PathHelper.UrlStatic/images/contents/login-banner-4.png" /></section>
+                <section id="5"><img src="@PathHelper.UrlStatic/images/contents/login-banner-5.png" /></section>
+            </section>
+            <section class="right">
+
+            </section>
+        </section>
+    </section>
+</body>
+</html>

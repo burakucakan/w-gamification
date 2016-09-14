@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TurkcellDBw2ModelStoreContainer" CdmEntityContainer="TurkcellDBw2Entities">
+    <EntitySetMapping Name="Offers">
+      <EntityTypeMapping TypeName="TurkcellDBw2Model.Offers">
+        <MappingFragment StoreEntitySet="Offers">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TurkcellId" ColumnName="TurkcellId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PosTransaction">
+      <EntityTypeMapping TypeName="TurkcellDBw2Model.PosTransaction">
+        <MappingFragment StoreEntitySet="PosTransaction">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="TrId" ColumnName="TrId" />
+          <ScalarProperty Name="CampaignType" ColumnName="CampaignType" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Income" ColumnName="Income" />
+          <ScalarProperty Name="Campaign" ColumnName="Campaign" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
+          <ScalarProperty Name="Msisdn" ColumnName="Msisdn" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VendorLogs">
+      <EntityTypeMapping TypeName="TurkcellDBw2Model.VendorLogs">
+        <MappingFragment StoreEntitySet="VendorLogs">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CallId" ColumnName="CallId" />
+          <ScalarProperty Name="Msisdn" ColumnName="Msisdn" />
+          <ScalarProperty Name="AuthKey" ColumnName="AuthKey" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendors">
+      <EntityTypeMapping TypeName="TurkcellDBw2Model.Vendors">
+        <MappingFragment StoreEntitySet="Vendors">
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="SecretKey" ColumnName="SecretKey" />
+          <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+          <ScalarProperty Name="AuthKey" ColumnName="AuthKey" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebServiceParameters">
+      <EntityTypeMapping TypeName="TurkcellDBw2Model.WebServiceParameters">
+        <MappingFragment StoreEntitySet="WebServiceParameters">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsRequired" ColumnName="IsRequired" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ParameterType" ColumnName="ParameterType" />
+          <ScalarProperty Name="ParameterName" ColumnName="ParameterName" />
+          <ScalarProperty Name="WebServiceDirectionCode" ColumnName="WebServiceDirectionCode" />
+          <ScalarProperty Name="WebServiceId" ColumnName="WebServiceId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebServices">
+      <EntityTypeMapping TypeName="TurkcellDBw2Model.WebServices">
+        <MappingFragment StoreEntitySet="WebServices">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="WebServiceMethod" ColumnName="WebServiceMethod" />
+          <ScalarProperty Name="ContextName" ColumnName="ContextName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

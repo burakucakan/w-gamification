@@ -1,0 +1,14 @@
+﻿@model Gnc2.Service.ServiceQuery.UserPoints
+
+<div>
+            @if (Model.PointsTotal != null)
+            {
+
+               <div>Toplam Puan : @Model.PointsTotal</div>
+
+            }
+            else
+            {
+                    <div> Kullanıcının Toplam Puanı Bulunmamaktır.  </div>
+            }
+</div>

@@ -1,0 +1,35 @@
+﻿@using Gnc2.Com.Helpers;
+@using Gnc2.Web.App_Manager
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    <title>@ViewBag.Title</title>
+
+    @Html.Partial("_Styles")
+    
+    @Html.Partial("_Scripts")
+    
+</head>
+<body>
+    @if (SessionManager.GetInstance().IsLogin)
+    {
+        @Html.Partial("_Header_AfterLogin");
+    }
+    else
+    {
+        @Html.Partial("_Header_UnLogin");
+    }
+    <ins class="space18"></ins>
+
+    @RenderBody()
+
+    <ins class="space18"></ins>
+
+    @Html.Partial("_Footer")
+
+</body>
+</html>

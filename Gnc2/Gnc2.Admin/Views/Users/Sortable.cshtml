@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Gnc2.DB.Users>
+@using Gnc2.Com.Helpers.UrlHelperExtensions
+@using Gnc2.Admin.Extensions;
+
+@section scripts
+{    
+    @Scripts.Render("~/bundles/jqueryui")
+
+    <script>
+        $(function () {
+            Sortable("@ViewContext.Controller.ValueProvider.GetValue("controller").RawValue");
+        });
+
+        $(document).ready(function () {
+            $("#UserOrderType").change(function data() {
+                location.href = "/Users/Sortable?UserOrderType=" + $(this).val();
+            });
+        });
+    </script>
+}
+
+@Helper.BodyNav(Html, "User", true)
+
+<section class="panel">
+    @Html.DropDownListEnum("UserOrderType", typeof(Gnc2.DB.Virtual.Enums.UserOrderType),0)
+    
+    @if (Model != null) {
+    <table class="grid">
+        <tr>
+            <td>
+                <ol>
+                    <li>
+                        <div>&nbsp;</div>
+                        <div>@Gnc2.Com.App_GlobalResources.rsrcCommon.Image</div>
+                        <div>@Gnc2.Com.App_GlobalResources.rsrcCommon.Title</div>
+                    </li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ol class="sortable high">
+                    
+                    @foreach (var item in Model.ToList())
+                    {
+            
+                    <li id="@item.Id.ToString()">
+                        <div class="hand"></div>
+                        <div class="withImg">
+                            <a href="@Gnc2.Com.Helpers.PathHelper.Images.Content(item.ProfileImage, Gnc2.Com.Virtual.Enums.ImageSizeNaming.Original).ToFullPath()" class="cb">
+                            <img alt="" src="@Gnc2.Com.Helpers.PathHelper.Images.Content(item.ProfileImage, Gnc2.Com.Virtual.Enums.ImageSizeNaming.Preview).ToFullPath()" style="height: 40px" />
+                          
+                                  </a>
+                        </div>
+                        <div>@item.Name</div>
+                        <div>@item.Surname</div>
+                        <div>@item.Gender</div>
+                        <div>@item.CreateDate</div>
+                       
+                    </li>                  
+                    }
+                </ol>
+            </td>
+        </tr>
+
+    </table>
+    }
+   
+</section>

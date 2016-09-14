@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ac237f5d-d7f6-44db-be5c-6704026e61d9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://wanda_wsrvlocator.turkcell.com.tr/GncClubMembershipService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GncClubMembershipService.xsd" MetadataType="Schema" ID="260482fe-dad7-44a9-99ac-3399bb40e341" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncClubMembershipService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GncClubMembershipService1.xsd" MetadataType="Schema" ID="129bb115-dea2-4119-a453-bdd8f4e03f30" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncClubMembershipService.svc?xsd=xsd1" />
+    <MetadataFile FileName="GncClubMembershipService2.xsd" MetadataType="Schema" ID="5f959587-09c2-4e6b-b3ee-9bb5b4d88329" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncClubMembershipService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GncClubMembershipService3.xsd" MetadataType="Schema" ID="4d87a6ab-8984-4ac5-a188-600b7df1c9e2" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncClubMembershipService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ClubMembershipQueryService.wsdl" MetadataType="Wsdl" ID="dd868a2b-dbf8-4fcc-a6db-33f79d16b1fc" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncClubMembershipService.svc?wsdl" />
+    <MetadataFile FileName="GncClubMembershipService.disco" MetadataType="Disco" ID="f35670aa-725c-43d8-ac02-e136f551acc9" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncClubMembershipService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

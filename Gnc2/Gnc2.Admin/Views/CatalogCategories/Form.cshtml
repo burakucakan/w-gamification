@@ -1,0 +1,31 @@
+﻿@model Gnc2.DB.CatalogCategories
+
+@using Gnc2.Admin.Extensions;
+
+@Helper.BodyNav(Html, "CatalogCategories")
+                
+
+@section Scripts {
+
+
+}
+
+@using (Ajax.BeginForm(null, null, new AjaxOptions { UpdateTargetId = "PageForm", LoadingElementId = "LoadingForm", OnSuccess = "FormOnSuccess" }, new { @id = "PageForm" }))
+{    
+    <aside class="panel main">
+
+       @Html.ValidationMessageFor(model => model.CategoryName)   @Html.LabelFor(model => model.CategoryName)    @Html.EditorFor(m => m.CategoryName)
+
+       @Html.Partial("Common/FormFooter")
+            
+    </aside>
+    
+    <aside class="panel side">
+   <aside>
+            <p class="checkbox"> @Html.EditorFor(model => model.IsActive,"Yayında") @Html.LabelFor(model => model.IsActive) </p>
+        </aside>
+
+        @Html.Partial("Common/DataDefaultFields")
+
+    </aside>
+}

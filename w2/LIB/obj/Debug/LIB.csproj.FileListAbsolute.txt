@@ -1,0 +1,7 @@
+C:\J\Projects\TurkcellWGamification\w2\LIB\bin\Debug\LIB.dll
+C:\J\Projects\TurkcellWGamification\w2\LIB\bin\Debug\LIB.pdb
+C:\J\Projects\TurkcellWGamification\w2\LIB\bin\Debug\Newtonsoft.Json.dll
+C:\J\Projects\TurkcellWGamification\w2\LIB\bin\Debug\Newtonsoft.Json.xml
+C:\J\Projects\TurkcellWGamification\w2\LIB\obj\Debug\LIB.csprojResolveAssemblyReference.cache
+C:\J\Projects\TurkcellWGamification\w2\LIB\obj\Debug\LIB.dll
+C:\J\Projects\TurkcellWGamification\w2\LIB\obj\Debug\LIB.pdb

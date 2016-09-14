@@ -1,0 +1,7 @@
+﻿@model Gnc2.Admin.Models.ButtonNavModel
+
+
+<a id="aNew" class="k-button" href="@Url.Action(Model.ActionName, Model.RouteValues)">
+    <span id="newIcon" class="k-icon k-i-plus"></span>
+    @HttpContext.GetGlobalResourceObject("Global", "NewItem")
+</a>

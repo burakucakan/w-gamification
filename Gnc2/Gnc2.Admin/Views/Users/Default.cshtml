@@ -1,0 +1,231 @@
+﻿@model IEnumerable<Gnc2.DB.Users>
+@using Gnc2.Admin.App_Manager
+
+@Helper.BodyNav(Html, "User", true, true, false)
+
+@section Scripts {
+    <script type="text/javascript">
+
+        function slGenderTypeOnChange(sender) {
+            var ddl = $("#GetGender").data("kendoDropDownList");
+
+            if (grid.length) {
+                gridData = grid.data("kendoGrid");
+
+                var selectedValue = ddl.value();
+
+                if (selectedValue)
+                    gridData.dataSource.filter({ field: "Gender", operator: "eq", value: parseInt(selectedValue) });
+                else
+                    gridData.dataSource.filter({});
+            }
+        }
+
+        function GetDisableUser(sender) {
+            var ddl = $("#GetDisableUser").data("kendoDropDownList");
+
+            if (grid.length) {
+                gridData = grid.data("kendoGrid");
+
+                var selectedValue = ddl.value();
+
+                if (selectedValue)
+                    gridData.dataSource.filter({ field: "IsActive", operator: "eq", value: parseInt(selectedValue) });
+                else
+                    gridData.dataSource.filter({});
+            }
+        }
+
+        function GetUserDateProcess(sender) {
+            var ddl = $("#GetUserDateProcess").data("kendoDropDownList");
+           
+
+
+            //today = new Date()
+            
+            //birthday = new Date(85, 2, 11)
+           
+            //console.log(birthday);
+  
+
+            //var d = Date.parse("Sep 8, 2013");
+            //console.log(d);
+
+
+         
+            if (grid.length) {
+                gridData = grid.data("kendoGrid");
+
+                var selectedValue = ddl.value();
+
+
+
+                var dt = new Date();
+
+                var day =  dt.getDate();
+                var month = dt.getMonth();
+                var year = dt.getFullYear();
+                
+                var tweek = day - 7;
+                var tmonth = day - 30;
+
+
+
+                    // Bu gün kayıt olanlar.
+                    if (selectedValue == 1) {
+                        gridData.dataSource.filter({ field: "CreateDate", operator: "eq", value: new Date(year, month, day) });
+                    }
+                        // Bu hafta kayıt olanlar.
+                    else if (selectedValue == 2) {
+                        gridData.dataSource.filter({ field: "CreateDate", operator: "gt", value: new Date(year, month, week) });
+                        
+                    }
+                        // Bu ay kayıt olanlar.
+                    else if (selectedValue == 3) {
+                        gridData.dataSource.filter({ field: "CreateDate", operator: "lt", value: new Date(year, month, tmonth) });
+                    }
+                        // Bugün login olanlar.
+                    else if (selectedValue == 4) {
+                        gridData.dataSource.filter({ field: "LoginDate", operator: "gt", value: new Date(year, month, day) });
+    
+                    }
+                        // Bu hafta login olanlar.
+                    else if (selectedValue == 5) {
+                        gridData.dataSource.filter({ field: "LoginDate", operator: "gt", value: new Date(year, month, tweek) });
+                       
+                    }  // Bu ay login olanlar.
+                    else if (selectedValue == 6) {
+                        gridData.dataSource.filter({ field: "LoginDate", operator: "neq", value: new Date(year, month, tmonth) });
+                    }
+                        // Facebook ile login olanlar.
+                    else if (selectedValue == 7) {
+                        gridData.dataSource.filter({ field: "FbId", operator: "neq", value: "null" });
+                    }
+                       
+                else
+                    gridData.dataSource.filter({});
+            }
+        }
+
+
+        
+
+        //function gridData() {
+        //    var jsonObj = {"logic":"or", filters: [] };
+          
+        //        jsonObj.filters.push({"field": "IsActive","operator":"eq","value":  parseInt(0) });
+        //        jsonObj.filters.push({ "field": "IsDeleted", "operator": "eq", "value": parseInt(0) });
+        //    categoriesDataSource.filter(jsonObj);
+        //}
+       
+ 
+
+        function tarih() {
+
+            Date.prototype.formatMMDDYYYY = function () {
+            var ss = this.getMonth() + "/" + this.getDate() + "/" + this.getFullYear();
+            console.log(ss);
+
+            }
+        }
+
+
+
+</script>
+
+
+}
+
+
+<header class="gridToolBar">
+
+    @Html.Partial("HelperControls/GridRefresh")
+
+     @(Html.Kendo().DropDownList()
+            .Name("GetGender")
+            .DataTextField("Text")
+            .DataValueField("Value")
+            .OptionLabel(HttpContext.GetGlobalResourceObject("Form", "All").ToString())
+                            .DataSource(source => { source.Read(read => { read.Action("GetGender", "Users"); }); })          
+            .Events(e => e.Change("slGenderTypeOnChange"))
+    )
+
+    @Html.Partial("HelperControls/GridSearch")
+
+   
+</header>
+
+
+<header class="gridToolBar">
+
+
+     @(Html.Kendo().DropDownList()
+            .Name("GetDisableUser")
+            .DataTextField("Text")
+            .DataValueField("Value")
+            .OptionLabel(HttpContext.GetGlobalResourceObject("Form", "UserType").ToString())
+            .DataSource(source => { source.Read(read => { read.Action("GetDisableUser", "Users"); }); })          
+            .Events(e => e.Change("GetDisableUser"))
+    )
+
+
+   
+     @(Html.Kendo().DropDownList()
+            .Name("GetUserDateProcess")
+            .DataTextField("Text")
+            .DataValueField("Value")
+            .OptionLabel(HttpContext.GetGlobalResourceObject("Form", "UserProcessType").ToString())
+            .DataSource(source => { source.Read(read => { read.Action("GetUserDateProcess", "Users"); }); })          
+            .Events(e => e.Change("GetUserDateProcess"))
+            .HtmlAttributes(new { style = "width:300px"})
+           
+            
+            
+            
+    )
+
+
+    
+   
+</header>
+
+
+
+
+@(Html.Kendo().Grid(Model)
+    .Name(KendoManager.GridName)
+        
+    .Columns(clm =>
+    {
+
+        clm.Bound(c => c.ProfileImage).ClientTemplate(KendoManager.ClientTemplateUserImage("ProfileImage"));
+        clm.Bound(c => c.Name);
+        clm.Bound(c => c.Surname);
+        clm.Bound(c => c.Gender).ClientTemplate(KendoManager.ClientTemplateGender("Gender"));
+        clm.Bound(c => c.Msisdn);
+        clm.Bound(c => c.LoginDate).ClientTemplate(KendoManager.ClientTemplateDate("LoginDate"));
+        
+        
+        clm.Command(cmd =>
+        {
+            cmd.Custom("Edit").Text(KendoManager.HtmlEditIcon + HttpContext.GetGlobalResourceObject("Global", "Edit").ToString()).Click("kGridGoDetail");
+            cmd.Destroy().Text(HttpContext.GetGlobalResourceObject("Global", "Delete").ToString()); } );
+    })
+
+    .DataSource(dataSource =>
+        dataSource
+            .Ajax()
+            .ServerOperation(false)
+            .Model(model => model.Id(m => m.Id))
+            .Read(r => r.Action("k_jRead", "Users"))
+            .Destroy(d => d.Action("k_jDelete", "Users"))
+            .Events(e => e.Error("kGridOnError"))
+        )
+            
+    .Sortable()
+    .Pageable(KendoManager.pagerSettings)
+    .Events(e => e.DataBound("kGridOnDataBound"))    
+    .Reorderable(reorder => reorder.Columns(true))
+    .Resizable(resize => resize.Columns(true))
+    .Filterable(KendoManager.filterSettings)
+)

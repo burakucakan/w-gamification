@@ -1,0 +1,49 @@
+﻿@using Gnc2.Com.Helpers
+@using Gnc2.Web.App_Manager
+<header id="gnc2Header" class="afterLogin">
+    <section class="top">
+        <section class="gnc2Container">
+            <span class="line fLeft"></span>
+            <section class="likeBtn"><img src="@PathHelper.UrlStatic/images/_offline/like-btn.png" /></section>
+            <span class="line fLeft"></span>
+
+            <section class="right">
+                <span class="line fLeft"></span>
+                <section class="ddl fReg">
+                    <a href="javascript:;" class="packageLoad">TL / PAKET YÜKLE</a>
+                </section>
+
+                <section class="search">
+                    <span class="line fLeft"></span>
+                    <input type="text" name="searchBox" placeholder="Ara" />
+                    <input type="submit" name="searchBtn" value="" />
+                    <span class="line fLeft"></span>
+                </section>
+            </section>
+
+            <section id="headerProfile">
+                @Html.Action("HeaderProfile","Login")
+            </section>
+
+        </section>
+    </section>
+    
+    <section class="gnc2Container">
+
+        <section class="headerContent">
+            <a href="@PathHelper.UrlWeb" title="gnctrkcll" class="logo">gnctrkcll</a>
+        </section>
+
+        @Html.Partial("Common/Menu")
+
+    </section>
+
+    <section id="packageLoad">
+        <section id="packageOverlay"></section>
+        <section class="gnc2Container">
+            <section>
+                @Html.Partial("Common/PackageLoad")
+            </section>
+        </section>
+    </section>
+</header>

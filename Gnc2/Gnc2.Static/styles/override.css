@@ -1,0 +1,39 @@
+﻿/* --- Kendo --- */
+.k-dropdown-wrap.k-state-default { border-radius: 0px; background: #ffffff; height: 42px; border: #aaaaaa 1px solid; }
+.k-select { background: #bdbdbd; height: 34px; margin-top: 1px; margin-right: 1px; width: 40px; border-radius: 0px !important; }
+.k-icon.k-i-arrow-s { width:14px; height:9px; background:url('../images/icons/login-ddl-arrow.png') no-repeat; margin-top: 13px; margin-left: 13px; }
+.k-animation-container.km-popup { background:#ffffff !important; border-radius:0px !important; }
+.k-list-container.k-popup.k-group { background:#ffffff !important; border-radius:0px !important; box-shadow:none !important; border: #aaaaaa 1px solid !important; }
+.k-list { border-radius:0px !important; border:0px !important; }
+.k-dropdown-wrap.k-state-default > .k-input { margin-top: 8px; color: #777; font-size: 14px; }
+
+.k-list-container.k-popup.k-group.k-reset .k-item { background:transparent !important; color: #000; }
+.k-list-container.k-popup.k-group.k-reset .k-item:hover { border: transparent 1px solid; color:#ffffff; background:#ff5cbd !important; border-radius:0px !important; }
+.k-list-container.k-popup.k-group.k-reset .k-item.k-state-selected { background: #ec008c !important; color:#ffffff; border:#db0684 1px solid; border-radius:0px; }
+.k-list-container.k-popup.k-group.k-reset .k-item.k-state-selected:hover { color:#ffffff; }
+
+/* --- Kendo Pager --- */
+#pager { background: transparent !important; border: 0px !important; float: right; }
+.k-pager-wrap > .k-link { float:left !important; background:#b7b6b6 !important; border:0px !important; border-radius:0px !important; -moz-border-radius: 0px !important; padding:8px !important; }
+.k-pager-wrap > .k-pager-numbers.k-reset { float:left !important; }
+.k-pager-wrap > .k-pager-info { display:none; }
+.k-pager-numbers a { background:#b7b6b6 !important; border:0px !important; border-radius:0px !important; -moz-border-radius: 0px !important; color:#ffffff !important; padding:7px 12px !important; font-size:15px !important; }
+.k-pager-numbers a:hover { padding:8px 12px !important; color:#272530; }
+.k-pager-numbers span { background:#b7b6b6 !important; border:0px !important; border-radius:0px !important; -moz-border-radius: 0px !important; padding:8px 12px !important; color:#272530; font-size:15px !important; }
+#pager > a:hover.k-link > .k-icon { background-position:0 -14px !important; }
+.k-icon.k-i-seek-w { background:url(../images/icons/pager-arrow-first.png) no-repeat !important; height:14px !important; margin-top:4px !important; }
+.k-icon.k-i-arrow-w { background:url(../images/icons/pager-arrow-left.png) no-repeat !important; height:14px !important; margin-top:4px !important; margin-left:4px !important; }
+.k-icon.k-i-arrow-e { background:url(../images/icons/pager-arrow-right.png) no-repeat !important; height:14px !important; margin-top:4px !important; margin-left:4px !important; }
+.k-icon.k-i-seek-e { background:url(../images/icons/pager-arrow-last.png) no-repeat !important; height:14px !important; margin-top:4px !important; }
+
+/* --- NanoScroller --- */
+.pane { display:block !important; width: 1px !important; border-left: #b2b2b2 1px solid; background: transparent !important;  }
+.nano { width:97% !important; }
+.nano .content { right:-5px !important; }
+.pane > .slider { width: 2px !important; margin-left: -1px !important; cursor:pointer; }
+
+/* --- Colorbox --- */
+#cboxOverlay { background:#000 !important; }
+div#cboxClose { width:23px !important; height:23px !important; background:url(../images/icons/cb-close.png) no-repeat !important; margin-top:-2px; margin-right:1px; }
+div:hover#cboxClose { background-position:0 -23px !important; }
+#cboxLoadedContent iframe { overflow:hidden !important; }

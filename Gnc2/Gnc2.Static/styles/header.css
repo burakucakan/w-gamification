@@ -1,0 +1,99 @@
+﻿#gnc2Header { width:100%; height:178px; background:url('../images/global/header-bg.jpg') repeat-x; }
+#gnc2Header .top { width:100%; height:46px; float:left; background:#1f1e27; position:relative; z-index:3; }
+#gnc2Header .top .line { width:2px; height:46px; background:url('../images/global/header-menu-line.jpg') no-repeat; }
+#gnc2Header .top .likeBtn { width:auto; float:left; padding:13px 18px 0px 9px; clear:none; }
+#gnc2Header .top .right { width:401px; float:right; clear:none; }
+
+#gnc2Header .top .right .ddl { width:178px; float:left; clear:none; }
+#gnc2Header .top .right .ddl a { width: 154px; height: 31px; float: left; background: url('../images/icons/ddl-arrow.png?v=2') no-repeat right 19px; color: #ffffff; font-size: 18px; padding-left: 18px; padding-top: 14px; }
+#gnc2Header .top .right .ddl a:hover { color:#ffff00; background-position:right -28px; }
+#gnc2Header .top .right .ddl a.open { color:#ffff00; background-position:right -72px; }
+#gnc2Header .top .right .search { width:221px; float:left; clear:none; }
+#gnc2Header .top .right .search input[type=text] { width: 175px; height: 18px; float: left; background: url('../images/form/top-search-box-bg.jpg') no-repeat; font-family: Arial; font-size:12px; padding: 10px 10px; margin-left: 10px; margin-top: 4px; color: #ffffff; border: 0px; z-index: 1; margin-right: 12px; }
+#gnc2Header .top .right .search input[type=button], #gnc2Header .top .right .search input[type=submit] { width: 20px; height: 21px; float: left; background: url('../images/form/top-search-btn.png') no-repeat; border: 0px; margin-left: -46px; margin-top: 12px; cursor: pointer; margin-right: 30px; position: absolute; z-index: 76; } 
+#gnc2Header .top .right .search input[type=button]:hover, #gnc2Header .top .right .search input[type=submit]:hover { background-position: 0 -21px; }
+
+#gnc2Header .headerContent { width:670px; float:left; }
+#gnc2Header .headerContent a.logo { width:155px; height:40px; float:left; background:url('../images/app/gnctrkcll-logo.png') no-repeat; margin:29px 0px 0px 10px; text-indent:-9999px; }
+
+#gnc2Header .userLogin { width:264px; float:right; clear: none; margin-top: 9px; }
+#gnc2Header .userLogin nav a { color:#1f1e27; text-align:center; text-decoration:none; font-size:18px; }
+#gnc2Header .userLogin nav a:hover { color:#0b0a0e; }
+#gnc2Header .userLogin nav a.login { width:110px; float:right; margin-right:10px; }
+#gnc2Header .userLogin nav a.login .icon { width:76px; height:85px; float:left; margin-left:17px; background:url('../images/icons/header-login.png') no-repeat; }
+#gnc2Header .userLogin nav a.login .text { width: auto; height: 16px; float: left; background: url('../images/icons/right-arrow.png') no-repeat right; margin-top: 11px; padding: 0px 16px; }
+#gnc2Header .userLogin nav a:hover.login .icon { background-position:0 -85px; }
+#gnc2Header .userLogin nav a:hover.login .text { background:url('../images/icons/right-arrow-hover.png') no-repeat right;  }
+#gnc2Header .userLogin nav a.register { width:125px; float:left; margin-left: 29px; }
+#gnc2Header .userLogin nav a.register .icon { width:76px; height:85px; float:left; margin-left:17px; background:url('../images/icons/header-register.png') no-repeat; }
+#gnc2Header .userLogin nav a.register .text { width: auto; height: 16px; float: left; background: url('../images/icons/right-arrow.png') no-repeat right; margin-top: 11px; padding: 0px 16px 0px 0px; }
+#gnc2Header .userLogin nav a:hover.register .icon { background-position:0 -85px; }
+#gnc2Header .userLogin nav a:hover.register .text { background:url('../images/icons/right-arrow-hover.png') no-repeat right;  }
+
+#gnc2Header .menu { width: 680px; height: auto; float: left; margin-top: -25px; clear:both; }
+#gnc2Header .menu ul {float:left; }
+#gnc2Header .menu ul li { position: relative; float:left; }
+#gnc2Header .menu ul li a { float:left; font-size:22px; color:#1f1e27; padding: 5px 21px 5px 18px; display: inline-block; position:relative; }
+#gnc2Header .menu ul li a.firstMenu { padding:5px 18px 5px 5px; }
+#gnc2Header .menu ul li > a:hover,#gnc2Header .menu ul li > a.active { color: #ffffff; background:#272530; padding-top: 8px; margin-top: -3px; }
+#gnc2Header .menu ul li:hover > .subMenu{ display:block; }
+
+#gnc2Header .menu ul li .subMenu { width:349px; display:none; z-index: 10; float: left; color: #ffffff; background: #272530; padding: 17px 10px 18px 14px; margin: 32px 0px 0px 0px; position: absolute; }
+#gnc2Header .menu ul li .subMenu > img { width:189px; height:132px; float:left; }
+#gnc2Header .menu ul li .subMenu > .subMenuContainer { min-width: 150px; float: right; clear: none; }
+#gnc2Header .menu ul li .subMenu > .subMenuContainer nav { margin-left: 11px; margin-top: -6px; float: left; width: 122px; }
+#gnc2Header .menu ul li .subMenu > .subMenuContainer nav a { width: 112px; height: auto; float: left; padding: 5px 2px 5px 2px; font-size: 14px; color: #e1e1e3; background: url('../images/global/header-menu-line-h.jpg') repeat-x bottom; line-height: 18px; margin-right: 7px; }
+#gnc2Header .menu ul li .subMenu > .subMenuContainer nav a:hover { color:#fef200; }
+#gnc2Header .menu ul li .subMenu > .subMenuContainer nav a:last-child { background:none; }
+
+#gnc2Header .menu ul li .subMenu.subMenuGnc2 { margin-left: -401px; width: 467px; }
+
+#gnc2Header #packageLoad { width: 100%; float: left; height: auto; background: #272530; margin-top: -200px; position: absolute; z-index: 2; padding-top: 64px; padding-bottom: 18px; }
+#gnc2Header #packageOverlay { width:100%; height:100%; position:fixed; z-index:-1; display:none; }
+#gnc2Header #packageLoad.unLogin { background:transparent !important; margin-top: -206px; }
+#gnc2Header #packageLoad .unLogin { width: 520px; float: right; background: #272530; padding: 22px 7px 20px 20px; margin-top: -18px; }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList.loginList { margin-left: 446px; }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList { width:auto; height:auto; float:left; margin-right:15px; }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList.space { margin-left:31px;  }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList li { float:left; clear:both; margin-bottom:2px;  }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList li a { width:146px; height:39px; float:left; background:#1f1e27; }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList li a .fLeft { width: 38px; height: 29px; float: left; background: url('../images/icons/package-load-icons.png') no-repeat; background-position: 0 -74px; padding: 11px 11px 0px 2px; font-size: 16px; color: #000000; text-align: center; }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList li a .fLeft .currency { font-size:14px; }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList li a .fRight { width:91px; height:auto; float:right; font-size:13px; color:#e1e1e1; padding-top:12px;  }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList li a .fRight.doubleLine { padding-top:8px !important; }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList li a:hover .fLeft { background-position:0px 0px; }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList li a:hover .fRight { color:#ffff00; }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList li a.title { cursor:default; }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList li a.title .fLeft { background: #ffff00 !important; width: 31px !important; height:28px !important; }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList li a .fLeft img { margin-top: -8px; }
+#gnc2Header #packageLoad .gnc2Container ul.packageLoadList li a.title .fRight { font-size:15px; color:#ffff00; }
+
+#gnc2Header .headerProfile { width: 412px; height: 198px; float: right; background: url('../images/global/header-profile-bg.png?v=1') no-repeat; margin-top: -244px; padding-top:16px; }
+#gnc2Header .headerProfile nav { width:auto; float:right; margin-right:13px; margin-top:5px; font-size:12px; color:#c9be0c;  }
+#gnc2Header .headerProfile nav a { text-decoration:underline; color:#c9be0c; }
+#gnc2Header .headerProfile nav a:hover { color:#878023; }
+#gnc2Header .headerProfile .profileImage { width:90px; height:90px; float:left; margin:8px 0px 0px 30px; z-index: 1; position: relative; }
+#gnc2Header .headerProfile .profileImage img { width:90px; height:90px; border-radius:90px; -moz-border-radius:90px; margin-top: -98px; }
+#gnc2Header .headerProfile .notification { width: 25px; height: 20px; float: left; background: url(../images/global/header-profile-notification.png) no-repeat; font-size: 14px; color: #ffffff; font-weight: bold; font-family: Arial; text-align: center; padding-top: 6px; margin-left: -97px; margin-top: 6px; position: relative; z-index: 0; display:none; }
+#gnc2Header .headerProfile .profileInfo { width: 270px; float: right; font-family: Arial; margin-right: 5px; margin-top: 6px; }
+#gnc2Header .headerProfile .profileInfo .welcome { width:100%; float:left; font-size:12px; margin-bottom: 3px; opacity:0; -moz-opacity:0; }
+#gnc2Header .headerProfile .profileInfo .name { width:100%; float:left; font-size:18px; opacity:0; -moz-opacity:1; }
+#gnc2Header .headerProfile .profileInfo .badges { width:100%; float:left; min-height:30px; margin-top:6px; }
+#gnc2Header .headerProfile .profileInfo .badges img { float:left; width:30px; height:30px; margin-right: 5px; opacity:0; -moz-opacity:0; }
+#gnc2Header .headerProfile .packageInfo { width:auto; margin:auto; min-height:26px; text-align: center; }
+#gnc2Header .headerProfile .packageInfo .scoreNumber { font-size:26px; color:#000000; }
+#gnc2Header .headerProfile .packageInfo .scoreNumberSmall { font-size:16px; }
+#gnc2Header .headerProfile .packageInfo .scoreName { font-size:16px; color:#878023; }
+#gnc2Header .headerProfile .packageInfo img.phone { margin-left: 12px; }
+#gnc2Header .headerProfile a.profileLink { float:left; width:100%; text-align:center; font-size:12px; color:#fff200; margin-top: 34px; }
+#gnc2Header .headerProfile a:hover.profileLink { color:#ffffff; }
+
+#gnc2Header.afterLogin .headerProfile {  margin-top: -17px;  }
+#gnc2Header.afterLogin .menu { margin-top:27px; }
+#gnc2Header.afterLogin .headerProfile .profileImage img { margin-top:0px; }
+#gnc2Header.afterLogin .headerProfile .profileInfo .welcome { opacity:1; -moz-opacity:1; }
+#gnc2Header.afterLogin .headerProfile .profileInfo .name { opacity:1; -moz-opacity:1; }
+
+#cboxLoadedContent iframe { width:100%; height:100%; z-index:999; position:relative; }
+
+#gnc2Header.afterLogin .top .right { float:left !important; }

@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21A72786-1BD3-4772-89B7-AC24C312FC89}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gnc2.Com</RootNamespace>
+    <AssemblyName>Gnc2.Com</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\rscUserRegisterControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rscUserRegisterControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\rsrcCampaigns.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rsrcCampaigns.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\rsrcAdmins.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rsrcAdmins.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\rsrcBanners.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rsrcBanners.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\rsrcCatalogs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rsrcCatalogs.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\rsrcCatalogCategories.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rsrcCatalogCategories.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\rsrcCatalogType.Designer.cs" />
+    <Compile Include="App_GlobalResources\rsrcCommon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rsrcCommon.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\rsrcEnumDisplays.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rsrcEnumDisplays.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\rsrcModulTypes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rsrcModulTypes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\rsrcPromoCodeArchives.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rsrcPromoCodeArchives.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\rsrcPromoCodes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rsrcPromoCodes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\rsrcPromoCodeTypes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rsrcPromoCodeTypes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\rsrcSinger.Designer.cs" />
+    <Compile Include="App_GlobalResources\rsrcSong.Designer.cs" />
+    <Compile Include="App_GlobalResources\rsrcUsers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rsrcUsers.resx</DependentUpon>
+    </Compile>
+    <Compile Include="General\GlobalVars.cs" />
+    <Compile Include="General\ProjectUtil.cs" />
+    <Compile Include="Helpers\PathHelper.cs" />
+    <Compile Include="Helpers\UrlHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Virtual\Enums.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\rscUserRegisterControl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>rscUserRegisterControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\rsrcCampaigns.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>rsrcCampaigns.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\rsrcAdmins.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>rsrcAdmins.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <ProjectReference Include="..\LIB\LIB.csproj">
+      <Project>{7e338258-5852-4955-aba2-b357c05767b8}</Project>
+      <Name>LIB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_GlobalResources\rsrcBanners.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>rsrcBanners.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\rsrcCatalogs.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>rsrcCatalogs.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\rsrcCatalogCategories.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>rsrcCatalogCategories.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\rsrcCatalogType.resx" />
+    <EmbeddedResource Include="App_GlobalResources\rsrcCommon.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>rsrcCommon.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\rsrcEnumDisplays.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>rsrcEnumDisplays.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\rsrcModulTypes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>rsrcModulTypes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\rsrcPromoCodeArchives.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>rsrcPromoCodeArchives.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\rsrcPromoCodes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>rsrcPromoCodes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\rsrcPromoCodeTypes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>rsrcPromoCodeTypes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_GlobalResources\rsrcSinger.resx" />
+    <EmbeddedResource Include="App_GlobalResources\rsrcSong.resx" />
+    <EmbeddedResource Include="App_GlobalResources\rsrcUsers.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>rsrcUsers.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LIB\LIB.csproj">
+      <Project>{7e338258-5852-4955-aba2-b357c05767b8}</Project>
+      <Name>LIB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

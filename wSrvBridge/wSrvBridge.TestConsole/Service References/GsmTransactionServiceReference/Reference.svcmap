@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fa0179b7-320f-4134-bdef-4d3504c77b58" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://wanda_w2.turkcell.com.tr/GsmTransaction.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GsmTransaction.xsd" MetadataType="Schema" ID="fc6d1aec-63d7-4c3b-9027-641af66088f7" SourceId="1" SourceUrl="http://wanda_w2.turkcell.com.tr/GsmTransaction.svc?xsd=xsd2" />
+    <MetadataFile FileName="GsmTransaction1.xsd" MetadataType="Schema" ID="1862f328-a9d3-46ba-8064-15f3caf57177" SourceId="1" SourceUrl="http://wanda_w2.turkcell.com.tr/GsmTransaction.svc?xsd=xsd0" />
+    <MetadataFile FileName="GsmTransaction.disco" MetadataType="Disco" ID="410ca962-cd5e-433c-bcd0-eb68d008a11b" SourceId="1" SourceUrl="http://wanda_w2.turkcell.com.tr/GsmTransaction.svc?disco" />
+    <MetadataFile FileName="GsmTransaction2.xsd" MetadataType="Schema" ID="bd5118cc-be49-4e69-acc2-c3c3a4431332" SourceId="1" SourceUrl="http://wanda_w2.turkcell.com.tr/GsmTransaction.svc?xsd=xsd4" />
+    <MetadataFile FileName="GsmTransaction3.xsd" MetadataType="Schema" ID="137189fd-bd77-475e-a630-1af443f8b2e2" SourceId="1" SourceUrl="http://wanda_w2.turkcell.com.tr/GsmTransaction.svc?xsd=xsd1" />
+    <MetadataFile FileName="GsmTransaction.wsdl" MetadataType="Wsdl" ID="e2bcb80a-ee9e-42e0-a9e1-9faf060b21f5" SourceId="1" SourceUrl="http://wanda_w2.turkcell.com.tr/GsmTransaction.svc?wsdl" />
+    <MetadataFile FileName="GsmTransaction4.xsd" MetadataType="Schema" ID="d761ab91-50db-4c40-abe9-5ebb09223734" SourceId="1" SourceUrl="http://wanda_w2.turkcell.com.tr/GsmTransaction.svc?xsd=xsd3" />
+    <MetadataFile FileName="GsmTransaction1.wsdl" MetadataType="Wsdl" ID="fabf01fb-938c-4f24-8def-3bcea479a1b7" SourceId="1" SourceUrl="http://wanda_w2.turkcell.com.tr/GsmTransaction.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

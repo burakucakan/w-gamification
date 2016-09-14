@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "gnctrkcll";
+}
+@using Gnc2.Com.Helpers;
+
+<section id="dashboard">
+    @Html.Action("Summary","Dashboard")
+</section>
+
+<section id="newsFeedContainer">
+    @Html.Action("Default", "NewsFeed")
+</section>
+
+<section id="myBadges" style="position: absolute;
+opacity: 0;">
+</section>
+
+<section class="gnc2Container">
+
+    <section id="mainBadge">
+        @{Html.RenderAction("MainBadge","Badge");}
+    </section>
+
+    <section id="defaultBanners">
+        @{Html.RenderAction("Default", "Banners");}
+    </section>
+
+    <section id="defaultLeaderBoard">
+        @{Html.RenderAction("Default", "LeaderBoard");}
+    </section>
+
+    <ins class="space18"></ins>
+    <ins class="space18"></ins>
+
+    @Html.Action("HomePageCampaing","Campaing")
+
+</section>

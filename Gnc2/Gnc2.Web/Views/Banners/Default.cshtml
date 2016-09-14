@@ -1,0 +1,64 @@
+﻿@using Gnc2.Com.Helpers;
+
+@model IEnumerable<Gnc2.DB.Banners>
+
+<script>
+    $(function () {
+        offerSlide();
+    });
+
+    function offerSlide() {
+        $('.offers').slides({
+            container: 'tip',
+            preload: false,
+            play: 5000,
+            paginition: true,
+            paginationClass: 'offersNav',
+            generatePagination: false,
+            effect: 'fade',
+            animationComplete: function (current) {
+                $('.offersNav li a').removeClass('active');
+                $('.offersNav li').eq(current - 1).children('a').addClass('active');
+            }
+        });
+    }
+</script>
+
+<section class="boxSmall fReg fLeft">
+    <h3 class="boxTitle">GNC2 FIRSATLAR</h3>
+
+    <section class="boxContent">
+
+        <section class="tips">
+
+           <section class="offers">
+            
+               <section class="tip">
+
+                   @foreach (var item in Model)
+                   {
+                         <section class="tipContent">
+                       <img src="@PathHelper.UrlStatic/images/banners/@item.FileName" />
+                            </section>
+                   }
+
+                 
+               </section> 
+
+               <ins></ins>
+
+               <ul class="alertNav offersNav">
+                    <li><a class="active">1</a></li>
+                    <li><a>2</a></li>
+                    <li><a>3</a></li>
+                    <li><a>4</a></li>
+                    <li><a>5</a></li>
+                    <li><a>6</a></li>
+               </ul>
+
+           </section>
+        
+        </section>
+
+    </section>
+</section>

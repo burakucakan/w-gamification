@@ -1,0 +1,157 @@
+﻿@using Gnc2.Com.Helpers
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>    
+    <title>Turkcell Gamification Api Documentation</title>
+
+    <link rel="stylesheet" href="styles/reset.css" type="text/css" />
+    <link rel="stylesheet" href="styles/common.css" type="text/css" />
+    <link rel="stylesheet" href="styles/global.css" type="text/css" />
+
+    <link href="@PathHelper.UrlUIAssets/packages/kendoui/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="@PathHelper.UrlUIAssets/packages/kendoui/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="@PathHelper.UrlUIAssets/scripts/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="/scripts/jquery.typer.js"type="text/javascript"></script>
+    <script src="/scripts/jsl.format.js"type="text/javascript"></script>
+
+    <!--[if lte IE 8]> <script src="@PathHelper.UrlUIAssets/scripts/utils/html5.min.js" type="text/javascript"></script> <![endif]-->
+
+    <script src="@PathHelper.UrlUIAssets/packages/kendoui/js/kendo.all.min.js"></script>
+    <script src="@PathHelper.UrlUIAssets/packages/kendoui/kendo.modernizr.custom.js"></script>
+    <script src="@PathHelper.UrlUIAssets/scripts/kendo.js"></script>
+
+    <script>
+        $(function () {
+            $("select").kendoDropDownList();
+            openApiExplorer();
+            closeApiExplorerBtn();
+        });
+
+        function openApiExplorer() {
+            $(".apiExplorerBtn").live("click", function () {
+                $("#overlay").fadeIn(function () {
+                    $("#overlayContent").show();
+
+                    $(".apiExplorerBtn").animate({
+                        marginTop: "214px"
+                    }, 450);
+
+                    $(".apiExplorer").slideDown(function () {
+                        $(".apiExplorerBtnOpen").show();
+                        $(".apiExplorerBtn").hide();
+
+                    });
+                });
+            });
+        }
+
+        function closeApiExplorer() {
+            $(".apiExplorerBtnOpen").hide();
+            $(".apiExplorerBtn").show();
+
+            var runWindow = $(".runWindow").attr("style");
+            if (runWindow != undefined) {
+                if (runWindow.indexOf("block") == -1) {
+                    $(".apiExplorerBtn").animate({
+                        marginTop: "23px"
+                    }, 400);
+                }
+                else {
+                    setTimeout(function () {
+                        $(".apiExplorerBtn").animate({
+                            marginTop: "23px"
+                        }, 410);
+                    }, 400);
+                }
+            }
+            else {
+                $(".apiExplorerBtn").animate({
+                    marginTop: "23px"
+                }, 400);
+            }
+
+            $(".runWindow").slideUp(function () {
+                $(".apiExplorer").slideUp(function () {
+                    $("#parameters").html("");
+                    $("#apiExplorerSubmit").hide();
+                    $("#WebServiceId").kendoDdlVal(0);
+                    $("#overlay").fadeOut();
+                });
+            });
+        }
+
+        function closeApiExplorerBtn() {
+            $(".apiExplorer > a.close").live("click", function () {
+                closeApiExplorer();
+            });
+
+            $(".apiExplorer > .apiExplorerBtnOpen").live("click", function () {
+                closeApiExplorer();
+            });
+
+            $("#overlay").live("click", function () {
+                closeApiExplorer();
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <a href="javascript:" class="logo"></a>
+
+        <aside class="search">
+            <input type="text" name="SearchKey" id="SearchKey" placeholder="Developer network içinde ara..." />
+        </aside>
+
+        <ins></ins>
+        <a href="javascript:;" class="apiExplorerBtn">API EXPLORER</a>
+    </header>
+
+    <section class="container">
+
+        @Html.Action("Default","Menu")
+
+        <section class="right">
+            <aside class="note">
+                <b>Lütfen sol menüden seçim yapınız!</b>
+            </aside>
+        </section>
+    </section>
+
+    <footer>
+        <span>powered by Wanda Digital</span>
+    </footer>
+
+    
+
+    @RenderBody()
+
+    <script>
+        $(function () {
+            var bHeight = parseInt($(this).height());
+            $(".container > .right").css("min-height", bHeight - 198 + "px");
+        });
+    </script>
+    
+
+    @*<script>
+        $(function () {
+            $("#fBtn").live("click", function () {
+                var a = $("#format").val();
+
+                var formatted_json = jsl.format.formatJson(a);
+                $(".right").html(formatted_json);
+                alert("It should be formatted now...");
+            });
+        });
+    </script>*@
+
+</body>
+</html>

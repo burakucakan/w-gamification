@@ -1,0 +1,38 @@
+﻿@model Gnc2.DB.PromoCodes
+@using Gnc2.Admin.Extensions;
+
+@Helper.BodyNav(Html, "PromoCodes", false, false, false, false)
+
+@section Scripts {
+
+}
+
+@using (Ajax.BeginForm(null, null, new AjaxOptions { UpdateTargetId = "PageForm", LoadingElementId = "LoadingForm", OnSuccess = "FormOnSuccess" }, new { @id = "PageForm" }))
+{    
+    <aside class="panel main">
+     
+         @Html.ValidationMessageFor(model => model.PromoCodeTypes.PromoCodeTypeName)   @Html.LabelFor(model => model.PromoCodeTypes.PromoCodeTypeName)   @Html.DropDownList("Id" , (SelectList)ViewBag.promocode, "Lütfen Kategori Seçin")
+       
+         @Html.Partial("Common/FormFooter")
+    
+    </aside>
+    
+    <aside class="panel side">
+
+       <aside>
+
+            @{Html.RenderPartial("Common/UploadTextFile", new Gnc2.Admin.Models.UploadModel {
+                  UploadElementName = "PromoCodeFileName",
+                  FileName = (Model != null) ? "PromoCode" : "",
+                  TextType = Gnc2.Com.Helpers.PathHelper.TextFiles.Type.promocodes,
+                
+              });}
+
+        </aside>
+        
+        @Html.Partial("Common/DataDefaultFields")
+
+    </aside>
+    
+    
+}

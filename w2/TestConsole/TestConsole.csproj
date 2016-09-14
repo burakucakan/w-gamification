@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6635F39D-F955-4B87-8A31-AFDFC0731BA6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestConsole</RootNamespace>
+    <AssemblyName>TestConsole</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\GMTransactionSrv\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GMTransaction\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GsmTrans\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Gsm\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PostTransactions\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\QuerySvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Sms\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Test\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\DataSources\w2.Service.Gigya.GM.CustomObjects.PostTransactionResponse.datasource" />
+    <None Include="Properties\DataSources\w2.Service.Gigya.GM.NotifyActionResponse.datasource" />
+    <None Include="Service References\GMTransactionSrv\GMTransaction.wsdl" />
+    <None Include="Service References\GMTransactionSrv\GMTransaction.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GMTransactionSrv\GMTransaction1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GMTransactionSrv\GMTransaction2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GMTransactionSrv\GMTransaction3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GMTransactionSrv\GMTransaction4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GMTransaction\GMTransaction.wsdl" />
+    <None Include="Service References\GMTransaction\GMTransaction.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GMTransaction\GMTransaction2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GMTransaction\GMTransaction3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GMTransaction\GMTransaction4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GMTransaction\GMTransaction5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GsmTrans\GsmTransaction.wsdl" />
+    <None Include="Service References\GsmTrans\GsmTransaction.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GsmTrans\GsmTransaction1.wsdl" />
+    <None Include="Service References\GsmTrans\GsmTransaction1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GsmTrans\GsmTransaction2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GsmTrans\GsmTransaction3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GsmTrans\GsmTransaction4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GsmTrans\TestConsole.GsmTrans.GsmTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Gsm\GsmTransaction2.wsdl" />
+    <None Include="Service References\Gsm\GsmTransaction21.wsdl" />
+    <None Include="Service References\Gsm\GsmTransaction5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Gsm\GsmTransaction51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Gsm\GsmTransaction52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Gsm\GsmTransaction53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Gsm\GsmTransaction54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Gsm\TestConsole.Gsm.GsmTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PostTransactions\PosTransactions.wsdl" />
+    <None Include="Service References\PostTransactions\PosTransactions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostTransactions\PosTransactions1.wsdl" />
+    <None Include="Service References\PostTransactions\PosTransactions1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostTransactions\PosTransactions2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostTransactions\PosTransactions3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostTransactions\PosTransactions4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PostTransactions\TestConsole.PostTransactions.PosTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\QuerySvc\Query.wsdl" />
+    <None Include="Service References\QuerySvc\Query.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuerySvc\Query1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuerySvc\Query2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuerySvc\Query3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuerySvc\Query4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\QuerySvc\TestConsole.QuerySvc.UserPoints.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Sms\SmsQuery.wsdl" />
+    <None Include="Service References\Sms\SmsQuery.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Sms\SmsQuery1.wsdl" />
+    <None Include="Service References\Sms\SmsQuery1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Sms\SmsQuery2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Sms\SmsQuery3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Sms\SmsQuery4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Sms\TestConsole.Sms.SmsQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Test\PostTransactions.wsdl" />
+    <None Include="Service References\Test\PostTransactions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Test\PostTransactions1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Test\PostTransactions2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Test\PostTransactions3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Test\PostTransactions4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Test\TestConsole.Test.PostTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GSCSharpSDK\Gigya.Socialize.SDK.csproj">
+      <Project>{bb96a02d-4c4b-48f0-9aa4-e73b186f3151}</Project>
+      <Name>Gigya.Socialize.SDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\w2.Com\w2.Com.csproj">
+      <Project>{6f1c6307-06f6-441c-92dc-c46a87ffc3ab}</Project>
+      <Name>w2.Com</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\w2.Service\w2.Service.csproj">
+      <Project>{be24673e-434c-4bf6-916c-6b5f1fc4a48e}</Project>
+      <Name>w2.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\GMTransactionSrv\" />
+    <WCFMetadataStorage Include="Service References\GMTransaction\" />
+    <WCFMetadataStorage Include="Service References\GsmTrans\" />
+    <WCFMetadataStorage Include="Service References\Gsm\" />
+    <WCFMetadataStorage Include="Service References\PostTransactions\" />
+    <WCFMetadataStorage Include="Service References\QuerySvc\" />
+    <WCFMetadataStorage Include="Service References\Sms\" />
+    <WCFMetadataStorage Include="Service References\Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QuerySvc\Query.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QuerySvc\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QuerySvc\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\QuerySvc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GMTransaction\GMTransaction.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GMTransaction\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GMTransaction\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GMTransaction\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GMTransactionSrv\GMTransaction.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GMTransactionSrv\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GMTransactionSrv\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GMTransactionSrv\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PostTransactions\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PostTransactions\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PostTransactions\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Test\PostTransactions.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Test\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Test\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Test\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Sms\SmsQuery.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Sms\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Sms\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Sms\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Gsm\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Gsm\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Gsm\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Gsm\GsmTransaction1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GsmTrans\GsmTransaction.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GsmTrans\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GsmTrans\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GsmTrans\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PostTransactions\PosTransactions.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

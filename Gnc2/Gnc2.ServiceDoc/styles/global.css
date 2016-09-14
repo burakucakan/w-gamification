@@ -1,0 +1,9 @@
+﻿body { font-family:Arial; margin-top:20px; }
+
+.container { width:860px; height:auto; margin:auto; }
+.container h1 { width:100%; float:left; margin:0px; padding: 0px; font-size:16px; font-weight:bold; }
+.container h3 { width:100%; float:left; margin:10px 0px 0px 0px; padding: 0px; font-size:14px; font-weight:bold; }
+.container p { width:100%; float:left; margin:5px 0px 20px 0px; font-size:12px; line-height:18px; }
+.container table { width:100%; border-top:#c9c9c9 1px solid; border-left:#c9c9c9 1px solid; font-size:12px; text-align:left; margin-top:5px; float:left; }
+.container table tr th { color:#000000; height:35px; border-right:#c9c9c9 1px solid;  border-bottom:#c9c9c9 1px solid; padding:0px 5px; }
+.container table tr td { color:#7b7b7b; height:35px; border-right:#c9c9c9 1px solid;  border-bottom:#c9c9c9 1px solid; padding:0px 5px; }

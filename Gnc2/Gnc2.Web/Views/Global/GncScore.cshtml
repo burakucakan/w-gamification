@@ -1,0 +1,20 @@
+﻿@using Gnc2.Com.Helpers
+@using Gnc2.Web.App_Manager 
+<script>
+    function pointRefresh() {
+        var intervalId = setInterval(function () {
+            $.ajax({
+                url: '/Login/getUserPoint',
+                type: "POST",
+                data: null,
+                dataType: 'json',
+                success: function (response) {
+                    $("#userPoint").html(response);
+                    clearInterval(intervalId); //kalkacak
+                }
+            });
+        }, 500);
+    }
+    pointRefresh();
+ </script>
+<span class="scoreNumber" id="userPoint">@SessionManager.GetInstance().LogonUser.Point.ToString()</span> <span class="scoreName">GNCPUAN</span>

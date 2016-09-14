@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a9492d5c-99ff-4942-9ca8-8b26924e1291" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://wanda_wsrvlocator.turkcell.com.tr/GncPermissionService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GncPermissionService.xsd" MetadataType="Schema" ID="2038e05a-128a-4b66-b342-2c7aa3ec8764" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncPermissionService.svc?xsd=xsd1" />
+    <MetadataFile FileName="GncPermissionService1.xsd" MetadataType="Schema" ID="b4a2c362-721b-44f9-98e1-aa1517398444" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncPermissionService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GncPermissionService2.xsd" MetadataType="Schema" ID="836f77da-a0fc-448b-84dd-d0188aa8977d" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncPermissionService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PermissionQueryService.wsdl" MetadataType="Wsdl" ID="2c34a711-b68a-420a-9f11-0e6e0532af99" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncPermissionService.svc?wsdl" />
+    <MetadataFile FileName="GncPermissionService.disco" MetadataType="Disco" ID="a3c8c94e-b82a-4c86-848a-e1fdd2711d3d" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncPermissionService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

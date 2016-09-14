@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BE24673E-434C-4BF6-916C-6B5F1FC4A48E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>w2.Service</RootNamespace>
+    <AssemblyName>w2.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\Gnc2\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Gnc2\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\BaseService.cs" />
+    <Compile Include="Base\IBaseService.cs" />
+    <Compile Include="Entities\LeaderBoard.cs" />
+    <Compile Include="Gigya\Comments\GetComments.cs" />
+    <Compile Include="Gigya\Filters\GigyaAttributeFilter.cs" />
+    <Compile Include="Gigya\Attributes\GigyaParameter.cs" />
+    <Compile Include="Gigya\BaseRequest.cs" />
+    <Compile Include="Gigya\BaseResponse.cs" />
+    <Compile Include="Gigya\Comments\AvgRatings.cs" />
+    <Compile Include="Gigya\Comments\Category.cs" />
+    <Compile Include="Gigya\Comments\CategorySettings.cs" />
+    <Compile Include="Gigya\Comments\ClientSettings.cs" />
+    <Compile Include="Gigya\Comments\Comment.cs" />
+    <Compile Include="Gigya\Comments\CommentCounts.cs" />
+    <Compile Include="Gigya\Comments\CommentResponse.cs" />
+    <Compile Include="Gigya\Comments\DeleteComment.cs" />
+    <Compile Include="Gigya\Comments\DeleteCommentResponse.cs" />
+    <Compile Include="Gigya\Comments\FlagComment.cs" />
+    <Compile Include="Gigya\Comments\FlagCommentResponse.cs" />
+    <Compile Include="Gigya\Comments\GetCategoryInfo.cs" />
+    <Compile Include="Gigya\Comments\GetCategoryInfoResponse.cs" />
+    <Compile Include="Gigya\Comments\GetCommentCounts.cs" />
+    <Compile Include="Gigya\Comments\GetCommentCountsResponse.cs" />
+    <Compile Include="Gigya\Comments\GetStreamInfo.cs" />
+    <Compile Include="Gigya\Comments\GetStreamInfoResponse.cs" />
+    <Compile Include="Gigya\Comments\GetThread.cs" />
+    <Compile Include="Gigya\Comments\GetThreadResponse.cs" />
+    <Compile Include="Gigya\Comments\GetTopRatedStreams.cs" />
+    <Compile Include="Gigya\Comments\GetTopRatedStreamsResponse.cs" />
+    <Compile Include="Gigya\Comments\GetTopStreams.cs" />
+    <Compile Include="Gigya\Comments\GetTopStreamsResponse.cs" />
+    <Compile Include="Gigya\Comments\GetUserComments.cs" />
+    <Compile Include="Gigya\Comments\GetUserCommentsResponse.cs" />
+    <Compile Include="Gigya\Comments\GetUserOptions.cs" />
+    <Compile Include="Gigya\Comments\GetUserOptionsResponse.cs" />
+    <Compile Include="Gigya\Comments\PostComment.cs" />
+    <Compile Include="Gigya\Comments\PostCommentResponse.cs" />
+    <Compile Include="Gigya\Comments\RatingDim.cs" />
+    <Compile Include="Gigya\Comments\Reply.cs" />
+    <Compile Include="Gigya\Comments\Sender.cs" />
+    <Compile Include="Gigya\Comments\Sender2.cs" />
+    <Compile Include="Gigya\Comments\SenderResponse.cs" />
+    <Compile Include="Gigya\Comments\SetCategoryInfo.cs" />
+    <Compile Include="Gigya\Comments\SetCategoryInfoResponse.cs" />
+    <Compile Include="Gigya\Comments\SetStreamInfo.cs" />
+    <Compile Include="Gigya\Comments\SetStreamInfoResponse.cs" />
+    <Compile Include="Gigya\Comments\SetUserOptions.cs" />
+    <Compile Include="Gigya\Comments\SetUserOptionsResponse.cs" />
+    <Compile Include="Gigya\Comments\Stream.cs" />
+    <Compile Include="Gigya\Comments\StreamInfo.cs" />
+    <Compile Include="Gigya\Comments\StreamSettings.cs" />
+    <Compile Include="Gigya\Comments\Subscribe.cs" />
+    <Compile Include="Gigya\Comments\SubscribeResponse.cs" />
+    <Compile Include="Gigya\Comments\Unsubscribe.cs" />
+    <Compile Include="Gigya\Comments\UnsubscribeResponse.cs" />
+    <Compile Include="Gigya\Comments\UpdateComment.cs" />
+    <Compile Include="Gigya\Comments\UpdateCommentResponse.cs" />
+    <Compile Include="Gigya\Comments\UserOptions.cs" />
+    <Compile Include="Gigya\Comments\Vote.cs" />
+    <Compile Include="Gigya\Comments\VoteResponse.cs" />
+    <Compile Include="Gigya\GigyaRequest.cs" />
+    <Compile Include="Gigya\GM\Achievement.cs" />
+    <Compile Include="Gigya\GM\ActionAttributes.cs" />
+    <Compile Include="Gigya\GM\ActionLogResponse.cs" />
+    <Compile Include="Gigya\GM\ActionResponse.cs" />
+    <Compile Include="Gigya\GM\ChallengeAction.cs" />
+    <Compile Include="Gigya\GM\Challenge.cs" />
+    <Compile Include="Gigya\GM\CustomObjects\ChallengeObj.cs" />
+    <Compile Include="Gigya\Socialize\CustomModels\NotifyUserLogin.cs" />
+    <Compile Include="Gigya\Socialize\CustomModels\NotifyUserLoginResponse.cs" />
+    <Compile Include="Resources\Errors.Designer.cs">
+      <DependentUpon>Errors.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="srvGmTransactionActions.cs" />
+    <Compile Include="srvVendorLogs.cs" />
+    <Compile Include="srvVendors.cs" />
+    <Compile Include="srvWebServiceParameters.cs" />
+    <Compile Include="srvWebServices.cs" />
+    <Compile Include="UserObj.cs" />
+    <Compile Include="Gigya\GM\DeleteAction.cs" />
+    <Compile Include="Gigya\GM\DeleteActionResponse.cs" />
+    <Compile Include="Gigya\GM\DeleteChallenge.cs" />
+    <Compile Include="Gigya\GM\DeleteChallengeResponse.cs" />
+    <Compile Include="Gigya\GM\DeleteChallengeVariant.cs" />
+    <Compile Include="Gigya\GM\DeleteChallengeVariantResponse.cs" />
+    <Compile Include="Gigya\GM\GetActionConfig.cs" />
+    <Compile Include="Gigya\GM\GetActionConfigResponse.cs" />
+    <Compile Include="Gigya\GM\GetActionsLog.cs" />
+    <Compile Include="Gigya\GM\GetActionsLogResponse.cs" />
+    <Compile Include="Gigya\GM\GetChallengeConfig.cs" />
+    <Compile Include="Gigya\GM\GetChallengeConfigResponse.cs" />
+    <Compile Include="Gigya\GM\GetChallengeStatus.cs" />
+    <Compile Include="Gigya\GM\GetChallengeStatusResponse.cs" />
+    <Compile Include="Gigya\GM\GetChallengeVariants.cs" />
+    <Compile Include="Gigya\GM\GetChallengeVariantsResponse.cs" />
+    <Compile Include="Gigya\GM\GetGlobalConfig.cs" />
+    <Compile Include="Gigya\GM\GetGlobalConfigResponse.cs" />
+    <Compile Include="Gigya\GM\GetTopRatedStreamsResponse.cs" />
+    <Compile Include="Gigya\GM\GetTopUsers.cs" />
+    <Compile Include="Gigya\GM\GetTopUsersResponse.cs" />
+    <Compile Include="Gigya\GM\LevelResponse.cs" />
+    <Compile Include="Gigya\GM\LevelRequest.cs" />
+    <Compile Include="Gigya\GM\NotifyAction.cs" />
+    <Compile Include="Gigya\GM\NotifyActionResponse.cs" />
+    <Compile Include="Gigya\GM\RedeemPoints.cs" />
+    <Compile Include="Gigya\GM\RedeemPointsResponse.cs" />
+    <Compile Include="Gigya\GM\RequiredAction.cs" />
+    <Compile Include="Gigya\GM\ResetLevelStatus.cs" />
+    <Compile Include="Gigya\GM\ResetLevelStatusResponse.cs" />
+    <Compile Include="Gigya\GM\SetActionConfig.cs" />
+    <Compile Include="Gigya\GM\SetActionConfigResponse.cs" />
+    <Compile Include="Gigya\GM\SetChallengeConfig.cs" />
+    <Compile Include="Gigya\GM\SetChallengeConfigResponse.cs" />
+    <Compile Include="Gigya\GM\SetGlobalConfig.cs" />
+    <Compile Include="Gigya\GM\SetGlobalConfigResponse.cs" />
+    <Compile Include="Gigya\GM\Stream.cs" />
+    <Compile Include="Gigya\GM\User.cs" />
+    <Compile Include="Gigya\GM\Variant.cs" />
+    <Compile Include="Gigya\ResponseCodes.cs" />
+    <Compile Include="Gigya\Socialize\DeleteAccount.cs" />
+    <Compile Include="Gigya\Socialize\DelUserSettings.cs" />
+    <Compile Include="Gigya\Socialize\DelUserSettingsResponse.cs" />
+    <Compile Include="Gigya\Socialize\ExportUsers.cs" />
+    <Compile Include="Gigya\Socialize\ExportUsersResponse.cs" />
+    <Compile Include="Gigya\Socialize\Facebook.cs" />
+    <Compile Include="Gigya\Socialize\GetUserInfo.cs" />
+    <Compile Include="Gigya\Socialize\GetUserInfoResponse.cs" />
+    <Compile Include="Gigya\Socialize\GetUserSettings.cs" />
+    <Compile Include="Gigya\Socialize\GetUserSettingsResponse.cs" />
+    <Compile Include="Gigya\Socialize\DeleteAccountResponse.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Activity.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Certification.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Date.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Education.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Favorites.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Hometown.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Interest.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Like.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Movy.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Music.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Patent.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Publication.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Skill.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Television.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Facebook\Work.cs" />
+    <Compile Include="Gigya\Socialize\Identities\IFacebook.cs" />
+    <Compile Include="Gigya\Socialize\Identities\ILinkedin.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Activity.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Certification.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Date.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Education.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Favorites.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Hometown.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Interest.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Like.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Movy.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Music.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Patent.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Publication.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Skill.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Television.cs" />
+    <Compile Include="Gigya\Socialize\Identities\Linkedin\Work.cs" />
+    <Compile Include="Gigya\Socialize\Identity.cs" />
+    <Compile Include="Gigya\Socialize\Logout.cs" />
+    <Compile Include="Gigya\Socialize\LogoutResponse.cs" />
+    <Compile Include="Gigya\Socialize\NotifyLogin.cs" />
+    <Compile Include="Gigya\Socialize\NotifyLoginResponse.cs" />
+    <Compile Include="Gigya\Socialize\NotifyRegistration.cs" />
+    <Compile Include="Gigya\Socialize\NotifyRegistrationResponse.cs" />
+    <Compile Include="Gigya\Socialize\ProviderErrorCode.cs" />
+    <Compile Include="Gigya\Socialize\ProviderErrorCodeResponse.cs" />
+    <Compile Include="Gigya\Socialize\ProviderPostIDs.cs" />
+    <Compile Include="Gigya\Socialize\ProviderSessions.cs" />
+    <Compile Include="Gigya\Socialize\PublishUserAction.cs" />
+    <Compile Include="Gigya\Socialize\PublishUserActionResponse.cs" />
+    <Compile Include="Gigya\Socialize\SetStatus.cs" />
+    <Compile Include="Gigya\Socialize\SetStatusResponse.cs" />
+    <Compile Include="Gigya\Socialize\Settings.cs" />
+    <Compile Include="Gigya\Socialize\SetUID.cs" />
+    <Compile Include="Gigya\Socialize\SetUIDResponse.cs" />
+    <Compile Include="Gigya\Socialize\SetUserInfo.cs" />
+    <Compile Include="Gigya\Socialize\SetUserInfoResponse.cs" />
+    <Compile Include="Gigya\Socialize\SetUserSettings.cs" />
+    <Compile Include="Gigya\Socialize\SetUserSettingsResponse.cs" />
+    <Compile Include="Gigya\Socialize\User.cs" />
+    <Compile Include="Gigya\Socialize\UserAction.cs" />
+    <Compile Include="Gigya\Socialize\UserInfo.cs" />
+    <Compile Include="Gigya\Socialize\GetPlaces.cs" />
+    <Compile Include="Gigya\Socialize\Yahoo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Gigya\Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gigya.DB\Gigya.DB.csproj">
+      <Project>{5441c50c-3cd9-48ae-8ee9-5c8775108106}</Project>
+      <Name>Gigya.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gigya.Service\Gigya.Service.csproj">
+      <Project>{33dd4eb5-93d6-4d34-827c-6f6af4b4b715}</Project>
+      <Name>Gigya.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GSCSharpSDK\Gigya.Socialize.SDK.csproj">
+      <Project>{bb96a02d-4c4b-48f0-9aa4-e73b186f3151}</Project>
+      <Name>Gigya.Socialize.SDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LIB\LIB.csproj">
+      <Project>{7e338258-5852-4955-aba2-b357c05767b8}</Project>
+      <Name>LIB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\w2.Com\w2.Com.csproj">
+      <Project>{6f1c6307-06f6-441c-92dc-c46a87ffc3ab}</Project>
+      <Name>w2.Com</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\w2.DB\w2.DB.csproj">
+      <Project>{9bf33a02-01f7-4ff6-a46c-5acb837523a8}</Project>
+      <Name>w2.DB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Errors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

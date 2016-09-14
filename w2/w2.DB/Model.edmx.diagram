@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="81d452c2e128414294120f84638f2743" Name="Diagram1" ZoomLevel="50">
+        <EntityTypeShape EntityType="TurkcellDBw2Model.GMTransactionActions" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TurkcellDBw2Model.Offers" Width="1.5" PointX="9.375" PointY="8" />
+        <EntityTypeShape EntityType="TurkcellDBw2Model.PosTransaction" Width="1.5" PointX="11.5" PointY="8" />
+        <EntityTypeShape EntityType="TurkcellDBw2Model.VendorLogs" Width="1.5" PointX="7.25" PointY="11.625" />
+        <EntityTypeShape EntityType="TurkcellDBw2Model.Vendors" Width="1.5" PointX="4.875" PointY="11.625" />
+        <EntityTypeShape EntityType="TurkcellDBw2Model.WebServiceParameters" Width="1.5" PointX="7.25" PointY="8" />
+        <EntityTypeShape EntityType="TurkcellDBw2Model.WebServices" Width="1.5" PointX="4.875" PointY="8" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

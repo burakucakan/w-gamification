@@ -1,0 +1,693 @@
+﻿@using Gnc2.Com.Helpers;
+@using Gnc2.Web.App_Manager 
+	
+<script>
+    var _flipBoxLoginDurationSpeed = 4000;
+    var _flipBoxLoginAnimateSpeed = 500;
+    var _autoLoginFlipBox;
+    var summaryItems = [
+          { "id": "1", "image": "@PathHelper.UrlStatic/images/global/yellow-badge.png", "point": "@SessionManager.GetInstance().LogonUser.Point.ToString()" },
+          { "id": "2", "image": "@SessionManager.GetInstance().LogonUser.ProfileImage.ToString()", "point": "450" },
+          { "id": "3", "image": "@PathHelper.UrlStatic/images/global/yellow-badge.png", "point": "325" }
+    ];
+
+    $(function () {
+        getFirstLoginFlipBox();
+        setTimeout(function () {
+            autoLoginFlipBox();
+        }, 800);
+    });
+
+    function getFirstLoginFlipBox() {
+        var template = $("#summaryTemplate").html();
+        template = template.replace("#= id #", summaryItems[0].id);
+        template = template.replace("#= image #", summaryItems[0].image);
+        template = template.replace("#= point #", summaryItems[0].point);
+        template = template.replace("#= badgeInfoStyle #", "style=\"display:none;\"");
+        template = template.replace("#= badgeInfoSpanStyle #", "style=\"margin-top:10px; opacity:0; -moz-opacity:0;\"");
+        template = template.replace("#= badgeInfoLabelStyle #", "style=\"margin-top: -20px; opacity:0; -moz-opacity:0;\"");
+        template = template.replace("#= flipBadgeImageStyle #", "style=\"width: 20px; height: 20px; margin-left: 117px; margin-top: 103px;\"");
+
+        setTimeout(function () {
+            var userMain = $(".flipbox-container").html();
+            $(".flipbox-container").html(userMain + template);
+            firstLoginUserAnimate();
+        }, 600);
+    }
+
+    function autoLoginFlipBox() {
+
+        _autoLoginFlipBox = setInterval(function () {
+            loginFlipBoxChange();
+        }, _flipBoxLoginDurationSpeed);
+    }
+
+    var iId = 0;
+    function loginFlipBoxChange() {
+        iId = iId + 1;
+        if (iId > 2) { iId = 0; }
+        loginFlipBox(iId);
+    }
+
+    function firstLoginUserAnimate() {
+        $("#flipBadgeLoginImage").animate({
+            width: "220px",
+            height: "220px",
+            marginLeft: "16px",
+            marginTop: "3px"
+        }, 500, function () {
+            $(".badgeInfo").fadeIn();
+            setTimeout(function () {
+                $(".badgeInfo label").animate({
+                    marginTop: "0",
+                    opacity: "1"
+                }, 200);
+                $(".badgeInfo span").animate({
+                    marginTop: "0",
+                    opacity: "1"
+                }, 200);
+            }, 200);
+        });
+    }
+
+    function loginFlipBox(Id) {
+        if (summaryItems[Id] == undefined) {
+            Id = 0;
+        }
+
+        var template;
+        if (Id == 2) {
+            template = $("#howToWinTemplate").html();
+            
+            template = template.replace("#= image #", summaryItems[Id].image);
+            template = template.replace("#= point #", summaryItems[Id].point);
+            template = template.replace("#= id #", summaryItems[Id].id);
+            template = template.replace("#= badgeInfoStyle #", "style=\"display:block;\"");
+            template = template.replace("#= badgeInfoSpanStyle1 #", "style=\"margin-top:10px; opacity:1; -moz-opacity:1;\"");
+            template = template.replace("#= badgeInfoSpanStyle2 #", "style=\"margin-top:3px; opacity:1; -moz-opacity:1;\"");
+            template = template.replace("#= badgeInfoSpanStyle3 #", "style=\"margin-top:3px; opacity:1; -moz-opacity:1;\"");
+            template = template.replace("#= flipBadgeImageStyle #", "");
+        }
+        else {
+            template = $("#summaryTemplate").html();
+            template = template.replace("#= image #", summaryItems[Id].image);
+            template = template.replace("#= point #", summaryItems[Id].point);
+            template = template.replace("#= id #", summaryItems[Id].id);
+            if (Id == 0) {
+                template = template.replace("#= badgeInfoStyle #", "style=\"display:block;\"");
+                template = template.replace("#= badgeInfoSpanStyle #", "style=\"display:block;\"");
+                template = template.replace("#= badgeInfoLabelStyle #", "style=\"display:block;\"");
+            }
+            else if (Id == 1) {
+                template = template.replace("#= badgeInfoStyle #", "style=\"display:none;\"");
+                template = template.replace("#= badgeInfoSpanStyle #", "style=\"display:none;\"");
+                template = template.replace("#= badgeInfoLabelStyle #", "style=\"display:none;\"");
+            }
+            template = template.replace("#= flipBadgeImageStyle #", "");
+            template = template.replace("#= point #", "");
+        }
+
+        $(".flipbox2").flippy({
+            color_target: "transparent",
+            duration: ""+_flipBoxLoginAnimateSpeed+"",
+            verso: template
+        });
+    }
+</script>
+
+<script type="text/template" id="summaryTemplate">
+    <section class="flipbox2">
+        <img src="#= image #" data-id="#= id #" id="flipBadgeLoginImage" #= flipBadgeImageStyle # />
+        <section class="badgeInfo" #= badgeInfoStyle #>
+            <label #= badgeInfoLabelStyle #>#= point #</label>
+            <span #= badgeInfoSpanStyle #>gnçpuan</span>
+        </section>
+    </section>
+</script>
+
+<script type="text/template" id="howToWinTemplate">
+    <section class="flipbox2">
+        <img src="#= image #" data-id="#= id #" id="flipBadgeLoginImage" #= flipBadgeImageStyle # />
+        <section class="badgeInfo" #= badgeInfoStyle #>
+            <span class="badgeInfoSpan1" #= badgeInfoSpanStyle1 #>nasıl</span>
+            <span class="badgeInfoSpan2" #= badgeInfoSpanStyle2 #>puan</span>
+            <span class="badgeInfoSpan3" #= badgeInfoSpanStyle3 #>kazanırım?</span>
+        </section>
+    </section>
+</script>
+
+<section class="gnc2Container">
+
+    <script>
+        var refreshLoginIntervalId;
+        var howScoreMonth = ""+@ViewBag.Month+"";
+        var howScoreDay = ""+@ViewBag.Day+"";
+        $(function () {
+            
+            dashboardArrow();
+            nextBtn();
+            nextBtn_Back();
+            prevBtn();
+            prevBtn_Back();
+
+            GetAllHowScore(4, howScoreMonth, howScoreDay, "mothHowScoreList");
+            GetLast5Month();
+            clickMonthSelect();
+            clickDaySelect();
+        });
+
+        function GetAllHowScore(Take, Month, Day, obj) {
+
+            $(".loading").fadeIn();
+
+            var template = kendo.template($("#template").html());
+            var dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: "/Dashboard/GetAllHowScore?Take=" + Take + "&Month=" + Month + "&Day=" + Day,
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        fields: {
+                            Point: { type: "string" },
+                            AdvantageName: { type: "string" },
+                            DateTime: { type: "date", format: "{0:yyyy-MM-dd}" }
+                        }
+                    }
+                },
+                change: function () {
+
+                    $("#" + obj).html(kendo.render(template, this.view()));
+                    if (obj == "mothHowScoreWideList") {
+                        setTimeout(function () {
+                            $(".nano").nanoScroller({ alwaysVisible: true });
+                        }, 500);
+                    }
+                    $(".loading").fadeOut();
+                }
+            });
+
+            dataSource.read();
+
+            
+        }
+
+        function GetLast5Month() {
+            var template = kendo.template($("#templateMonth").html());
+            var dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: "/Dashboard/GetLast5Month",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        fields: {
+                            Id: { type: "int" },
+                            Name: { type: "string" }
+                        }
+                    }
+                },
+                change: function () {
+                    $("#last5Month").html(kendo.render(template, this.view()));
+                    monthSelect(howScoreMonth, "last5Month");
+                    GetMonthDays(howScoreMonth, "days");
+                }
+            });
+
+            dataSource.read();
+        }
+
+        function GetAllMonth() {
+            var template = kendo.template($("#templateMonth").html());
+            var dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: "/Dashboard/GetAllMonth",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        fields: {
+                            Id: { type: "int" },
+                            Name: { type: "string" }
+                        }
+                    }
+                },
+                change: function () {
+                    $("#allMonth").html(kendo.render(template, this.view()));
+                    monthSelect(howScoreMonth, "allMonth");
+                    //GetMonthDays(howScoreMonth, "days2");
+                }
+            });
+
+            dataSource.read();
+        }
+
+        function GetMonthDays(Month, obj) {
+            var template = kendo.template($("#templateDay").html());
+            var dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: "/Dashboard/GetAllMonthDays?Month=" + Month,
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        fields: {
+                            Id: { type: "int" },
+                            Month: { type: "id" },
+                            Name: { type: "string" },
+                            Disable: { type: "bool" }
+                        }
+                    }
+                },
+                change: function () {
+                    $("." + obj).html(kendo.render(template, this.view()));
+                    daySelect(howScoreDay, obj);
+                    tooltipsy();
+                }
+            });
+
+            dataSource.read();
+        }
+
+        function dashboardArrow() {
+            $(".boxContent").live("mouseover", function () {
+                $("nav.arrow").show();
+            });
+            $(".boxContent").live("mouseout", function () {
+                $("nav.arrow").hide();
+            });
+
+            $("nav.arrow").live("mouseover", function () {
+                $("nav.arrow").show();
+            });
+            $("nav.arrow").live("mouseout", function () {
+                $("nav.arrow").hide();
+            });
+        }
+
+        function nextBtn() {
+            $(".nextBtn").live("click", function () {
+
+                clearInterval(_autoLoginFlipBox);
+                dashboardArrowDisable();
+                $(".nextBackBtn").fadeIn();
+
+                var rotatePoint = 0;
+                refreshLoginIntervalId = setInterval(function () {
+                    rotatePoint = rotatePoint + 1;
+                    rotateCss(".flipbox2", rotatePoint, "next");
+                }, 2);
+
+                setTimeout(function () {
+
+                    clearInterval(refreshLoginIntervalId);
+
+                    refreshLoginIntervalId = setInterval(function () {
+                        rotatePoint = rotatePoint + 5;
+                        rotateCss(".flipbox2", rotatePoint, "next");
+                    }, 1);
+
+                    $(".dashboard > .fLeft").animate({
+                        marginLeft: "-353px"
+                    }, 500);
+                    $(".dashboard > .leftCircle").animate({
+                        marginLeft: "-78px"
+                    }, 500);
+                    $(".dashboard > .center").animate({
+                        marginLeft: "0px"
+                    }, 500);
+                    $(".dashboard > .fRight").animate({
+                        width: "700px"
+                    }, 500);
+
+                    autoFlipBox();
+                }, 500);
+
+
+            });
+        }
+
+        function nextBtn_Back() {
+            $(".nextBackBtn").live("click", function () {
+                clearInterval(_autoLoginFlipBox);
+
+                var rotatePoint = 0;
+                refreshLoginIntervalId = setInterval(function () {
+                    rotatePoint = rotatePoint + 1;
+                    rotateCss(".flipbox2", rotatePoint, "nextBack");
+                }, 2);
+
+                setTimeout(function () {
+                    $(".dashboard > .fRight").animate({
+                        width: "352px"
+                    }, 500);
+
+                    $(".dashboard > .leftCircle").animate({
+                        marginLeft: "0px"
+                    }, 500);
+
+                    $(".dashboard > .center").animate({
+                        marginLeft: "-78px"
+                    }, 500);
+
+                    $(".dashboard > .fLeft").animate({
+                        marginLeft: "0px"
+                    }, 500);
+
+                    clearInterval(refreshLoginIntervalId);
+
+                    refreshLoginIntervalId = setInterval(function () {
+                        rotatePoint = rotatePoint + 5;
+                        rotateCss(".flipbox2", rotatePoint, "nextBack");
+                    }, 1);
+
+                    autoFlipBox();
+                    dashboardArrowEnable();
+                    $(".nextBackBtn").fadeOut();
+              
+                }, 500);
+            });
+        }
+
+        function prevBtn() {
+            $(".prevBtn").live("click", function () {
+
+                clearInterval(_autoLoginFlipBox);
+                dashboardArrowDisable();
+                $(".prevBackBtn").fadeIn();
+
+                var rotatePoint = 0;
+                refreshLoginIntervalId = setInterval(function () {
+                    rotatePoint = rotatePoint + 1;
+                    rotateCss(".flipbox2", rotatePoint, "prev");
+                }, 2);
+
+
+                GetAllMonth();
+                GetMonthDays(howScoreMonth, "days2");
+                GetAllHowScore(0, howScoreMonth, howScoreDay, "mothHowScoreWideList");
+
+                setTimeout(function () {
+
+                    clearInterval(refreshLoginIntervalId);
+
+                    refreshLoginIntervalId = setInterval(function () {
+                        rotatePoint = rotatePoint + 5;
+                        rotateCss(".flipbox2", rotatePoint, "prev");
+                    }, 1);
+
+                    $(".mothHowScore").slideUp();
+
+                    $(".dashboard > .fLeft").animate({
+                        marginLeft: "0px",
+                        width: "700px"
+                    }, 300);
+                    $(".dashboard > .rightCircle").animate({
+                        marginLeft: "0px"
+                    }, 500);
+
+                    autoFlipBox();
+
+                    $(".mothHowScoreWide").slideDown();
+
+                }, 500);
+            });
+        }
+
+        function prevBtn_Back() {
+            $(".prevBackBtn").live("click", function () {
+                clearInterval(_autoLoginFlipBox);
+
+                var rotatePoint = 0;
+                refreshLoginIntervalId = setInterval(function () {
+                    rotatePoint = rotatePoint + 1;
+                    rotateCss(".flipbox2", rotatePoint, "prevBack");
+                }, 2);
+
+                setTimeout(function () {
+
+                    $(".mothHowScoreWide").fadeOut();
+
+                    $(".dashboard > .fLeft").animate({
+                        width: "353px"
+                    }, 300);
+
+                    $(".dashboard > .rightCircle").animate({
+                        marginLeft: "-79px"
+                    }, 200);
+
+                    clearInterval(refreshLoginIntervalId);
+
+                    refreshLoginIntervalId = setInterval(function () {
+                        rotatePoint = rotatePoint + 5;
+                        rotateCss(".flipbox2", rotatePoint, "prevBack");
+                    }, 1);
+
+                    autoFlipBox();
+                    dashboardArrowEnable();
+                    $(".prevBackBtn").fadeOut();
+                    $(".mothHowScore").eq(0).slideDown();
+
+                }, 500);
+            });
+        }
+
+        function rotateCss(obj, rotate, type) {
+            var w = $(obj).width();
+            var h = "220px";
+            var durationMarginLeft = "0px";
+            var direction = "-";
+            if (type == "prev") {
+                durationMarginLeft = "500px";
+                direction = "";
+            }
+            else if (type == "nextBack") {
+                durationMarginLeft = "-78px";
+                direction = "";
+            }
+            if ($(".center").css("margin-left") == durationMarginLeft) {
+                clearInterval(refreshLoginIntervalId);
+                rotate = 0;
+            }
+            if (type == "prev") {
+                if ($(".dashboard > .fLeft").css("width") == "700px") {
+                    clearInterval(refreshLoginIntervalId);
+                    rotate = 0;
+                }
+            }
+            else if (type == "prevBack") {
+                if ($(".dashboard > .fLeft").css("width") == "353px") {
+                    clearInterval(refreshLoginIntervalId);
+                    rotate = 0;
+                }
+            }
+            $(obj).attr("style", "width:" + w + "; height:" + h + "; transform:rotate(" + direction + rotate + "deg); -ms-transform:rotate(" + direction + rotate + "deg); -webkit-transform:rotate(" + direction + rotate + "deg);");
+        }
+
+        function dashboardArrowDisable() {
+            $("nav.arrow").attr("style", "margin-left:970px;");
+        }
+        function dashboardArrowEnable() {
+            $("nav.arrow").attr("style", "margin-left:336px;");
+        }
+
+        function monthSelect(monthId,obj) {
+            $("#" + obj + " > li > a").removeAttr("class");
+            $("#" + obj + " > li > a[data-id=" + monthId + "]").attr("class", "active");
+        }
+        function daySelect(dayId, obj) {
+            $("." + obj + " > li > a").removeClass("active");
+            $("." + obj + " > li > a[data-id=" + dayId + "]").addClass("active");
+        }
+
+        function clickMonthSelect() {
+            $("#last5Month > li > a").live("click", function () {
+                var id = $(this).attr("data-id");
+                monthSelect(id, "last5Month");
+                howScoreMonth = id;
+                GetAllHowScore(4, howScoreMonth, howScoreDay, "mothHowScoreList");
+                GetMonthDays(howScoreMonth, "days");
+            });
+
+            $("#allMonth > li > a").live("click", function () {
+                var id = $(this).attr("data-id");
+                monthSelect(id, "allMonth");
+                howScoreMonth = id;
+                GetAllHowScore(4, howScoreMonth, howScoreDay, "mothHowScoreWideList");
+                GetMonthDays(howScoreMonth, "days2");
+            });
+        }
+        function clickDaySelect() {
+            $(".days > li > a").live("click", function () {
+                var id = $(this).attr("data-id");
+                var monthId = $(this).attr("data-monthid");
+                daySelect(id, "days");
+                howScoreDay = id;
+                howScoreMonth = monthId;
+
+                GetAllHowScore(4, howScoreMonth, howScoreDay, "mothHowScoreList");
+            });
+
+            $(".days2 > li > a").live("click", function () {
+                var id = $(this).attr("data-id");
+                var monthId = $(this).attr("data-monthid");
+                daySelect(id, "days2");
+                howScoreDay = id;
+                howScoreMonth = monthId;
+
+                GetAllHowScore(0, howScoreMonth, howScoreDay, "mothHowScoreWideList");
+            });
+        }
+    </script>
+
+    <style>
+        .nano { height:150px; }
+    </style>
+
+    <script id="template" type="text/x-kendo-template">
+        <li><a href="javascript:;">
+            <section class="left">#= Point #</section>
+            <section class="right">#= AdvantageName #</section>
+            <section class="date">#= DateTime #</section>
+            </a></li>
+    </script>
+
+    <script id="templateMonth" type="text/x-kendo-template">
+        <li><a href="javascript:;" data-id="#=  Id #">#= Name #</a></li>
+    </script>
+
+    <script id="templateDay" type="text/x-kendo-template">
+        <li><a href="javascript:;" class="ttT  #= Disable == 1 ? "disable" : "" #";" title="#= Name #" data-id="#=  Id #" data-monthId="#= Month #">#= Id #</a></li>
+    </script>
+
+    <section class="boxMedium fReg fLeft hidden loginSummary">
+        <section class="dashboard hidden">
+            <h3 class="grayTitle dashboardTitle">genel bakış</h3>
+        </section>
+        <ins class="space20"></ins>
+        <section class="boxContent dashboard hidden">
+            
+            <section class="fLeft">
+
+                <section class="mothHowScore">
+                    
+                    <section class="loading"><img src="@PathHelper.UrlUIAssets/images/global/loading.gif" width="20px" /></section>
+
+                    <ul class="months" id="last5Month">
+                    </ul>
+                    <ul class="days">
+                    </ul>
+                    <ul class="list" id="mothHowScoreList">
+                    </ul>
+
+                </section>
+
+                <section class="mothHowScore mothHowScoreWide" style="display:none;">
+                    
+                    <section class="loading"><img src="@PathHelper.UrlUIAssets/images/global/loading.gif" width="20px" /></section>
+                   
+                    <ul class="months" id="allMonth">
+                    </ul>
+                    <ul class="days2">
+                    </ul>
+                    <section class="nano">
+                        <section class="content">
+                            <ul class="list" id="mothHowScoreWideList">
+                            </ul>
+                        </section>
+                    </section>
+
+                </section>
+
+            </section>
+            <section class="leftCircle"></section>
+            <section class="center">
+                <a href="javascript:;" class="prevBackBtn"></a>
+                <a href="javascript:;" class="nextBackBtn"></a>
+                <section class="flipbox-container">
+                    
+                </section>
+            </section>
+            <section class="rightCircle"></section>
+            <section class="fRight">
+                <section class="whatIsGoing">
+
+
+                    <section class="title">GNC2' de NELER OLUYOR?</section>
+                    <section class="item">
+                        <section class="point">25</section>
+                        <img src="@PathHelper.UrlStatic/images/_offline/users/burcak.jpg" />
+                        <section class="right">
+                            <span class="top">Burçak Erbatuk <span class="dateTime">10.05.2013 10:55</span></span>
+                            <span class="desc"><u>Sinema Fırsatı</u> ile puanını yükseltti!</span>
+                        </section>
+                    </section>
+
+                    <section class="item">
+                        <section class="point">30</section>
+                        <img src="@PathHelper.UrlStatic/images/_offline/users/ipek.jpg" />
+                        <section class="right">
+                            <span class="top">İpek Topçu <span class="dateTime">10.05.2013 10:55</span></span>
+                            <span class="desc"><u>2. kahve bedava</u> ile puanını yükseltti!</span>
+                        </section>
+                    </section>
+
+                    <section class="item">
+                        <section class="point">5</section>
+                        <img src="@PathHelper.UrlStatic/images/_offline/users/merve.jpg" />
+                        <section class="right">
+                            <span class="top">Merve Özekli <span class="dateTime">10.05.2013 10:55</span></span>
+                            <span class="desc"><u>Sinemasever</u> badge’ine sahip oldu!</span>
+                        </section>
+                    </section>
+
+                    <section class="item">
+                        <section class="point">25</section>
+                        <img src="@PathHelper.UrlStatic/images/_offline/users/burcak.jpg" />
+                        <section class="right">
+                            <span class="top">Burçak Erbatuk <span class="dateTime">10.05.2013 10:55</span></span>
+                            <span class="desc"><u>Sinema Fırsatı</u> ile puanını yükseltti!</span>
+                        </section>
+                    </section>
+
+                    <section class="item">
+                        <section class="point">30</section>
+                        <img src="@PathHelper.UrlStatic/images/_offline/users/ipek.jpg" />
+                        <section class="right">
+                            <span class="top">İpek Topçu <span class="dateTime">10.05.2013 10:55</span></span>
+                            <span class="desc"><u>2. kahve bedava</u> ile puanını yükseltti!</span>
+                        </section>
+                    </section>
+
+                    <section class="item">
+                        <section class="point">5</section>
+                        <img src="@PathHelper.UrlStatic/images/_offline/users/merve.jpg" />
+                        <section class="right">
+                            <span class="top">Merve Özekli <span class="dateTime">10.05.2013 10:55</span></span>
+                            <span class="desc"><u>Sinemasever</u> badge’ine sahip oldu!</span>
+                        </section>
+                    </section>
+
+                </section>
+            </section>
+            
+        </section>
+
+        <nav class="arrow">
+            <a href="javascript:;" class="prevBtn"></a>
+            <a href="javascript:;" class="nextBtn"></a>
+        </nav>
+        
+    </section>
+
+   
+
+</section>

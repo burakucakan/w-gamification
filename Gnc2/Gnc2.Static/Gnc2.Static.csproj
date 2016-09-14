@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1060F17-D922-4910-AFF0-7BFC83336A49}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gnc2.Static</RootNamespace>
+    <AssemblyName>Gnc2.Static</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="images\catalogs\product_large.jpg" />
+    <Content Include="images\catalogs\TurkcellGnc2_8825_big_hero_6_2014_concept_art-wide.jpg" />
+    <Content Include="images\catalogs\TurkcellGnc2_6102_Tulips.jpg" />
+    <Content Include="images\catalogs\image.jpg" />
+    <Content Include="images\contents\login-banner-2.png" />
+    <Content Include="images\contents\login-banner-3.png" />
+    <Content Include="images\contents\login-banner-4.png" />
+    <Content Include="images\contents\login-banner-5.png" />
+    <Content Include="images\contents\login-banner.png" />
+    <Content Include="images\global\black-transparent-bg.png" />
+    <Content Include="images\global\buy-btn-arrow.png" />
+    <Content Include="images\global\buy-gift-btn.png" />
+    <Content Include="images\global\catalog-filter-check.png" />
+    <Content Include="images\global\dashboard-left-circle.png" />
+    <Content Include="images\global\dashboard-right-circle.png" />
+    <Content Include="images\global\gnc2222.jpg" />
+    <Content Include="images\global\header-profile-bg.png" />
+    <Content Include="images\global\header-profile-notification.png" />
+    <Content Include="images\global\join-container.png" />
+    <Content Include="images\global\join-content.png" />
+    <Content Include="images\global\login-type-gray-circle-bg.png" />
+    <Content Include="images\global\point_number_bg.png" />
+    <Content Include="images\global\profile-image-dropshadow.png" />
+    <Content Include="images\global\tcell-login-bg.png" />
+    <Content Include="images\global\white-transparent-bg.png" />
+    <Content Include="images\global\yellow-badge.png" />
+    <Content Include="images\icons\button-left-hover.png" />
+    <Content Include="images\icons\button-left.png" />
+    <Content Include="images\icons\catalog-search-icon.png" />
+    <Content Include="images\icons\catalog-social-icons.png" />
+    <Content Include="images\icons\cb-close.png" />
+    <Content Include="images\icons\day-arrow.png" />
+    <Content Include="images\icons\header-phone.png" />
+    <Content Include="images\icons\info-icon.png" />
+    <Content Include="images\icons\info2-icon.png" />
+    <Content Include="images\icons\loader-large.gif" />
+    <Content Include="images\icons\login-bagde-arrow.png" />
+    <Content Include="images\icons\pager-arrow-first.png" />
+    <Content Include="images\icons\pager-arrow-last.png" />
+    <Content Include="images\icons\pager-arrow-left.png" />
+    <Content Include="images\icons\pager-arrow-right.png" />
+    <Content Include="images\icons\success-icon.png" />
+    <Content Include="images\global\yellow-ballon2.png" />
+    <Content Include="images\_offline\captcha.jpg" />
+    <Content Include="images\_offline\login-right-banner.png" />
+    <Content Include="images\_offline\users\bahriye.jpg" />
+    <Content Include="images\_offline\users\can.jpg" />
+    <Content Include="images\_offline\users\can2.jpg" />
+    <Content Include="images\_offline\users\ipek.jpg" />
+    <Content Include="images\_offline\users\rabia.jpg" />
+    <Content Include="scripts\packages.js" />
+    <Content Include="styles\packages.css" />
+    <Content Include="Global.asax" />
+    <Content Include="images\app\gencaver-mascot.png" />
+    <Content Include="images\app\gnctrkcll-logo.png" />
+    <Content Include="images\banners\advantage1.jpg" />
+    <Content Include="images\banners\advantage2.jpg" />
+    <Content Include="images\banners\advantage3.jpg" />
+    <Content Include="images\banners\banner1.jpg" />
+    <Content Include="images\banners\campaing1.jpg" />
+    <Content Include="images\banners\campaing2.jpg" />
+    <Content Include="images\banners\campaing3.jpg" />
+    <Content Include="images\form\checkbox.png" />
+    <Content Include="images\form\photoUpload.png" />
+    <Content Include="images\form\top-search-box-bg.jpg" />
+    <Content Include="images\form\top-search-btn.png" />
+    <Content Include="images\global\badge-tooltip-bg.png" />
+    <Content Include="images\global\board-order-bg.png" />
+    <Content Include="images\global\board-order-gray-bg.png" />
+    <Content Include="images\global\board-score-arrow-bg.jpg" />
+    <Content Include="images\global\dashboard-center-circle.png" />
+    <Content Include="images\global\dashboard-join-btn.png" />
+    <Content Include="images\global\fb-login.png" />
+    <Content Include="images\global\header-bg.jpg" />
+    <Content Include="images\global\header-menu-line-h.jpg" />
+    <Content Include="images\global\header-menu-line.jpg" />
+    <Content Include="images\global\left-shadow.png" />
+    <Content Include="images\global\package-tooltip-btn-bg.png" />
+    <Content Include="images\global\packages\1.png" />
+    <Content Include="images\global\packages\2.png" />
+    <Content Include="images\global\packages\3.png" />
+    <Content Include="images\global\packages\4.png" />
+    <Content Include="images\global\packages\5.png" />
+    <Content Include="images\global\right-shadow.png" />
+    <Content Include="images\global\sifre-al.png" />
+    <Content Include="images\global\twitter.jpg" />
+    <Content Include="images\global\yellow-ballon.png" />
+    <Content Include="images\icons\badge-locked.png" />
+    <Content Include="images\icons\button-right-hover.png" />
+    <Content Include="images\icons\button-right.png" />
+    <Content Include="images\icons\carou-arrow.png" />
+    <Content Include="images\icons\computer-icon.png" />
+    <Content Include="images\icons\ddl-arrow.png" />
+    <Content Include="images\icons\fb-login-arrow.png" />
+    <Content Include="images\icons\fb-login-icon.png" />
+    <Content Include="images\icons\footer-gencaver-arrow.png" />
+    <Content Include="images\icons\footer-menu-point.png" />
+    <Content Include="images\icons\footer-social-icons.png" />
+    <Content Include="images\icons\gray-content-arrow.png" />
+    <Content Include="images\icons\header-login.png" />
+    <Content Include="images\icons\header-register.png" />
+    <Content Include="images\icons\kendo-dll-arrow.png" />
+    <Content Include="images\icons\kendo-dll-yellow-arrow.png" />
+    <Content Include="images\icons\login-ddl-arrow.png" />
+    <Content Include="images\icons\map-icon.png" />
+    <Content Include="images\icons\mobile-icon.png" />
+    <Content Include="images\icons\new.png" />
+    <Content Include="images\icons\no.png" />
+    <Content Include="images\icons\okey.png" />
+    <Content Include="images\icons\package-load-icon.png" />
+    <Content Include="images\icons\package-load-icons.png" />
+    <Content Include="images\icons\package-tooltip-arrow.png" />
+    <Content Include="images\icons\picture-arrow.png" />
+    <Content Include="images\icons\point.png" />
+    <Content Include="images\icons\pomegranate-icon.png" />
+    <Content Include="images\icons\poup-menu-arrow.png" />
+    <Content Include="images\icons\right-arrow-hover.png" />
+    <Content Include="images\icons\right-arrow.png" />
+    <Content Include="images\icons\righticon.png" />
+    <Content Include="images\icons\security.png" />
+    <Content Include="images\icons\social-accounts.png" />
+    <Content Include="images\icons\tl-load-icon.png" />
+    <Content Include="images\icons\tw-login-icon.png" />
+    <Content Include="images\_offline\badge\1.png" />
+    <Content Include="images\_offline\badge\2.png" />
+    <Content Include="images\_offline\badge\3.png" />
+    <Content Include="images\_offline\badge\4.png" />
+    <Content Include="images\_offline\badge\5.png" />
+    <Content Include="images\_offline\badge\6.png" />
+    <Content Include="images\_offline\badge\7.png" />
+    <Content Include="images\_offline\badge\8.png" />
+    <Content Include="images\_offline\like-btn.png" />
+    <Content Include="images\_offline\users\burcak.jpg" />
+    <Content Include="images\_offline\users\lara.jpg" />
+    <Content Include="images\_offline\users\merve.jpg" />
+    <Content Include="images\_offline\users\nusret.jpg" />
+    <Content Include="images\_offline\users\selin.jpg" />
+    <Content Include="scripts\global.js" />
+    <Content Include="scripts\ie.js" />
+    <Content Include="scripts\init.js" />
+    <Content Include="scripts\loginGlobal.js" />
+    <Content Include="styles\footer.css" />
+    <Content Include="styles\form.css" />
+    <Content Include="styles\global.css" />
+    <Content Include="styles\header.css" />
+    <Content Include="styles\ie6.css" />
+    <Content Include="styles\ie7.css" />
+    <Content Include="styles\ie8.css" />
+    <Content Include="styles\kendo.css" />
+    <Content Include="styles\popupOverride.css" />
+    <Content Include="styles\override.css" />
+    <Content Include="styles\popup.css" />
+    <Content Include="styles\screen.css" />
+    <Content Include="temp\login.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="images\menu\" />
+    <Folder Include="images\widgets\" />
+    <Folder Include="Models\" />
+    <Folder Include="promocodes\promocodes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gnc2.Service\Gnc2.Service.csproj">
+      <Project>{5c2ef67a-68b5-4848-a7ca-279e28ecca4a}</Project>
+      <Name>Gnc2.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Default\Default.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>35013</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:18168/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

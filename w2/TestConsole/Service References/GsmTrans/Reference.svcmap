@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f61b9229-17c1-4794-bd2a-c58407c2e209" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:18348/GsmTransaction.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GsmTransaction.xsd" MetadataType="Schema" ID="aa80efcf-445a-4290-b22e-dfc1e882b597" SourceId="1" SourceUrl="http://localhost:18348/GsmTransaction.svc?xsd=xsd3" />
+    <MetadataFile FileName="GsmTransaction1.xsd" MetadataType="Schema" ID="16fe1881-9ef3-4ead-a03e-6d7ddcd4881a" SourceId="1" SourceUrl="http://localhost:18348/GsmTransaction.svc?xsd=xsd0" />
+    <MetadataFile FileName="GsmTransaction2.xsd" MetadataType="Schema" ID="91cb5bbc-e025-4506-be3a-f3d6ac9399df" SourceId="1" SourceUrl="http://localhost:18348/GsmTransaction.svc?xsd=xsd1" />
+    <MetadataFile FileName="GsmTransaction3.xsd" MetadataType="Schema" ID="e1aa4643-3b1b-4493-862d-ac7161a5811c" SourceId="1" SourceUrl="http://localhost:18348/GsmTransaction.svc?xsd=xsd4" />
+    <MetadataFile FileName="GsmTransaction.wsdl" MetadataType="Wsdl" ID="ab133408-567b-4447-86b5-56e455c4705d" SourceId="1" SourceUrl="http://localhost:18348/GsmTransaction.svc?wsdl" />
+    <MetadataFile FileName="GsmTransaction.disco" MetadataType="Disco" ID="36b7c4ae-e3bb-44b1-a292-fd861e7d94ae" SourceId="1" SourceUrl="http://localhost:18348/GsmTransaction.svc?disco" />
+    <MetadataFile FileName="GsmTransaction1.wsdl" MetadataType="Wsdl" ID="7083f466-a8fa-4f2e-b70c-5668c73570c5" SourceId="1" SourceUrl="http://localhost:18348/GsmTransaction.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="GsmTransaction4.xsd" MetadataType="Schema" ID="d61f7f6d-9116-425e-9851-e3403968487a" SourceId="1" SourceUrl="http://localhost:18348/GsmTransaction.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

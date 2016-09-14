@@ -1,0 +1,7 @@
+C:\J\Projects\TurkcellWGamification\w2\w2.DB\bin\Debug\w2.DB.dll.config
+C:\J\Projects\TurkcellWGamification\w2\w2.DB\bin\Debug\w2.DB.dll
+C:\J\Projects\TurkcellWGamification\w2\w2.DB\bin\Debug\w2.DB.pdb
+C:\J\Projects\TurkcellWGamification\w2\w2.DB\bin\Debug\EntityFramework.dll
+C:\J\Projects\TurkcellWGamification\w2\w2.DB\bin\Debug\EntityFramework.xml
+C:\J\Projects\TurkcellWGamification\w2\w2.DB\obj\Debug\w2.DB.dll
+C:\J\Projects\TurkcellWGamification\w2\w2.DB\obj\Debug\w2.DB.pdb

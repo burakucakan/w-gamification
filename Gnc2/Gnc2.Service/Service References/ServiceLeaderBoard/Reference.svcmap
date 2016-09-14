@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7af0dbb6-0f8e-4a70-a8bf-3ee17415334c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:18348/ws/LeaderBoard.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LeaderBoard5.xsd" MetadataType="Schema" ID="80fe2713-5a30-43dc-a062-e1465e49f74b" SourceId="1" SourceUrl="http://localhost:18348/Ws/LeaderBoard.svc?xsd=xsd0" />
+    <MetadataFile FileName="LeaderBoard51.xsd" MetadataType="Schema" ID="8cf970f9-91fd-4bac-af3e-53c90922bfbd" SourceId="1" SourceUrl="http://localhost:18348/Ws/LeaderBoard.svc?xsd=xsd2" />
+    <MetadataFile FileName="LeaderBoard1.wsdl" MetadataType="Wsdl" ID="dcb4b588-f896-473d-a01d-6e3a95d7e28c" SourceId="1" SourceUrl="http://localhost:18348/Ws/LeaderBoard.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="LeaderBoard52.xsd" MetadataType="Schema" ID="bfc669fa-0e4f-430d-a61a-18accaed6358" SourceId="1" SourceUrl="http://localhost:18348/Ws/LeaderBoard.svc?xsd=xsd3" />
+    <MetadataFile FileName="LeaderBoard1.disco" MetadataType="Disco" ID="03fde5d1-642d-43f9-b123-12c0604db9c4" SourceId="1" SourceUrl="http://localhost:18348/Ws/LeaderBoard.svc?disco" />
+    <MetadataFile FileName="LeaderBoard53.xsd" MetadataType="Schema" ID="4b0545ee-8dd1-4c13-821c-0bd81b58bcf7" SourceId="1" SourceUrl="http://localhost:18348/Ws/LeaderBoard.svc?xsd=xsd4" />
+    <MetadataFile FileName="LeaderBoard11.wsdl" MetadataType="Wsdl" ID="77c18e7d-64a2-42e2-af86-f034eaade5fd" SourceId="1" SourceUrl="http://localhost:18348/Ws/LeaderBoard.svc?wsdl" />
+    <MetadataFile FileName="LeaderBoard54.xsd" MetadataType="Schema" ID="6c0defb6-dfd1-4564-b0f8-6e7595f8a71a" SourceId="1" SourceUrl="http://localhost:18348/Ws/LeaderBoard.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

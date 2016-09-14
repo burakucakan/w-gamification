@@ -1,0 +1,51 @@
+﻿@model Gnc2.DB.Admins
+
+@{
+    Layout = "~/Views/Shared/_LayoutEmpty.cshtml";
+}
+
+@section styles {
+    <link href="/Styles/login.css" rel="stylesheet"/>
+}
+
+@section scripts {    
+     <script src="/Scripts/app/login.js"></script>
+}
+
+<section class="login">
+        
+    <header class="top">                
+        <aside> 
+                    
+            @Html.ActionLink("Gnc2", "Default", "Default", null, new { @class = "logo" })
+
+        </aside>
+    </header>
+
+    <section class="panel">
+
+        @if (ViewBag.LoginFailed != null) { 
+            @Html.Partial("Common/Result", new Gnc2.Admin.Models.ResultModel {
+                Type = Gnc2.Admin.Models.ResultModel.ResultType.error,
+                Message = HttpContext.GetGlobalResourceObject("Notices", "LoginFailed").ToString()
+            })
+        }
+
+        @using (Html.BeginForm()) {
+                    
+        <h1>@HttpContext.GetGlobalResourceObject("Global", "LoginTitle")</h1>
+
+        @Html.ValidationMessageFor(p => p.Username) @Html.LabelFor(p => p.Username) @Html.EditorFor(p => p.Username) 
+        @Html.ValidationMessageFor(p => p.Password) @Html.LabelFor(p => p.Password) @Html.PasswordFor(p => p.Password) 
+
+        @Html.CheckBox("RememberMe") <label for="RememberMe">Beni hatırla</label>
+
+        <input class="light" type="submit" value="@HttpContext.GetGlobalResourceObject("Form", "ButtonLogin")" />
+
+        }
+
+    </section>
+
+    <footer class="footer">powered by Wanda Digital</footer>
+
+</section>

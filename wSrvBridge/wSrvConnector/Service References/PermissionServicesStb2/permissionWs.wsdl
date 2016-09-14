@@ -1,0 +1,1334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tns="http://service.permission.ccrl.cusman.turkcell.com" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://ws.model.data.permission.ccrl.cusman.turkcell.com" targetNamespace="http://service.permission.ccrl.cusman.turkcell.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service.permission.ccrl.cusman.turkcell.com">
+      <xsd:element name="queryServicePermNcstBasedExt">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="ncst" type="xsd:long" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csrv" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryServicePermNcstBasedExtResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermQueryExtResult" nillable="true" type="ns1:PermQueryExtResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeCategoryPerm">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdn" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="msgCat" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="coptout" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csource" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeCategoryPermResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermWriteResult" nillable="true" type="ns1:PermWriteResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfString">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="writeServicePermCorpOffline">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="ncstArr" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="coptout" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csource" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeServicePermCorpOfflineResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermWriteResult" nillable="true" type="ns1:PermWriteResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryServicePerm">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdn" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csrv" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryServicePermResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermQueryResult" nillable="true" type="ns1:PermQueryResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getServicePerm">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdn" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csrv" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getServicePermResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermQueryExtResult" nillable="true" type="ns1:PermQueryExtResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAdvertisementPerm">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="nprd" type="xsd:long" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAdvertisementPermResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="AdvertisementPerm" nillable="true" type="ns1:AdvertisementPerm" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkPermAndQuotaArr">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdnArr" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="msgCat" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="quotaCat" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="quotaChannel" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="quotaPeriod" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="checkQuota" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="dropQuota" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="checkPerm" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkPermAndQuotaArrResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermQueryArrResult" nillable="true" type="ns1:PermQueryArrResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeApprovalBulk">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermApprovalBulkWrite" nillable="true" type="ns1:PermApprovalBulkWrite" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="companyId" type="xsd:long" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeApprovalBulkResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermApprovalBulkWriteResult" nillable="true" type="ns1:PermApprovalBulkWriteResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getServicePermWithSms">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdn" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csrv" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="sendSms" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csource" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getServicePermWithSmsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermQueryExtResult" nillable="true" type="ns1:PermQueryExtResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeFirsatPermArr">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdnArr" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="coptout" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csource" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeFirsatPermArrResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermWriteArrResult" nillable="true" type="ns1:PermWriteArrResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeServicePermMultiSrvArr">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdnArr" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csource" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeServicePermMultiSrvArrResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermWriteArrResult" nillable="true" type="ns1:PermWriteArrResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryChannelPerm">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="nprd" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdn" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="channelId" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryChannelPermResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermQueryResult" nillable="true" type="ns1:PermQueryResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryServicePermMultiSrvArr">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdnCsrvArr" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryServicePermMultiSrvArrResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermQueryArrResult" nillable="true" type="ns1:PermQueryArrResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeTurkcellPerm">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdn" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="coptout" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csource" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeTurkcellPermResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermWriteResult" nillable="true" type="ns1:PermWriteResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeApproval">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdn" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="companyId" type="xsd:long" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="approvalType" type="xsd:long" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="status" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="approvalDate" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeApprovalResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermApprovalWriteResult" nillable="true" type="ns1:PermApprovalWriteResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeServicePermArr">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdnArr" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csrv" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="coptout" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csource" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeServicePermArrResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermWriteArrResult" nillable="true" type="ns1:PermWriteArrResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryCategoryPerm">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdn" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="msgCat" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryCategoryPermResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermQueryResult" nillable="true" type="ns1:PermQueryResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryChannelPermArr">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdnArr" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="channelId" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryChannelPermArrResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermQueryArrResult" nillable="true" type="ns1:PermQueryArrResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryCategoryPermArr">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdnArr" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="msgCat" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryCategoryPermArrResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermQueryArrResult" nillable="true" type="ns1:PermQueryArrResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryBulkSmsPerm">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="alphanumeric" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdn" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryBulkSmsPermResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermQueryResult" nillable="true" type="ns1:PermQueryResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeServicePermWithNotification">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdn" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csrv" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="coptout" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csource" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="forAllMsisdn" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="sendSMSNotification" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeServicePermWithNotificationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermWriteNotificationResult" nillable="true" type="ns1:PermWriteNotificationResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkPermAndQuota">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdn" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="msgCat" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="quotaCat" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="quotaChannel" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="quotaPeriod" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="checkQuota" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="dropQuota" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="checkPerm" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="checkPermAndQuotaResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermCheckResult" nillable="true" type="ns1:PermCheckResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeAdvertisementPerm">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="nprd" type="xsd:long" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="categoryPerms" nillable="true" type="ns1:ArrayOfCategoryPerm" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="channelPerms" nillable="true" type="ns1:ArrayOfChannelPerm" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="bulkSmsPerm" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csource" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeAdvertisementPermResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermWriteResult" nillable="true" type="ns1:PermWriteResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteAlfanumeric">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="alphanumeric" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteAlfanumericResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermWriteResult" nillable="true" type="ns1:PermWriteResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeFirsatPerm">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdn" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="coptout" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csource" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeFirsatPermResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermWriteResult" nillable="true" type="ns1:PermWriteResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeServicePermCorpOfflineByType">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="ncstArr" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="coptout" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csource" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="cpermType" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeServicePermCorpOfflineByTypeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermWriteResult" nillable="true" type="ns1:PermWriteResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryApproval">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdn" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="companyId" type="xsd:long" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryApprovalResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermApprovalQueryResult" nillable="true" type="ns1:PermApprovalQueryResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertAlfanumeric">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="alphanumeric" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="ncst" type="xsd:long" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="serviceId" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="insertAlfanumericResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermWriteResult" nillable="true" type="ns1:PermWriteResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeServicePermNcstBased">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="ncst" type="xsd:long" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csrv" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="coptout" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csource" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeServicePermNcstBasedResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermWriteResult" nillable="true" type="ns1:PermWriteResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeServicePerm">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdn" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csrv" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="coptout" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csource" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="writeServicePermResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermWriteResult" nillable="true" type="ns1:PermWriteResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryServicePermArr">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="msisdnArr" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csrv" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryServicePermArrResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermQueryArrResult" nillable="true" type="ns1:PermQueryArrResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryServicePermNcstBased">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="ncst" type="xsd:long" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="csrv" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryServicePermNcstBasedResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PermQueryResult" nillable="true" type="ns1:PermQueryResult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.model.data.permission.ccrl.cusman.turkcell.com">
+      <xsd:complexType name="PermQueryExtResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="coptout" type="xsd:int" />
+          <xsd:element minOccurs="0" name="csource" nillable="true" type="xsd:int" />
+          <xsd:element minOccurs="0" name="csourceDesc" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="modifyDate" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="modifyUser" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PermWriteResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PermQueryResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="coptout" type="xsd:int" />
+          <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AdvertisementPerm">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="bulkSmsPerm" type="xsd:int" />
+          <xsd:element minOccurs="0" name="busPartnerPerms" nillable="true" type="ns1:ArrayOfCategoryPermQuery" />
+          <xsd:element minOccurs="0" name="channelPerms" nillable="true" type="ns1:ArrayOfChannelPermQuery" />
+          <xsd:element minOccurs="0" name="mobilMarketingPerms" nillable="true" type="ns1:ArrayOfCategoryPermQuery" />
+          <xsd:element minOccurs="0" name="turkcellPerms" nillable="true" type="ns1:ArrayOfCategoryPermQuery" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfChannelPermQuery">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ChannelPermQuery" nillable="true" type="ns1:ChannelPermQuery" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ChannelPermQuery">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="channelDesc" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="channelId" type="xsd:int" />
+          <xsd:element minOccurs="0" name="coptOut" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCategoryPermQuery">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CategoryPermQuery" nillable="true" type="ns1:CategoryPermQuery" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CategoryPermQuery">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="catDesc" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="catId" type="xsd:int" />
+          <xsd:element minOccurs="0" name="coptOut" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PermQueryArrResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="permArr" nillable="true" type="tns:ArrayOfString" />
+          <xsd:element minOccurs="0" name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PermApprovalBulkWrite">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="approvalRequestList" nillable="true" type="ns1:ArrayOfPermApprovalBulkWriteRecord" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfPermApprovalBulkWriteRecord">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PermApprovalBulkWriteRecord" nillable="true" type="ns1:PermApprovalBulkWriteRecord" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PermApprovalBulkWriteRecord">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="approvalType" type="xsd:long" />
+          <xsd:element minOccurs="0" name="approveDate" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="msisdn" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="status" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PermApprovalBulkWriteResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="requestResultList" nillable="true" type="ns1:ArrayOfPermApprovalBulkWriteResultRecord" />
+          <xsd:element minOccurs="0" name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfPermApprovalBulkWriteResultRecord">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PermApprovalBulkWriteResultRecord" nillable="true" type="ns1:PermApprovalBulkWriteResultRecord" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PermApprovalBulkWriteResultRecord">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="msisdn" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PermWriteArrResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="permArr" nillable="true" type="tns:ArrayOfString" />
+          <xsd:element minOccurs="0" name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PermApprovalWriteResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PermWriteNotificationResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="result" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PermCheckResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="coptout" type="xsd:int" />
+          <xsd:element minOccurs="0" name="errorCode" type="xsd:int" />
+          <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCategoryPerm">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="CategoryPerm" nillable="true" type="ns1:CategoryPerm" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CategoryPerm">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="catId" type="xsd:int" />
+          <xsd:element minOccurs="0" name="coptOut" type="xsd:int" />
+          <xsd:element minOccurs="0" name="label" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfChannelPerm">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ChannelPerm" nillable="true" type="ns1:ChannelPerm" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ChannelPerm">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="channelId" type="xsd:int" />
+          <xsd:element minOccurs="0" name="coptOut" type="xsd:int" />
+          <xsd:element minOccurs="0" name="label" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PermApprovalQueryResult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="approvalList" nillable="true" type="ns1:ArrayOfPermApprovalQueryRecord" />
+          <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfPermApprovalQueryRecord">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PermApprovalQueryRecord" nillable="true" type="ns1:PermApprovalQueryRecord" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PermApprovalQueryRecord">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="approvalDate" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="approvalType" type="xsd:long" />
+          <xsd:element minOccurs="0" name="status" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getAdvertisementPermRequest">
+    <wsdl:part name="parameters" element="tns:getAdvertisementPerm" />
+  </wsdl:message>
+  <wsdl:message name="queryBulkSmsPermRequest">
+    <wsdl:part name="parameters" element="tns:queryBulkSmsPerm" />
+  </wsdl:message>
+  <wsdl:message name="writeFirsatPermArrResponse">
+    <wsdl:part name="parameters" element="tns:writeFirsatPermArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="queryServicePermRequest">
+    <wsdl:part name="parameters" element="tns:queryServicePerm" />
+  </wsdl:message>
+  <wsdl:message name="checkPermAndQuotaArrRequest">
+    <wsdl:part name="parameters" element="tns:checkPermAndQuotaArr" />
+  </wsdl:message>
+  <wsdl:message name="writeServicePermWithNotificationResponse">
+    <wsdl:part name="parameters" element="tns:writeServicePermWithNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkPermAndQuotaRequest">
+    <wsdl:part name="parameters" element="tns:checkPermAndQuota" />
+  </wsdl:message>
+  <wsdl:message name="writeTurkcellPermRequest">
+    <wsdl:part name="parameters" element="tns:writeTurkcellPerm" />
+  </wsdl:message>
+  <wsdl:message name="queryChannelPermRequest">
+    <wsdl:part name="parameters" element="tns:queryChannelPerm" />
+  </wsdl:message>
+  <wsdl:message name="queryServicePermMultiSrvArrResponse">
+    <wsdl:part name="parameters" element="tns:queryServicePermMultiSrvArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeServicePermArrRequest">
+    <wsdl:part name="parameters" element="tns:writeServicePermArr" />
+  </wsdl:message>
+  <wsdl:message name="writeApprovalResponse">
+    <wsdl:part name="parameters" element="tns:writeApprovalResponse" />
+  </wsdl:message>
+  <wsdl:message name="queryServicePermNcstBasedRequest">
+    <wsdl:part name="parameters" element="tns:queryServicePermNcstBased" />
+  </wsdl:message>
+  <wsdl:message name="queryChannelPermArrResponse">
+    <wsdl:part name="parameters" element="tns:queryChannelPermArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeServicePermResponse">
+    <wsdl:part name="parameters" element="tns:writeServicePermResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServicePermWithSmsResponse">
+    <wsdl:part name="parameters" element="tns:getServicePermWithSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertAlfanumericRequest">
+    <wsdl:part name="parameters" element="tns:insertAlfanumeric" />
+  </wsdl:message>
+  <wsdl:message name="queryChannelPermArrRequest">
+    <wsdl:part name="parameters" element="tns:queryChannelPermArr" />
+  </wsdl:message>
+  <wsdl:message name="writeFirsatPermArrRequest">
+    <wsdl:part name="parameters" element="tns:writeFirsatPermArr" />
+  </wsdl:message>
+  <wsdl:message name="writeServicePermNcstBasedRequest">
+    <wsdl:part name="parameters" element="tns:writeServicePermNcstBased" />
+  </wsdl:message>
+  <wsdl:message name="writeFirsatPermRequest">
+    <wsdl:part name="parameters" element="tns:writeFirsatPerm" />
+  </wsdl:message>
+  <wsdl:message name="writeServicePermMultiSrvArrRequest">
+    <wsdl:part name="parameters" element="tns:writeServicePermMultiSrvArr" />
+  </wsdl:message>
+  <wsdl:message name="writeCategoryPermResponse">
+    <wsdl:part name="parameters" element="tns:writeCategoryPermResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeServicePermCorpOfflineResponse">
+    <wsdl:part name="parameters" element="tns:writeServicePermCorpOfflineResponse" />
+  </wsdl:message>
+  <wsdl:message name="queryApprovalRequest">
+    <wsdl:part name="parameters" element="tns:queryApproval" />
+  </wsdl:message>
+  <wsdl:message name="queryChannelPermResponse">
+    <wsdl:part name="parameters" element="tns:queryChannelPermResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServicePermWithSmsRequest">
+    <wsdl:part name="parameters" element="tns:getServicePermWithSms" />
+  </wsdl:message>
+  <wsdl:message name="writeApprovalBulkRequest">
+    <wsdl:part name="parameters" element="tns:writeApprovalBulk" />
+  </wsdl:message>
+  <wsdl:message name="queryCategoryPermRequest">
+    <wsdl:part name="parameters" element="tns:queryCategoryPerm" />
+  </wsdl:message>
+  <wsdl:message name="writeServicePermMultiSrvArrResponse">
+    <wsdl:part name="parameters" element="tns:writeServicePermMultiSrvArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAlfanumericResponse">
+    <wsdl:part name="parameters" element="tns:deleteAlfanumericResponse" />
+  </wsdl:message>
+  <wsdl:message name="queryServicePermNcstBasedExtResponse">
+    <wsdl:part name="parameters" element="tns:queryServicePermNcstBasedExtResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeFirsatPermResponse">
+    <wsdl:part name="parameters" element="tns:writeFirsatPermResponse" />
+  </wsdl:message>
+  <wsdl:message name="queryServicePermArrRequest">
+    <wsdl:part name="parameters" element="tns:queryServicePermArr" />
+  </wsdl:message>
+  <wsdl:message name="writeServicePermWithNotificationRequest">
+    <wsdl:part name="parameters" element="tns:writeServicePermWithNotification" />
+  </wsdl:message>
+  <wsdl:message name="writeCategoryPermRequest">
+    <wsdl:part name="parameters" element="tns:writeCategoryPerm" />
+  </wsdl:message>
+  <wsdl:message name="queryServicePermResponse">
+    <wsdl:part name="parameters" element="tns:queryServicePermResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeAdvertisementPermRequest">
+    <wsdl:part name="parameters" element="tns:writeAdvertisementPerm" />
+  </wsdl:message>
+  <wsdl:message name="getAdvertisementPermResponse">
+    <wsdl:part name="parameters" element="tns:getAdvertisementPermResponse" />
+  </wsdl:message>
+  <wsdl:message name="queryCategoryPermArrResponse">
+    <wsdl:part name="parameters" element="tns:queryCategoryPermArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeServicePermCorpOfflineRequest">
+    <wsdl:part name="parameters" element="tns:writeServicePermCorpOffline" />
+  </wsdl:message>
+  <wsdl:message name="queryCategoryPermArrRequest">
+    <wsdl:part name="parameters" element="tns:queryCategoryPermArr" />
+  </wsdl:message>
+  <wsdl:message name="queryServicePermNcstBasedResponse">
+    <wsdl:part name="parameters" element="tns:queryServicePermNcstBasedResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeServicePermCorpOfflineByTypeResponse">
+    <wsdl:part name="parameters" element="tns:writeServicePermCorpOfflineByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeServicePermRequest">
+    <wsdl:part name="parameters" element="tns:writeServicePerm" />
+  </wsdl:message>
+  <wsdl:message name="queryApprovalResponse">
+    <wsdl:part name="parameters" element="tns:queryApprovalResponse" />
+  </wsdl:message>
+  <wsdl:message name="queryServicePermMultiSrvArrRequest">
+    <wsdl:part name="parameters" element="tns:queryServicePermMultiSrvArr" />
+  </wsdl:message>
+  <wsdl:message name="checkPermAndQuotaResponse">
+    <wsdl:part name="parameters" element="tns:checkPermAndQuotaResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeServicePermCorpOfflineByTypeRequest">
+    <wsdl:part name="parameters" element="tns:writeServicePermCorpOfflineByType" />
+  </wsdl:message>
+  <wsdl:message name="queryServicePermArrResponse">
+    <wsdl:part name="parameters" element="tns:queryServicePermArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeServicePermNcstBasedResponse">
+    <wsdl:part name="parameters" element="tns:writeServicePermNcstBasedResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeServicePermArrResponse">
+    <wsdl:part name="parameters" element="tns:writeServicePermArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertAlfanumericResponse">
+    <wsdl:part name="parameters" element="tns:insertAlfanumericResponse" />
+  </wsdl:message>
+  <wsdl:message name="queryServicePermNcstBasedExtRequest">
+    <wsdl:part name="parameters" element="tns:queryServicePermNcstBasedExt" />
+  </wsdl:message>
+  <wsdl:message name="queryCategoryPermResponse">
+    <wsdl:part name="parameters" element="tns:queryCategoryPermResponse" />
+  </wsdl:message>
+  <wsdl:message name="queryBulkSmsPermResponse">
+    <wsdl:part name="parameters" element="tns:queryBulkSmsPermResponse" />
+  </wsdl:message>
+  <wsdl:message name="getServicePermResponse">
+    <wsdl:part name="parameters" element="tns:getServicePermResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeAdvertisementPermResponse">
+    <wsdl:part name="parameters" element="tns:writeAdvertisementPermResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkPermAndQuotaArrResponse">
+    <wsdl:part name="parameters" element="tns:checkPermAndQuotaArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeTurkcellPermResponse">
+    <wsdl:part name="parameters" element="tns:writeTurkcellPermResponse" />
+  </wsdl:message>
+  <wsdl:message name="writeApprovalBulkResponse">
+    <wsdl:part name="parameters" element="tns:writeApprovalBulkResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAlfanumericRequest">
+    <wsdl:part name="parameters" element="tns:deleteAlfanumeric" />
+  </wsdl:message>
+  <wsdl:message name="writeApprovalRequest">
+    <wsdl:part name="parameters" element="tns:writeApproval" />
+  </wsdl:message>
+  <wsdl:message name="getServicePermRequest">
+    <wsdl:part name="parameters" element="tns:getServicePerm" />
+  </wsdl:message>
+  <wsdl:portType name="PermissionWebServicePortType">
+    <wsdl:operation name="queryServicePermNcstBasedExt">
+      <wsdl:input name="queryServicePermNcstBasedExtRequest" message="tns:queryServicePermNcstBasedExtRequest" />
+      <wsdl:output name="queryServicePermNcstBasedExtResponse" message="tns:queryServicePermNcstBasedExtResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="writeCategoryPerm">
+      <wsdl:input name="writeCategoryPermRequest" message="tns:writeCategoryPermRequest" />
+      <wsdl:output name="writeCategoryPermResponse" message="tns:writeCategoryPermResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="writeServicePermCorpOffline">
+      <wsdl:input name="writeServicePermCorpOfflineRequest" message="tns:writeServicePermCorpOfflineRequest" />
+      <wsdl:output name="writeServicePermCorpOfflineResponse" message="tns:writeServicePermCorpOfflineResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="queryServicePerm">
+      <wsdl:input name="queryServicePermRequest" message="tns:queryServicePermRequest" />
+      <wsdl:output name="queryServicePermResponse" message="tns:queryServicePermResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getServicePerm">
+      <wsdl:input name="getServicePermRequest" message="tns:getServicePermRequest" />
+      <wsdl:output name="getServicePermResponse" message="tns:getServicePermResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAdvertisementPerm">
+      <wsdl:input name="getAdvertisementPermRequest" message="tns:getAdvertisementPermRequest" />
+      <wsdl:output name="getAdvertisementPermResponse" message="tns:getAdvertisementPermResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="checkPermAndQuotaArr">
+      <wsdl:input name="checkPermAndQuotaArrRequest" message="tns:checkPermAndQuotaArrRequest" />
+      <wsdl:output name="checkPermAndQuotaArrResponse" message="tns:checkPermAndQuotaArrResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="writeApprovalBulk">
+      <wsdl:input name="writeApprovalBulkRequest" message="tns:writeApprovalBulkRequest" />
+      <wsdl:output name="writeApprovalBulkResponse" message="tns:writeApprovalBulkResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getServicePermWithSms">
+      <wsdl:input name="getServicePermWithSmsRequest" message="tns:getServicePermWithSmsRequest" />
+      <wsdl:output name="getServicePermWithSmsResponse" message="tns:getServicePermWithSmsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="writeFirsatPermArr">
+      <wsdl:input name="writeFirsatPermArrRequest" message="tns:writeFirsatPermArrRequest" />
+      <wsdl:output name="writeFirsatPermArrResponse" message="tns:writeFirsatPermArrResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="writeServicePermMultiSrvArr">
+      <wsdl:input name="writeServicePermMultiSrvArrRequest" message="tns:writeServicePermMultiSrvArrRequest" />
+      <wsdl:output name="writeServicePermMultiSrvArrResponse" message="tns:writeServicePermMultiSrvArrResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="queryChannelPerm">
+      <wsdl:input name="queryChannelPermRequest" message="tns:queryChannelPermRequest" />
+      <wsdl:output name="queryChannelPermResponse" message="tns:queryChannelPermResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="queryServicePermMultiSrvArr">
+      <wsdl:input name="queryServicePermMultiSrvArrRequest" message="tns:queryServicePermMultiSrvArrRequest" />
+      <wsdl:output name="queryServicePermMultiSrvArrResponse" message="tns:queryServicePermMultiSrvArrResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="writeTurkcellPerm">
+      <wsdl:input name="writeTurkcellPermRequest" message="tns:writeTurkcellPermRequest" />
+      <wsdl:output name="writeTurkcellPermResponse" message="tns:writeTurkcellPermResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="writeApproval">
+      <wsdl:input name="writeApprovalRequest" message="tns:writeApprovalRequest" />
+      <wsdl:output name="writeApprovalResponse" message="tns:writeApprovalResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="writeServicePermArr">
+      <wsdl:input name="writeServicePermArrRequest" message="tns:writeServicePermArrRequest" />
+      <wsdl:output name="writeServicePermArrResponse" message="tns:writeServicePermArrResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="queryCategoryPerm">
+      <wsdl:input name="queryCategoryPermRequest" message="tns:queryCategoryPermRequest" />
+      <wsdl:output name="queryCategoryPermResponse" message="tns:queryCategoryPermResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="queryChannelPermArr">
+      <wsdl:input name="queryChannelPermArrRequest" message="tns:queryChannelPermArrRequest" />
+      <wsdl:output name="queryChannelPermArrResponse" message="tns:queryChannelPermArrResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="queryCategoryPermArr">
+      <wsdl:input name="queryCategoryPermArrRequest" message="tns:queryCategoryPermArrRequest" />
+      <wsdl:output name="queryCategoryPermArrResponse" message="tns:queryCategoryPermArrResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="queryBulkSmsPerm">
+      <wsdl:input name="queryBulkSmsPermRequest" message="tns:queryBulkSmsPermRequest" />
+      <wsdl:output name="queryBulkSmsPermResponse" message="tns:queryBulkSmsPermResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="writeServicePermWithNotification">
+      <wsdl:input name="writeServicePermWithNotificationRequest" message="tns:writeServicePermWithNotificationRequest" />
+      <wsdl:output name="writeServicePermWithNotificationResponse" message="tns:writeServicePermWithNotificationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="checkPermAndQuota">
+      <wsdl:input name="checkPermAndQuotaRequest" message="tns:checkPermAndQuotaRequest" />
+      <wsdl:output name="checkPermAndQuotaResponse" message="tns:checkPermAndQuotaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="writeAdvertisementPerm">
+      <wsdl:input name="writeAdvertisementPermRequest" message="tns:writeAdvertisementPermRequest" />
+      <wsdl:output name="writeAdvertisementPermResponse" message="tns:writeAdvertisementPermResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAlfanumeric">
+      <wsdl:input name="deleteAlfanumericRequest" message="tns:deleteAlfanumericRequest" />
+      <wsdl:output name="deleteAlfanumericResponse" message="tns:deleteAlfanumericResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="writeFirsatPerm">
+      <wsdl:input name="writeFirsatPermRequest" message="tns:writeFirsatPermRequest" />
+      <wsdl:output name="writeFirsatPermResponse" message="tns:writeFirsatPermResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="writeServicePermCorpOfflineByType">
+      <wsdl:input name="writeServicePermCorpOfflineByTypeRequest" message="tns:writeServicePermCorpOfflineByTypeRequest" />
+      <wsdl:output name="writeServicePermCorpOfflineByTypeResponse" message="tns:writeServicePermCorpOfflineByTypeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="queryApproval">
+      <wsdl:input name="queryApprovalRequest" message="tns:queryApprovalRequest" />
+      <wsdl:output name="queryApprovalResponse" message="tns:queryApprovalResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAlfanumeric">
+      <wsdl:input name="insertAlfanumericRequest" message="tns:insertAlfanumericRequest" />
+      <wsdl:output name="insertAlfanumericResponse" message="tns:insertAlfanumericResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="writeServicePermNcstBased">
+      <wsdl:input name="writeServicePermNcstBasedRequest" message="tns:writeServicePermNcstBasedRequest" />
+      <wsdl:output name="writeServicePermNcstBasedResponse" message="tns:writeServicePermNcstBasedResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="writeServicePerm">
+      <wsdl:input name="writeServicePermRequest" message="tns:writeServicePermRequest" />
+      <wsdl:output name="writeServicePermResponse" message="tns:writeServicePermResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="queryServicePermArr">
+      <wsdl:input name="queryServicePermArrRequest" message="tns:queryServicePermArrRequest" />
+      <wsdl:output name="queryServicePermArrResponse" message="tns:queryServicePermArrResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="queryServicePermNcstBased">
+      <wsdl:input name="queryServicePermNcstBasedRequest" message="tns:queryServicePermNcstBasedRequest" />
+      <wsdl:output name="queryServicePermNcstBasedResponse" message="tns:queryServicePermNcstBasedResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PermissionWebServiceHttpBinding" type="tns:PermissionWebServicePortType">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="queryServicePermNcstBasedExt">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="queryServicePermNcstBasedExtRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryServicePermNcstBasedExtResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeCategoryPerm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="writeCategoryPermRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="writeCategoryPermResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeServicePermCorpOffline">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="writeServicePermCorpOfflineRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="writeServicePermCorpOfflineResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryServicePerm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="queryServicePermRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryServicePermResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServicePerm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getServicePermRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getServicePermResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAdvertisementPerm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAdvertisementPermRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAdvertisementPermResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkPermAndQuotaArr">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="checkPermAndQuotaArrRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="checkPermAndQuotaArrResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeApprovalBulk">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="writeApprovalBulkRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="writeApprovalBulkResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServicePermWithSms">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getServicePermWithSmsRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getServicePermWithSmsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeFirsatPermArr">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="writeFirsatPermArrRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="writeFirsatPermArrResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeServicePermMultiSrvArr">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="writeServicePermMultiSrvArrRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="writeServicePermMultiSrvArrResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryChannelPerm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="queryChannelPermRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryChannelPermResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryServicePermMultiSrvArr">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="queryServicePermMultiSrvArrRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryServicePermMultiSrvArrResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeTurkcellPerm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="writeTurkcellPermRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="writeTurkcellPermResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeApproval">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="writeApprovalRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="writeApprovalResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeServicePermArr">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="writeServicePermArrRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="writeServicePermArrResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryCategoryPerm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="queryCategoryPermRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryCategoryPermResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryChannelPermArr">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="queryChannelPermArrRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryChannelPermArrResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryCategoryPermArr">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="queryCategoryPermArrRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryCategoryPermArrResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryBulkSmsPerm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="queryBulkSmsPermRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryBulkSmsPermResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeServicePermWithNotification">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="writeServicePermWithNotificationRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="writeServicePermWithNotificationResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkPermAndQuota">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="checkPermAndQuotaRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="checkPermAndQuotaResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeAdvertisementPerm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="writeAdvertisementPermRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="writeAdvertisementPermResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAlfanumeric">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="deleteAlfanumericRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deleteAlfanumericResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeFirsatPerm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="writeFirsatPermRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="writeFirsatPermResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeServicePermCorpOfflineByType">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="writeServicePermCorpOfflineByTypeRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="writeServicePermCorpOfflineByTypeResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryApproval">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="queryApprovalRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryApprovalResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertAlfanumeric">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="insertAlfanumericRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="insertAlfanumericResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeServicePermNcstBased">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="writeServicePermNcstBasedRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="writeServicePermNcstBasedResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="writeServicePerm">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="writeServicePermRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="writeServicePermResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryServicePermArr">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="queryServicePermArrRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryServicePermArrResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryServicePermNcstBased">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="queryServicePermNcstBasedRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryServicePermNcstBasedResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PermissionWebService">
+    <wsdl:port name="PermissionWebServiceHttpPort" binding="tns:PermissionWebServiceHttpBinding">
+      <wsdlsoap:address location="http://extstable2.sd.turkcell.com.tr/ccrl/ws/permissionWs" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

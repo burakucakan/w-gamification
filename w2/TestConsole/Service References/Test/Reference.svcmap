@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="53b30e48-7f68-43b8-873c-b8b04c79e4d2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:18348/PostTransactions.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PostTransactions.xsd" MetadataType="Schema" ID="34e14b75-3dbf-447a-9041-a7e74b426083" SourceId="1" SourceUrl="http://localhost:18348/PostTransactions.svc?xsd=xsd4" />
+    <MetadataFile FileName="PostTransactions1.xsd" MetadataType="Schema" ID="ffeefaab-6925-43c1-afd7-cb927f27b072" SourceId="1" SourceUrl="http://localhost:18348/PostTransactions.svc?xsd=xsd1" />
+    <MetadataFile FileName="PostTransactions.wsdl" MetadataType="Wsdl" ID="51334845-83e2-47e5-839f-38ae39525e82" SourceId="1" SourceUrl="http://localhost:18348/PostTransactions.svc?wsdl" />
+    <MetadataFile FileName="PostTransactions.disco" MetadataType="Disco" ID="f653c5c4-07d7-44ce-9994-a011de0fdb6e" SourceId="1" SourceUrl="http://localhost:18348/PostTransactions.svc?disco" />
+    <MetadataFile FileName="PostTransactions2.xsd" MetadataType="Schema" ID="ac16fe08-2ac7-408d-97a4-17ef35acd9a1" SourceId="1" SourceUrl="http://localhost:18348/PostTransactions.svc?xsd=xsd3" />
+    <MetadataFile FileName="PostTransactions3.xsd" MetadataType="Schema" ID="3bc98ffb-2ea4-47d9-b75e-b11a9582f1ad" SourceId="1" SourceUrl="http://localhost:18348/PostTransactions.svc?xsd=xsd2" />
+    <MetadataFile FileName="PostTransactions4.xsd" MetadataType="Schema" ID="4dfdbe15-b7db-4144-811c-ff122611dca0" SourceId="1" SourceUrl="http://localhost:18348/PostTransactions.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

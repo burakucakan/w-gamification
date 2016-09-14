@@ -1,0 +1,117 @@
+﻿@model IEnumerable<Gnc2.Admin.Models.CatalogBounded>
+@using Gnc2.Admin.App_Manager
+
+@Helper.BodyNav(Html, "Catalogs",true)
+
+@section Scripts {
+
+     <script type="text/javascript">
+
+         function slGenderTypeOnChange(sender) {
+             var ddl = $("#GetCatalogProcess").data("kendoDropDownList");
+
+             if (grid.length) {
+                 gridData = grid.data("kendoGrid");
+
+                 var selectedValue = ddl.value();
+                 if (selectedValue == 1) {
+                     gridData.dataSource.filter({ field: "CreateDate", operator: "IsLessThan", value: "100" });
+
+
+                 }
+                     // Bu hafta kayıt olanlar.
+                 else if (selectedValue == 2) {
+                     gridData.dataSource.filter({ field: "CreateDate", operator: "gt", value: new Date(year, month, week) });
+
+                 }
+                     // Bu ay kayıt olanlar.
+                 else if (selectedValue == 3) {
+                     gridData.dataSource.filter({ field: "CreateDate", operator: "lt", value: new Date(year, month, tmonth) });
+                 }
+                     // Bugün login olanlar.
+                 else if (selectedValue == 4) {
+                     gridData.dataSource.filter({ field: "LoginDate", operator: "gt", value: new Date(year, month, day) });
+
+                 }
+                     // Bu hafta login olanlar.
+                 else if (selectedValue == 5) {
+                     gridData.dataSource.filter({ field: "LoginDate", operator: "gt", value: new Date(year, month, tweek) });
+
+                 }  // Bu ay login olanlar.
+                 else if (selectedValue == 6) {
+                     gridData.dataSource.filter({ field: "LoginDate", operator: "neq", value: new Date(year, month, tmonth) });
+                 }
+                     // Facebook ile login olanlar.
+                 else if (selectedValue == 7) {
+                     gridData.dataSource.filter({ field: "FbId", operator: "neq", value: "null" });
+                 }
+
+                 else
+                     gridData.dataSource.filter({});
+             }
+
+         }
+
+
+         //var grid = $("#GridID").data("kendoGrid");
+         //grid.dataSource.pageSize(20);
+         //grid.refresh();
+
+
+
+         </script>
+
+}
+
+<header class="gridToolBar">
+
+    @Html.Partial("HelperControls/GridRefresh")
+
+         @(Html.Kendo().DropDownList()
+            .Name("GetCatalogProcess")
+            .DataTextField("Text")
+            .DataValueField("Value")
+            .OptionLabel(HttpContext.GetGlobalResourceObject("Form", "ProductType").ToString())
+                    .DataSource(source => { source.Read(read => { read.Action("GetCatalogProcess", "Catalogs"); }); })          
+            .Events(e => e.Change("GetCatalogProcess"))
+            .HtmlAttributes(new { style = "width:300px"})
+    )
+
+    @Html.Partial("HelperControls/GridSearch")
+
+</header>
+
+@(Html.Kendo().Grid(Model)
+    .Name(KendoManager.GridName)
+        
+    .Columns(clm =>
+    {
+
+        clm.Bound(c => c.CatalogImage).ClientTemplate(KendoManager.ClientTemplateCatalogImage("CatalogImage")); 
+        clm.Bound(c => c.CatalogName);
+        clm.Bound(c => c.CatalogPoint);
+        clm.Bound(c => c.CatalogCategoriesName);
+
+        clm.Command(cmd =>
+        {
+            cmd.Custom("Edit").Text(KendoManager.HtmlEditIcon + HttpContext.GetGlobalResourceObject("Global", "Edit").ToString()).Click("kGridGoDetail");
+            cmd.Destroy().Text(HttpContext.GetGlobalResourceObject("Global", "Delete").ToString()); } );
+        })
+
+    .DataSource(dataSource =>
+        dataSource
+            .Ajax()
+            .ServerOperation(false)
+            .Model(model => model.Id(m => m.Id))
+            .Read(r => r.Action("k_jRead", "Catalogs"))
+            .Destroy(d => d.Action("k_jDelete", "Catalogs"))
+            .Events(e => e.Error("kGridOnError"))
+        )
+            
+    .Sortable()
+    .Pageable(KendoManager.pagerSettings)
+    .Events(e => e.DataBound("kGridOnDataBound"))    
+    .Reorderable(reorder => reorder.Columns(true))
+    .Resizable(resize => resize.Columns(true))
+    .Filterable(KendoManager.filterSettings)
+)

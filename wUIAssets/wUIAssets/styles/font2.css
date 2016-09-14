@@ -1,0 +1,37 @@
+﻿@font-face {
+    font-family: 'turkcellsaturabolregular';
+    src: url('../fonts/turkcellsaturabol-turkcell.eot');
+    src: url('../fonts/turkcellsaturabol-turkcell.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/turkcellsaturabol-turkcell.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'turkcellsaturaregular';
+    src: url('../fonts/turkcellsaturareg-webfont.eot');
+    src: url('../fonts/turkcellsaturareg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/turkcellsaturareg-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'turkcellsaturameditaregular';
+    src: url('../fonts/turkcellsaturamedita-webfont.eot');
+    src: url('../fonts/turkcellsaturamedita-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/turkcellsaturamedita-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'turkcellsaturabolita';
+    src: url('../fonts/turkcellsaturabolita-webfont.eot');
+    src: url('../fonts/turkcellsaturabolita-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/turkcellsaturabolita-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fReg { font-family: 'turkcellsaturaregular',"Arial"; }
+.fBold { font-family: 'turkcellsaturabolregular', "Arial"; }
+.fIta { font-family: 'turkcellsaturameditaregular', "Arial"; }
+.fBoldIta { font-family: 'turkcellsaturabolita', "Arial"; }

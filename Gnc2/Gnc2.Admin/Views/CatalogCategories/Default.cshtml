@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Gnc2.Admin.Models.CatalogCategoriesBounded>
+@using Gnc2.Admin.App_Manager
+
+@Helper.BodyNav(Html, "CatalogCategories")
+
+@section Scripts {
+
+}
+
+<header class="gridToolBar">
+
+    @Html.Partial("HelperControls/GridRefresh")
+
+    @Html.Partial("HelperControls/GridSearch")
+
+</header>
+
+@(Html.Kendo().Grid(Model)
+    .Name(KendoManager.GridName)
+        
+    .Columns(clm =>
+    {
+        clm.Bound(c => c.CategoryName);
+      
+        clm.Command(cmd =>
+        {
+            cmd.Custom("Edit").Text(KendoManager.HtmlEditIcon + HttpContext.GetGlobalResourceObject("Global", "Edit").ToString()).Click("kGridGoDetail");
+            cmd.Destroy().Text(HttpContext.GetGlobalResourceObject("Global", "Delete").ToString()); } );
+    })
+
+    .DataSource(dataSource =>
+        dataSource
+            .Ajax()
+            .ServerOperation(false)
+            .Model(model => model.Id(m => m.Id))
+            .Read(r => r.Action("k_jRead", "CatalogCategories"))
+            .Destroy(d => d.Action("k_jDelete", "CatalogCategories"))
+            .Events(e => e.Error("kGridOnError"))
+        )
+            
+    .Sortable()
+    .Pageable(KendoManager.pagerSettings)
+    .Events(e => e.DataBound("kGridOnDataBound"))    
+    .Reorderable(reorder => reorder.Columns(true))
+    .Resizable(resize => resize.Columns(true))
+    .Filterable(KendoManager.filterSettings)
+)

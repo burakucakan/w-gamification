@@ -1,0 +1,68 @@
+﻿@model Gnc2.DB.Campaigns
+
+@using Gnc2.Admin.Extensions;
+
+@Helper.BodyNav(Html, "Campaigns")
+
+
+@section Scripts {
+
+
+}
+
+@using (Ajax.BeginForm(null, null, new AjaxOptions { UpdateTargetId = "PageForm", LoadingElementId = "LoadingForm", OnSuccess = "FormOnSuccess" }, new { @id = "PageForm" }))
+{    
+    <aside class="panel main">
+
+
+        @Html.ValidationMessageFor(model => model.Title)   @Html.LabelFor(model => model.Title)    @Html.EditorFor(m => m.Title)
+
+        @Html.ValidationMessageFor(model => model.Header)   @Html.LabelFor(model => model.Header)    @Html.EditorFor(m => m.Header)
+
+        @Html.LabelFor(model => model.ExternalUrl)    @Html.EditorFor(m => m.ExternalUrl)
+
+        @Html.ValidationMessageFor(model => model.Content)   @Html.LabelFor(model => model.Content)  
+
+        @Html.Partial("HelperControls/HtmlEditor", new Gnc2.Admin.Models.HtmlEditorModel { Expression = "Content", ErrorMessageRsrcKey = "ValContentDetailReq", Value = (Model != null) ? Model.Content : "", Height = 500 })
+
+        @Html.Partial("Common/FormFooter")
+
+    </aside>
+    
+    <aside class="panel side">
+        <aside>
+
+            @{Html.RenderPartial("Common/Upload", new Gnc2.Admin.Models.UploadModel {
+                  UploadElementName = "Image",
+                  FileName = (Model != null) ? Model.Image : "",
+                  ImageType = Gnc2.Com.Helpers.PathHelper.Images.Type.campaigns,
+                  ResizeDefault = false
+              });}
+
+        </aside>
+         </aside>
+        <aside class="panel side">
+        <aside>
+            <p class="checkbox"> @Html.EditorFor(model => model.IsUserCampaigns) @Html.LabelFor(model => model.IsUserCampaigns) </p>
+            @{Html.RenderPartial("Common/UploadTextFile", new Gnc2.Admin.Models.UploadModel
+              {
+                  UploadElementName = "CampaignsTextFile",
+                  FileName = (Model != null) ? "campaignsUser" : "",
+                  TextType = Gnc2.Com.Helpers.PathHelper.TextFiles.Type.campaigns,
+                  NotRequired = true
+              });}
+
+        </aside>
+    </aside>
+    
+    <aside class="panel side">
+        
+
+        <aside>
+            <p class="checkbox"> @Html.EditorFor(model => model.IsActive,"Yayında") @Html.LabelFor(model => model.IsActive) </p>
+        </aside>
+
+        @Html.Partial("Common/DataDefaultFields")
+
+    </aside>
+}

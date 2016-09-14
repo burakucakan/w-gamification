@@ -1,0 +1,133 @@
+﻿@model Gnc2.Admin.Models.UploadModel
+@using Gnc2.Com.Helpers.UrlHelperExtensions
+@using Gnc2.Com.Helpers
+
+<script>
+
+    var fuText = null;
+
+    $(function () {           
+        fuText = $("#@Model.UploadElementName");
+
+        @if (!Model.NotRequired) { <text>
+        $('form').submit(CheckTextFileUpload);
+        </text> }
+
+        @if (Model.FileName != "")
+        {<text>
+        
+        fuText.val("@Model.FileName");
+    
+        </text>
+        
+        }
+
+    });
+
+    function CheckTextFileUpload() {
+        if (fuText.val() != "") return true;
+        else {
+            ShowTextFileUploadValError("@HttpContext.GetGlobalResourceObject("Notices", "TextFileUploadReq").ToString()")
+            return false;
+        }
+    }
+
+    function ShowTextFileUploadValError(msg) {
+        $("#fileValText").html(msg);
+        $("#fileValText").show();
+    }
+
+
+    function TextFilUploadCheckExt(e) {
+        var ext = String(e.files[0].extension).toLowerCase();
+        return !((ext != ".txt"))
+    }
+
+    function TextFilUploadCheckSize(e) {
+        var size = e.files[0].size;
+        size = Math.ceil(size / 1024); //as KB
+
+        return (size < @Gnc2.Admin.App_Manager.ConfigManager.GetInstance().UploadDefaultMaxKB);
+    }
+
+    function TextkUploadOnSelect(e) {
+        if (!TextFilUploadCheckExt(e)) {
+            ShowTextFileUploadValError("@HttpContext.GetGlobalResourceObject("Notices", "TextfileUploadType").ToString()");
+            e.preventDefault();
+        }
+        else if (!TextFilUploadCheckSize(e)) {
+            ShowTextFileUploadValError("@HttpContext.GetGlobalResourceObject("Notices", "ValTextFileUploadSize").ToString()");
+                e.preventDefault();
+            }
+
+        $('#uploadtxt').hide();
+    }    
+
+    function TextkUploadOnSuccess(e) {
+        if (e.response.savedFileName != null) {
+            $('#fileValText').hide();
+            fuText.val(e.response.savedFileName);
+            SetUploadedImage(e.response.savedBig, e.response.pathPreview);
+        }
+    }
+
+
+    function TextkUploadOnRemove(e) {
+        $('#uploadtxt').hide();
+        fuText.val("");
+        //$('#fileVal').show();        
+    }
+
+    function TextkUploadOnUpload(e) { }
+    function TextkUploadOnError(e) { }
+    function TextkUploadOnComplete(e) { }
+    function TextkUploadOnCancel(e) { }
+
+</script>
+
+<span class="formVal" id="fileValText" style="display: none;"></span>
+
+<label>@HttpContext.GetGlobalResourceObject("Global", "TexFileUpload")<i>@HttpContext.GetGlobalResourceObject("Global", "MaxUploadSize")</i></label>
+
+<a id="uploadtxt" class="cb cboxElement" href="#" style="display: none;"><img src="#" /></a>
+
+<input type="hidden" id="@Model.UploadElementName" name="@Model.UploadElementName" value="@((Model.FileName == "") ? ViewBag.savedFileName : Model.FileName) " />
+
+@(Html.Kendo().Upload()
+    .Name("UploadTextFile")
+    .Messages(m => m
+        .Cancel(HttpContext.GetGlobalResourceObject("Kendo", "UploadCancel").ToString())
+        .DropFilesHere(HttpContext.GetGlobalResourceObject("Kendo", "UploadTextFiles").ToString())
+        .Remove(HttpContext.GetGlobalResourceObject("Kendo", "UploadRemove").ToString())
+        .Retry(HttpContext.GetGlobalResourceObject("Kendo", "UploadRetry").ToString())
+        .Select(HttpContext.GetGlobalResourceObject("Kendo", "UploadSelect").ToString())
+        .StatusFailed(HttpContext.GetGlobalResourceObject("Kendo", "UploadStatusFailed").ToString())
+        .StatusUploaded(HttpContext.GetGlobalResourceObject("Kendo", "UploadStatusUploaded").ToString())
+        .StatusUploading(HttpContext.GetGlobalResourceObject("Kendo", "UploadStatusUploading").ToString())
+        .UploadSelectedFiles(HttpContext.GetGlobalResourceObject("Kendo", "UploadSelectedFiles").ToString())
+    )
+    .Async(a => a
+        .Save("UploadTextFile", "Upload", new { 
+            TextType = Model.TextType, 
+            ResizeDefault = Model.ResizeDefault,
+            ResizeDefaultW = (int)Model.ResizeDefaultW,
+            ResizeDefaultH = (int)Model.ResizeDefaultH,
+            NotLiveImg = Model.NotLiveImg
+        })
+        .Remove("FileRemove", "Upload", new { 
+              TextType = Model.TextType, 
+            NotLiveImg = Model.NotLiveImg
+        })
+        .AutoUpload(true)
+    )
+    .Multiple(false)
+    .Events(events => events
+        .Cancel("TextkUploadOnCancel")
+        .Complete("TextkUploadOnComplete")
+        .Error("TextkUploadOnError")
+        .Remove("TextkUploadOnRemove")
+        .Select("TextkUploadOnSelect")
+        .Success("TextkUploadOnSuccess")
+        .Upload("TextkUploadOnUpload")
+    )
+    )

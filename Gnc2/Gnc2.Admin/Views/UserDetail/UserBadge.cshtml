@@ -1,0 +1,23 @@
+﻿@model Gnc2.Service.ServicesBadge.BadgeUserListModel
+
+<div>
+            @if (Model.Badges != null)
+            {
+
+                foreach (var item in Model.Badges)
+                {
+                    <div>@item.BadgeURL  </div>
+                    <div>@item.Points7Days</div>
+                    <div>@item.Rank</div>
+                    <div>@item.Level</div>
+                    <div>@item.BadgeURL</div>
+             
+                   <div> </div>
+                }
+
+            }
+            else
+            {
+                <div> Kullanıcının sahip olduğu bir rozet bulunmamaktır.</div>
+            }
+</div>

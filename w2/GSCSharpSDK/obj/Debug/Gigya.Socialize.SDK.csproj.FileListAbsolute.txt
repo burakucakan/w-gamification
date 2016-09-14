@@ -1,0 +1,5 @@
+C:\J\Projects\TurkcellWGamification\w2\GSCSharpSDK\bin\Debug\GSCSharpSDK.dll
+C:\J\Projects\TurkcellWGamification\w2\GSCSharpSDK\bin\Debug\GSCSharpSDK.pdb
+C:\J\Projects\TurkcellWGamification\w2\GSCSharpSDK\obj\Debug\Gigya.Socialize.SDK.csprojResolveAssemblyReference.cache
+C:\J\Projects\TurkcellWGamification\w2\GSCSharpSDK\obj\Debug\GSCSharpSDK.dll
+C:\J\Projects\TurkcellWGamification\w2\GSCSharpSDK\obj\Debug\GSCSharpSDK.pdb

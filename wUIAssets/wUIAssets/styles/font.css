@@ -1,0 +1,11 @@
+﻿@font-face {
+    font-family: 'social_gothicregular';
+    src: url('../fonts/socialgothic-webfont.eot');
+    src: url('../fonts/socialgothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/socialgothic-webfont.woff') format('woff'),
+         url('../fonts/socialgothic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fReg { font-family: 'social_gothicregular',"Arial"; } 

@@ -1,0 +1,107 @@
+﻿@using Gnc2.Com.Helpers;
+
+@model Gnc2.Service.ServiceLeaderBoard.LeaderListModel
+
+<section class="boxSmall fReg fRight">
+    <h3 class="boxTitle">Puan Tablosu</h3>
+
+    <section class="boxContent">
+        
+        <section class="leaderBoard">
+            <ul>
+                <li>
+                    <a href="javascript:;">
+                            <section class="order">01</section>
+                            <section class="image"><img src="@PathHelper.UrlStatic/images/_offline/users/nusret.jpg" /></section>
+
+                            <section class="userName">Nusret<br />Ö.</section>
+                            <section class="userPoint fReg">
+                               5.454
+                                <span class="userPointType">GNCPUAN</span>
+                            </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                            <section class="order">02</section>
+                            <section class="image"><img src="@PathHelper.UrlStatic/images/_offline/users/nusret.jpg" /></section>
+
+                            <section class="userName">Nusret<br />Ö.</section>
+                            <section class="userPoint fReg">
+                               5.454
+                                <span class="userPointType">GNCPUAN</span>
+                            </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                            <section class="order">03</section>
+                            <section class="image"><img src="@PathHelper.UrlStatic/images/_offline/users/nusret.jpg" /></section>
+
+                            <section class="userName">Nusret<br />Ö.</section>
+                            <section class="userPoint fReg">
+                               5.454
+                                <span class="userPointType">GNCPUAN</span>
+                            </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                            <section class="order">04</section>
+                            <section class="image"><img src="@PathHelper.UrlStatic/images/_offline/users/nusret.jpg" /></section>
+
+                            <section class="userName">Nusret<br />Ö.</section>
+                            <section class="userPoint fReg">
+                               5.454
+                                <span class="userPointType">GNCPUAN</span>
+                            </section>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                            <section class="order">05</section>
+                            <section class="image"><img src="@PathHelper.UrlStatic/images/_offline/users/nusret.jpg" /></section>
+
+                            <section class="userName">Nusret<br />Ö.</section>
+                            <section class="userPoint fReg">
+                               5.454
+                                <span class="userPointType">GNCPUAN</span>
+                            </section>
+                    </a>
+                </li>
+            </ul>
+
+            @*@{
+                if(Model.Leaders !=null)
+                {
+            <ul>
+
+                    @{int Order = 1;}
+                    @foreach (var item in Model.Leaders.OrderByDescending(m=>m.Point))
+                    {
+
+                         <li>
+                    <a href="javascript:;">
+                            <section class="order">@Order++;</section>
+                            <section class="image"><img src="@PathHelper.UrlStatic/images/_offline/users/@item.Picture" /></section>
+
+                            <section class="userName">@item.Name<br />Ö.</section>
+                            <section class="userPoint fReg">
+                               @item.Point 
+                                <span class="userPointType">GNCPUAN</span>
+                            </section>
+                    </a>
+                </li>
+                    } 
+
+            </ul>
+            }
+            }*@
+        </section>
+
+        <ins></ins>
+
+        <a href="javascript:;" class="btn fRight">Daha Fazla</a>
+
+    </section>
+</section>

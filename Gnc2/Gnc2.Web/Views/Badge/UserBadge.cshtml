@@ -1,0 +1,36 @@
+﻿@using Gnc2.Com.Helpers;
+
+@model Gnc2.Service.ServicesBadge.BadgeUserListModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserBadge</title>
+</head>
+<body>
+    <div>
+        
+
+        @if (Model.Badges == null)
+        {
+            <text> Sahip olduğunuz bir rozet bulunmamaktadır. </text>
+        }
+        else
+        {
+            foreach (var item in Model.Badges)
+            {
+                item.BadgeURL = "";
+            }
+            
+        }
+
+      
+    </div>
+</body>
+</html>

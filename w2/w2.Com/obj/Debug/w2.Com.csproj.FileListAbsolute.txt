@@ -1,0 +1,5 @@
+C:\J\Projects\TurkcellWGamification\w2\w2.Com\bin\Debug\w2.Com.dll
+C:\J\Projects\TurkcellWGamification\w2\w2.Com\bin\Debug\w2.Com.pdb
+C:\J\Projects\TurkcellWGamification\w2\w2.Com\obj\Debug\w2.Com.csprojResolveAssemblyReference.cache
+C:\J\Projects\TurkcellWGamification\w2\w2.Com\obj\Debug\w2.Com.dll
+C:\J\Projects\TurkcellWGamification\w2\w2.Com\obj\Debug\w2.Com.pdb

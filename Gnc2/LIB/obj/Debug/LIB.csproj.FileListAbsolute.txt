@@ -1,0 +1,4 @@
+C:\J\Projects\TurkcellWGamification\Gnc2\LIB\bin\Debug\LIB.dll
+C:\J\Projects\TurkcellWGamification\Gnc2\LIB\bin\Debug\LIB.pdb
+C:\J\Projects\TurkcellWGamification\Gnc2\LIB\obj\Debug\LIB.dll
+C:\J\Projects\TurkcellWGamification\Gnc2\LIB\obj\Debug\LIB.pdb

@@ -1,0 +1,9 @@
+﻿@using Gnc2.Com.Helpers
+<section class="userInfo">
+    
+    <img src="@Gnc2.Com.Helpers.UrlHelper.Images.AdminUser(Gnc2.Admin.App_Manager.SessionManager.GetInstance().UserPhoto, Gnc2.Com.Virtual.Enums.ImageSizeNaming.Preview)" onerror="NoImage(this)" />
+
+    @Gnc2.Admin.App_Manager.SessionManager.GetInstance().FullName <br />
+    @Html.ActionLink(HttpContext.GetGlobalResourceObject("Global", "UserProfile").ToString(), "UserSelfForm", "AdminUser")
+
+</section>

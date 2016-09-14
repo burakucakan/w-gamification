@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GigyaLogModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="GigyaLogModelStoreContainer">
+          <EntitySet Name="GigyaLogs" EntityType="GigyaLogModel.Store.GigyaLogs" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="GigyaLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApiMethod" Type="nvarchar" MaxLength="50" />
+          <Property Name="ApiKey" Type="nvarchar" MaxLength="250" />
+          <Property Name="ClientParams" Type="nvarchar(max)" />
+          <Property Name="Response" Type="nvarchar(max)" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="VendorId" Type="uniqueidentifier" />
+          <Property Name="ErrorCode" Type="int" />
+          <Property Name="CallId" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GigyaLogModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="GigyaLogEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="GigyaLogs" EntityType="GigyaLogModel.GigyaLogs" />
+        </EntityContainer>
+        <EntityType Name="GigyaLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="String" Name="ApiMethod" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ApiKey" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ClientParams" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Response" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+          <Property Type="Guid" Name="VendorId" />
+          <Property Type="Int32" Name="ErrorCode" />
+          <Property Type="String" Name="CallId" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GigyaLogModelStoreContainer" CdmEntityContainer="GigyaLogEntities">
+          <EntitySetMapping Name="GigyaLogs">
+            <EntityTypeMapping TypeName="GigyaLogModel.GigyaLogs">
+              <MappingFragment StoreEntitySet="GigyaLogs">
+                <ScalarProperty Name="CallId" ColumnName="CallId" />
+                <ScalarProperty Name="ErrorCode" ColumnName="ErrorCode" />
+                <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Response" ColumnName="Response" />
+                <ScalarProperty Name="ClientParams" ColumnName="ClientParams" />
+                <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+                <ScalarProperty Name="ApiMethod" ColumnName="ApiMethod" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

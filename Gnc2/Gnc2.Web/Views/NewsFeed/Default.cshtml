@@ -1,0 +1,124 @@
+﻿@using Gnc2.Com.Helpers;
+
+<section class="gray">
+    <section class="grayTitle">
+        <section class="gnc2Container fReg">
+            <section class="fLeft">
+                <span class="fLeft">GNC2’de Neler Oluyor?</span>
+            </section>
+        </section>
+    </section>
+    <section class="grayContent">
+        <section class="gnc2Container">
+
+            <script>
+                $(function () {
+                    feedIn();
+                    setInterval(function () {
+                        getNewsFeed();
+                    }, 5000);
+                });
+
+                function getNewsFeed() {
+                    feedsOut();
+                    setTimeout(function () {
+                        $("#newsFeed").load("/NewsFeed/DefaultContainer", function (responseText, textStatus, req) {
+                            _feedItemIndex = 0;
+                            feedIn();
+                        });
+                    }, 500);
+                }
+
+                var _feedItemIndex = 0;
+                function feedIn() {
+                    setTimeout(function () {
+                        for (var i = 0; i < 6; i++) {
+                            feedAnimateIn(_feedItemIndex);
+                        }
+                    }, 500);
+                };
+
+                function feedsOut() {
+                    for (var i = 0; i < 6; i++) {
+                        feedAnimateOut(i);
+                    }
+                }
+
+                function feedAnimateIn(itemIndex) {
+                    var item = $(".newsFeed > .feed").eq(itemIndex);
+                    setTimeout(function () {
+                        $(item).animate({
+                            opacity: "1"
+                        }, 200);
+                    }, itemIndex * 50);
+                    _feedItemIndex++;
+                }
+
+                function feedAnimateOut(itemIndex) {
+                    var item = $(".newsFeed > .feed").eq(itemIndex);
+                    setTimeout(function () {
+                        $(item).animate({
+                            opacity: "0"
+                        }, 200);
+                    }, itemIndex * 50);
+                }
+            </script>
+
+			<section class="newsFeed" id="newsFeed">
+
+                <section class="feed">
+    <section class="fLeft"><img src="@PathHelper.UrlStatic/images/_offline/users/nusret.jpg" /></section>
+    <section class="fRight">
+        <span class="ballon fReg">+150</span>
+        <label class="name">Nusret S.</label>
+        <label class="desc"><u>Kahve Fırsatını</u> yakaladı.</label>
+    </section>
+</section>
+
+<section class="feed">
+    <section class="fLeft"><img src="@PathHelper.UrlStatic/images/_offline/users/lara.jpg" /></section>
+    <section class="fRight">
+        <label class="name">Lara A.</label>
+        <label class="desc"><u>SMS Paketi Rozetini</u> Aldı.</label>
+    </section>
+</section>
+
+<section class="feed">
+    <section class="fLeft"><img src="@PathHelper.UrlStatic/images/_offline/users/nusret.jpg" /></section>
+    <section class="fRight">
+        <span class="ballon fReg">+150</span>
+        <label class="name">Nusret S.</label>
+        <label class="desc"><u>Kahve Fırsatını</u> yakaladı.</label>
+    </section>
+</section>
+
+<section class="feed">
+    <section class="fLeft"><img src="@PathHelper.UrlStatic/images/_offline/users/merve.jpg" /></section>
+    <section class="fRight">
+        <label class="name">Merve Ö.</label>
+        <label class="desc"><u>Sinema Fırsatını</u> yakaladı.</label>
+    </section>
+</section>
+
+<section class="feed">
+    <section class="fLeft"><img src="@PathHelper.UrlStatic/images/_offline/users/lara.jpg" /></section>
+    <section class="fRight">
+        <label class="name">Lara A.</label>
+        <label class="desc"><u>SMS Paketi Rozetini</u> Aldı.</label>
+    </section>
+</section>
+
+<section class="feed">
+    <section class="fLeft"><img src="@PathHelper.UrlStatic/images/_offline/users/merve.jpg" /></section>
+    <section class="fRight">
+        <span class="ballon fReg">+150</span>
+        <label class="name">Merve Ö.</label>
+        <label class="desc"><u>Sinema Fırsatını</u> yakaladı.</label>
+    </section>
+</section>
+
+			</section>
+
+        </section>
+    </section>
+</section>

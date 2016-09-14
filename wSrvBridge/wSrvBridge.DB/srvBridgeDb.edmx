@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="srvBridgeDb.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="srvBridgeDbStoreContainer">
+          <EntitySet Name="QDBOfferList" EntityType="srvBridgeDb.Store.QDBOfferList" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="QDBValueTrackers" EntityType="srvBridgeDb.Store.QDBValueTrackers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ServiceLogs" EntityType="srvBridgeDb.Store.ServiceLogs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WebServices" EntityType="srvBridgeDb.Store.WebServices" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="QDBOfferList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OfferId" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="OfferUniqueName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FilterStatus" Type="bit" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QDBValueTrackers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LastTimestamp" Type="datetime" Nullable="false" />
+          <Property Name="LastProvId" Type="int" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ServiceLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LogLevel" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="Naming" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Operation" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ExceptionType" Type="nvarchar" MaxLength="50" />
+          <Property Name="ActivePlatform" Type="int" Nullable="false" />
+          <Property Name="ResponseData" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Referrer" Type="nvarchar(max)" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebServices">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PlatformType" Type="int" Nullable="false" />
+          <Property Name="Naming" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ConfigName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ServiceUrl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedAt" Type="datetime" />
+        </EntityType>
+        <Function Name="uspGetMeteringTransactions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="srvBridgeDb" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="srvBridgeDbContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="QDBValueTrackers" EntityType="srvBridgeDb.QDBValueTracker" />
+          <EntitySet Name="WebServices" EntityType="srvBridgeDb.WebService" />
+          <EntitySet Name="ServiceLogs" EntityType="srvBridgeDb.ServiceLog" />
+          <FunctionImport Name="uspGetMeteringTransactions" ReturnType="Collection(srvBridgeDb.uspGetMeteringTransactions_Result)" />
+          <EntitySet Name="QDBOfferList" EntityType="srvBridgeDb.QDBOfferList" />
+        </EntityContainer>
+        <EntityType Name="QDBValueTracker">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="LastTimestamp" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="LastProvId" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedAt" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="WebService">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PlatformType" Nullable="false" />
+          <Property Type="String" Name="Naming" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ConfigName" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="ServiceUrl" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedAt" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="ModifiedAt" Precision="3" />
+        </EntityType>
+        <EntityType Name="ServiceLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="LogLevel" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Message" MaxLength="Max" Nullable="true" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Naming" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Operation" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="ExceptionType" Nullable="true" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="ActivePlatform" Nullable="false" />
+          <Property Type="String" Name="ResponseData" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="Referrer" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="DateTime" Name="CreatedAt" Nullable="false" Precision="3" />
+        </EntityType>
+        <ComplexType Name="uspGetMeteringTransactions_Result">
+          <Property Type="Int32" Name="METERING_PROV_ID" Nullable="false" />
+          <Property Type="String" Name="BSSOSS_MSISDN" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="OFFER_ID" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="TIMESTAMP" Nullable="true" Precision="23" />
+        </ComplexType>
+        <EntityType Name="QDBOfferList">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="OfferId" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OfferUniqueName" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Type="Boolean" Name="FilterStatus" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedAt" Nullable="false" Precision="3" />
+        </EntityType>
+        <ComplexType Name="uspGetMeteringTransactions1_Result">
+          <Property Type="Int32" Name="METERING_PROV_ID" Nullable="false" />
+          <Property Type="String" Name="BSSOSS_MSISDN" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="OFFER_ID" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="TIMESTAMP" Nullable="true" Precision="23" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="srvBridgeDbStoreContainer" CdmEntityContainer="srvBridgeDbContainer">
+    <EntitySetMapping Name="QDBValueTrackers">
+      <EntityTypeMapping TypeName="IsTypeOf(srvBridgeDb.QDBValueTracker)">
+        <MappingFragment StoreEntitySet="QDBValueTrackers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LastTimestamp" ColumnName="LastTimestamp" />
+          <ScalarProperty Name="LastProvId" ColumnName="LastProvId" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebServices">
+      <EntityTypeMapping TypeName="IsTypeOf(srvBridgeDb.WebService)">
+        <MappingFragment StoreEntitySet="WebServices">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PlatformType" ColumnName="PlatformType" />
+          <ScalarProperty Name="Naming" ColumnName="Naming" />
+          <ScalarProperty Name="ConfigName" ColumnName="ConfigName" />
+          <ScalarProperty Name="ServiceUrl" ColumnName="ServiceUrl" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="ModifiedAt" ColumnName="ModifiedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceLogs">
+      <EntityTypeMapping TypeName="IsTypeOf(srvBridgeDb.ServiceLog)">
+        <MappingFragment StoreEntitySet="ServiceLogs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LogLevel" ColumnName="LogLevel" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Naming" ColumnName="Naming" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+          <ScalarProperty Name="ExceptionType" ColumnName="ExceptionType" />
+          <ScalarProperty Name="ActivePlatform" ColumnName="ActivePlatform" />
+          <ScalarProperty Name="ResponseData" ColumnName="ResponseData" />
+          <ScalarProperty Name="Referrer" ColumnName="Referrer" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QDBOfferList">
+      <EntityTypeMapping TypeName="IsTypeOf(srvBridgeDb.QDBOfferList)">
+        <MappingFragment StoreEntitySet="QDBOfferList">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OfferId" ColumnName="OfferId" />
+          <ScalarProperty Name="OfferUniqueName" ColumnName="OfferUniqueName" />
+          <ScalarProperty Name="FilterStatus" ColumnName="FilterStatus" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="uspGetMeteringTransactions" FunctionName="srvBridgeDb.Store.uspGetMeteringTransactions">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="srvBridgeDb.uspGetMeteringTransactions_Result">
+                <ScalarProperty Name="METERING_PROV_ID" ColumnName="METERING_PROV_ID" />
+                <ScalarProperty Name="BSSOSS_MSISDN" ColumnName="BSSOSS_MSISDN" />
+                <ScalarProperty Name="OFFER_ID" ColumnName="OFFER_ID" />
+                <ScalarProperty Name="TIMESTAMP" ColumnName="TIMESTAMP" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

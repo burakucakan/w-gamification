@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "gnctrkcll";
+}
+@using Gnc2.Com.Helpers;
+
+@Html.Action("LoginSummary","Dashboard")
+
+@Html.Action("MyBadges", "Badge") 
+
+<section class="gnc2Container">
+ 
+    @{Html.RenderAction("Default", "LineSummary");}
+ 
+    @{Html.RenderAction("Default", "LeaderBoard");}
+
+    <ins class="space18"></ins>
+    <ins class="space18"></ins>
+
+    @Html.Action("HomePageCampaing","Campaing")
+
+</section>

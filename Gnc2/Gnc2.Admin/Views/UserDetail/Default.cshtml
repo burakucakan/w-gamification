@@ -1,0 +1,21 @@
+﻿@using Gnc2.Admin.App_Manager
+
+@Helper.BodyNav(Html, "UserDetail", false, false, false, false)
+
+@section Scripts {
+
+}
+
+<aside class="panel main">
+
+    @{Html.RenderAction("UserPoint", "UserDetail");}
+
+    <br />
+    <ins></ins>
+
+    @{Html.RenderAction("UserBadge", "UserDetail");}
+
+    @{Html.RenderAction("GetAllBadge", "UserDetail");}
+
+</aside>
+    @Html.Partial("Common/FormFooterNotSubmit")

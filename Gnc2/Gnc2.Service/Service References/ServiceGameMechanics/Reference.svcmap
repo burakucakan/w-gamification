@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6dcc02cd-b572-4f4f-83fd-0d5c820cb2cb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:18348/GameMechanics.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GameMechanics.xsd" MetadataType="Schema" ID="3c82096a-e616-4358-b40f-e49bde19b5ef" SourceId="1" SourceUrl="http://localhost:18348/GameMechanics.svc?xsd=xsd0" />
+    <MetadataFile FileName="GameMechanics1.xsd" MetadataType="Schema" ID="3b49a265-b142-40dd-aea1-efef4c8cfba8" SourceId="1" SourceUrl="http://localhost:18348/GameMechanics.svc?xsd=xsd3" />
+    <MetadataFile FileName="GameMechanics2.xsd" MetadataType="Schema" ID="49514710-b1f8-4256-a142-21b45b978ba2" SourceId="1" SourceUrl="http://localhost:18348/GameMechanics.svc?xsd=xsd2" />
+    <MetadataFile FileName="GameMechanics.disco" MetadataType="Disco" ID="54b47b5c-186c-4aa8-904e-7e088fb77285" SourceId="1" SourceUrl="http://localhost:18348/GameMechanics.svc?disco" />
+    <MetadataFile FileName="GameMechanics.wsdl" MetadataType="Wsdl" ID="d9ebd1e4-7890-455f-8748-cb2602f2b280" SourceId="1" SourceUrl="http://localhost:18348/GameMechanics.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="GameMechanics1.wsdl" MetadataType="Wsdl" ID="beea1c0c-0e90-4ef5-86aa-d229d1445315" SourceId="1" SourceUrl="http://localhost:18348/GameMechanics.svc?wsdl" />
+    <MetadataFile FileName="GameMechanics3.xsd" MetadataType="Schema" ID="e7deb210-915a-44b2-877e-94a0d1731252" SourceId="1" SourceUrl="http://localhost:18348/GameMechanics.svc?xsd=xsd5" />
+    <MetadataFile FileName="GameMechanics4.xsd" MetadataType="Schema" ID="ce34950a-5ef9-4fb8-932a-07b7a5190d28" SourceId="1" SourceUrl="http://localhost:18348/GameMechanics.svc?xsd=xsd4" />
+    <MetadataFile FileName="GameMechanics5.xsd" MetadataType="Schema" ID="08416bb0-6bc4-4720-b2e7-708fb7f95417" SourceId="1" SourceUrl="http://localhost:18348/GameMechanics.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,267 @@
+﻿@{
+    ViewBag.Title = "Puan Kataloğu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Gnc2.Com.Helpers;
+
+<section class="gnc2Container fReg">
+    <h3 class="grayTitle">PUAN KATALOĞU</h3>
+
+    <script>
+
+        var filters = { Categories: [] };
+        var sort=1;
+
+        $(function () {
+            catalogFilterFields();
+            getAllCatalogCategories();
+            getCategories();
+            categoriesSort();
+            scoreSufficient();
+
+            $("#Search").on("keyup", function (e) {
+                kGridSearch(categoriesDataSource, e, filters);
+            });
+        });
+
+        function catalogFilterFields() {
+            $(".catalogFilters > .categories > .fields > a.radioBtn").live("click", function () {
+                var classNames = $(this).attr("class");
+                var id = $(this).attr("data-id");
+                if (classNames.indexOf("active")!=-1) {
+                    $(this).removeClass("active");
+                    removeFilter(id);
+                }
+                else {
+                    $(this).addClass("active");
+                    filters.Categories.push(
+                        { "Id": id }
+                    );
+                }
+                categoriesFilters();
+            });
+        }
+
+        function scoreSufficient(){
+            $(".boxLarge > .fields > a.radioBtn").live("click", function(){
+                var classNames = $(this).attr("class");
+                var id = $(this).attr("data-id");
+                if (classNames.indexOf("active")!=-1) {
+                    $(this).removeClass("active");
+                }
+                else {
+                    $(this).addClass("active");
+                }
+                getCategories();
+            });
+        }
+        
+        function removeFilter(id) {
+            var _indexCount=0;
+            for (var i = 0; i < filters.Categories.length; i++) {
+                _indexCount++;
+                if (filters.Categories[i].Id == id) {
+                    filters.Categories.splice(parseInt(_indexCount-1), 1);
+                    _indexCount=0;
+                }
+            }
+        }
+
+
+        function getAllCatalogCategories() {
+            var template = kendo.template($("#categoryTemplate").html());
+            var dataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: "/Catalogs/GetAllCatalogCategories",
+                        dataType: "json"
+                    }
+                },
+                schema: {
+                    model: {
+                        fields: {
+                            Id: { type: "int" },
+                            CategoryName: { type: "string" }
+                        }
+                    }
+                },
+                change: function () {
+                    $(".catalogFilters > .categories > .fields").html(kendo.render(template, this.view()));
+
+                    @if (ViewBag.CatalogCategoriesId!=null){
+                    <text>
+                        var dataId=@ViewBag.CatalogCategoriesId+"";
+                        $("a[data-id=" + dataId + "]").addClass("active");
+                        filters.Categories.push(
+                            { "Id": @ViewBag.CatalogCategoriesId }
+                        );
+                        categoriesFilters();
+                    </text>
+                }
+                }
+            });
+
+            dataSource.read();
+
+        }
+        var categoriesDataSource;
+        function getCategories() {
+            loadingOpen();
+            var template = kendo.template($("#catalogTemplate").html());
+            categoriesDataSource = new kendo.data.DataSource({
+                transport: {
+                    read: {
+                        url: "/Catalogs/GetCategories",
+                        dataType: "json"
+                    }
+                },
+                pageSize:9,
+                schema: {
+                    model: {
+                        fields: {
+                            Id: { type: "int" },
+                            CatalogName: { type: "string" },
+                            CatalogImage: { type: "string" },
+                            CatalogPoint: { type: "int" },
+                            CatalogStartDate: { type: "date" }
+                        }
+                    }
+                },
+                change: function () {
+                    $(".catalogs").html(kendo.render(template, this.view()));
+                    $(".catalog").hide().fadeIn('slow');
+                    loadingClose();
+                    $(".catalogTotal").html("TOPLAM: "+categoriesDataSource.total()+" ÜRÜN");
+                }
+            });
+
+            categoriesDataSource.read();
+
+            $("#pager").kendoPager({
+                autoBind: false,
+                dataSource: categoriesDataSource
+            });
+        }
+
+        function categoriesFilters() {
+            var jsonObj = {"logic":"or", filters: [] };
+            for (var i = 0; i < filters.Categories.length; i++) {
+                jsonObj.filters.push({"field": "CatalogCategoriesId","operator":"eq","value":  parseInt(filters.Categories[i].Id) });
+            }
+            categoriesDataSource.filter(jsonObj);
+        }
+
+        function categoriesSort(){
+            $("#Order").change(function(){
+                sort=$(this).val();
+                if(sort=="1"){
+                    categoriesDataSource.sort({ field: "CatalogStartDate", dir: "asc" })
+                }
+                else if(sort=="2"){
+                    categoriesDataSource.sort({ field: "CatalogPoint", dir: "asc" })
+                }
+                else if(sort=="3"){
+                    categoriesDataSource.sort({ field: "CatalogName", dir: "asc" })
+                }
+                else if(sort=="4"){
+                    categoriesDataSource.sort({ field: "CatalogName", dir: "desc" })
+                }
+            });
+        }
+
+        function loadingOpen() {
+            var h = $(".catalogs").height();
+            h = parseInt(h) / 2;
+
+            $(".loading").attr("style", "height:" + h + "px; padding-top:" + h + "px;").fadeIn();
+        }
+        function loadingClose() {
+            $(".loading").fadeOut();
+        }
+    </script>
+
+    <script type="text/template" id="categoryTemplate">
+        <a href="javascript:;" data-id="#= Id #" class="radioBtn">#= CategoryName #</a>
+    </script>
+
+    <script type="text/template" id="catalogTemplate">
+        <a href="@PathHelper.UrlWeb/Catalogs/Detail/#= Id #" class="catalog">
+            <img src="@PathHelper.UrlStatic/images/catalogs/#= CatalogImage #" />
+            <aside class="catalogInfo">
+                <span class="title">#= CatalogName #</span>
+                <span class="point">#= CatalogPoint # GNCPUAN</span>
+            </aside>
+        </a>
+    </script>
+
+    <section class="catalogFilters">
+        <h4 class="pinkTitle">FİLTERELE:</h4>
+
+        <section class="categories">
+            <section class="fields">
+            </section>
+        </section>
+    </section>
+
+    <section class="boxLarge fReg fLeft">
+
+        <section class="fields">
+            <a href="javascript:;" class="radioBtn">SADECE PUANIM YETENLERİ GÖSTER</a>
+
+            <section class="order fLeft">
+                <script>
+                    $(function () {
+                        $("#Order").kendoDropDownList({
+                            dataTextField: "Text",
+                            dataValueField: "Value",
+                            dataSource: {
+                                transport: {
+                                    read: {
+                                        dataType: "json",
+                                        url: "/Catalogs/GetOrderFilters",
+                                    }
+                                }
+                            }
+                        });
+                    });
+                </script>
+                <label>SIRALA</label>
+                <select name="Order" id="Order" style="width:235px;">
+                </select>
+            </section>
+
+            <script>
+                $(function(){
+                    $("#Search").live("focus",function(){
+                        $(".search > .s-icon").animate({
+                            opacity:1
+                        },500);
+                    });
+                    $("#Search").live("blur",function(){
+                        $(".search > .s-icon").animate({
+                            opacity:"0.5"
+                        },500);
+                    });
+                });
+            </script>
+
+            <section class="search fLeft">
+                <input type="text" name="Search" id="Search" placeholder="Ürün Ara" />
+                <span class="s-icon"></span>
+            </section>
+            
+        </section>
+
+        <ins></ins>
+
+        <section class="loading"><img src="@PathHelper.UrlUIAssets/images/global/loader-large.gif" /></section>
+        <section class="catalogs">
+        </section>
+        <ins></ins>
+        <section class="catalogTotal"></section>
+        <section id="pager"></section>
+
+
+    </section>
+
+</section>

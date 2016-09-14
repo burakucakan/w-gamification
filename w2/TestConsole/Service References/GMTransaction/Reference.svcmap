@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="65173904-f8c1-4e5d-b876-ec67cd3fea75" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:18348/GMTransaction.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GMTransaction.xsd" MetadataType="Schema" ID="28a30404-1bcf-43f6-aa28-cce9babbf889" SourceId="1" SourceUrl="http://localhost:18348/GMTransaction.svc?xsd=xsd4" />
+    <MetadataFile FileName="GMTransaction2.xsd" MetadataType="Schema" ID="dcd965ad-dbf8-4856-afac-660410f0fa8e" SourceId="1" SourceUrl="http://localhost:18348/GMTransaction.svc?xsd=xsd2" />
+    <MetadataFile FileName="GMTransaction3.xsd" MetadataType="Schema" ID="5e847d59-e6f4-4bcd-a941-7322268b6953" SourceId="1" SourceUrl="http://localhost:18348/GMTransaction.svc?xsd=xsd3" />
+    <MetadataFile FileName="GMTransaction4.xsd" MetadataType="Schema" ID="dda9fc9a-df38-47b8-b55a-3284d204fe2b" SourceId="1" SourceUrl="http://localhost:18348/GMTransaction.svc?xsd=xsd0" />
+    <MetadataFile FileName="GMTransaction5.xsd" MetadataType="Schema" ID="f0a0c8b8-611a-4453-9fb3-4afeb72214d2" SourceId="1" SourceUrl="http://localhost:18348/GMTransaction.svc?xsd=xsd1" />
+    <MetadataFile FileName="GMTransaction.disco" MetadataType="Disco" ID="f2c0c34f-4201-4de9-aa6b-5eb8a68b6460" SourceId="1" SourceUrl="http://localhost:18348/GMTransaction.svc?disco" />
+    <MetadataFile FileName="GMTransaction.wsdl" MetadataType="Wsdl" ID="62978bab-7090-468d-b2be-85b429f5de1d" SourceId="1" SourceUrl="http://localhost:18348/GMTransaction.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

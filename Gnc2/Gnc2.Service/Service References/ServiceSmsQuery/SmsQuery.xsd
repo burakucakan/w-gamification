@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/w2.Ws" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/w2.Ws" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18348/ws/SmsQuery.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/w2.Ws.Models" />
+  <xs:complexType name="SmsQueryRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SmsQueryRequest" nillable="true" type="tns:SmsQueryRequest" />
+  <xs:complexType name="SmsQueryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/w2.Ws.Models" base="q1:BaseWsModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SmsText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalPoints" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SmsQueryResponse" nillable="true" type="tns:SmsQueryResponse" />
+  <xs:complexType name="SmsQueryActionRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SmsQueryActionRequest" nillable="true" type="tns:SmsQueryActionRequest" />
+  <xs:complexType name="SmsQueryActionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/w2.Ws.Models" base="q2:BaseWsModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionPoints" type="xs:int" />
+          <xs:element minOccurs="0" name="SmsText" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SmsQueryActionResponse" nillable="true" type="tns:SmsQueryActionResponse" />
+</xs:schema>

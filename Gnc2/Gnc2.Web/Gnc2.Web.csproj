@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8A3AB55-E3D3-4369-9C84-2B79BF2B96E0}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gnc2</RootNamespace>
+    <AssemblyName>Gnc2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Facebook.6.1.4\lib\net40-client\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Mvc.Facebook">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.Facebook.0.3.0-rc\lib\net45\Microsoft.AspNet.Mvc.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MvcHelper">
+      <HintPath>..\packages\MvcHelper\MvcHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.ServiceModel.Channels" />
+    <Reference Include="System.ServiceModel.Discovery" />
+    <Reference Include="System.ServiceModel.Routing" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\w2\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\w2\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Manager\ConfigManager.cs" />
+    <Compile Include="App_Manager\DataSourceManager.cs" />
+    <Compile Include="App_Manager\SelectListHelper.cs" />
+    <Compile Include="App_Manager\SessionManager.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BadgeController.cs" />
+    <Compile Include="Controllers\BannersController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CampaingController.cs" />
+    <Compile Include="Controllers\CatalogsController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\GlobalController.cs" />
+    <Compile Include="Controllers\JsonController.cs" />
+    <Compile Include="Controllers\LeaderBoardController.cs" />
+    <Compile Include="Controllers\LineSummaryController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NewsFeedController.cs" />
+    <Compile Include="Controllers\RechargeController.cs" />
+    <Compile Include="Controllers\RechargeCreditController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BadgeModel.cs" />
+    <Compile Include="Models\BannersModel.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\JsonReturnModel.cs" />
+    <Compile Include="Models\LogonUserModel.cs" />
+    <Compile Include="Models\ResultModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ws\BaseWS.cs" />
+    <Compile Include="Ws\IUser.cs" />
+    <Compile Include="Ws\User.svc.cs">
+      <DependentUpon>User.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Ws\UserLogin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="images\_offline\gnc2-aylar.png" />
+    <Content Include="images\_offline\gnc2-de-neler-oluyor.png" />
+    <Content Include="images\_offline\menu1_banner.jpg" />
+    <Content Include="Sample.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Ws\User.svc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Filters\" />
+    <Folder Include="images\content\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutPopup.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gnc2.Com\Gnc2.Com.csproj">
+      <Project>{21a72786-1bd3-4772-89b7-ac24c312fc89}</Project>
+      <Name>Gnc2.Com</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gnc2.DB\Gnc2.DB.csproj">
+      <Project>{06b85d69-bba3-4baf-a13c-f4f4a1f5931f}</Project>
+      <Name>Gnc2.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gnc2.Service\Gnc2.Service.csproj">
+      <Project>{5c2ef67a-68b5-4848-a7ca-279e28ecca4a}</Project>
+      <Name>Gnc2.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gnc2.Static\Gnc2.Static.csproj">
+      <Project>{f1060f17-d922-4910-aff0-7bfc83336a49}</Project>
+      <Name>Gnc2.Static</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LIB\LIB.csproj">
+      <Project>{7e338258-5852-4955-aba2-b357c05767b8}</Project>
+      <Name>LIB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Default.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\SsoResult.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\SsoCompleted.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\LinkSocial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Styles.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Scripts.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Header_Unlogin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Footer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_PopupStyles.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_PopupScripts.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Common\Result.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Badge\MainBadge.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Test\Badge.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Occasion\Occasion.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Banners\Default.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LeaderBoard\Default.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\DataProcessing.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\TermsofUse.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Badge\MyBadges.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NewsFeed\Default.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dashboard\Summary.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LineSummary\Default.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Recharge\Default.cshtml" />
+    <Content Include="Views\Recharge\Step2.cshtml" />
+    <Content Include="Views\Recharge\Step3.cshtml" />
+    <Content Include="Views\Recharge\Step4.cshtml" />
+    <Content Include="Views\Recharge\Step5.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\RechargeCredit\Default.cshtml" />
+    <Content Include="Views\RechargeCredit\Step2.cshtml" />
+    <Content Include="Views\RechargeCredit\Step3.cshtml" />
+    <Content Include="Views\RechargeCredit\Step4.cshtml" />
+    <Content Include="Views\RechargeCredit\Step5.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NewsFeed\DefaultContainer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Campaing\HomePageCampaing.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dashboard\Default.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NewsFeed\Data.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PackageLoad\Default.cshtml" />
+    <Content Include="Views\PackageLoad\Step2.cshtml" />
+    <Content Include="Views\PackageLoad\Step3.cshtml" />
+    <Content Include="Views\PackageLoad\Step4.cshtml" />
+    <Content Include="Views\PackageLoad\Step5.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TLLoad\Default.cshtml" />
+    <Content Include="Views\TLLoad\Step2.cshtml" />
+    <Content Include="Views\TLLoad\Step3.cshtml" />
+    <Content Include="Views\TLLoad\Step4.cshtml" />
+    <Content Include="Views\TLLoad\Step5.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dashboard\LoginSummary.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Catalogs\Default.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Catalogs\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Common\AddThis.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Header_AfterLogin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Common\PackageLoad.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Common\Menu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Dashboard\Default_AfterLogin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\LoginType.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\SpecialForYou.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\RegisterFb.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\kosul.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Badge\UserBadge.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\HeaderProfile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Global\GncScore.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Global\GncRemaining.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Global\PartialError.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Global\GncBadges.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Campaing\campaign.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>35022</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:18132/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

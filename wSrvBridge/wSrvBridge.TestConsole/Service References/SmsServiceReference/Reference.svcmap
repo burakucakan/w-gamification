@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="03900d64-a63f-44b4-a9a2-76b194fa1d96" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://wanda_wsrvlocator.turkcell.com.tr/GncSmsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GncSmsService.disco" MetadataType="Disco" ID="b14f7da8-19db-4b73-b31d-ddeb92fbbbea" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncSmsService.svc?disco" />
+    <MetadataFile FileName="GncSmsService.xsd" MetadataType="Schema" ID="598604ca-c1df-45fd-a304-03fa02c74851" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncSmsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GncSmsService1.xsd" MetadataType="Schema" ID="466126c5-958f-4de6-b264-567123a9d842" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncSmsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SmsService.wsdl" MetadataType="Wsdl" ID="ec948d35-eb38-485d-81ae-1b20db31b546" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncSmsService.svc?wsdl" />
+    <MetadataFile FileName="GncSmsService2.xsd" MetadataType="Schema" ID="37943e40-8535-43e3-832e-23049dfce474" SourceId="1" SourceUrl="http://wanda_wsrvlocator.turkcell.com.tr/GncSmsService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

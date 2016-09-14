@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f3bdeccc-ea6c-4f07-a6af-5c608765b9ec" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:18348/SmsQuery.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SmsQuery.wsdl" MetadataType="Wsdl" ID="764b3943-2d17-4e63-93d0-5866e00fa6a4" SourceId="1" SourceUrl="http://localhost:18348/SmsQuery.svc?wsdl" />
+    <MetadataFile FileName="SmsQuery.xsd" MetadataType="Schema" ID="687d8afa-c8cd-4abd-b98a-16bb90a1b808" SourceId="1" SourceUrl="http://localhost:18348/SmsQuery.svc?xsd=xsd2" />
+    <MetadataFile FileName="SmsQuery1.xsd" MetadataType="Schema" ID="954fa8bc-8610-473d-9f63-9c99934d2cb1" SourceId="1" SourceUrl="http://localhost:18348/SmsQuery.svc?xsd=xsd0" />
+    <MetadataFile FileName="SmsQuery1.wsdl" MetadataType="Wsdl" ID="e90ef200-9f33-46bc-a9fa-81bead58a130" SourceId="1" SourceUrl="http://localhost:18348/SmsQuery.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SmsQuery2.xsd" MetadataType="Schema" ID="97dedab2-d3a2-482b-8342-aeb84b0b0aac" SourceId="1" SourceUrl="http://localhost:18348/SmsQuery.svc?xsd=xsd3" />
+    <MetadataFile FileName="SmsQuery.disco" MetadataType="Disco" ID="4f098a94-4a61-4a9b-9c09-0f6df204886a" SourceId="1" SourceUrl="http://localhost:18348/SmsQuery.svc?disco" />
+    <MetadataFile FileName="SmsQuery3.xsd" MetadataType="Schema" ID="2c3fd747-1ed6-4635-bafe-ca577007883e" SourceId="1" SourceUrl="http://localhost:18348/SmsQuery.svc?xsd=xsd1" />
+    <MetadataFile FileName="SmsQuery4.xsd" MetadataType="Schema" ID="31a9a097-d4e8-4376-aa88-d036d46f306e" SourceId="1" SourceUrl="http://localhost:18348/SmsQuery.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

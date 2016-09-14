@@ -1,0 +1,247 @@
+﻿@model IEnumerable<w2.DB.WebServices>
+@using Gnc2.Com.Helpers
+
+<script>
+    $(function () {
+        ddlWebServiceSelected();
+        webServiceSend();
+    });
+
+    function ddlWebServiceSelected() {
+        $("#WebServiceId").change(function () {
+
+            var serviceId = $("#WebServiceId").val();
+
+            if (serviceId > 0) {
+                $("#overlayProtector").show();
+                $(".loaderDdl").show();
+                var template = kendo.template($("#parametersTemplate").html());
+                var dataSource = new kendo.data.DataSource({
+                    transport: {
+                        read: {
+                            url: "/Default/WebServicesParameters/" + serviceId,
+                            dataType: "json"
+                        }
+                    },
+                    schema: {
+                        model: {
+                            fields: {
+                                Id: { type: "int" },
+                                ParameterName: { type: "string" },
+                                ParameterType: { type: "string" },
+                                Description: { type: "string" }
+                            }
+                        }
+                    },
+                    change: function () {
+                        $("#parameters").html(kendo.render(template, this.view()));
+
+                        $("#parameters > .item").each(function () {
+                            itemHide($(this));
+                        });
+
+                        $("#apiExplorerSubmit").show();
+                        $(".loaderDdl").hide();
+                        
+
+                        setTimeout(function () {
+                            apiExplorerBtn();
+                            $("#overlayProtector").hide();
+                        }, 200);
+                    }
+                });
+                dataSource.read();
+            }
+            else {
+                $("#parameters").html("");
+                $("#apiExplorerSubmit").hide();
+            }
+        });
+    }
+
+
+    function itemHide(obj) {
+        setTimeout(function () {
+            $(obj).fadeIn();
+        }, 400);
+    }
+
+    function apiExplorerBtn() {
+        setTimeout(function () {
+            var h = $(".apiExplorer").height();
+            setTimeout(function () {
+                $(".apiExplorerBtn").attr("style", "margin-top:" + parseInt(h + 83) + "px; display:none;");
+            }, 500);
+        }, 500);
+    }
+
+    function webServiceSend() {
+        $("#btnWebServiceSend").live("click", function () {
+            loaderOpen();
+
+            var serviceName = $("#WebServiceId option:selected").text();
+            var _serviceName = serviceName.split("/");
+            var serviceUrl = "http://localhost:18348/Ws/" + _serviceName[0] + ".svc/Json/" + _serviceName[1];
+
+            var params = [];
+            var paramCount = 0;
+            $("#parameters > .item > .form > input").each(function () {
+                paramCount++;
+                var parameterName = $(this).attr("id").replace("param_", "");
+                var parameterValue = $(this).val();
+
+                params.push(
+                    { "ParameterName": parameterName, "ParameterValue": parameterValue }
+                );
+
+                if (paramCount == 1) {
+                    serviceUrl += "?" + parameterName + "=" + parameterValue;
+                }
+                else {
+                    serviceUrl += "amp;" + parameterName + "=" + parameterValue;
+                }
+            });
+
+            setTimeout(function () {
+                $.ajax({
+                    url: "/Default/WebServiceRun?Path=" + serviceUrl,
+                    dataType: "JSON",
+                    success: function (res) {
+                        console.log(res);
+                        serviceUrl = serviceUrl.replace(/amp;/g, "&");
+                        var obj;
+                        var statusReason;
+                        var html = "<p class=\"title\">REQUEST URL</p><span id=\"serviceUrl\">" + serviceUrl + "</span>";
+                        try
+                        {
+                            obj = JSON.parse(res);
+                            statusReason = obj.statusReason;
+                            if (statusReason == "OK") {
+                                html += "<p class=\"title\">CONNECT STATUS</p>" + statusReason;
+                            }
+                            else {
+                                if (statusReason == null) {
+                                    statusReason = "OK";
+                                }
+                                html += "<p class=\"title\">CONNECT STATUS</p>" + statusReason;
+                                html += "<p class=\"title\">EXCEPTION MESSAGE</p><span class=\"red\">" + res + "</span>";
+                            }
+                        }
+                        catch(errs)
+                        {
+                            if (statusReason == "OK") {
+                                html += "<p class=\"title\">CONNECT STATUS</p>" + statusReason;
+                            }
+                            else {
+                                if (statusReason == null) {
+                                    statusReason = "OK";
+                                }
+                                html += "<p class=\"title\">CONNECT STATUS</p>" + statusReason;
+                                html += "<p class=\"title\">EXCEPTION MESSAGE</p><span class=\"red\">" + res.errorMessage + "</span>";
+                            }
+                        }
+
+
+                        
+                        
+                        
+                        
+                        
+
+                        $(".runWindow").slideDown();
+                        var win = $(window),
+                            foo = $(".runWindow");
+
+                        foo.typer([html]);
+
+                        loaderClose();
+
+                    },
+                    error: function (err) {
+
+                        console.log("err:" + err);
+
+                        var obj;
+                        try
+                        {
+                            obj = JSON.parse(err);
+                        }
+                        catch (errs) {
+                            obj = err;
+                        }
+
+                        var html = "<p class=\"title\">REQUEST URL</p><span id=\"serviceUrl\">" + serviceUrl + "</span>";
+                            html += "<p class=\"title\">CONNECT STATUS</p>FAIL";
+                            html += "<p class=\"title\">EXCEPTION MESSAGE</p><span class=\"red\">" + obj + "</span>";
+
+                        $(".runWindow").slideDown();
+                        var win = $(window),
+                            foo = $(".runWindow");
+
+                        foo.typer([html]);
+
+                        loaderClose();
+
+                        console.log(err);
+                    }
+                });
+
+
+            }, 200);
+        });
+    }
+
+    function loaderOpen() {
+        $(".loader").show();
+    }
+
+    function loaderClose() {
+        $(".loader").hide();
+    }
+</script>
+<script type="text/template" id="parametersTemplate">
+    <section class="item" style="display:none;">
+        <label class="form"><input type="text" name="param_#= ParameterName #" id="param_#= ParameterName #" placeholder="#= ParameterName #" /></label>
+    </section>
+</script>
+<section id="overlay"></section>
+<section id="overlayContent">
+    <section class="apiExplorer">
+        <h1>API EXPLORER</h1>
+        <a href="javavascript:;" class="close">x kapat</a>
+        <ins></ins>
+        <section class="item">
+            <img src="@PathHelper.UrlUIAssets/images/global/loader-small.gif" class="loaderDdl" />
+            <label class="title">Web Servis</label>
+            <label class="form">
+                <select name="WebServiceId" id="WebServiceId" style="width: 100%">
+                    <option value="0">- Seçiniz -</option>
+                    @foreach (var item in Model.ToList())
+                    {
+                        <text><option value="@item.Id">@item.ContextName/@item.WebServiceMethod</option></text>
+                    }
+                </select>
+            </label>
+        </section>
+
+        <section id="parameters">
+        </section>
+
+        <section id="apiExplorerSubmit" class="item" style="display: none;">
+            <section class="form">
+                <input type="button" value="GÖNDER" id="btnWebServiceSend" />
+                <img src="@PathHelper.UrlUIAssets/images/global/loader-small.gif" class="loader" />
+            </section>
+        </section>
+
+        <ins></ins>
+
+        <a href="javascript:;" class="apiExplorerBtnOpen">API EXPLORER</a>
+
+    </section>
+
+    <section class="runWindow">
+    </section>
+
+</section>
+<section id="overlayProtector"></section>

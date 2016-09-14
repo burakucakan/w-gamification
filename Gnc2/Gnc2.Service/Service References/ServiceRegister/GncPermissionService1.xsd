@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/wSrvLocatorLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/wSrvLocatorLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PermissionQueryResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifyDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifyUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Permission" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PermissionQueryResult" nillable="true" type="tns:PermissionQueryResult" />
+  <xs:simpleType name="Permission">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PermissionGranted" />
+      <xs:enumeration value="PermissionDenied" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Permission" nillable="true" type="tns:Permission" />
+</xs:schema>

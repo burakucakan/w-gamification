@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5e9d3bc6-b99e-419f-8948-2310fc5ff94e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:18348/ws/Badge.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Badge1.disco" MetadataType="Disco" ID="f2bf8a75-bb10-4ee0-acb7-5ce605c55fb7" SourceId="1" SourceUrl="http://localhost:18348/Ws/Badge.svc?disco" />
+    <MetadataFile FileName="Badge2.wsdl" MetadataType="Wsdl" ID="37edb7e7-d1a5-46bb-970c-b9de0d76ecc0" SourceId="1" SourceUrl="http://localhost:18348/Ws/Badge.svc?wsdl" />
+    <MetadataFile FileName="Badge5.xsd" MetadataType="Schema" ID="3bc23c47-5e2d-4485-b8b1-9b9529176a8b" SourceId="1" SourceUrl="http://localhost:18348/Ws/Badge.svc?xsd=xsd0" />
+    <MetadataFile FileName="Badge21.wsdl" MetadataType="Wsdl" ID="57218965-a39e-42eb-b45f-ada9fdb14b9b" SourceId="1" SourceUrl="http://localhost:18348/Ws/Badge.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Badge51.xsd" MetadataType="Schema" ID="ed5e8f3c-8373-41d8-b4db-87b8311aef9b" SourceId="1" SourceUrl="http://localhost:18348/Ws/Badge.svc?xsd=xsd4" />
+    <MetadataFile FileName="Badge52.xsd" MetadataType="Schema" ID="fdad9474-0bc4-43ae-9419-edcc4a246f45" SourceId="1" SourceUrl="http://localhost:18348/Ws/Badge.svc?xsd=xsd2" />
+    <MetadataFile FileName="Badge53.xsd" MetadataType="Schema" ID="0f1a5cc4-66cf-492a-9c51-8cadd27841e3" SourceId="1" SourceUrl="http://localhost:18348/Ws/Badge.svc?xsd=xsd3" />
+    <MetadataFile FileName="Badge54.xsd" MetadataType="Schema" ID="42a3a763-cf4a-480f-a678-37427a84bdb8" SourceId="1" SourceUrl="http://localhost:18348/Ws/Badge.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,33 @@
+﻿@model Gnc2.DB.PromoCodeTypes
+
+@using Gnc2.Admin.Extensions;
+
+@Helper.BodyNav(Html, "PromoCodeTypes")
+
+
+@section Scripts {
+
+}
+
+@using (Ajax.BeginForm(null, null, new AjaxOptions { UpdateTargetId = "PageForm", LoadingElementId = "LoadingForm", OnSuccess = "FormOnSuccess" }, new { @id = "PageForm" }))
+{    
+    <aside class="panel main">
+
+
+        @Html.ValidationMessageFor(model => model.PromoCodeTypeName)   @Html.LabelFor(model => model.PromoCodeTypeName)    @Html.EditorFor(m => m.PromoCodeTypeName)
+
+        @Html.Partial("Common/FormFooter")
+
+    </aside>
+ 
+    
+    <aside class="panel side">
+
+        <aside>
+            <p class="checkbox"> @Html.EditorFor(model => model.IsActive,"Yayında") @Html.LabelFor(model => model.IsActive) </p>
+        </aside>
+
+        @Html.Partial("Common/DataDefaultFields")
+
+    </aside>
+}

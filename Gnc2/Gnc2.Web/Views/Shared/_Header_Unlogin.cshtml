@@ -1,0 +1,64 @@
+﻿@using Gnc2.Com.Helpers
+<header id="gnc2Header">
+    <section class="top">
+        <section class="gnc2Container">
+            <span class="line fLeft"></span>
+            <section class="likeBtn"><img src="@PathHelper.UrlStatic/images/_offline/like-btn.png" /></section>
+            <span class="line fLeft"></span>
+
+            <section class="right">
+                <span class="line fLeft"></span>
+                <section class="ddl fReg">
+                    <a href="javascript:;" class="packageLoad">TL / PAKET YÜKLE</a>
+                </section>
+
+                <section class="search">
+                    <span class="line fLeft"></span>
+                    <input type="text" name="searchBox" placeholder="Ara" />
+                    <input type="submit" name="searchBtn" value="" />
+                    <span class="line fLeft"></span>
+                </section>
+            </section>
+
+            <section id="headerProfile"></section>
+
+        </section>
+    </section>
+    
+    <section class="gnc2Container">
+
+        <section class="headerContent">
+            <a href="@PathHelper.UrlWeb" title="gnctrkcll" class="logo">gnctrkcll</a>
+        </section>
+        <section class="userLogin">
+            <nav class="fReg">
+                <script>
+                    $(function () {
+                        $(".cb-login").colorbox({ iframe: true, width: 720, height: 634, scrolling:false });
+                        $(".cb-register").colorbox({ iframe: true, width: 670, height: 850 });
+                    });
+                </script>
+                <a href="/Login/LoginType" class="login cb-login">
+                    <span class="icon"></span>
+                    <span class="text">
+                        Gİrİş yap
+                    </span>
+                </a>
+
+            </nav>
+        </section>
+
+        @Html.Partial("Common/Menu")
+
+    </section>
+
+    <section id="packageLoad" class="unLogin">
+        <section id="packageOverlay"></section>
+        <section class="gnc2Container">
+            <section class="unLogin">
+            @Html.Partial("Common/PackageLoad")
+            </section>
+        </section>
+    </section>
+
+</header>

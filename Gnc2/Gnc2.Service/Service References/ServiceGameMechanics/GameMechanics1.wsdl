@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/ws/2005/02/mex/bindings" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GameMechanics" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://schemas.microsoft.com/ws/2005/02/mex/bindings" location="http://localhost:18348/GameMechanics.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:18348/GameMechanics.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:18348/GameMechanics.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:18348/GameMechanics.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" />
+      <xsd:import schemaLocation="http://localhost:18348/GameMechanics.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" />
+      <xsd:import schemaLocation="http://localhost:18348/GameMechanics.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM.CustomObjects" />
+      <xsd:import schemaLocation="http://localhost:18348/GameMechanics.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGameMechanics_LeaderBoard_InputMessage">
+    <wsdl:part name="parameters" element="tns:LeaderBoard" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_LeaderBoard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LeaderBoardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_ActionConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActionConfig" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_ActionConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActionConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_ActionsLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActionsLog" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_ActionsLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActionsLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_DeleteActions_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActions" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_DeleteActions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteActionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_DeleteChallange_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteChallange" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_DeleteChallange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteChallangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_DeleteChallengeVariant_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteChallengeVariant" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_DeleteChallengeVariant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteChallengeVariantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_RedeemPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:RedeemPoints" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_RedeemPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RedeemPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_ChallengeConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChallengeConfig" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_ChallengeConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChallengeConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_GetChallengeStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChallengeStatus" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_GetChallengeStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChallengeStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_ChallengeVariants_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChallengeVariants" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_ChallengeVariants_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChallengeVariantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_GlobalConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:GlobalConfig" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_GlobalConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GlobalConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_GetTopUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTopUsers" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_GetTopUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTopUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_NotifyAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyAction" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_NotifyAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_ResetLevelStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetLevelStatus" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_ResetLevelStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetLevelStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_SetActionConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetActionConfig" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_SetActionConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetActionConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_SetChallengeConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetChallengeConfig" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_SetChallengeConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetChallengeConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_SetGlobalConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetGlobalConfig" />
+  </wsdl:message>
+  <wsdl:message name="IGameMechanics_SetGlobalConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetGlobalConfigResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGameMechanics">
+    <wsdl:operation name="LeaderBoard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/LeaderBoard" message="tns:IGameMechanics_LeaderBoard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/LeaderBoardResponse" message="tns:IGameMechanics_LeaderBoard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActionConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/ActionConfig" message="tns:IGameMechanics_ActionConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/ActionConfigResponse" message="tns:IGameMechanics_ActionConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActionsLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/ActionsLog" message="tns:IGameMechanics_ActionsLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/ActionsLogResponse" message="tns:IGameMechanics_ActionsLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteActions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/DeleteActions" message="tns:IGameMechanics_DeleteActions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/DeleteActionsResponse" message="tns:IGameMechanics_DeleteActions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteChallange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/DeleteChallange" message="tns:IGameMechanics_DeleteChallange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/DeleteChallangeResponse" message="tns:IGameMechanics_DeleteChallange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteChallengeVariant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/DeleteChallengeVariant" message="tns:IGameMechanics_DeleteChallengeVariant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/DeleteChallengeVariantResponse" message="tns:IGameMechanics_DeleteChallengeVariant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RedeemPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/RedeemPoints" message="tns:IGameMechanics_RedeemPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/RedeemPointsResponse" message="tns:IGameMechanics_RedeemPoints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChallengeConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/ChallengeConfig" message="tns:IGameMechanics_ChallengeConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/ChallengeConfigResponse" message="tns:IGameMechanics_ChallengeConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChallengeStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/GetChallengeStatus" message="tns:IGameMechanics_GetChallengeStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/GetChallengeStatusResponse" message="tns:IGameMechanics_GetChallengeStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChallengeVariants">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/ChallengeVariants" message="tns:IGameMechanics_ChallengeVariants_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/ChallengeVariantsResponse" message="tns:IGameMechanics_ChallengeVariants_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GlobalConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/GlobalConfig" message="tns:IGameMechanics_GlobalConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/GlobalConfigResponse" message="tns:IGameMechanics_GlobalConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/GetTopUsers" message="tns:IGameMechanics_GetTopUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/GetTopUsersResponse" message="tns:IGameMechanics_GetTopUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/NotifyAction" message="tns:IGameMechanics_NotifyAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/NotifyActionResponse" message="tns:IGameMechanics_NotifyAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetLevelStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/ResetLevelStatus" message="tns:IGameMechanics_ResetLevelStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/ResetLevelStatusResponse" message="tns:IGameMechanics_ResetLevelStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetActionConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/SetActionConfig" message="tns:IGameMechanics_SetActionConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/SetActionConfigResponse" message="tns:IGameMechanics_SetActionConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetChallengeConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/SetChallengeConfig" message="tns:IGameMechanics_SetChallengeConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/SetChallengeConfigResponse" message="tns:IGameMechanics_SetChallengeConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetGlobalConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameMechanics/SetGlobalConfig" message="tns:IGameMechanics_SetGlobalConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameMechanics/SetGlobalConfigResponse" message="tns:IGameMechanics_SetGlobalConfig_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="GameMechanics">
+    <wsdl:port name="MetadataExchangeHttpBinding_IGameMechanics" binding="i0:MetadataExchangeHttpBinding_IGameMechanics">
+      <soap12:address location="http://localhost:18348/GameMechanics.svc/mex" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:18348/GameMechanics.svc/mex</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

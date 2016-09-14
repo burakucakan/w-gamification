@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TurkcellDBw2Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="TurkcellDBw2ModelStoreContainer">
+          <EntitySet Name="Offers" EntityType="TurkcellDBw2Model.Store.Offers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PosTransaction" EntityType="TurkcellDBw2Model.Store.PosTransaction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VendorLogs" EntityType="TurkcellDBw2Model.Store.VendorLogs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Vendors" EntityType="TurkcellDBw2Model.Store.Vendors" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WebServiceParameters" EntityType="TurkcellDBw2Model.Store.WebServiceParameters" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WebServices" EntityType="TurkcellDBw2Model.Store.WebServices" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Offers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TurkcellId" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PosTransaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Msisdn" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="JoinDate" Type="datetime" Nullable="false" />
+          <Property Name="Location" Type="int" Nullable="false" />
+          <Property Name="Campaign" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Income" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Amount" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="CampaignType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TrId" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VendorLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AuthKey" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Msisdn" Type="nvarchar" Nullable="false" MaxLength="12" />
+          <Property Name="CallId" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vendors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AuthKey" Type="uniqueidentifier" />
+          <Property Name="ApiKey" Type="nvarchar" MaxLength="100" />
+          <Property Name="SecretKey" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="VendorName" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="WebServiceParameters">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="WebServiceId" Type="int" Nullable="false" />
+          <Property Name="WebServiceDirectionCode" Type="int" Nullable="false" />
+          <Property Name="ParameterName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="ParameterType" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IsRequired" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebServices">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContextName" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="WebServiceMethod" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TurkcellDBw2Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TurkcellDBw2Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Offers" EntityType="TurkcellDBw2Model.Offers" />
+          <EntitySet Name="PosTransaction" EntityType="TurkcellDBw2Model.PosTransaction" />
+          <EntitySet Name="VendorLogs" EntityType="TurkcellDBw2Model.VendorLogs" />
+          <EntitySet Name="Vendors" EntityType="TurkcellDBw2Model.Vendors" />
+          <EntitySet Name="WebServiceParameters" EntityType="TurkcellDBw2Model.WebServiceParameters" />
+          <EntitySet Name="WebServices" EntityType="TurkcellDBw2Model.WebServices" />
+        </EntityContainer>
+        <EntityType Name="Offers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="TurkcellId" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PosTransaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Msisdn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="JoinDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="Location" Nullable="false" />
+          <Property Type="String" Name="Campaign" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Income" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Amount" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CampaignType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TrId" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VendorLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AuthKey" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Msisdn" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CallId" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vendors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Guid" Name="AuthKey" />
+          <Property Type="String" Name="ApiKey" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SecretKey" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+          <Property Type="String" Name="VendorName" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WebServiceParameters">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="WebServiceId" Nullable="false" />
+          <Property Type="Int32" Name="WebServiceDirectionCode" Nullable="false" />
+          <Property Type="String" Name="ParameterName" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ParameterType" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsRequired" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebServices">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ContextName" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WebServiceMethod" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TurkcellDBw2ModelStoreContainer" CdmEntityContainer="TurkcellDBw2Entities">
+          <EntitySetMapping Name="Offers">
+            <EntityTypeMapping TypeName="TurkcellDBw2Model.Offers">
+              <MappingFragment StoreEntitySet="Offers">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="TurkcellId" ColumnName="TurkcellId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PosTransaction">
+            <EntityTypeMapping TypeName="TurkcellDBw2Model.PosTransaction">
+              <MappingFragment StoreEntitySet="PosTransaction">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="TrId" ColumnName="TrId" />
+                <ScalarProperty Name="CampaignType" ColumnName="CampaignType" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Income" ColumnName="Income" />
+                <ScalarProperty Name="Campaign" ColumnName="Campaign" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
+                <ScalarProperty Name="Msisdn" ColumnName="Msisdn" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VendorLogs">
+            <EntityTypeMapping TypeName="TurkcellDBw2Model.VendorLogs">
+              <MappingFragment StoreEntitySet="VendorLogs">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CallId" ColumnName="CallId" />
+                <ScalarProperty Name="Msisdn" ColumnName="Msisdn" />
+                <ScalarProperty Name="AuthKey" ColumnName="AuthKey" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vendors">
+            <EntityTypeMapping TypeName="TurkcellDBw2Model.Vendors">
+              <MappingFragment StoreEntitySet="Vendors">
+                <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="SecretKey" ColumnName="SecretKey" />
+                <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+                <ScalarProperty Name="AuthKey" ColumnName="AuthKey" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebServiceParameters">
+            <EntityTypeMapping TypeName="TurkcellDBw2Model.WebServiceParameters">
+              <MappingFragment StoreEntitySet="WebServiceParameters">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsRequired" ColumnName="IsRequired" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ParameterType" ColumnName="ParameterType" />
+                <ScalarProperty Name="ParameterName" ColumnName="ParameterName" />
+                <ScalarProperty Name="WebServiceDirectionCode" ColumnName="WebServiceDirectionCode" />
+                <ScalarProperty Name="WebServiceId" ColumnName="WebServiceId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebServices">
+            <EntityTypeMapping TypeName="TurkcellDBw2Model.WebServices">
+              <MappingFragment StoreEntitySet="WebServices">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="WebServiceMethod" ColumnName="WebServiceMethod" />
+                <ScalarProperty Name="ContextName" ColumnName="ContextName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TurkcellDBw2Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TurkcellDBw2ModelStoreContainer">
+    <EntitySet Name="Offers" EntityType="TurkcellDBw2Model.Store.Offers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PosTransaction" EntityType="TurkcellDBw2Model.Store.PosTransaction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VendorLogs" EntityType="TurkcellDBw2Model.Store.VendorLogs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vendors" EntityType="TurkcellDBw2Model.Store.Vendors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WebServiceParameters" EntityType="TurkcellDBw2Model.Store.WebServiceParameters" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WebServices" EntityType="TurkcellDBw2Model.Store.WebServices" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Offers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TurkcellId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PosTransaction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Msisdn" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="JoinDate" Type="datetime" Nullable="false" />
+    <Property Name="Location" Type="int" Nullable="false" />
+    <Property Name="Campaign" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Income" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="Amount" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="CampaignType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="TrId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VendorLogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AuthKey" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Msisdn" Type="nvarchar" Nullable="false" MaxLength="12" />
+    <Property Name="CallId" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vendors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AuthKey" Type="uniqueidentifier" />
+    <Property Name="ApiKey" Type="nvarchar" MaxLength="100" />
+    <Property Name="SecretKey" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="VendorName" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="WebServiceParameters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="WebServiceId" Type="int" Nullable="false" />
+    <Property Name="WebServiceDirectionCode" Type="int" Nullable="false" />
+    <Property Name="ParameterName" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="ParameterType" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="IsRequired" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WebServices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ContextName" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="WebServiceMethod" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifyDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+</Schema>

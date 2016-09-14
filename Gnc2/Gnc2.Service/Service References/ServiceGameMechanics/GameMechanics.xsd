@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18348/GameMechanics.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" />
+  <xs:element name="LeaderBoard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q1:GetTopUsers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LeaderBoardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="LeaderBoardResult" nillable="true" type="q2:GetTopUsersResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActionConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q3:GetActionConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActionConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ActionConfigResult" nillable="true" type="q4:GetActionConfigResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActionsLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q5:GetActionsLog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActionsLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ActionsLogResult" nillable="true" type="q6:GetActionsLogResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteActions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q7:DeleteAction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteActionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="DeleteActionsResult" nillable="true" type="q8:DeleteActionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteChallange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q9:DeleteChallenge" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteChallangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="DeleteChallangeResult" nillable="true" type="q10:DeleteChallengeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteChallengeVariant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q11:DeleteChallengeVariant" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteChallengeVariantResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="DeleteChallengeVariantResult" nillable="true" type="q12:DeleteChallengeVariantResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RedeemPoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q13:RedeemPoints" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RedeemPointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="RedeemPointsResult" nillable="true" type="q14:RedeemPointsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChallengeConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q15:GetChallengeConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChallengeConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ChallengeConfigResult" nillable="true" type="q16:GetChallengeConfigResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChallengeStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q17:GetChallengeStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChallengeStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="GetChallengeStatusResult" nillable="true" type="q18:GetChallengeStatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChallengeVariants">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q19:GetChallengeVariants" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChallengeVariantsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ChallengeVariantsResult" nillable="true" type="q20:GetChallengeVariantsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GlobalConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q21:GetGlobalConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GlobalConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="GlobalConfigResult" nillable="true" type="q22:GetGlobalConfigResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTopUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q23:GetTopUsers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTopUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="GetTopUsersResult" nillable="true" type="q24:GetTopUsersResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q25:NotifyAction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyActionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="NotifyActionResult" nillable="true" type="q26:NotifyActionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetLevelStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q27:ResetLevelStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetLevelStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ResetLevelStatusResult" nillable="true" type="q28:ResetLevelStatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetActionConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q29:SetActionConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetActionConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="SetActionConfigResult" nillable="true" type="q30:SetActionConfigResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetChallengeConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q31:SetChallengeConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetChallengeConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="SetChallengeConfigResult" nillable="true" type="q32:SetChallengeConfigResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetGlobalConfig">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="ent" nillable="true" type="q33:SetGlobalConfig" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetGlobalConfigResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" minOccurs="0" name="SetGlobalConfigResult" nillable="true" type="q34:SetGlobalConfigResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

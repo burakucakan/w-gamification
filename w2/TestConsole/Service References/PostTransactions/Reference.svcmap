@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b6b2d95e-6b1c-4294-b863-f2d4fac0ed14" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:18348/PosTransactions.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PosTransactions.xsd" MetadataType="Schema" ID="83bccb4e-4eb3-4570-983d-721c15ad6b32" SourceId="1" SourceUrl="http://localhost:18348/PosTransactions.svc?xsd=xsd1" />
+    <MetadataFile FileName="PosTransactions1.xsd" MetadataType="Schema" ID="febc0d6d-976f-4765-83ca-112d674bde5d" SourceId="1" SourceUrl="http://localhost:18348/PosTransactions.svc?xsd=xsd3" />
+    <MetadataFile FileName="PosTransactions2.xsd" MetadataType="Schema" ID="74cbb425-2225-4a3f-b5e6-4cc2af8d00a0" SourceId="1" SourceUrl="http://localhost:18348/PosTransactions.svc?xsd=xsd2" />
+    <MetadataFile FileName="PosTransactions3.xsd" MetadataType="Schema" ID="1ba34548-6b53-4f6d-a53d-21c3e8956ce8" SourceId="1" SourceUrl="http://localhost:18348/PosTransactions.svc?xsd=xsd4" />
+    <MetadataFile FileName="PosTransactions.wsdl" MetadataType="Wsdl" ID="1ce05a8b-723d-49b6-8416-f3e426b3b377" SourceId="1" SourceUrl="http://localhost:18348/PosTransactions.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="PosTransactions1.wsdl" MetadataType="Wsdl" ID="05ead6b0-5ab1-48c5-8299-d9b3a90f9076" SourceId="1" SourceUrl="http://localhost:18348/PosTransactions.svc?wsdl" />
+    <MetadataFile FileName="PosTransactions4.xsd" MetadataType="Schema" ID="d54ecf3f-974c-4c62-acc6-8cdac3092b69" SourceId="1" SourceUrl="http://localhost:18348/PosTransactions.svc?xsd=xsd0" />
+    <MetadataFile FileName="PosTransactions.disco" MetadataType="Disco" ID="1614b54a-87fe-406f-a564-736f390aa02a" SourceId="1" SourceUrl="http://localhost:18348/PosTransactions.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

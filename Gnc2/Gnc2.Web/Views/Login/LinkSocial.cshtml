@@ -1,0 +1,98 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPopup.cshtml";
+    ViewBag.Title = "gnctrkcll";
+}
+@using Gnc2.Com.Helpers
+
+<section class="login">
+    <h3 class="contentTitle fReg">gnc2 gİrİş</h3>
+    <section class="loginContent">
+            
+        <section class="socialAccounts">
+            <section class="socialAccountText">Social Network accountlarını bağlayıp puanlar kazan...</section>
+            <section class="socialAccountList">
+                <script>
+                    $(function () {
+                        $(".socialAccountList ul li a").on("click", function () {
+                            var classNames = $(this).attr("class");
+                            if (classNames.indexOf(" ok") == -1) {
+                                socialAccountOpen(classNames);
+                            }
+                            else {
+                                socialAccountClose(classNames);
+                            }
+                        });
+
+                        function socialAccountOpen(classNames) {
+                            var socialAccountName = classNames.replace(" no", "");
+                            $("." + socialAccountName + " .status span").animate({
+                                    marginLeft: "40px"
+                                }, function () {
+                                    $("." + socialAccountName + " .status span").html($("#statusOk").html());
+                                    $("." + socialAccountName + " .status span em").fadeIn(function () {
+                                        $("." + socialAccountName + " .status span em img").animate({
+                                                opacity: 1,
+                                                width: '17px',
+                                                marginTop: '0px'
+                                            }, function () {
+                                                $("." + socialAccountName).attr("class", socialAccountName + " ok");
+                                                var text = $("." + socialAccountName + " .text").html().replace(" kazan!", " kazandın!");
+                                                $("." + socialAccountName + " .text").html(text);
+                                            });
+                                    });
+                                });
+                        }
+
+                        function socialAccountClose(classNames) {
+                            var socialAccountName = classNames.replace(" ok", "");
+                            $("." + socialAccountName + " .status span").attr("style", "float:left !important; margin-left:40px;");
+                            $("." + socialAccountName + " .status span").animate({
+                                    marginLeft: "0px"
+                                }, function () {
+                                    $("." + socialAccountName + " .status span").html($("#statusNo").html());
+                                    $("." + socialAccountName + " .status span em").fadeIn(function () {
+                                        $("." + socialAccountName + " .status span em img").animate({
+                                                opacity: 1,
+                                                width: '17px',
+                                                marginTop: '0px'
+                                            }, function () {
+                                                var socialAccountName = classNames.replace(" ok", "");
+                                                $("." + socialAccountName).attr("class", socialAccountName + " no");
+                                                var text = $("." + socialAccountName + " .text").html().replace(" kazandın!", " kazan!");
+                                                $("." + socialAccountName + " .text").html(text);
+                                            });
+                                    });
+                                });
+                        }
+                    });
+                </script>
+                <script id="statusOk" type="text/template">
+                    <em style='width:40px; height:28px; float:left; text-align:center; margin-top:-13px; display:none; padding-top:13px; background:#009cff;'><img src='@PathHelper.UrlStatic/images/icons/okey.png' style='opacity:0; width: 40px; margin-top: -9px;' /></em>
+                </script>
+                <script id="statusNo" type="text/template">
+                    <em style='width:40px; height:28px; float:left; text-align:center; margin-top:-13px; display:none; padding-top:13px; background:#272530;'><img src='@PathHelper.UrlStatic/images/icons/no.png' style='opacity:0; width: 40px; margin-top: -9px;' /></em>
+                </script>
+                <ul>
+                    <li>
+                        <a href="javascript:;" class="fb ok"><span class="text">Facebook hesabını bağladın 500 puan kazandın!</span><span class="status"><span><img src="@PathHelper.UrlStatic/images/icons/okey.png" /></span></span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="tw no"><span class="text">Twitter hesabını bağla 500 puan kazan!</span><span class="status"><span><img src="@PathHelper.UrlStatic/images/icons/no.png" /></span></span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="ln no"><span class="text">Linkedin hesabını bağla 500 puan kazan!</span><span class="status"><span><img src="@PathHelper.UrlStatic/images/icons/no.png" /></span></span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="in no"><span class="text">Instagram hesabını bağla 500 puan kazan!</span><span class="status"><span><img src="@PathHelper.UrlStatic/images/icons/no.png" /></span></span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="gp no"><span class="text">Google Plus hesabını bağla 500 puan kazan!</span><span class="status"><span><img src="@PathHelper.UrlStatic/images/icons/no.png" /></span></span></a>
+                    </li>
+                </ul>
+            </section>
+        </section>
+
+    </section>
+</section>
+
+@ViewBag.aa

@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TurkcellGnc2ModelStoreContainer" CdmEntityContainer="Gnc2Entities">
+    <EntitySetMapping Name="AdminAuths">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.AdminAuths">
+        <MappingFragment StoreEntitySet="AdminAuths">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="ModulId" ColumnName="ModulId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.Admins">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="FullAuth" ColumnName="FullAuth" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminTransaction">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.AdminTransaction">
+        <MappingFragment StoreEntitySet="AdminTransaction">
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banners">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.Banners">
+        <MappingFragment StoreEntitySet="Banners">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PositionCode" ColumnName="PositionCode" />
+          <ScalarProperty Name="WindowTypeCode" ColumnName="WindowTypeCode" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Campaigns">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.Campaigns">
+        <MappingFragment StoreEntitySet="Campaigns">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogCategories">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.CatalogCategories">
+        <MappingFragment StoreEntitySet="CatalogCategories">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Catalogs">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.Catalogs">
+        <MappingFragment StoreEntitySet="Catalogs">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CatalogCreateDate" ColumnName="CatalogCreateDate" />
+          <ScalarProperty Name="ModuleTypeId" ColumnName="ModuleTypeId" />
+          <ScalarProperty Name="CatalogCategoriesId" ColumnName="CatalogCategoriesId" />
+          <ScalarProperty Name="CatalogCondition" ColumnName="CatalogCondition" />
+          <ScalarProperty Name="CatalogImage" ColumnName="CatalogImage" />
+          <ScalarProperty Name="CatalogEndDate" ColumnName="CatalogEndDate" />
+          <ScalarProperty Name="CatalogStartDate" ColumnName="CatalogStartDate" />
+          <ScalarProperty Name="CatalogFeatures" ColumnName="CatalogFeatures" />
+          <ScalarProperty Name="CatalogPoint" ColumnName="CatalogPoint" />
+          <ScalarProperty Name="CatalogName" ColumnName="CatalogName" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatalogVarieties">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.CatalogVarieties">
+        <MappingFragment StoreEntitySet="CatalogVarieties">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="VarietyImageUrl" ColumnName="VarietyImageUrl" />
+          <ScalarProperty Name="VarietyStock" ColumnName="VarietyStock" />
+          <ScalarProperty Name="VarietyName" ColumnName="VarietyName" />
+          <ScalarProperty Name="CatalogId" ColumnName="CatalogId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Code">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.Code">
+        <MappingFragment StoreEntitySet="Code">
+          <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+          <ScalarProperty Name="CodeId" ColumnName="CodeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invitations">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.Invitations">
+        <MappingFragment StoreEntitySet="Invitations">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsMember" ColumnName="IsMember" />
+          <ScalarProperty Name="InvitationCode" ColumnName="InvitationCode" />
+          <ScalarProperty Name="InvitationDate" ColumnName="InvitationDate" />
+          <ScalarProperty Name="InvitedUserFbId" ColumnName="InvitedUserFbId" />
+          <ScalarProperty Name="InviterUserFbId" ColumnName="InviterUserFbId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Moduls">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.Moduls">
+        <MappingFragment StoreEntitySet="Moduls">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LivePageUrl" ColumnName="LivePageUrl" />
+          <ScalarProperty Name="HasLivePage" ColumnName="HasLivePage" />
+          <ScalarProperty Name="IsSubEndItem" ColumnName="IsSubEndItem" />
+          <ScalarProperty Name="IsInAdminMenu" ColumnName="IsInAdminMenu" />
+          <ScalarProperty Name="AdminPath" ColumnName="AdminPath" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModulTypes">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.ModulTypes">
+        <MappingFragment StoreEntitySet="ModulTypes">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModulTypeName" ColumnName="ModulTypeName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PromoCodeArchives">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.PromoCodeArchives">
+        <MappingFragment StoreEntitySet="PromoCodeArchives">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="PromoCodeName" ColumnName="PromoCodeName" />
+          <ScalarProperty Name="CatalogId" ColumnName="CatalogId" />
+          <ScalarProperty Name="PromoCodeTypeId" ColumnName="PromoCodeTypeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PromoCodes">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.PromoCodes">
+        <MappingFragment StoreEntitySet="PromoCodes">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+          <ScalarProperty Name="PromoCodeName" ColumnName="PromoCodeName" />
+          <ScalarProperty Name="CatalogsId" ColumnName="CatalogsId" />
+          <ScalarProperty Name="PromoCodeTypeId" ColumnName="PromoCodeTypeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PromoCodeTypes">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.PromoCodeTypes">
+        <MappingFragment StoreEntitySet="PromoCodeTypes">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PromoCodeTypeName" ColumnName="PromoCodeTypeName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Refunds">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.Refunds">
+        <MappingFragment StoreEntitySet="Refunds">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="test">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.test">
+        <MappingFragment StoreEntitySet="test">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="tone" ColumnName="tone" />
+          <ScalarProperty Name="testid" ColumnName="testid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserCampaigns">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.UserCampaigns">
+        <MappingFragment StoreEntitySet="UserCampaigns">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CampaignId" ColumnName="CampaignId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserOrders">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.UserOrders">
+        <MappingFragment StoreEntitySet="UserOrders">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="TaxOffice" ColumnName="TaxOffice" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Town" ColumnName="Town" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="StockCode" ColumnName="StockCode" />
+          <ScalarProperty Name="ShippingCode" ColumnName="ShippingCode" />
+          <ScalarProperty Name="ProjectNumber" ColumnName="ProjectNumber" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="PromoCode" ColumnName="PromoCode" />
+          <ScalarProperty Name="CatalogId" ColumnName="CatalogId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="FbProfileImage" ColumnName="FbProfileImage" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Ispermissions" ColumnName="Ispermissions" />
+          <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FbId" ColumnName="FbId" />
+          <ScalarProperty Name="Msisdn" ColumnName="Msisdn" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTransaction">
+      <EntityTypeMapping TypeName="TurkcellGnc2Model.UserTransaction">
+        <MappingFragment StoreEntitySet="UserTransaction">
+          <ScalarProperty Name="Msisdn" ColumnName="Msisdn" />
+          <ScalarProperty Name="LoginType" ColumnName="LoginType" />
+          <ScalarProperty Name="RegisterType" ColumnName="RegisterType" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

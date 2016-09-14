@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TurkcellDBw2Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TurkcellDBw2Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Offers" EntityType="TurkcellDBw2Model.Offers" />
+    <EntitySet Name="PosTransaction" EntityType="TurkcellDBw2Model.PosTransaction" />
+    <EntitySet Name="VendorLogs" EntityType="TurkcellDBw2Model.VendorLogs" />
+    <EntitySet Name="Vendors" EntityType="TurkcellDBw2Model.Vendors" />
+    <EntitySet Name="WebServiceParameters" EntityType="TurkcellDBw2Model.WebServiceParameters" />
+    <EntitySet Name="WebServices" EntityType="TurkcellDBw2Model.WebServices" />
+  </EntityContainer>
+  <EntityType Name="Offers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="TurkcellId" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PosTransaction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Msisdn" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="JoinDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="Location" Nullable="false" />
+    <Property Type="String" Name="Campaign" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Income" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Amount" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CampaignType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TrId" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VendorLogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="AuthKey" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Msisdn" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CallId" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vendors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Guid" Name="AuthKey" />
+    <Property Type="String" Name="ApiKey" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SecretKey" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="String" Name="VendorName" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WebServiceParameters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="WebServiceId" Nullable="false" />
+    <Property Type="Int32" Name="WebServiceDirectionCode" Nullable="false" />
+    <Property Type="String" Name="ParameterName" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ParameterType" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsRequired" Nullable="false" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WebServices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ContextName" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="WebServiceMethod" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+  </EntityType>
+</Schema>

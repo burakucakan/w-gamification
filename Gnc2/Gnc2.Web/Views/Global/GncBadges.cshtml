@@ -1,0 +1,31 @@
+﻿@using Gnc2.Com.Helpers
+
+<script>
+    function badgeRefresh() {
+        console.log('test');
+      //  var badgeIntervalId = setInterval(function () {
+            $.ajax({
+                url: '/Login/GetUserBadge',
+                dataType: 'json',
+                success: function (response) {
+                    for (var i = 0; i < response.length; i++) {
+                        console.log(response[i].BadgeURL);
+                        if (response[i].BadgeURL != '') {
+                            $(".badges").append('<img src="' + response[i].BadgeURL + '" />');
+                        }
+                    }
+
+                    setTimeout(function () {
+                        for (var i = 0; i < response.length; i++) {
+                            console.log('hayda');
+                            profileBadgeIn(i);
+                        }
+                    }, 200);
+
+        //            clearInterval(badgeIntervalId); //kalkacak
+                }
+            });
+        //}, 500);
+    }
+    badgeRefresh();
+</script>

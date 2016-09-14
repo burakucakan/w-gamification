@@ -1,0 +1,111 @@
+﻿body { margin:0px; background:#dedfe0; }
+
+.container { width:620px; height:auto; margin:0px auto; }
+.registerMain { height:auto; margin:0px auto; }
+
+header { width:100%; height:89px; background:#fef200; border-bottom:#1f1e27 4px solid; }
+header a.logo { width:155px; height:40px; float:left; background:url('../images/app/gnctrkcll-logo.png') no-repeat; margin:26px 0px 0px 0px; }
+
+.headerMenu { width:100%; height:47px; float:left; background:#1f1e27; margin-top:-4px; }
+.headerMenu .container ul { width: 100%; float:left; }
+.headerMenu .container ul li { float:left; }
+.headerMenu .container ul li a { width:auto; float:left; height:14px; padding:17px 24px 16px 24px; text-align:center; font-size:15px; color:#ffffff; }
+.headerMenu .container ul li a:hover { background:#323234; }
+.headerMenu .container ul li a.active { background:url(../images/icons/poup-menu-arrow.png) no-repeat center 37px #323234; color:#fdf035; }
+
+h3.contentTitle { width:auto; height:auto; float:left; background:#fef200; padding:8px 10px; font-size:26px; color:#272530; }
+h2.contentTitle { width:auto; height:auto; float:left; background:url(../images/icons/map-icon.png) no-repeat #1f1e27 center 7px; padding:8px 10px; font-size:29px; color:#fef200; }
+h3.grayTitle { width: auto; height: auto; float: left; background:#1f1e27; padding: 10px 15px; font-size: 29px; color: #fef200; }
+
+.container .login { width:100%; height:auto; float: left; margin-top:37px; }
+.container.registerMain .login { width:auto !important; height:auto; float: left; margin-top:0px !important; }
+.container .login .loginContent { width:570px; height:auto; float:left; background:#ffffff; padding:12px 20px 12px 30px; }
+.container .login .loginContent.registerForm { /*width: 260px !important; padding: 45px 60px !important;*/ }
+.container .login .loginContent .left { width:270px; min-height:220px; float:left; clear:none; border-right:#b5b5b5 1px solid; padding-right:16px; }
+.container .login .loginContent .right { width:270px; min-height:220px; float:right; clear:none; }
+.container .login .loginContent .line { width:1px; height:219px; margin:1px 0px 0px 11px; background:#b5b5b5; float:left; clear:none; }
+.container .login .loginContent .left label.text, .container .login .loginContent .right label.text { width:100%; float:left; font-size:16px; color:#777777; }
+.container .login .loginContent .left label.textbox { width:100%; height:auto; float:left; margin:10px 0px 17px 0px; } 
+.container .login .loginContent .left label.button {width:100%; height:auto; float:left; margin-top:-7px; }
+.container .login .loginContent .right label.button img { float:right; display:none; }
+.container .login .loginContent .right label.detail { width: 100%; height: auto; float: left; color: #777777; font-family: Arial; font-size: 12px; line-height: 14px; margin-top: 7px; }
+.container .login .loginContent .left .captchaImage { width:108px; }
+.container .login .loginContent .left .securityCode { width:144px; float:right; }
+
+.container .login .loginContent .right label.get-password { margin-top: 25px; float:left; }
+.container .login .loginContent .bottom { width:100%; height:auto; float:left; font-size:12px; color:#ec008c;  font-family:Arial; }
+.container .login .loginContent .bottom a { text-decoration:none; color:#ec008c; }
+.container .login .loginContent .bottom a:hover { text-decoration:underline; color:#ec008c; }
+.container .login .loginContent .left .text { width:100%; float:left; font-size:12px; color:#777777; font-family: Arial; line-height: 14px; }
+.fbLogin { width:270px; float:left; margin-top:5px; }
+.fbLogin a { width: 270px; height: 93px; float: left; background: url('../images/icons/fb-login-icon.png') no-repeat 55px 29px #394c8c; overflow:hidden; }
+.fbLogin a span { width: 141px; float: right; background: #2b3b6f; height: 93px; padding: 35px 0px 0px 0px; text-align:center; color:#ffffff; font-size:20px; }
+.fbLogin a em { width:7px; height:14px; float:right; background: url('../images/icons/fb-login-arrow.png') no-repeat; margin-top:9px; }
+.tcellLogin { width:270px; float:right; margin-top:5px; }
+.tcellLogin a { width: 270px; height: 93px; float: left;  background: url('../images/global/tcell-login-bg.png') no-repeat 23px 27px #fad807; overflow:hidden; }
+.tcellLogin a span { width: 141px; float: right; background: #2b3b6f; height: 93px; padding: 35px 0px 0px 0px; text-align:center; color:#ffffff; font-size:20px; }
+.tcellLogin a em { width:7px; height:14px; float:right; background: url('../images/icons/fb-login-arrow.png') no-repeat; margin-top:9px; }
+.container .login .loginContent .photoUpload { width:274px; height:100px; float:left; background:url('../images/form/photoUpload.png') no-repeat; cursor:pointer; margin-bottom:10px; }
+.container .login .loginContent .photoUpload:hover { background-position:0 -100px; }
+.container .login .loginContent label.text { margin-bottom:6px; }
+.container .login .loginContent label.textbox { margin-bottom:21px; float:left; width:100%; }
+.container .login .loginContent label.halfText { width:50% !important; }
+.container .login .loginContent label.halfTextbox { width:50% !important; }
+.field-validation-valid, .field-validation-error, .formError { float: right; font-size: 12px; font-family: Arial; margin-top: 4px; color: #ec008c; }
+.container .login .loginContent .right.rightBorder { border-left: #b5b5b5 1px solid; padding-left: 20px; }
+.container .login .loginContent .right label.smallText { font-size:10px; }
+
+.container .securityBottom { width:auto; height:auto; float:left; background:url('../images/icons/security.png') no-repeat; padding:1px 0px 0px 27px; color:#777777; font-size:12px; font-family:Arial; margin-top:10px; }
+.container .error { width: 596px; height: auto; float: left; background: #ec008c; font-size: 12px; font-family: Arial; padding: 12px 13px; color: #ffffff; }
+
+ins.space10 { height:10px; }
+ins.space18 { height:18px; } 
+ins.space73 { height:73px; } 
+
+.container .login .loginContent .socialAccounts { float:left; width:100%; font-family:Arial; }
+.container .login .loginContent .socialAccounts .socialAccountText { width:100%; float:left; font-size:14px; color:#414044; padding:0px 0px 14px 0px; border-bottom:#dedfe0 1px solid; margin-bottom:14px; }
+.container .login .loginContent .socialAccounts .socialAccountList { width:100%; float:left; }
+.container .login .loginContent .socialAccounts .socialAccountList ul { float:left; }
+.container .login .loginContent .socialAccounts .socialAccountList ul li a { float:left; width:580px; font-size:12px; background:url('../images/icons/social-accounts.png') no-repeat; margin-bottom:15px; }
+.container .login .loginContent .socialAccounts .socialAccountList ul li a .text { width:450px; float:left; padding-left:50px; padding-top:15px; color:#c2c2c3; }
+.container .login .loginContent .socialAccounts .socialAccountList ul li a:hover .text { color:#444444; }
+.container .login .loginContent .socialAccounts .socialAccountList ul li a.ok .text { color:#000000; } 
+.container .login .loginContent .socialAccounts .socialAccountList ul li a .status { width:80px; float:right; height:40px; background:#e9e9ea; }
+.container .login .loginContent .socialAccounts .socialAccountList ul li a.ok .status span { width:40px; float:right; height:28px; padding:13px 0px 0px 0px; background:#009cff; text-align:center; }
+.container .login .loginContent .socialAccounts .socialAccountList ul li a.no .status span { width:40px; float:left; height:28px; padding:13px 0px 0px 0px; background:#272530; text-align:center; }
+.container .login .loginContent .socialAccounts .socialAccountList ul li a:hover.no .status span { background:#16151b; }
+.container .login .loginContent .socialAccounts .socialAccountList ul li a.tw { background-position:0 -40px; }
+.container .login .loginContent .socialAccounts .socialAccountList ul li a.ln { background-position:0 -80px; }
+.container .login .loginContent .socialAccounts .socialAccountList ul li a.in { background-position:0 -120px; }
+.container .login .loginContent .socialAccounts .socialAccountList ul li a.gp { background-position:0 -160px; }
+
+.container .packageContent { padding:23px 19px; width:582px; background:#ffffff; float:left; margin-top:8px; }
+.container .packageContent .textPlace { width:100%; height:auto; float:left; font-size:16px; color:#373a40; line-height:22px; }
+.container .packageContent .packageForm { width:582px; float:left; }
+.container .packageContent .packageForm .fLeft { width: 277px; }
+.container .packageContent .packageForm .fRight { width: 305px; }
+
+.loginTypeContent { width: 645px; min-height:527px; float: left; padding:30px; border:#fff 6px solid; }
+.loginTypeContent .text { width:100%; float:left; font-size:12px; color:#777777; line-height:18px; font-family:Arial; margin:15px 0px;  }
+.loginTypeContent .textLarge { width:100%; float:left; font-size:26px; color:#000; line-height:32px; margin:15px 0px;  }
+.loginTypeContent ins.space { width:100%; height:1px; float:left; background:#acacac; border-top:#e4e4e4 1px solid; margin-top:44px; }
+.loginTypeContent .banners { width:604px; height:226px; float:left; background:#ffffff; overflow:hidden; margin-top: 42px; }
+.loginTypeContent .banners .left { width: 604px; height: 226px; float: left; position: relative; z-index: 1; }
+.loginTypeContent .banners .right { width: 249px; height: 226px; float: right; background: url(../images/global/login-type-gray-circle-bg.png) no-repeat; position: absolute; z-index: 12; margin-top: 0px; margin-left: 355px; }
+.loginTypeContent .banners .left section { width:355px; height:226px; float:left;}
+.loginTypeContent .banners .right img { border-radius: 126px; margin-left: 10px; margin-top: -2px; }
+.loginFlipbox { background-color: transparent !important; }
+.flippy_light { background-color: transparent !important; }
+.loginFlipbox img { background-color:transparent !important; position:absolute; z-index:1; }
+.loginTypeContent .btn { font-size: 23px !important; height: 24px !important; margin-top: 5px; }
+
+#topPage { width: 600px; height: 554px; background:rgba(255, 255, 255, 0.9); position:absolute; z-index:2; display:none; font-family:Arial; padding:10px; }
+#topPage h1 { width: 100%; float: left; font-size: 20px; font-weight: bold; margin-bottom: 10px; }
+#topPage p { width:100%; float:left; font-size:12px; line-height:18px; }
+.topPageClose { height:42px !important; display:none; }
+
+.nano .content { right:-5px !important; }
+.pane > .slider { cursor:pointer; }
+
+.registerFb .profile { border-radius: 100px; width: 200px; margin-left: 38px; }
+.registerFb .name { margin-top: 14px; text-align: center; font-size: 20px;  }

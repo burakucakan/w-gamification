@@ -1,0 +1,13 @@
+C:\J\Projects\TurkcellWGamification\w2\Gigya.Service\obj\Debug\Gigya.Service.csprojResolveAssemblyReference.cache
+C:\J\Projects\TurkcellWGamification\w2\Gigya.Service\bin\Debug\Gigya.Service.dll
+C:\J\Projects\TurkcellWGamification\w2\Gigya.Service\bin\Debug\Gigya.Service.pdb
+C:\J\Projects\TurkcellWGamification\w2\Gigya.Service\bin\Debug\EntityFramework.dll
+C:\J\Projects\TurkcellWGamification\w2\Gigya.Service\bin\Debug\Gigya.DB.dll
+C:\J\Projects\TurkcellWGamification\w2\Gigya.Service\bin\Debug\LIB.dll
+C:\J\Projects\TurkcellWGamification\w2\Gigya.Service\bin\Debug\Newtonsoft.Json.dll
+C:\J\Projects\TurkcellWGamification\w2\Gigya.Service\bin\Debug\Gigya.DB.pdb
+C:\J\Projects\TurkcellWGamification\w2\Gigya.Service\bin\Debug\LIB.pdb
+C:\J\Projects\TurkcellWGamification\w2\Gigya.Service\bin\Debug\EntityFramework.xml
+C:\J\Projects\TurkcellWGamification\w2\Gigya.Service\bin\Debug\Newtonsoft.Json.xml
+C:\J\Projects\TurkcellWGamification\w2\Gigya.Service\obj\Debug\Gigya.Service.dll
+C:\J\Projects\TurkcellWGamification\w2\Gigya.Service\obj\Debug\Gigya.Service.pdb

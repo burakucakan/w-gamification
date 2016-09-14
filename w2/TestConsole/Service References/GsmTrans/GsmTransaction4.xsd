@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/w2.Ws" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/w2.Ws" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18348/GsmTransaction.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/w2.Ws.Models" />
+  <xs:complexType name="GsmTransactionRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSendSms" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GsmTransactionRequest" nillable="true" type="tns:GsmTransactionRequest" />
+  <xs:complexType name="GsmTransactionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/w2.Ws.Models" base="q1:BaseWsModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TransactionId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GsmTransactionResponse" nillable="true" type="tns:GsmTransactionResponse" />
+  <xs:complexType name="GsmTransactionMultipleRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Actions" nillable="true" type="tns:ArrayOfGsmTransactionRequest" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GsmTransactionMultipleRequest" nillable="true" type="tns:GsmTransactionMultipleRequest" />
+  <xs:complexType name="ArrayOfGsmTransactionRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GsmTransactionRequest" nillable="true" type="tns:GsmTransactionRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGsmTransactionRequest" nillable="true" type="tns:ArrayOfGsmTransactionRequest" />
+  <xs:complexType name="ArrayOfGsmTransactionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GsmTransactionResponse" nillable="true" type="tns:GsmTransactionResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGsmTransactionResponse" nillable="true" type="tns:ArrayOfGsmTransactionResponse" />
+</xs:schema>

@@ -1,0 +1,204 @@
+﻿@model Gnc2.DB.Catalogs
+@using Gnc2.Admin.Extensions;
+
+@Helper.BodyNav(Html, "Catalogs", true)
+
+@section scriptsPreRender {
+    <script>
+        function kUploadOnSelect(e) {
+            if (!TextFilUploadCheckExt(e)) {
+                ShowFileUploadValError("@HttpContext.GetGlobalResourceObject("Notices", "TextfileUploadType").ToString()");
+            e.preventDefault();
+        }
+        else if (!TextFilUploadCheckSize(e)) {
+            ShowFileUploadValError("@HttpContext.GetGlobalResourceObject("Notices", "ValTextFileUploadSize").ToString()");
+                e.preventDefault();
+            }
+
+        $('#uploadtxt').hide();
+    }
+
+        function TextFilUploadCheckExt(e) {
+            var ext = String(e.files[0].extension).toLowerCase();
+            return !((ext != ".txt"))
+        }
+
+        function TextFilUploadCheckSize(e) {
+            var size = e.files[0].size;
+            size = Math.ceil(size / 1024); //as KB
+            var defaultSize = '@Gnc2.Admin.App_Manager.ConfigManager.GetInstance().UploadDefaultMaxKB';
+            return size < parseInt(defaultSize);
+    }
+
+    function kUploadOnSuccess(e) {
+        if (e.response.savedFileName != null) {
+            $('#fileValText').hide();
+            fu.val(e.response.savedFileName);
+            SetUploadedImage(e.response.savedBig, e.response.pathPreview);
+        }
+    }
+
+
+    function kUploadOnRemove(e) {
+        $('#uploadtxt').hide();
+        fu.val("");
+        //$('#fileVal').show();        
+    }
+
+    function kUploadOnUpload(e) { e.data = { TextType: "@Convert.ToInt32(Gnc2.Com.Helpers.PathHelper.TextFiles.Type.promocodes)" } }
+    function kUploadOnError(e) { }
+    function kUploadOnComplete(e) { }
+    function kUploadOnCancel(e) { }
+
+        $(function () {
+            AddValReq("#CatalogTypeId", "Modül tipi seçin");
+            AddValReq("#CatalogCategoriesId", "Kategori seçin");
+            AddValReq("#PromoCodes", "Tip seçin");
+
+
+
+        });
+        $('#CatalogTypeId').change(function () {
+            console.log($(this).val());
+            if ($(this).val() == 3) {
+                $('#CatalogVarieties').show();
+                $.get('@Url.Action("TextFileUpload","Catalogs")', function (data) {
+                    $('#textFileContainer').html(data);
+                    $('#UploadTextFile').kendoUpload({
+                        async: {
+                            saveUrl: "@Url.Action("UploadTextFile","Upload")",
+                            removeUrl: "/Upload/FileRemove",
+                        },
+                        localization: {
+                            remove: "@HttpContext.GetGlobalResourceObject("Kendo", "UploadRemove").ToString()",
+                            cancel: "@HttpContext.GetGlobalResourceObject("Kendo", "UploadCancel").ToString()",
+                            select: "@HttpContext.GetGlobalResourceObject("Kendo", "UploadSelect").ToString()",
+                            retry: "@HttpContext.GetGlobalResourceObject("Kendo", "UploadRetry").ToString()",
+                            statusFailed: "@HttpContext.GetGlobalResourceObject("Kendo", "UploadStatusFailed").ToString()",
+                            statusUploaded: "@HttpContext.GetGlobalResourceObject("Kendo", "UploadStatusUploaded").ToString()",
+                            statusUploading: "@HttpContext.GetGlobalResourceObject("Kendo", "UploadStatusUploading").ToString()",
+                            uploadSelectedFiles: "@HttpContext.GetGlobalResourceObject("Kendo", "UploadSelectedFiles").ToString()"
+                        },
+                        multiple: false,
+                        cancel: kUploadOnCancel,
+                        complete: kUploadOnComplete,
+                        error: kUploadOnError,
+                        remove: kUploadOnRemove,
+                        select: kUploadOnSelect,
+                        success: kUploadOnSuccess,
+                        upload: kUploadOnUpload
+                    });
+                })
+            }
+            else
+                $('#CatalogVarieties').hide();
+        });
+
+        $('#CatalogVariety').click(function () {
+            if ($(this).is(':checked'))
+                $('#CatalogVarietyFields').show();
+            else
+                $('#CatalogVarietyFields').hide();
+
+        });
+    </script>
+
+}
+
+@using (Ajax.BeginForm(null, null, new AjaxOptions { UpdateTargetId = "PageForm", LoadingElementId = "LoadingForm", OnSuccess = "FormOnSuccess" }, new { @id = "PageForm" }))
+{    
+    <aside class="panel main">
+
+        @Html.ValidationMessageFor(model => model.CatalogCategoriesId)   @Html.LabelFor(model => model.CatalogCategoriesId)   @Html.DropDownList("CatalogCategoriesId", (SelectList)ViewBag.category, "Lütfen Kategori Seçin")
+
+
+        <section class="columns">
+
+            <aside>@Html.LabelFor(model => model.CatalogStartDate)   @Html.Kendo().DatePickerFor(model => model.CatalogStartDate).Min(DateTime.Today).Events(e => e.Change("kDateRangeStartChange")) </aside>
+            <aside>@Html.LabelFor(model => model.CatalogEndDate)     @Html.Kendo().DatePickerFor(model => model.CatalogEndDate).Events(e => e.Change("kDateRangeEndChange")) </aside>
+
+            <ins></ins>
+
+        </section>
+
+        @Html.ValidationMessageFor(m => m.CatalogName)    @Html.LabelFor(m => m.CatalogName)    @Html.EditorFor(m => m.CatalogName)
+
+        @Html.ValidationMessageFor(m => m.Header)    @Html.LabelFor(m => m.Header)
+
+        @Html.Partial("HelperControls/HtmlEditor", new Gnc2.Admin.Models.HtmlEditorModel { Expression = "Header", ErrorMessageRsrcKey = "HeaderReq", Value = (Model != null) ? Model.Header : "" })
+
+        @Html.ValidationMessageFor(m => m.CatalogPoint)    @Html.LabelFor(m => m.CatalogPoint)    @Html.EditorFor(m => m.CatalogPoint)
+
+        @Html.ValidationMessageFor(m => m.CatalogFeatures)    @Html.LabelFor(m => m.CatalogFeatures)
+
+        @Html.Partial("HelperControls/HtmlEditor", new Gnc2.Admin.Models.HtmlEditorModel { Expression = "CatalogFeatures", ErrorMessageRsrcKey = "CatalogFeaturesReq", Value = (Model != null) ? Model.CatalogFeatures : "" })
+
+        @Html.ValidationMessageFor(m => m.CatalogCondition)    @Html.LabelFor(m => m.CatalogCondition)
+
+        @Html.Partial("HelperControls/HtmlEditor", new Gnc2.Admin.Models.HtmlEditorModel { Expression = "CatalogCondition", ErrorMessageRsrcKey = "CatalogConditionReq", Value = (Model != null) ? Model.CatalogCondition : "" })
+
+                @Html.ValidationMessageFor(model => model.CatalogTypeId)   @Html.LabelFor(model => model.CatalogTypeId)
+        @Html.DropDownList("CatalogTypeId", (SelectList)ViewBag.type, "Lütfen Modül Seçin")
+
+        <section class="CatalogVarieties" id="CatalogVarieties" style="display: none;">
+        @Html.ValidationMessageFor(model => model.PromoCodes)   @Html.LabelFor(model => model.PromoCodes)   @Html.DropDownList("PromoCodes", (SelectList)ViewBag.Promocode, "Lütfen tip seçin", new { id = "PromoCodes" })
+
+            @Html.Label("CatalogVariety", "Ürün çeşitliliği var mı?") @Html.CheckBox("CatalogVariety", false, new { onclick = "ShowVarieties()" })
+            <ins></ins>
+            <section id="CatalogVarietyFields" style="display:none;">
+<label for="CatalogVarieties[0].VarietyName" class="categoryLabel">Çeşit Adı</label> 
+        <label for="CatalogVarieties[0].VarietyStock" class="categoryLabel">Stok Adedi</label>
+            <ins></ins>
+                <input type="text" id="CatalogVarieties[0].VarietyName" name="CatalogVarieties[0].VarietyName" class="categoryInput mr20px" />
+                <input type="text" id="CatalogVarieties[0].VarietyStock" name="CatalogVarieties[0].VarietyStock" class="categoryInput mr20px" />
+     <input type="button" class="addNewVariety" value="+" onclick="AddNewVarietyField()" />
+            </section>
+       </section>
+
+
+        @Html.Partial("Common/FormFooter")
+
+    </aside>
+    
+    <aside class="panel side">
+        <aside>
+
+            @{Html.RenderPartial("Common/Upload", new Gnc2.Admin.Models.UploadModel
+              {
+                  UploadElementName = "CatalogImage",
+                  FileName = (Model != null) ? Model.CatalogImage : "",
+                  ImageType = Gnc2.Com.Helpers.PathHelper.Images.Type.contents,
+                  ResizeDefault = true,
+                  ResizeDefaultW = Gnc2.Com.Virtual.Enums.ImageSizes.Offer_Default_W,
+
+              });
+              }
+
+        </aside>
+    </aside>
+    
+        <aside class="panel side">
+        <aside>
+
+            @{Html.RenderPartial("Common/UploadTextFile", new Gnc2.Admin.Models.UploadModel
+              {
+                  UploadElementName = "PromoCodeFileName",
+                  FileName = (Model != null) ? "PromoCode" : "",
+                  TextType = Gnc2.Com.Helpers.PathHelper.TextFiles.Type.promocodes,
+
+              });}
+
+        </aside>
+    </aside>
+    
+    
+    <aside class="panel side">
+
+        <aside>
+            <p class="checkbox">@Html.EditorFor(model => model.IsActive, "Yayında") @Html.LabelFor(model => model.IsActive) </p>
+        </aside>
+
+        @Html.Partial("Common/DataDefaultFields")
+
+    </aside>
+}

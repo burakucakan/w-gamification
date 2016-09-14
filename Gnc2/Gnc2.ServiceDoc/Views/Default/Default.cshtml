@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = Resources.PosTransactionGlobal.Title + " Documentation - Wanda Digital";
+}
+
+
+
+@*@{Type resourceType = Type.GetType("App_GlobalResources.");
+  System.Reflection.PropertyInfo[] resourceProps = resourceType.GetProperties(
+      System.Reflection.BindingFlags.NonPublic |
+      System.Reflection.BindingFlags.Static |
+      System.Reflection.BindingFlags.GetProperty);
+
+  foreach (System.Reflection.PropertyInfo info in resourceProps)
+  {
+      string name = info.Name;
+      object value = info.GetValue(null, null);  // object can be an image, a string whatever
+      // do something with name and value
+      Response.Write(name.ToString() + " - " + value.ToString() + "<br>");
+  }
+  *@
+@*@{
+    
+    string resourceName = Server.MapPath("App_GlobalResources/GlobalResponseParam.resx");
+    System.Resources.ResourceReader rr = new System.Resources.ResourceReader(resourceName);
+
+    
+    System.Collections.IDictionaryEnumerator dict = rr.GetEnumerator();
+    while (dict.MoveNext())
+    {
+        Response.Write(dict.Current+" - "+dict.Entry.Key+" - "+dict.Entry.Value+" - "+dict.Key+" - "+dict.Value);
+        //ResXDataNode node = (ResXDataNode)dict.Value;
+        //Console.WriteLine("{0,-20} {1,-20} {2}",
+        //                  node.Name + ":",
+        //                  node.GetValue((ITypeResolutionService)null),
+        //                  !String.IsNullOrEmpty(node.Comment) ? "// " + node.Comment : "");
+    }
+}*@
+
+@{
+    string resourceName = Server.MapPath("App_GlobalResources/GlobalResponseParam.resx");
+    //System.Resources.ResourceReader rr = new System.Resources.ResourceReader(resourceName);
+    
+    
+
+}
+
+
+<h1>@Resources.PosTransactionGlobal.Title</h1>
+<p>
+    @Resources.PosTransactionGlobal.Detail
+    <br /><br />
+
+    Endpoint Url<br />
+    <a href="@Resources.PosTransactionGlobal.EndpointUrl" target="_blank">@Resources.PosTransactionGlobal.EndpointUrl</a> <br /> 
+    Wsdl Url <br />
+    <a href="@Resources.PosTransactionGlobal.WsdlUrl" target="_blank">@Resources.PosTransactionGlobal.WsdlUrl</a> <br />
+    Rest Api Method Url <br />
+    <a href="@Resources.PosTransactionGlobal.RestApiMethodUrl" target="_blank">@Resources.PosTransactionGlobal.RestApiMethodUrl</a> <br />
+    Rest Api Help <br />
+    <a href="@Resources.PosTransactionGlobal.RestApiHelp" target="_blank">@Resources.PosTransactionGlobal.RestApiHelp</a> <br />
+
+    <br /><br />
+
+    Not: @Resources.PosTransactionGlobal.Note
+</p>
+
+<h3>Request Parameters</h3>
+<table cellspacing="0">
+    <tr>            
+        <th width="50">Required</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    @foreach(System.Collections.DictionaryEntry item in new System.Resources.ResourceManager(typeof(Resources.PosTransactionRequestParam)).GetResourceSet(System.Globalization.CultureInfo.CurrentCulture,true,true)){   
+      <text>
+      <tr>
+        <td>*</td>
+        <td><b>@item.Key</b></td>
+        <td>@item.Value</td>
+        <td>Erişim yetkilendirme için kullanılan parametredir. </td>
+      </tr>
+      </text>
+  }
+</table>
+<p></p>
+
+<h3>Yetkilendirme</h3>
+<p>@Resources.PosTransactionGlobal.Authorization</p>
+
+<h3>Response Parameters</h3>
+<table cellspacing="0">
+    <tr>            
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    @foreach (System.Collections.DictionaryEntry item in new System.Resources.ResourceManager(typeof(Resources.GlobalResponseParam)).GetResourceSet(System.Globalization.CultureInfo.CurrentCulture, true, true))
+    {
+        <text>
+        <tr>
+            <td><b>@item.Key</b></td>
+            <td>@item.Value</td>
+            <td>Operasyon sonucuna ait kod. “0” ise başarılı anlamını taşır.</td>
+        </tr>
+        </text>
+    }
+</table>

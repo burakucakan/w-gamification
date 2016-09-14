@@ -1,0 +1,29 @@
+﻿- Msisdn & Uid Encrypt İşleri
+- Return Object Type belirleme
+- Gnc2 Login mekanizmasının yapılması
+- Fb Connect force
+
+- Db User Tablosu Update
+  .. Fb Connect Bilgilerini update
+  .. UserExist Check
+  .. False > Insert | True > Update
+  .. Last Login Date
+  .. w2'ye Login Bilgisi geç IsNewUser
+  .. Log Kayıtlarını unutmayalım
+  .. Social Intelligence
+
+- w2 Login Akışı
+  .. Notify Loginin çalıştırılması
+  .. IsNewUserCheck > Actionlarının çağırılması
+  .. Welcome Action ını çalıştıracağız
+
+
+
+
+- srvLocator işleri
+.. Social Intelligence
+.. Veri İşleme İzni
+
+
+- Gigya
+.. Log formatı yanlış, yazışma

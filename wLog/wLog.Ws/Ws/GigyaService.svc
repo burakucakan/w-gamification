@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="wLog.Ws.Ws.GigyaService" CodeBehind="GigyaService.svc.cs" %>

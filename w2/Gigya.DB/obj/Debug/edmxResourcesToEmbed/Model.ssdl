@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GigyaLogModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="GigyaLogModelStoreContainer">
+    <EntitySet Name="GigyaLogs" EntityType="GigyaLogModel.Store.GigyaLogs" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="GigyaLogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ApiMethod" Type="nvarchar" MaxLength="50" />
+    <Property Name="ApiKey" Type="nvarchar" MaxLength="250" />
+    <Property Name="ClientParams" Type="nvarchar(max)" />
+    <Property Name="Response" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="VendorId" Type="uniqueidentifier" />
+    <Property Name="ErrorCode" Type="int" />
+    <Property Name="CallId" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,23 @@
+﻿@using Gnc2.Admin.Extensions;
+@Helper.BodyNav(Html, "UserRegisterControl", false, false, false)
+@section Scripts {
+
+
+}
+
+@using (Ajax.BeginForm(null, null, new AjaxOptions { UpdateTargetId = "PageForm", LoadingElementId = "LoadingForm", OnSuccess = "FormOnSuccess" }, new { @id = "PageForm" }))
+{    
+    <aside class="panel">
+
+                    @{Html.RenderPartial("Common/UploadTextFile", new Gnc2.Admin.Models.UploadModel
+              {
+                  UploadElementName = "PromoCodeFileName",
+                  FileName = (Model != null) ? "PromoCode" : "",
+                  TextType = Gnc2.Com.Helpers.PathHelper.TextFiles.Type.promocodes
+              });}
+        <br />
+        @Html.Partial("Common/FormFooter")
+
+    </aside>
+}
+

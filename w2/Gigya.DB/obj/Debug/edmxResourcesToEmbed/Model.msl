@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GigyaLogModelStoreContainer" CdmEntityContainer="GigyaLogEntities">
+    <EntitySetMapping Name="GigyaLogs">
+      <EntityTypeMapping TypeName="GigyaLogModel.GigyaLogs">
+        <MappingFragment StoreEntitySet="GigyaLogs">
+          <ScalarProperty Name="CallId" ColumnName="CallId" />
+          <ScalarProperty Name="ErrorCode" ColumnName="ErrorCode" />
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Response" ColumnName="Response" />
+          <ScalarProperty Name="ClientParams" ColumnName="ClientParams" />
+          <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+          <ScalarProperty Name="ApiMethod" ColumnName="ApiMethod" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

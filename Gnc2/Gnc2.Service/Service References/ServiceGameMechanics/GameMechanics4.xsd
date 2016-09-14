@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM.CustomObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM.CustomObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18348/GameMechanics.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" />
+  <xs:complexType name="ArrayOfUserObj">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserObj" nillable="true" type="tns:UserObj" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserObj" nillable="true" type="tns:ArrayOfUserObj" />
+  <xs:complexType name="UserObj">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" base="q1:User">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserObj" nillable="true" type="tns:UserObj" />
+  <xs:complexType name="ArrayOfChallengeObj">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChallengeObj" nillable="true" type="tns:ChallengeObj" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChallengeObj" nillable="true" type="tns:ArrayOfChallengeObj" />
+  <xs:complexType name="ChallengeObj">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DailyCap" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MinimalInterval" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PointsValue" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChallengeObj" nillable="true" type="tns:ChallengeObj" />
+</xs:schema>

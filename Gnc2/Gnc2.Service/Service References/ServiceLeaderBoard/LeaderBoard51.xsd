@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/w2.Ws" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/w2.Ws" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18348/Ws/LeaderBoard.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/w2.Ws.Models" />
+  <xs:complexType name="LeaderListRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LeaderListRequest" nillable="true" type="tns:LeaderListRequest" />
+  <xs:complexType name="LeaderListModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/w2.Ws.Models" base="q1:BaseWsModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Leaders" nillable="true" type="tns:ArrayOfLeaderModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LeaderListModel" nillable="true" type="tns:LeaderListModel" />
+  <xs:complexType name="ArrayOfLeaderModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LeaderModel" nillable="true" type="tns:LeaderModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLeaderModel" nillable="true" type="tns:ArrayOfLeaderModel" />
+  <xs:complexType name="LeaderModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Picture" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Point" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LeaderModel" nillable="true" type="tns:LeaderModel" />
+  <xs:complexType name="UserRankRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserRankRequest" nillable="true" type="tns:UserRankRequest" />
+</xs:schema>

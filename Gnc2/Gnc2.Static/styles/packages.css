@@ -1,0 +1,34 @@
+﻿.packageContent { padding:23px 19px; width:582px; background:#ffffff; float:left; margin-top:8px; }
+.packageContent .textPlace { width:100%; height:auto; float:left; font-size:16px; color:#373a40; line-height:22px; margin-bottom:35px; }
+.packageContent .packageForm { width:582px; float:left; font-family:Arial; }
+.packageContent .packageForm .item { width:582px; float:left; margin-bottom:12px; }
+.packageContent .packageForm .item .left { width: 277px; float:left; font-size:12px; padding-top:15px; font-weight:bold; color:#323234; }
+.packageContent .packageForm .item .left.leftSmall { width:auto !important; padding-right:10px; }
+.packageContent .packageForm .item .right { width: 305px; float:left; }
+.packageContent .packageForm .item .right .date { width:105px; float:left; }
+.packageContent .packageForm .item .right .cvv { width:95px; float:left;  }
+.packageContent .packageForm .item .right .cvv label { width: 30px; float: left; font-size: 12px; font-weight: bold; padding-top: 15px; }
+.packageContent .packageForm .item .right .cvv .text { width:65px; float:left; }
+.packageContent .packageForm .item input[type=text] { font-size:12px; width:100%; }
+.packageContent .packageForm .item:last-child { margin-top:10px; }
+.packageContent .packageForm .k-dropdown-wrap.k-state-default > .k-input { font-size:12px; width:96%; margin-top:10px; }
+.packageContent .stepInfo { width:524px; min-height:45px; float:left; margin-top:36px; border-top:#373a40 2px dotted; padding:17px 0px 0px 58px; background:url('../images/icons/info-icon.png') no-repeat 0px 14px; color:#141f27; font-size:11px; font-family:Arial; }
+.packageContent .contractArea { width:582px; height:190px; float:left; border:#b0b0b0 1px solid; font-family:Arial; font-size:12px; line-height:18px; color:#373a40; margin-bottom:21px; }
+.packageContent .contractArea .content { margin:7px; outline:none; }
+.packageContent .packageForm .item .right .btnLeft { margin-right:10px; }
+.packageContent .packageForm .check { width: 500px; margin-top: 6px; font-weight:bold; }
+.packageContent .infoArea { width:347px; min-height:130px; float:left; background:url('../images/icons/info2-icon.png') no-repeat right 0px; padding-right:235px; font-size:12px; font-family:Arial; color:#646464; line-height:18px; font-weight:bold; }
+.packageContent .infoArea a { text-decoration:underline; color:#e9168c; }
+.packageContent .infoArea span { color:#373a40; }
+.packageContent .infoArea.success { background:url('../images/icons/success-icon.png') no-repeat right 0px; }
+.packageContent .packageForm .item .right .check { width:auto; margin-bottom:30px;}
+.packageContent .packageForm .item .right .check img.packageImage { width:119px; height:39px; float:left; margin-top: -14px; margin-right:8px; }
+.packageContent .packageForm .item .right .check .packageText { width:150px; float:left; margin-top:0px; color:#151f28; }
+.packageContent .packageForm .item .right .check .tooltip { width: 233px; min-height:230px; position: absolute; margin-left: -263px; margin-top: -61px; cursor:default; display:none; }
+.packageContent .packageForm .item .right .check .tooltip .tooltipContent { width:193px; float:left;  background:#d4d3d6; box-shadow:#b2b6b8 2px 2px; padding:17px 10px 10px 11px;  }
+.packageContent .packageForm .item .right .check .tooltip .arrow { width:13px; height:17px; float:left; background:url(../images/icons/package-tooltip-arrow.png) no-repeat; margin-top:59px; }
+.packageContent .packageForm .item .right .check .tooltip .tooltipContent .title { width:100%; float:left; font-size:14px; color:#336499;  }
+.packageContent .packageForm .item .right .check .tooltip .tooltipContent .text { width:100%; float:left; margin-top:8px; font-size:11px; font-weight:normal; color:#000000; line-height: 16px; }
+.packageContent .packageForm .item .right .check .tooltip .tooltipContent .button { width:100%; float:left; margin-top:13px; }
+.packageContent .packageForm .item .right .check .tooltip .tooltipContent .button a { width: auto; height: 16px; font-family: Arial; font-size: 11px; color: #ffffff; float: right; background: url(../images/global/package-tooltip-btn-bg.png) no-repeat right 0px #ec008d; padding: 6px 25px 0px 7px; }
+ .packageContent .packageForm .item .right .check .tooltip .tooltipContent .button a:hover { background:url(../images/global/package-tooltip-btn-bg.png) no-repeat right -21px #d20078; text-decoration:none; }

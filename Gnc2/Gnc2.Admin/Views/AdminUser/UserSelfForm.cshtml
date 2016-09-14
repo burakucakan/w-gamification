@@ -1,0 +1,54 @@
+﻿@model Gnc2.DB.Admins
+
+@Helper.BodyNav(Html, "AdminUser", false, false, false)
+                
+@using (Ajax.BeginForm(null, null, new AjaxOptions { UpdateTargetId = "PageForm", LoadingElementId = "LoadingForm", OnSuccess = "FormOnSuccess" }, new { @id = "PageForm" }))
+{    
+    <aside class="panel main">
+                
+        @Html.ValidationMessageFor(m => m.Username)        @Html.LabelFor(m => m.Username)    @Html.TextBoxFor(m => m.Username, new { @readonly = "readonly" })
+        @Html.ValidationMessageFor(m => m.Password)        @Html.LabelFor(m => m.Password)    @Html.EditorFor(m => m.Password)
+        @Html.ValidationMessageFor(m => m.FirstName)        @Html.LabelFor(m => m.FirstName)    @Html.EditorFor(m => m.FirstName)
+        @Html.ValidationMessageFor(m => m.LastName)        @Html.LabelFor(m => m.LastName)    @Html.EditorFor(m => m.LastName)
+            
+        @Html.LabelFor(m => m.Description)    @Html.EditorFor(m => m.Description)
+            
+        @Html.ValidationMessageFor(m => m.LastLoginDate)        @Html.LabelFor(m => m.LastLoginDate)    @Html.TextBoxFor(m => m.LastLoginDate, new { @readonly = "readonly" })                        
+
+        @Html.Partial("Common/FormFooter")
+            
+    </aside>
+    
+    
+    <aside class="panel side">
+        <aside>
+
+            @{Html.RenderPartial("Common/Upload", new Gnc2.Admin.Models.UploadModel {
+                  UploadElementName = "FileName",
+                  FileName = (Model != null) ? Model.FileName : "",
+                  ImageType = Gnc2.Com.Helpers.UrlHelper.Images.Type.adminusers,
+                  ResizeDefault = true,
+                  ResizeDefaultW = Gnc2.Com.Virtual.Enums.ImageSizes.AdminUser_Default_W,
+                  NotRequired = true,
+                  NotLiveImg=true
+              });
+              }
+
+        </aside>
+    </aside>
+    
+    <aside class="panel side">
+
+        <section class="displayNone">
+    
+            @Html.EditorFor(m => m.FullAuth)
+
+        </section>
+
+
+        <aside>
+            <p class="checkbox"> @Html.EditorFor(model => model.IsActive) @Html.LabelFor(model => model.IsActive) </p>
+        </aside>
+
+    </aside>
+}

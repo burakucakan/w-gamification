@@ -1,0 +1,120 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "w2.DB", "w2.DB\w2.DB.csproj", "{9BF33A02-01F7-4FF6-A46C-5ACB837523A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{6635F39D-F955-4B87-8A31-AFDFC0731BA6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2AE8BFAB-118E-43EF-AF1B-015851C04590} = {2AE8BFAB-118E-43EF-AF1B-015851C04590}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LIB", "LIB\LIB.csproj", "{7E338258-5852-4955-ABA2-B357C05767B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "w2.Service", "w2.Service\w2.Service.csproj", "{BE24673E-434C-4BF6-916C-6B5F1FC4A48E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "w2.Ws", "w2.Ws\w2.Ws.csproj", "{2AE8BFAB-118E-43EF-AF1B-015851C04590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docs", "Docs\Docs.csproj", "{69F20C96-75A4-47F6-8187-933E58D0707F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gigya.Socialize.SDK", "GSCSharpSDK\Gigya.Socialize.SDK.csproj", "{BB96A02D-4C4B-48F0-9AA4-E73B186F3151}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gigya.DB", "Gigya.DB\Gigya.DB.csproj", "{5441C50C-3CD9-48AE-8EE9-5C8775108106}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gigya.Service", "Gigya.Service\Gigya.Service.csproj", "{33DD4EB5-93D6-4D34-827C-6F6AF4B4B715}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "w2.Com", "w2.Com\w2.Com.csproj", "{6F1C6307-06F6-441C-92DC-C46A87FFC3AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "w2.ApiDocs", "w2.ApiDocs\w2.ApiDocs.csproj", "{ADBD8922-B33A-49B6-97D4-564F41AE1995}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://jiqsaw.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Docs\\Docs.csproj
+		SccProjectName1 = Docs
+		SccLocalPath1 = Docs
+		SccProjectUniqueName2 = LIB\\LIB.csproj
+		SccProjectName2 = LIB
+		SccLocalPath2 = LIB
+		SccProjectUniqueName3 = TestConsole\\TestConsole.csproj
+		SccProjectName3 = TestConsole
+		SccLocalPath3 = TestConsole
+		SccProjectUniqueName4 = w2.DB\\w2.DB.csproj
+		SccProjectName4 = w2.DB
+		SccLocalPath4 = w2.DB
+		SccProjectUniqueName5 = w2.Service\\w2.Service.csproj
+		SccProjectName5 = w2.Service
+		SccLocalPath5 = w2.Service
+		SccProjectUniqueName6 = w2.Ws\\w2.Ws.csproj
+		SccProjectName6 = w2.Ws
+		SccLocalPath6 = w2.Ws
+		SccProjectUniqueName7 = GSCSharpSDK\\Gigya.Socialize.SDK.csproj
+		SccProjectName7 = GSCSharpSDK
+		SccLocalPath7 = GSCSharpSDK
+		SccProjectUniqueName8 = Gigya.DB\\Gigya.DB.csproj
+		SccProjectName8 = Gigya.DB
+		SccLocalPath8 = Gigya.DB
+		SccProjectUniqueName9 = Gigya.Service\\Gigya.Service.csproj
+		SccProjectName9 = Gigya.Service
+		SccLocalPath9 = Gigya.Service
+		SccProjectUniqueName10 = w2.Com\\w2.Com.csproj
+		SccProjectName10 = w2.Com
+		SccLocalPath10 = w2.Com
+		SccProjectUniqueName11 = w2.ApiDocs\\w2.ApiDocs.csproj
+		SccProjectName11 = w2.ApiDocs
+		SccLocalPath11 = w2.ApiDocs
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BF33A02-01F7-4FF6-A46C-5ACB837523A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF33A02-01F7-4FF6-A46C-5ACB837523A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF33A02-01F7-4FF6-A46C-5ACB837523A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF33A02-01F7-4FF6-A46C-5ACB837523A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6635F39D-F955-4B87-8A31-AFDFC0731BA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6635F39D-F955-4B87-8A31-AFDFC0731BA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6635F39D-F955-4B87-8A31-AFDFC0731BA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6635F39D-F955-4B87-8A31-AFDFC0731BA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E338258-5852-4955-ABA2-B357C05767B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E338258-5852-4955-ABA2-B357C05767B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E338258-5852-4955-ABA2-B357C05767B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE24673E-434C-4BF6-916C-6B5F1FC4A48E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE24673E-434C-4BF6-916C-6B5F1FC4A48E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE24673E-434C-4BF6-916C-6B5F1FC4A48E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE24673E-434C-4BF6-916C-6B5F1FC4A48E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AE8BFAB-118E-43EF-AF1B-015851C04590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AE8BFAB-118E-43EF-AF1B-015851C04590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AE8BFAB-118E-43EF-AF1B-015851C04590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AE8BFAB-118E-43EF-AF1B-015851C04590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69F20C96-75A4-47F6-8187-933E58D0707F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69F20C96-75A4-47F6-8187-933E58D0707F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69F20C96-75A4-47F6-8187-933E58D0707F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB96A02D-4C4B-48F0-9AA4-E73B186F3151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB96A02D-4C4B-48F0-9AA4-E73B186F3151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB96A02D-4C4B-48F0-9AA4-E73B186F3151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB96A02D-4C4B-48F0-9AA4-E73B186F3151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5441C50C-3CD9-48AE-8EE9-5C8775108106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5441C50C-3CD9-48AE-8EE9-5C8775108106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5441C50C-3CD9-48AE-8EE9-5C8775108106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5441C50C-3CD9-48AE-8EE9-5C8775108106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33DD4EB5-93D6-4D34-827C-6F6AF4B4B715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33DD4EB5-93D6-4D34-827C-6F6AF4B4B715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33DD4EB5-93D6-4D34-827C-6F6AF4B4B715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33DD4EB5-93D6-4D34-827C-6F6AF4B4B715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F1C6307-06F6-441C-92DC-C46A87FFC3AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F1C6307-06F6-441C-92DC-C46A87FFC3AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F1C6307-06F6-441C-92DC-C46A87FFC3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F1C6307-06F6-441C-92DC-C46A87FFC3AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADBD8922-B33A-49B6-97D4-564F41AE1995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADBD8922-B33A-49B6-97D4-564F41AE1995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADBD8922-B33A-49B6-97D4-564F41AE1995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADBD8922-B33A-49B6-97D4-564F41AE1995}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

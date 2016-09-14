@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e202715e-538b-4962-80ab-7867bf9f15ce" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:18348/Ws/SiteActivity.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SiteActivity4.xsd" MetadataType="Schema" ID="bc853388-1286-4208-86f8-9a8ce6c4585f" SourceId="1" SourceUrl="http://localhost:18348/WS/SiteActivity.svc?xsd=xsd0" />
+    <MetadataFile FileName="SiteActivity1.disco" MetadataType="Disco" ID="4dcf2d6f-71dc-4b86-ad4d-b8ad02cc9a15" SourceId="1" SourceUrl="http://localhost:18348/WS/SiteActivity.svc?disco" />
+    <MetadataFile FileName="SiteActivity41.xsd" MetadataType="Schema" ID="26e5a541-1bc9-4f70-9c55-685cd0bd1103" SourceId="1" SourceUrl="http://localhost:18348/WS/SiteActivity.svc?xsd=xsd3" />
+    <MetadataFile FileName="SiteActivity2.wsdl" MetadataType="Wsdl" ID="863a1580-0707-4f88-b81a-221f4ee5662e" SourceId="1" SourceUrl="http://localhost:18348/WS/SiteActivity.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="SiteActivity21.wsdl" MetadataType="Wsdl" ID="0dcdd5be-729c-472c-8f1d-cbcc703bb331" SourceId="1" SourceUrl="http://localhost:18348/WS/SiteActivity.svc?wsdl" />
+    <MetadataFile FileName="SiteActivity42.xsd" MetadataType="Schema" ID="7a81a0b8-df00-4d30-952b-f1620646e970" SourceId="1" SourceUrl="http://localhost:18348/WS/SiteActivity.svc?xsd=xsd2" />
+    <MetadataFile FileName="SiteActivity43.xsd" MetadataType="Schema" ID="42e2fb34-0666-4ee2-b5c5-e2ff0664eb02" SourceId="1" SourceUrl="http://localhost:18348/WS/SiteActivity.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

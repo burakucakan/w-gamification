@@ -1,0 +1,79 @@
+﻿@using Gnc2.Com.Helpers;
+
+@model Gnc2.Service.ServiceLeaderBoard.LeaderListModel
+
+<section class="boxSmall fReg fLeft">
+    <h3 class="boxTitle">Hat Özetim</h3>
+
+    <section class="boxContent-summary">
+        <ins></ins>
+        
+           
+            <div class="textup">Hattına ait güncel fatura bilgini ve kalan kullanım bilgilerini görebilirsin.</div>
+            <div class="lineCont">
+                <div class="lineConttext">GÜNCEL FATURA</div>
+                <div class="lineConttextPri">59.56 TL</div>
+                <div class="lineContOdeme">Hemen Öde</div>
+            </div>
+         <div class="lineCont lineCont-bg">
+                <div class="lineConttext">GÜNCEL FATURA</div>
+                <div class="lineConttextPri">HEPSİ BİR ARADA</div>
+                <div class="lineContOdeme">Hemen Öde</div>
+            </div>
+
+         <div class="lineCont">
+                <div class="lineConttext">GÜNCEL FATURA</div>
+                <div class="lineConttextPri">gnctrkcll, Profesyoneller</div>
+                <div class="lineContOdeme">Hemen Öde</div>
+            </div>
+
+         <div class="lineCont lineCont-bg">
+                <div class="lineConttext">GÜNCEL FATURA</div>
+                <div class="lineConttextPri">SOSYAL PAKET</div>
+                <div class="lineContOdeme">Hemen Öde</div>
+            </div>
+        <div class="boxContent-progresbarCont">
+         
+            <span class="lineConttext">KONUŞMA</span>
+            <span class="pbCtextTime">182 DK / 600 DK </span>
+            <div id="rate1" class="pbar"></div>
+            <script>
+                $(function () {
+                    rateGenerate("rate1", "%80", "%80");
+                });
+            </script>
+
+            
+            <span class="lineConttext">KONUŞMA</span>
+            <span class="pbCtextTime">182 DK / 600 DK </span>
+              <div id="rate2" class="pbar">
+                 <script>
+                     $(function () {
+                         rateGenerate("rate2", "%60", "%60");
+                     });
+            </script>
+
+            </div>
+
+
+            
+            <span class="lineConttext">KONUŞMA</span>
+            <span class="pbCtextTime">182 DK / 600 DK </span>
+            <div id="rate3" class="pbar">
+
+
+                    <script>
+                        $(function () {
+                            rateGenerate("rate3", "%40", "%40");
+                        });
+            </script>
+
+
+            </div>
+        </div>
+        <ins></ins>
+
+        <a href="javascript:;" class="btn fRight">HAT İŞLEMLERİM</a>
+
+    </section>
+</section>

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    
+    <title>gnctrkcll</title>
+
+    <link rel="stylesheet" href="http://localhost:18309/styles/reset.css" type="text/css" />
+    <link rel="stylesheet" href="http://localhost:18309/styles/font.css" type="text/css" />
+    <link rel="stylesheet" href="http://localhost:18309/styles/common.css" type="text/css" />
+
+    <link rel="stylesheet" href="http://localhost:18168/styles/form.css" type="text/css" />
+    <link rel="stylesheet" href="http://localhost:18168/styles/popup.css" type="text/css" />
+
+    <link href="http://localhost:18309/scripts/jquery/plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css" />
+    <link href="http://localhost:18309/packages/kendoui/styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://localhost:18309/packages/kendoui/styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
+    
+    <link href="http://localhost:18168/styles/popupOverride.css" rel="stylesheet" type="text/css" />
+
+    <!--[if lte IE 8]> <script src="http://localhost:18309/scripts/utils/html5.min.js" type="text/javascript"></script> <![endif]-->
+
+    <script src="http://localhost:18309/scripts/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="http://localhost:18309/scripts/jquery/plugins/colorbox/jquery.colorbox-min.js"></script> 
+    <script src="http://localhost:18309/packages/kendoui/js/kendo.all.min.js"></script> 
+    <script src="http://localhost:18309/packages/kendoui/kendo.modernizr.custom.js"></script>
+    <script src="http://localhost:18309/scripts/kendo.js"></script> 
+    <script src="http://localhost:18168/scripts/loginGlobal.js" type="text/javascript"></script>
+    <script src="http://localhost:18168/scripts/init.js" type="text/javascript"></script>
+
+</head>
+
+<body class="popup">
+    
+    <header>
+        <section class="container">
+            <a href="javascript:;" class="logo"></a>
+        </section>
+    </header>
+
+    <section class="container">
+        <section class="login">
+
+            <h3 class="contentTitle fReg">gnc2 gİrİş</h3>
+            <section class="error" style="display:none;">GSM numaranız hatalı girdiniz. Lütfen kontrol edip tekrar deneyiniz.</section>
+            <section class="loginContent">
+                
+                <section class="left">
+		            <form name="login" id="login" method="post" action="http://localhost:18132/Login/SsoResult">
+			            <label class="text"><i class="fReg">gsm numaranız:</i></label>
+			            <label class="textbox"><input type="text" name="gsm" id="gsm" maxlength="10" /></label>
+
+			            <ins></ins>
+
+			            <label class="text"><i class="fReg">turkcell şİfre:</i></label>
+			            <label class="textbox"><input type="password" name="pass" id="pass" maxlength="6" /></label>
+
+                        <ins></ins>
+
+			            <label class="text"><i class="fReg">güvenlİk kodu:</i></label>
+			            <label class="textbox">
+                            <img src="http://localhost:18168/images/_offline/captcha.jpg" class="captchaImage" />
+                            <input type="text" name="securityCode" id="securityCode" class="securityCode" maxlength="6" /></label>
+
+			            <ins></ins>
+
+			            <label class="button"><input type="submit" value="GİRİŞ" onclick="javascript: document.getElementById('login').action = 'http://localhost:18132/Login/SsoResult?LocalMsisdn=' + document.getElementById('gsm').value;" class="fRight"/></label>
+		            </form>
+
+                </section>
+                <section class="right fReg">
+
+                    <label class="text">ŞİFRE AL</label>
+                    <label class="detail">Turkcell Şifrenizi <b>SIFRE</b> yazip <b>2222</b>'ye <br />kısa mesaj göndererek ücretsiz alabilirsiniz.<br />Turkcell Şifreniz SMS ile tarafınıza iletilecektir.
+                    </label>
+
+                    <ins></ins>
+
+                    <label class="get-password"><img src="http://localhost:18168/images/global/sifre-al.png" /></label>
+
+                </section>
+
+                <section class="bottom">
+                    <a href="javascript:;" class="fRight">Şifremi değiştir</a>
+                </section>
+
+            </section>
+
+        </section>
+
+        <section class="securityBottom">
+            Turkcell Web Siteleri'nde güvenli işlem yapabilmenizi sağlamak için<br />
+            uluslararası bir güvenlik standartı olan SSL kullanmaktadır.
+        </section>
+        
+    </section>
+
+<!--
+    <script>
+        $(function () {
+            parent.$.colorbox.resize({
+                innerWidth: $('body').width(),
+                innerHeight: $('body').height()
+            });
+        });
+    </script>
+-->
+
+</body>
+</html>

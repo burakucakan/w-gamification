@@ -1,0 +1,7 @@
+C:\J\Projects\TurkcellWGamification\w2\Gigya.DB\bin\Debug\Gigya.DB.dll.config
+C:\J\Projects\TurkcellWGamification\w2\Gigya.DB\bin\Debug\Gigya.DB.dll
+C:\J\Projects\TurkcellWGamification\w2\Gigya.DB\bin\Debug\Gigya.DB.pdb
+C:\J\Projects\TurkcellWGamification\w2\Gigya.DB\bin\Debug\EntityFramework.dll
+C:\J\Projects\TurkcellWGamification\w2\Gigya.DB\bin\Debug\EntityFramework.xml
+C:\J\Projects\TurkcellWGamification\w2\Gigya.DB\obj\Debug\Gigya.DB.dll
+C:\J\Projects\TurkcellWGamification\w2\Gigya.DB\obj\Debug\Gigya.DB.pdb

@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TurkcellGnc2Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TurkcellGnc2ModelStoreContainer">
+    <EntitySet Name="AdminAuths" EntityType="TurkcellGnc2Model.Store.AdminAuths" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Admins" EntityType="TurkcellGnc2Model.Store.Admins" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AdminTransaction" EntityType="TurkcellGnc2Model.Store.AdminTransaction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Banners" EntityType="TurkcellGnc2Model.Store.Banners" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Campaigns" EntityType="TurkcellGnc2Model.Store.Campaigns" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CatalogCategories" EntityType="TurkcellGnc2Model.Store.CatalogCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Catalogs" EntityType="TurkcellGnc2Model.Store.Catalogs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CatalogVarieties" EntityType="TurkcellGnc2Model.Store.CatalogVarieties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Code" EntityType="TurkcellGnc2Model.Store.Code" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Invitations" EntityType="TurkcellGnc2Model.Store.Invitations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Moduls" EntityType="TurkcellGnc2Model.Store.Moduls" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ModulTypes" EntityType="TurkcellGnc2Model.Store.ModulTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PromoCodeArchives" EntityType="TurkcellGnc2Model.Store.PromoCodeArchives" store:Type="Tables" store:Schema="dbo" store:Name="PromoCodeArchives">
+      <DefiningQuery>SELECT 
+      [PromoCodeArchives].[Id] AS [Id], 
+      [PromoCodeArchives].[PromoCodeTypeId] AS [PromoCodeTypeId], 
+      [PromoCodeArchives].[CatalogId] AS [CatalogId], 
+      [PromoCodeArchives].[PromoCodeName] AS [PromoCodeName], 
+      [PromoCodeArchives].[CreateDate] AS [CreateDate], 
+      [PromoCodeArchives].[UserId] AS [UserId], 
+      [PromoCodeArchives].[IsDeleted] AS [IsDeleted], 
+      [PromoCodeArchives].[IsActive] AS [IsActive]
+      FROM [dbo].[PromoCodeArchives] AS [PromoCodeArchives]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PromoCodes" EntityType="TurkcellGnc2Model.Store.PromoCodes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PromoCodeTypes" EntityType="TurkcellGnc2Model.Store.PromoCodeTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Refunds" EntityType="TurkcellGnc2Model.Store.Refunds" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="TurkcellGnc2Model.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="test" EntityType="TurkcellGnc2Model.Store.test" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserCampaigns" EntityType="TurkcellGnc2Model.Store.UserCampaigns" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserOrders" EntityType="TurkcellGnc2Model.Store.UserOrders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="TurkcellGnc2Model.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserTransaction" EntityType="TurkcellGnc2Model.Store.UserTransaction" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_CatalogCategories_ModulTypes" Association="TurkcellGnc2Model.Store.FK_CatalogCategories_ModulTypes">
+      <End Role="ModulTypes" EntitySet="ModulTypes" />
+      <End Role="Catalogs" EntitySet="Catalogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CatalogVarieties_Catalogs" Association="TurkcellGnc2Model.Store.FK_CatalogVarieties_Catalogs">
+      <End Role="Catalogs" EntitySet="Catalogs" />
+      <End Role="CatalogVarieties" EntitySet="CatalogVarieties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Categories_CatalogCategories" Association="TurkcellGnc2Model.Store.FK_Categories_CatalogCategories">
+      <End Role="CatalogCategories" EntitySet="CatalogCategories" />
+      <End Role="Catalogs" EntitySet="Catalogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PromoCodes_Catalogs" Association="TurkcellGnc2Model.Store.FK_PromoCodes_Catalogs">
+      <End Role="Catalogs" EntitySet="Catalogs" />
+      <End Role="PromoCodes" EntitySet="PromoCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PromoCodes_PromoCodeTypes" Association="TurkcellGnc2Model.Store.FK_PromoCodes_PromoCodeTypes">
+      <End Role="PromoCodeTypes" EntitySet="PromoCodeTypes" />
+      <End Role="PromoCodes" EntitySet="PromoCodes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AdminAuths">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ModulId" Type="int" Nullable="false" />
+    <Property Name="AdminId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="512" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="512" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="FullAuth" Type="bit" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdminTransaction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="TransactionId" Type="int" Nullable="false" />
+    <Property Name="TableName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="TransactionType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Banners">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="URL" Type="nvarchar" MaxLength="500" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Order" Type="nvarchar" MaxLength="20" />
+    <Property Name="WindowTypeCode" Type="int" />
+    <Property Name="PositionCode" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Campaigns">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Image" Type="nvarchar" MaxLength="500" />
+    <Property Name="Header" Type="nvarchar(max)" />
+    <Property Name="Content" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogCategories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Catalogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Header" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CatalogName" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="CatalogPoint" Type="int" Nullable="false" />
+    <Property Name="CatalogFeatures" Type="nvarchar" MaxLength="500" />
+    <Property Name="CatalogStartDate" Type="datetime" Nullable="false" />
+    <Property Name="CatalogEndDate" Type="datetime" Nullable="false" />
+    <Property Name="CatalogImage" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="CatalogCondition" Type="nvarchar" MaxLength="500" />
+    <Property Name="CatalogCategoriesId" Type="int" Nullable="false" />
+    <Property Name="ModuleTypeId" Type="int" Nullable="false" />
+    <Property Name="CatalogCreateDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CatalogVarieties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CatalogId" Type="int" />
+    <Property Name="VarietyName" Type="nvarchar" MaxLength="250" />
+    <Property Name="VarietyStock" Type="int" />
+    <Property Name="VarietyImageUrl" Type="nvarchar" MaxLength="250" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Code">
+    <Key>
+      <PropertyRef Name="CodeId" />
+    </Key>
+    <Property Name="CodeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CodeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Invitations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="InviterUserFbId" Type="int" Nullable="false" />
+    <Property Name="InvitedUserFbId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="InvitationDate" Type="datetime" Nullable="false" />
+    <Property Name="InvitationCode" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="IsMember" Type="bit" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Moduls">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="AdminPath" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsInAdminMenu" Type="bit" Nullable="false" />
+    <Property Name="IsSubEndItem" Type="bit" Nullable="false" />
+    <Property Name="HasLivePage" Type="bit" Nullable="false" />
+    <Property Name="LivePageUrl" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Order" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModulTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ModulTypeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'TurkcellGnc2.dbo.PromoCodeArchives' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="PromoCodeArchives">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="CatalogId" />
+      <PropertyRef Name="PromoCodeName" />
+      <PropertyRef Name="CreateDate" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="IsDeleted" />
+      <PropertyRef Name="IsActive" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="PromoCodeTypeId" Type="int" />
+    <Property Name="CatalogId" Type="int" Nullable="false" />
+    <Property Name="PromoCodeName" Type="nvarchar" Nullable="false" MaxLength="120" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PromoCodes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PromoCodeTypeId" Type="int" Nullable="false" />
+    <Property Name="CatalogsId" Type="int" Nullable="false" />
+    <Property Name="PromoCodeName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsUsed" Type="bit" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PromoCodeTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PromoCodeTypeName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Refunds">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="test">
+    <Key>
+      <PropertyRef Name="testid" />
+    </Key>
+    <Property Name="testid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="tone" Type="datetime" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserCampaigns">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CampaignId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserOrders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CatalogId" Type="int" Nullable="false" />
+    <Property Name="PromoCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DocumentNumber" Type="nvarchar" Nullable="false" MaxLength="16" />
+    <Property Name="ProjectNumber" Type="nvarchar" Nullable="false" MaxLength="16" />
+    <Property Name="ShippingCode" Type="nvarchar" Nullable="false" MaxLength="16" />
+    <Property Name="StockCode" Type="nvarchar" Nullable="false" MaxLength="16" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="Town" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="16" />
+    <Property Name="TaxOffice" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Msisdn" Type="nvarchar" Nullable="false" MaxLength="11" />
+    <Property Name="FbId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Surname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="ProfileImage" Type="nvarchar" MaxLength="500" />
+    <Property Name="BirthDate" Type="datetime" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="LoginDate" Type="datetime" Nullable="false" />
+    <Property Name="CityCode" Type="int" Nullable="false" />
+    <Property Name="Ispermissions" Type="bit" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="FbProfileImage" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="UserTransaction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RegisterDate" Type="datetime" Nullable="false" />
+    <Property Name="RegisterType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="LoginType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Msisdn" Type="nvarchar" Nullable="false" MaxLength="11" />
+  </EntityType>
+  <Association Name="FK_CatalogCategories_ModulTypes">
+    <End Role="ModulTypes" Type="TurkcellGnc2Model.Store.ModulTypes" Multiplicity="1" />
+    <End Role="Catalogs" Type="TurkcellGnc2Model.Store.Catalogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModulTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Catalogs">
+        <PropertyRef Name="ModuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CatalogVarieties_Catalogs">
+    <End Role="Catalogs" Type="TurkcellGnc2Model.Store.Catalogs" Multiplicity="0..1" />
+    <End Role="CatalogVarieties" Type="TurkcellGnc2Model.Store.CatalogVarieties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Catalogs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CatalogVarieties">
+        <PropertyRef Name="CatalogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Categories_CatalogCategories">
+    <End Role="CatalogCategories" Type="TurkcellGnc2Model.Store.CatalogCategories" Multiplicity="1" />
+    <End Role="Catalogs" Type="TurkcellGnc2Model.Store.Catalogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatalogCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Catalogs">
+        <PropertyRef Name="CatalogCategoriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PromoCodes_Catalogs">
+    <End Role="Catalogs" Type="TurkcellGnc2Model.Store.Catalogs" Multiplicity="1" />
+    <End Role="PromoCodes" Type="TurkcellGnc2Model.Store.PromoCodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Catalogs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PromoCodes">
+        <PropertyRef Name="CatalogsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PromoCodes_PromoCodeTypes">
+    <End Role="PromoCodeTypes" Type="TurkcellGnc2Model.Store.PromoCodeTypes" Multiplicity="1" />
+    <End Role="PromoCodes" Type="TurkcellGnc2Model.Store.PromoCodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PromoCodeTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PromoCodes">
+        <PropertyRef Name="PromoCodeTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

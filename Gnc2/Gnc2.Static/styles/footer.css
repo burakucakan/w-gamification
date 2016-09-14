@@ -1,0 +1,37 @@
+﻿#gnc2Footer { width:100%; height:auto; float:left; background:#1f1e27; }
+
+#gnc2Footer .gencaverMascot { width:205px; height:141px; float:left; background:url('../images/app/gencaver-mascot.png') no-repeat; padding-left:135px; padding-top:15px; margin-top:26px; }
+#gnc2Footer .gencaverMascot a { float:left; text-decoration:none; }
+#gnc2Footer .gencaverMascot a .title { width: auto; background: #fff200; color: #1f1e25; font-size: 19px; display: inline; white-space: pre-line; line-height: 27px; padding: 0px 10px; margin-top:16px; }
+#gnc2Footer .gencaverMascot a .text { width:auto; float:left; color:#e1e1e1; font-size:14px; line-height:18px; margin-top:11px;}
+#gnc2Footer .gencaverMascot a .text > .arrow { background: url('../images/icons/footer-gencaver-arrow.png') no-repeat; width: 17px; height: 14px; position: absolute; margin-left: 3px; margin-top: 1px; }
+#gnc2Footer .gencaverMascot a:hover .text { color:#fff200; } 
+#gnc2Footer .gencaverMascot a:hover .text > .arrow { background-position:0 -14px; }
+
+#gnc2Footer .navMenu { width:580px; float:left; clear:none; margin-top:14px; margin-left:39px; }
+#gnc2Footer .navMenu ul { width:160px; float:left; font-family:Arial; }
+#gnc2Footer .navMenu ul li { float:left; width:100%; }
+#gnc2Footer .navMenu ul li a { width:auto; float:left; color:#f1f2f3; font-size:12px; padding: 7px 0px 7px 13px; background:url('../images/icons/footer-menu-point.png') no-repeat 0px 10px; }
+#gnc2Footer .navMenu ul li a:hover { color:#fff200; background-position:0 -14px; }
+#gnc2Footer .navMenu ul li.navMenuTitle { float:left; font-size:24px; color:#f1f2f3; background:none; padding-left:0px; margin-bottom:7px; }
+#gnc2Footer .navMenu ul.menuTemsilciler { width:150px; }
+#gnc2Footer .navMenu ul.menuTarifeler { width:130px; }
+#gnc2Footer .navMenu ul.menuHesapOrtada { width:169px; }
+#gnc2Footer .navMenu ul.menuGnc2 { width:130px; }
+
+#gnc2Footer .bottom { width:100%; height:55px; float:left; background:#17161b; margin-top:50px; }
+#gnc2Footer .bottom .left { width:200px; float:left; font-size:24px; color:#e1e1e1; padding-top:17px; }
+#gnc2Footer .bottom .right { width:518px; float:right; text-align:right; clear:none; }
+#gnc2Footer .bottom .right nav.navLink { width:auto; float:left; margin-top:24px; font-size:12px; font-family:Arial; }
+#gnc2Footer .bottom .right nav.navLink a { text-decoration:none; color:#e1e1e1; float:left; margin:0px 10px; }
+#gnc2Footer .bottom .right nav.navLink a:hover { text-decoration:none; color:#fff200; }
+#gnc2Footer .bottom .right nav.navSocial { width:auto; float:left; margin-top:14px; margin-left:14px;}
+#gnc2Footer .bottom .right nav.navSocial a { float:left; background:url('../images/icons/footer-social-icons.png') no-repeat; }
+#gnc2Footer .bottom .right nav.navSocial a.fb { width:19px; height:27px; margin-right:20px; }
+/*#gnc2Footer .bottom .right nav.navSocial a:hover.fb { background-position:0 -27px; }*/
+#gnc2Footer .bottom .right nav.navSocial a.tw { width:35px; height:27px; margin-right:15px; background-position:-19px 0px; }
+/*#gnc2Footer .bottom .right nav.navSocial a:hover.tw { background-position:-19px -27px; }*/
+#gnc2Footer .bottom .right nav.navSocial a.yt { width:46px; height:27px; margin-right:17px; background-position:-54px 0px; }
+/*#gnc2Footer .bottom .right nav.navSocial a:hover.yt { background-position:-54px -27px; }*/
+#gnc2Footer .bottom .right nav.navSocial a.rss { width:29px; height:27px; background-position:-100px 0px; }
+/*#gnc2Footer .bottom .right nav.navSocial a:hover.rss { background-position:-100px -27px; }*/

@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C2EF67A-68B5-4848-A7CA-279E28ECCA4A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gnc2.Service</RootNamespace>
+    <AssemblyName>Gnc2.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseService.cs" />
+    <Compile Include="srvUserCampaigns.cs" />
+    <Compile Include="IBaseService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceGameMechanics\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceLeaderBoard\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceQuery\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceRegister\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceBadge\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceSiteActivity\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceSmsQuery\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceUserManagement\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="srvAdminAuths.cs" />
+    <Compile Include="srvAdmins.cs" />
+    <Compile Include="srvBadge.cs" />
+    <Compile Include="srvBanners.cs" />
+    <Compile Include="srvCampaigns.cs" />
+    <Compile Include="srvCatalogs.cs" />
+    <Compile Include="srvCatalogCategories.cs" />
+    <Compile Include="srvGameMechanics.cs" />
+    <Compile Include="srvLeaderBoard.cs" />
+    <Compile Include="srvModuls.cs" />
+    <Compile Include="srvPromoCodeArchives.cs" />
+    <Compile Include="srvPromoCodes.cs" />
+    <Compile Include="srvPromoCodeTypes.cs" />
+    <Compile Include="srvQuery.cs" />
+    <Compile Include="srvSmsQuery.cs" />
+    <Compile Include="srvUsers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gnc2.Com\Gnc2.Com.csproj">
+      <Project>{21a72786-1bd3-4772-89b7-ac24c312fc89}</Project>
+      <Name>Gnc2.Com</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gnc2.DB\Gnc2.DB.csproj">
+      <Project>{06b85d69-bba3-4baf-a13c-f4f4a1f5931f}</Project>
+      <Name>Gnc2.DB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gnc2.DB\Gnc2.DB.csproj">
+      <Project>{06b85d69-bba3-4baf-a13c-f4f4a1f5931f}</Project>
+      <Name>Gnc2.DB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Service References\ServiceBadge\Gnc2.Service.ServiceBadge.BadgeListQueryRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceBadge\Gnc2.Service.ServiceBadge.BadgeUserListModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceBadge\Gnc2.Service.ServiceBadge.JsonGetAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceBadge\Gnc2.Service.ServiceBadge.JsonGetNRandomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceBadge\Gnc2.Service.ServiceBadge.JsonGetUserBadgeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\GameMechanics.wsdl" />
+    <None Include="Service References\ServiceGameMechanics\GameMechanics.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\GameMechanics1.wsdl" />
+    <None Include="Service References\ServiceGameMechanics\GameMechanics1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\GameMechanics2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\GameMechanics3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\GameMechanics4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\GameMechanics5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.DeleteActionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.DeleteChallengeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.DeleteChallengeVariantResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.GetActionConfigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.GetActionsLogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.GetChallengeConfigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.GetChallengeStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.GetChallengeVariantsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.GetGlobalConfigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.GetTopUsersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.NotifyActionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.RedeemPointsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.ResetLevelStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.SetActionConfigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.SetChallengeConfigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceGameMechanics\Gnc2.Service.ServiceGameMechanics.SetGlobalConfigResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceLeaderBoard\Gnc2.Service.ServiceLeaderBoard.JsonGetUserRankResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceLeaderBoard\Gnc2.Service.ServiceLeaderBoard.JsonTopNResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceLeaderBoard\Gnc2.Service.ServiceLeaderBoard.LeaderListModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceLeaderBoard\LeaderBoard1.wsdl" />
+    <None Include="Service References\ServiceLeaderBoard\LeaderBoard11.wsdl" />
+    <None Include="Service References\ServiceLeaderBoard\LeaderBoard5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceLeaderBoard\LeaderBoard51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceLeaderBoard\LeaderBoard52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceLeaderBoard\LeaderBoard53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceLeaderBoard\LeaderBoard54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceQuery\Gnc2.Service.ServiceQuery.JsonGetUserTotalPointsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceQuery\Gnc2.Service.ServiceQuery.UserPoints.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceQuery\Query.wsdl" />
+    <None Include="Service References\ServiceQuery\Query.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceQuery\Query1.wsdl" />
+    <None Include="Service References\ServiceQuery\Query1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceQuery\Query2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceQuery\Query3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceQuery\Query4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceRegister\Gnc2.Service.ServiceRegister.PermissionQueryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceRegister\GncPermissionService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceRegister\GncPermissionService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceRegister\GncPermissionService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceRegister\PermissionQueryService.wsdl" />
+    <None Include="Service References\ServiceBadge\Badge2.wsdl" />
+    <None Include="Service References\ServiceBadge\Badge21.wsdl" />
+    <None Include="Service References\ServiceBadge\Badge5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceBadge\Badge51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceBadge\Badge52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceBadge\Badge53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceBadge\Badge54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceSiteActivity\Gnc2.Service.ServiceSiteActivity.JsonSiteLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceSiteActivity\Gnc2.Service.ServiceSiteActivity.JsonSiteRegisterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceSiteActivity\Gnc2.Service.ServiceSiteActivity.NotifyUserLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceSiteActivity\SiteActivity2.wsdl" />
+    <None Include="Service References\ServiceSiteActivity\SiteActivity21.wsdl" />
+    <None Include="Service References\ServiceSiteActivity\SiteActivity4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceSiteActivity\SiteActivity41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceSiteActivity\SiteActivity42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceSiteActivity\SiteActivity43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceSmsQuery\Gnc2.Service.ServiceSmsQuery.JsonGetActionPointsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceSmsQuery\Gnc2.Service.ServiceSmsQuery.JsonGetUserTotalPointsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceSmsQuery\Gnc2.Service.ServiceSmsQuery.SmsQueryActionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceSmsQuery\Gnc2.Service.ServiceSmsQuery.SmsQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceSmsQuery\SmsQuery.wsdl" />
+    <None Include="Service References\ServiceSmsQuery\SmsQuery.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceSmsQuery\SmsQuery1.wsdl" />
+    <None Include="Service References\ServiceSmsQuery\SmsQuery1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceSmsQuery\SmsQuery2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceSmsQuery\SmsQuery3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceSmsQuery\SmsQuery4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceUserManagement\Gnc2.Service.ServiceUserManagement.JsonLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceUserManagement\Gnc2.Service.ServiceUserManagement.JsonRegisterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceUserManagement\Gnc2.Service.ServiceUserManagement.NotifyUserLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceUserManagement\UserManagement2.wsdl" />
+    <None Include="Service References\ServiceUserManagement\UserManagement21.wsdl" />
+    <None Include="Service References\ServiceUserManagement\UserManagement4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceUserManagement\UserManagement41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceUserManagement\UserManagement42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceUserManagement\UserManagement43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceGameMechanics\" />
+    <WCFMetadataStorage Include="Service References\ServiceLeaderBoard\" />
+    <WCFMetadataStorage Include="Service References\ServiceQuery\" />
+    <WCFMetadataStorage Include="Service References\ServiceRegister\" />
+    <WCFMetadataStorage Include="Service References\ServiceBadge\" />
+    <WCFMetadataStorage Include="Service References\ServiceSiteActivity\" />
+    <WCFMetadataStorage Include="Service References\ServiceSmsQuery\" />
+    <WCFMetadataStorage Include="Service References\ServiceUserManagement\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceBadge\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceBadge\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceBadge\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceLeaderBoard\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceLeaderBoard\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceLeaderBoard\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceRegister\GncPermissionService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceRegister\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceRegister\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceRegister\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceQuery\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceQuery\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceQuery\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceGameMechanics\GameMechanics.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceGameMechanics\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceGameMechanics\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceGameMechanics\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUserManagement\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUserManagement\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUserManagement\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceSiteActivity\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceSiteActivity\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceSiteActivity\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceBadge\Badge1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceLeaderBoard\LeaderBoard1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceSiteActivity\SiteActivity1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceUserManagement\UserManagement1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceQuery\Query.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceSmsQuery\SmsQuery.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceSmsQuery\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceSmsQuery\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceSmsQuery\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

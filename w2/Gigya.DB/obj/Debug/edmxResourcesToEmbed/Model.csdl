@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GigyaLogModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="GigyaLogEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="GigyaLogs" EntityType="GigyaLogModel.GigyaLogs" />
+  </EntityContainer>
+  <EntityType Name="GigyaLogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Guid" Name="Id" Nullable="false" />
+    <Property Type="String" Name="ApiMethod" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ApiKey" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ClientParams" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Response" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="Guid" Name="VendorId" />
+    <Property Type="Int32" Name="ErrorCode" />
+    <Property Type="String" Name="CallId" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

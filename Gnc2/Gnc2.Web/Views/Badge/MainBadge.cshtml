@@ -1,0 +1,78 @@
+﻿@using Gnc2.Com.Helpers;
+
+@model Gnc2.Service.ServiceBadge.BadgeModel
+
+<script>
+    $(function () {
+        tipsSlide();
+    });
+
+    function tipsSlide() {
+        $('.ballon').slides({
+            container: 'tip',
+            preload: false,
+            play: 50000,
+            paginition: true,
+            paginationClass: 'badgeNav',
+            generatePagination: false,
+            effect: 'fade',
+            animationComplete: function (current) {
+                $('.badgeNav li a').removeClass('active');
+                $('.badgeNav li').eq(current - 1).children('a').addClass('active');
+            }
+        });
+    }
+</script>
+
+<section class="boxSmall fReg fLeft">
+    <h3 class="boxTitle">ROZETLER</h3>
+
+    <section class="boxContent">
+
+        <section class="desc">
+            <span class="descTitle fReg">SİNEMASKOP</span>
+            <span class="descContent">Lorem Ipsum Lorem Ipsum Hop Ipsum</span>
+        </section>
+
+        <section class="caruselArea tips">
+
+           <section class="ballon">
+            
+               <section class="tip">
+                   
+                   <section class="tipContent">
+                       <img src="@PathHelper.UrlStatic/images/_offline/badge/1.png" />
+                   </section>
+                 
+                   @*@foreach (var item in Model.Badges)
+                   {
+                   <section class="tipContent">
+                       <img src="@item.ImageUrl" />
+                   </section>
+                   }*@
+                   
+                  
+              
+                 
+               </section> 
+
+               <ins></ins>
+
+               <ul class="alertNav badgeNav">
+                    <li><a class="active">1</a></li>
+                    <li><a>3</a></li>
+                    <li><a>4</a></li>
+                    <li><a>5</a></li>
+                    <li><a>6</a></li>
+               </ul>
+
+           </section>
+        
+        </section>
+        
+        <ins class="space35"></ins>
+        
+        <a href="javascript:;" class="btn fRight">Daha Fazla</a>
+
+    </section>
+</section>

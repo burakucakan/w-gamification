@@ -1,0 +1,241 @@
+﻿@using Gnc2.Com.Helpers;
+<script>
+    var _flipBoxDurationSpeed = 4000;
+    var _flipBoxAnimateSpeed = 500;
+    var _autoFlipBox;
+    var users = [
+          { "id": "1", "image": "@PathHelper.UrlStatic/images/_offline/users/can.jpg", "point": "375" },
+          { "id": "2", "image": "@PathHelper.UrlStatic/images/_offline/users/bahriye.jpg", "point": "450" },
+          { "id": "3", "image": "@PathHelper.UrlStatic/images/_offline/users/can2.jpg", "point": "325" }
+    ];
+
+    $(function () {
+        getFirstFlipBox();
+        autoFlipBox();
+    });
+
+    function getFirstFlipBox() {
+        var template = $("#userTemplate").html();
+        template = template.replace("#= id #", users[0].id);
+        template = template.replace("#= image #", users[0].image);
+        template = template.replace("#= point #", users[0].point);
+        template = template.replace("#= pointInfoStyle #", "style=\"display:none;\"");
+        template = template.replace("#= pointInfoSpanStyle #", "style=\"margin-top:10px; opacity:0; -moz-opacity:0;\"");
+        template = template.replace("#= pointInfoLabelStyle #", "style=\"margin-top: -20px; opacity:0; -moz-opacity:0;\"");
+        template = template.replace("#= imageStyle #", "style=\"width: 20px; height: 20px; margin-left: 117px; margin-top: 103px;\"");
+
+        setTimeout(function () {
+            var userMain = $(".flipbox-container").html();
+            $(".flipbox-container").html(userMain + template);
+            firstUserAnimate();
+        }, 600);
+    }
+
+    function autoFlipBox() {
+        _autoFlipBox = setInterval(function () {
+            flipBoxChange();
+        }, _flipBoxDurationSpeed);
+    }
+
+    function flipBoxChange() {
+        var Id = $("#flipUserImage").attr("data-id");
+        flipBox(Id);
+    }
+
+    function firstUserAnimate() {
+        $("#flipUserImage").animate({
+            width: "220px",
+            height: "220px",
+            marginLeft: "16px",
+            marginTop: "3px"
+        }, 500, function () {
+            $(".pointInfo").fadeIn();
+            setTimeout(function () {
+                $(".pointInfo label").animate({
+                    marginTop: "0",
+                    opacity: "1"
+                }, 200);
+                $(".pointInfo span").animate({
+                    marginTop: "0",
+                    opacity: "1"
+                }, 200);
+            }, 200);
+        });
+    }
+
+    function flipBox(Id) {
+        var template = $("#userTemplate").html();
+        if (users[Id] == undefined) {
+            template = getJoinBtn();
+        }
+        else {
+            template = template.replace("#= image #", users[Id].image);
+            template = template.replace("#= point #", users[Id].point);
+            template = template.replace("#= id #", users[Id].id);
+            template = template.replace("#= pointInfoStyle #", "");
+            template = template.replace("#= pointInfoSpanStyle #", "");
+            template = template.replace("#= pointInfoLabelStyle #", "");
+            template = template.replace("#= imageStyle #", "");
+        }
+
+        $(".flipbox").flippy({
+            color_target: "transparent",
+            duration: ""+_flipBoxAnimateSpeed+"",
+            verso: template
+        });
+
+        if (users[Id] == undefined) {
+            Id = 0;
+            joinBtnAnimate();
+        }
+    }
+
+    function getJoinBtn() {
+        var template = $("#joinBtnTemplate").html();
+        return template;
+    }
+
+    function joinBtnAnimate() {
+        setTimeout(function () {
+            $(".joinContainer").animate({
+                width: "255px",
+                height: "229px",
+                marginTop: "0px",
+                marginLeft: "0px"
+            }, 200);
+
+            setTimeout(function () {
+                $(".joinContent").show();
+                $(".joinContent").animate({
+                    width: "183px",
+                    height: "187px",
+                    marginTop: "15px",
+                    marginLeft: "37px"
+                }, 150);
+                    $(".joinContent").animate({
+                        width: "173px",
+                        height: "177px",
+                        marginTop: "23px",
+                        marginLeft: "41px"
+                    }, 150, function () {
+                        $(".joinBtnAbsolute").fadeIn(function () {
+                            $(".joinBtn").fadeOut();
+                        });
+
+                    });
+            
+            }, 100);
+        }, 500);
+    }
+</script>
+
+<script type="text/template" id="userTemplate">
+    <section class="flipbox">
+        <img src="#= image #" data-id="#= id #" id="flipUserImage" #= imageStyle # />
+        <section class="pointInfo" #= pointInfoStyle #>
+            <label #= pointInfoLabelStyle #>#= point #</label><br />
+            <span #= pointInfoSpanStyle #>gnçpuan</span>
+        </section>
+    </section>
+</script>
+
+<script type="text/template" id="joinBtnTemplate">
+    <img data-id="0" id="flipUserImage" style="display:none" />
+    <a href="javascript:;" class="joinBtn">
+        <img src="@PathHelper.UrlStatic/images/global/join-container.png" class="joinContainer" style="width: 0px; height: 0px; margin-left: 127px; margin-top: 113px;" />
+        <img src="@PathHelper.UrlStatic/images/global/join-content.png" class="joinContent" style="display:none; width: 10px; height: 10px; margin-left: 120px; margin-top: 105px;" />
+    </a>
+
+    <a href="javascript:;" class="joinBtnAbsolute"></a>
+</script>
+
+<section class="gnc2Container">
+
+    <section class="boxMedium fReg fLeft">
+        <h3 class="grayTitle dashboardTitle">genel bakış</h3>
+        <ins class="space20"></ins>
+        <section class="boxContent dashboard">
+            <section class="fLeft">
+                <section class="howScore">
+                    <label class="title">nasıl puan kazanırım?</label>
+                    <ul class="list">
+                        <li><a href="javascript:;">
+                            <section class="left">+150</section>
+                            <section class="right">Kahve Dünyası</section>
+                            </a></li>
+                        <li><a href="javascript:;">
+                            <section class="left">+150</section>
+                            <section class="right">Kahve Dünyası</section>
+                            </a></li>
+                        <li><a href="javascript:;">
+                            <section class="left">+150</section>
+                            <section class="right">Kahve Dünyası</section>
+                            </a></li>
+                        <li><a href="javascript:;">
+                            <section class="left">+75</section>
+                            <section class="right">Kahve Dünyası</section>
+                            </a></li>
+                        <li><a href="javascript:;">
+                            <section class="left">+75</section>
+                            <section class="right">Kahve Dünyası</section>
+                            </a></li>
+                        <li><a href="javascript:;">
+                            <section class="left">+150</section>
+                            <section class="right">Kahve Dünyası</section>
+                            </a></li>
+                    </ul>
+                </section>
+            </section>
+            <section class="leftCircle"></section>
+            <section class="center">
+                <section class="flipbox-container">
+                </section>
+            </section>
+            <section class="rightCircle"></section>
+            <section class="fRight">
+                <section class="advantage">
+                    <label class="title">gnctrkcll’lİler Kazanıyor?</label>
+                    <ul class="list">
+                        <li><a href="javascript:;">
+                            <section class="left">
+                                <section class="price fReg">15 TL</section>
+                                <section class="image">
+                                    <img src="@PathHelper.UrlStatic/images/banners/advantage1.jpg" />
+                                </section>
+                            </section>
+                            <section class="right">
+                                <span class="name">1 Alana 1 Bedava</span>
+                                <span class="desc">Sinema Fırsatıyla 15 TL cepte.</span>
+                            </section>
+                            </a></li>
+                        <li><a href="javascript:;">
+                            <section class="left">
+                                <section class="price fReg">22 TL</section>
+                                <section class="image">
+                                    <img src="@PathHelper.UrlStatic/images/banners/advantage2.jpg" />
+                                </section>
+                            </section>
+                            <section class="right">
+                                <span class="name">Little Ceaser</span>
+                                <span class="desc">Pizza Fırsatıyla 15 TL cepte.</span>
+                            </section>
+                            </a></li>
+                        <li><a href="javascript:;">
+                            <section class="left">
+                                <section class="price fReg">15 TL</section>
+                                <section class="image">
+                                    <img src="@PathHelper.UrlStatic/images/banners/advantage3.jpg" />
+                                </section>
+                            </section>
+                            <section class="right">
+                                <span class="name">SMS Paketi</span>
+                                <span class="desc">SMS Fırsatı 15 TL cepte.</span>
+                            </section>
+                            </a></li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+    </section>
+
+</section>

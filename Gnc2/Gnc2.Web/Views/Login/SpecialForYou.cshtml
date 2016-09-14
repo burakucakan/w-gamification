@@ -1,0 +1,64 @@
+﻿@{
+    Layout = null;
+}
+@using Gnc2.Com.Helpers
+@using Gnc2.Web.App_Manager
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    
+    <title>Login</title>
+
+    @Html.Partial("_PopupStyles")
+
+    @Html.Partial("_PopupScripts")
+    @{
+        if (SessionManager.GetInstance().LogonUser.Mssidn != null)
+        {
+            Response.Redirect("LinkSocial");
+        }
+            
+    }
+
+</head>
+
+<body>
+    <script>
+        $(function () {
+            cbIframeResize('448px');
+        });
+
+        function goSsoResult() {
+            cbIframeResize('600px');
+            $(".loginTypeContent").animate({
+                height: "527px"
+            }, 300);
+            setTimeout(function () {
+               window.location = "SsoResult";
+            }, 500);
+        }
+    </script>
+    <section class="loginTypeContent noMinHeight">
+
+        <h3 class="grayTitle fReg">SANA ÖZEL</h3>
+
+        <section class="textLarge fReg">GNÇTRKCLL DÜNYASININ SANA ÖZEL FIRSAT VE<br />AYRICALIKLARINDAN YARARLANMAK İSTER MİSİN?</section>
+        
+        <ins></ins>
+        
+        <img src="@PathHelper.UrlStatic/images/global/gnc2222.jpg" />
+
+        <ins class="space18"></ins>
+
+        <a href="javascript:goSsoResult();" class="btn fLeft">TURKCELL ŞİFRE İLE DEVAM ET</a>
+        <ins class="space18"></ins>
+        <a href="javascript:;" class="btn fLeft">HAYIR, TEŞEKKÜRLER</a>
+
+    </section>
+</body>
+</html>

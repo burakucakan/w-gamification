@@ -1,0 +1,63 @@
+﻿
+<script>
+    $(function () {
+        tipsSlide();
+    });
+
+    function tipsSlide() {
+        $('.ballon').slides({
+            container: 'tip',
+            preload: false,
+            play: 5000,
+            paginition: true,
+            paginationClass: 'alertNav',
+            generatePagination: false,
+            effect: 'fade',
+            animationComplete: function (current) {
+                $('.alertNav li a').removeClass('active');
+                $('.alertNav li').eq(current - 1).children('a').addClass('active');
+            }
+        });
+    }
+</script>
+
+<section class="box fReg">
+    <h3 class="boxTitle">GNC2 FIRSATLAR</h3>
+
+    <section class="boxContent">
+
+      
+
+        <section class="carusel-area tips">
+
+           <section class="ballon">
+            
+               <section class="tip">
+                   <article class="tipContent">
+                       <img src="@Gnc2.Com.Helpers.PathHelper.UrlStatic/images/_offline/badge/1.png" />
+                   </article>
+               </section>
+               
+               <section class="tip">
+                   <article class="tipContent">
+                       <img src="@Gnc2.Com.Helpers.PathHelper.UrlStatic/images/_offline/badge/1.png" />
+                   </article>
+               </section> 
+
+               <ins></ins>
+
+               <ul class="alertNav">
+                    <li><a class="active">1</a></li>
+                    <li><a>2</a></li>
+               </ul>
+
+           </section>
+        
+        </section>
+        
+        <ins class="clear"></ins>
+        
+        <a href="javascript:;" class="btn">Daha Fazla</a>
+
+    </section>
+</section>

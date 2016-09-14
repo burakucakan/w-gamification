@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/w2.Ws" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/w2.Ws" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18348/Ws/Badge.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/w2.Ws.Models" />
+  <xs:complexType name="BadgeListQueryReq">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NTop" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BadgeListQueryReq" nillable="true" type="tns:BadgeListQueryReq" />
+  <xs:complexType name="BadgeListQueryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/w2.Ws.Models" base="q1:BaseWsModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Badges" nillable="true" type="tns:ArrayOfBadgeModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BadgeListQueryRequest" nillable="true" type="tns:BadgeListQueryRequest" />
+  <xs:complexType name="ArrayOfBadgeModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BadgeModel" nillable="true" type="tns:BadgeModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBadgeModel" nillable="true" type="tns:ArrayOfBadgeModel" />
+  <xs:complexType name="BadgeModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BadgeModel" nillable="true" type="tns:BadgeModel" />
+  <xs:complexType name="BadgeUserListModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/w2.Ws.Models" base="q2:BaseWsModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Badges" nillable="true" type="tns:ArrayOfUserBadgeModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BadgeUserListModel" nillable="true" type="tns:BadgeUserListModel" />
+  <xs:complexType name="ArrayOfUserBadgeModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserBadgeModel" nillable="true" type="tns:UserBadgeModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserBadgeModel" nillable="true" type="tns:ArrayOfUserBadgeModel" />
+  <xs:complexType name="UserBadgeModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BadgeURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChallengeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Level" type="xs:int" />
+      <xs:element minOccurs="0" name="Points7Days" type="xs:int" />
+      <xs:element minOccurs="0" name="PointsTotal" type="xs:int" />
+      <xs:element minOccurs="0" name="Rank" type="xs:int" />
+      <xs:element minOccurs="0" name="Rank7Days" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserBadgeModel" nillable="true" type="tns:UserBadgeModel" />
+</xs:schema>

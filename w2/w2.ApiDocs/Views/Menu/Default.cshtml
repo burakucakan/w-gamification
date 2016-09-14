@@ -1,0 +1,185 @@
+﻿@model IEnumerable<w2.DB.WebServices>
+@{
+    Layout = null;
+}
+@using Gnc2.Com.Helpers
+
+<script>
+    $(function () {
+
+        $(".left > ul > li > ul > li > a.main").live("click", function () {
+            $(".left > ul > li > ul > li > a.main").removeClass("active");
+            $(this).addClass("active");
+
+            var context = $(this).attr("data-context");
+            $(".left > ul > li > ul > li > a.sub").slideUp();
+            $(".left > ul > li > ul > li > a.sub[data-context=" + context + "]").slideDown();
+        });
+
+        $(".left > ul > li > ul > li > a.sub").live("click", function () {
+            $(".left > ul > li > ul > li > a.sub").removeClass("active");
+            $(this).addClass("active");
+            var dataId = $(this).attr("data-id");
+
+            rightLoaderOpen();
+
+            $.ajax({
+                url: "/Menu/WebServiceDetail/" + dataId,
+                dataType: "JSON",
+                success: function (response) {
+                    var template = $("#contentTemplate").html();
+                    template = template.replace(/#= ContextName #/g, response.ContextName);
+                    template = template.replace(/#= WebServiceMethod #/g, response.WebServiceMethod);
+                    template = template.replace(/#= Description #/g, response.Description);
+                    template = template.replace(/#= Notes #/g, response.Notes);
+
+                    
+
+                    $.ajax({
+                        url: "/Menu/WebServiceRequestParameters/" + dataId,
+                        dataType: "JSON",
+                        success: function (res) {
+
+                            var requestParametersTable = "";
+                            var rCount = 0;
+                            for (var i = 0; i < res.length; i++) {
+                                rCount++;
+                                var className = "";
+                                if (rCount == 1) { className = "class=\"gray\""; }
+                                if (rCount == 2) { rCount = 0; }
+                                var Required = "";
+                                if (res[i].IsRequired == true) {
+                                    Required = "*";
+                                }
+                                requestParametersTable = requestParametersTable + "<tr " + className + "><td class=\"fBold\">" + Required + "</td><td class=\"fBold\">" + res[i].ParameterName + "</td><td>" + res[i].ParameterType + "</td> <td>" + res[i].Description + "</td></tr>";
+                            }
+
+                            template = template.replace("#= RequestParametersTable #", requestParametersTable);
+
+                            $.ajax({
+                                url: "/Menu/WebServiceResponseParameters/" + dataId,
+                                dataType: "JSON",
+                                success: function (res) {
+
+                                    var responseParametersTable = "";
+                                    var rCount = 0;
+                                    for (var i = 0; i < res.length; i++) {
+                                        rCount++;
+                                        var className = "";
+                                        if (rCount == 1) { className = "class=\"gray\""; }
+                                        if (rCount == 2) { rCount = 0; }
+                                        var Required = "";
+                                        if (res[i].IsRequired == true) {
+                                            Required = "*";
+                                        }
+                                        responseParametersTable = responseParametersTable + "<tr " + className + "><td class=\"fBold\">" + Required + "</td><td class=\"fBold\">" + res[i].ParameterName + "</td><td>" + res[i].ParameterType + "</td> <td>" + res[i].Description + "</td></tr>";
+                                    }
+
+                                    template = template.replace("#= ResponseParametersTable #", responseParametersTable);
+
+                                    rightLoaderClose();
+
+                                    setTimeout(function () {
+                                        $(".right").html(template);
+                                        $(".right > h1").fadeIn();
+                                        $(".right > .content").fadeIn();
+                                    }, 500);
+                                }
+                            });
+                            
+                        }
+                    });
+
+                    
+                }
+            });
+        });
+
+        function rightLoaderOpen() {
+            $(".right").html("<section class=\"loaderContent\"><img src=\"@PathHelper.UrlUIAssets/images/global/loader-large.gif\" /></section>");
+            $(".loaderContent").fadeIn();
+        }
+
+        function rightLoaderClose() {
+            $(".loaderContent").fadeOut();
+        }
+
+    });
+</script>
+
+<script type="text/template" id="contentTemplate">
+    <h1 style="display:none;">#= ContextName # / #= WebServiceMethod #</h1>
+    <section class="content" style="display:none;">
+        Wsdl Url<br />
+        <a href="http://w2.turkcell.com.tr/Ws/#= ContextName #.svc" target="_blank">http://w2.turkcell.com.tr/#= ContextName #.svc</a>
+        <br /><br />
+        Rest URL<br />
+        <a href="http://w2.turkcell.com.tr/Ws/#= ContextName #/#= WebServiceMethod #" target="_blank">http://w2.turkcell.com.tr/Ws/#= ContextName #/#= WebServiceMethod #</a>
+        <br /><br />
+        #= Description #
+        <br /><br />
+
+        <aside class="note">
+            #= Notes #
+        </aside>
+
+        <h2>Request Parameters</h2>
+        <table cellpadding="5">
+            <tr>
+                <th width="50" class="fBold">Required</th>
+                <th class="fBold">Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            #= RequestParametersTable #
+        </table>
+        
+        <ins></ins>
+        <h2>Response Structures</h2>
+        <table cellpadding="5">
+            <tr>
+                <th width="50" class="fBold">Required</th>
+                <th class="fBold">Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            #= ResponseParametersTable #
+        </table>
+
+    </section>
+</script>
+<section class="left">
+    <ul>
+        <li><a href="javascript:;">Developer Rehberi</a></li>
+        <li><a href="javascript:;" class="active">Api Listesi</a>
+            <ul>
+                @{
+                    var mCount=0;
+                    var exHeader="";
+                    foreach (var item in Model.OrderBy(d=>d.ContextName).ToList())
+                    {
+                        mCount++;
+                        
+                        if(exHeader!=item.ContextName){
+                            mCount = 1;
+                        }
+                        exHeader = item.ContextName;
+                        if(mCount==1){
+                            <text>
+                            <li><a href="javascript:;" data-id="@item.Id" class="main" data-context="@item.ContextName">@item.ContextName</a></li>
+                            <li><a href="javascript:;" data-id="@item.Id" class="sub" data-context="@item.ContextName">@item.WebServiceMethod</a></li>
+                            </text>
+                        }
+                        else{
+                        <text>
+                            <li><a href="javascript:;" data-id="@item.Id" class="sub" data-context="@item.ContextName">@item.WebServiceMethod</a></li>
+                        </text>
+                        }
+                    }
+                }
+            </ul>
+        </li>
+        <li><a href="javascript:;">Javascript SDK</a></li>
+        <li><a href="javascript:;">Plugins</a></li>
+    </ul>
+</section>

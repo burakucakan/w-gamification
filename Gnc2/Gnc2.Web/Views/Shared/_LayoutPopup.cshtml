@@ -1,0 +1,41 @@
+﻿@using Gnc2.Com.Helpers
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:og="http://ogp.me/ns#"
+    xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+    
+    <title>@ViewBag.Title</title>
+
+    @Html.Partial("_PopupStyles")
+
+    @Html.Partial("_PopupScripts")
+
+</head>
+
+<body class="popup">
+    
+    <header>
+        <section class="container">
+            <a href="javascript:;" class="logo"></a>
+        </section>
+    </header>
+
+    <section class="container">
+
+        @RenderBody()
+
+        <section class="securityBottom">
+            Turkcell Web Siteleri'nde güvenli işlem yapabilmenizi sağlamak için<br />
+            uluslararası bir güvenlik standartı olan SSL kullanmaktadır.
+        </section>
+        
+    </section>
+
+
+
+</body>
+</html>

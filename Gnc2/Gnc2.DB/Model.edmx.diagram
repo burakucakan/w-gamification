@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7e3d4c7259a241c19bcfaddeddc069f9" Name="Diagram1" ZoomLevel="10">
+        <EntityTypeShape EntityType="TurkcellGnc2Model.AdminAuths" Width="1.5" PointX="7.98512652701937" PointY="0.5968145134843954" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.Admins" Width="1.5" PointX="2.937844389554972" PointY="2.4202440839355086" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.AdminTransaction" Width="1.5" PointX="1.504290523708002" PointY="8.794097680968278" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.Banners" Width="1.5" PointX="6.73660265968023" PointY="29.383631973240352" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.Campaigns" Width="1.5" PointX="11.485985498636023" PointY="15.320310510378475" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.CatalogCategories" Width="1.5" PointX="4.7419738623974723" PointY="29.091010211543651" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.Catalogs" Width="1.5" PointX="5.8973781326307808" PointY="22.211490939469773" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.CatalogType" Width="1.5" PointX="9.2512646397814446" PointY="7.1423337790846517" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.CatalogVarieties" Width="1.5" PointX="2.6439288978669464" PointY="10.771413763412932" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.Code" Width="1.5" PointX="8.524175146838731" PointY="12.895417070433226" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.Invitations" Width="1.5" PointX="9.9691623309483575" PointY="19.4623645187646" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.Moduls" Width="1.5" PointX="8.14849172539473" PointY="26.626657245041176" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.PromoCodeArchives" Width="1.5" PointX="5.0891132881348549" PointY="24.339786108741436" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.PromoCodes" Width="1.5" PointX="6.5919367776214788" PointY="18.2271980877161" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.PromoCodeTypes" Width="1.5" PointX="10.333315528153124" PointY="4.3107855042027241" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.Refunds" Width="1.5" PointX="0.26768107352204673" PointY="31.028604626203236" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.sysdiagrams" Width="1.5" PointX="7.3835253340115425" PointY="30.701287477603781" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.test" Width="1.5" PointX="2.9164050514420516" PointY="11.055652429841297" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.UserCampaigns" Width="1.5" PointX="6.9098476352681626" PointY="6.0140139190545367" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.UserOrders" Width="1.5" PointX="8.82957429291195" PointY="28.594101606213535" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.Users" Width="1.5" PointX="6.7115481229087095" PointY="18.667248421659345" />
+        <EntityTypeShape EntityType="TurkcellGnc2Model.UserTransaction" Width="1.5" PointX="9.8462545172526745" PointY="27.361726788506715" />
+        <AssociationConnector Association="TurkcellGnc2Model.FK_Categories_CatalogCategories" />
+        <AssociationConnector Association="TurkcellGnc2Model.FK_Catalogs_CatalogType" />
+        <AssociationConnector Association="TurkcellGnc2Model.FK_CatalogVarieties_Catalogs" />
+        <AssociationConnector Association="TurkcellGnc2Model.FK_PromoCodes_Catalogs" />
+        <AssociationConnector Association="TurkcellGnc2Model.FK_PromoCodes_PromoCodeTypes" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

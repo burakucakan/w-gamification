@@ -1,0 +1,236 @@
+﻿@using Gnc2.Com.Helpers;
+
+<script>
+    $(function () {
+        badgeCarouselAnimate();
+        //$('#badgeCarousel').carouFredSel({
+        //    auto: false,
+        //    prev: '#prev2',
+        //    next: '#next2',
+        //    mousewheel: true,
+        //    swipe: {
+        //        onMouse: true,
+        //        onTouch: true
+        //    }
+        //});
+
+        setTimeout(function () {
+
+            for (var i = 0; i < 8; i++) {
+                myBadgeIn(i);
+            }
+        }, 800);
+
+    });
+
+    function myBadgeIn(itemIndex) {
+        setTimeout(function () {
+            $("#badgeCarousel li a .image img.badge").eq(itemIndex).animate({
+                width: "90px",
+                height: "89px",
+                marginTop: "0px",
+                marginLeft: "0px"
+            }, 100, function () {
+                $("#badgeCarousel li a .image img.badge").eq(itemIndex).animate({
+                    width: "80px",
+                    height: "79px"
+                }, 100);
+            });
+
+            setTimeout(function () {
+                
+                $("#badgeCarousel li a .image img.new").eq(itemIndex).animate({
+                    marginTop: "-101px",
+                    marginLeft: "75px"
+                }, 200, function () {
+                    $("#badgeCarousel li a .image img.new").eq(itemIndex).css("z-index", "3").show();
+                    $("#badgeCarousel li a .image img.new").eq(itemIndex).animate({
+                        marginTop: "-93px",
+                        marginLeft: "70px"
+                    }, 100);
+                });
+
+                $("#badgeCarousel li a .name").eq(itemIndex).animate({
+                    marginTop: "0px",
+                    opacity: "1"
+                }, 200);
+
+            }, 200);
+        }, itemIndex * 150);
+    }
+
+    
+</script>
+
+<section class="gray">
+    <section class="grayTitle">
+        <section class="gnc2Container fReg">
+
+            <section class="fLeft">
+                <span class="fLeft">rozetlerİm</span>
+                <a href="javascript:;">TÜMÜMÜ GÖR</a>
+            </section>
+
+            <section class="fRight">
+                <a href="javascript:;">NASIL rozet KAZANIRIM?</a>
+                <a href="javascript:;" class="lastChild">rozetler NE İŞE YARAR?</a>
+            </section>
+
+        </section>
+    </section>
+    <section class="grayContent">
+        <section class="gnc2Container">
+
+			<section class="listCarousel">
+
+				<ul id="badgeCarousel">
+					<li>
+                        <a href="javascript:;">
+                            <section class="image">
+                                <img src="@PathHelper.UrlStatic/images/_offline/badge/1.png" class="badge" />
+                                <img src="@PathHelper.UrlStatic/images/icons/new.png" class="new" />
+                            </section>
+                            <section class="name">Sinemaskop</section>
+
+                            <section class="tooltip">
+                                <section class="fLeft fReg">
+                                    <img src="@PathHelper.UrlStatic/images/_offline/badge/1.png" />
+                                </section>
+                                <section class="fRight">
+                                    <section class="title">Sinemaskop Rozeti</section>
+                                    <section class="desc">Sinema tutkunuysan bu rozet senindir demek! Sinema dünyasında 10 kahve iç kahvekolik rozetini kap!</section>
+                                </section>
+                            </section>
+                        </a>
+					</li>
+					<li>
+                        <a href="javascript:;">
+                            <section class="image">
+                                <img src="@PathHelper.UrlStatic/images/_offline/badge/2.png" class="badge" />
+                            </section>
+                            <section class="name">Festival Gurusu</section>
+
+                            <section class="tooltip">
+                                <section class="fLeft fReg">
+                                    <img src="@PathHelper.UrlStatic/images/_offline/badge/2.png" />
+                                </section>
+                                <section class="fRight">
+                                    <section class="title">Festival Gurusu Rozeti</section>
+                                    <section class="desc">Sinema tutkunuysan bu rozet senindir demek! Sinema dünyasında 10 kahve iç kahvekolik rozetini kap!</section>
+                                </section>
+                            </section>
+                        </a>
+					</li>
+					<li>
+                        <a href="javascript:;">
+                            <section class="image"><img src="@PathHelper.UrlStatic/images/_offline/badge/3.png" class="badge" /></section>
+                            <section class="name">Aşkına Eşkiya</section>
+
+                            <section class="tooltip">
+                                <section class="fLeft fReg">
+                                    <img src="@PathHelper.UrlStatic/images/_offline/badge/3.png" />
+                                </section>
+                                <section class="fRight">
+                                    <section class="title">Aşkına Eşkiya Rozeti</section>
+                                    <section class="desc">Sinema tutkunuysan bu rozet senindir demek! Sinema dünyasında 10 kahve iç kahvekolik rozetini kap!</section>
+                                </section>
+                            </section>
+                        </a>
+					</li>
+					<li>
+                        <a href="javascript:;">
+                            <section class="image"><img src="@PathHelper.UrlStatic/images/_offline/badge/4.png" class="badge" /></section>
+                            <section class="name">Kahvekolik</section>
+
+                            <section class="tooltip">
+                                <section class="fLeft fReg">
+                                    <img src="@PathHelper.UrlStatic/images/_offline/badge/4.png" />
+                                </section>
+                                <section class="fRight">
+                                    <section class="title">Kahvekolik Rozeti</section>
+                                    <section class="desc">Sinema tutkunuysan bu rozet senindir demek! Sinema dünyasında 10 kahve iç kahvekolik rozetini kap!</section>
+                                </section>
+                            </section>
+                        </a>
+					</li>
+					<li>
+                        <a href="javascript:;">
+                            <section class="image"><img src="@PathHelper.UrlStatic/images/_offline/badge/5.png" class="badge" /></section>
+                            <section class="name">BFF</section>
+
+                            <section class="tooltip">
+                                <section class="fLeft fReg">
+                                    <img src="@PathHelper.UrlStatic/images/_offline/badge/5.png" />
+                                </section>
+                                <section class="fRight">
+                                    <section class="title">BFF</section>
+                                    <section class="desc">Sinema tutkunuysan bu rozet senindir demek! Sinema dünyasında 10 kahve iç kahvekolik rozetini kap!</section>
+                                </section>
+                            </section>
+                        </a>
+					</li>
+					<li>
+                        <a href="javascript:;">
+                            <section class="image">
+                                <img src="@PathHelper.UrlStatic/images/_offline/badge/6.png" class="badge" />
+                            </section>
+                            <section class="name">Sinemaskop</section>
+
+                            <section class="tooltip">
+                                <section class="fLeft fReg">
+                                    <img src="@PathHelper.UrlStatic/images/_offline/badge/6.png" />
+                                </section>
+                                <section class="fRight">
+                                    <section class="title">Sinemaskop</section>
+                                    <section class="desc">Sinema tutkunuysan bu rozet senindir demek! Sinema dünyasında 10 kahve iç kahvekolik rozetini kap!</section>
+                                </section>
+                            </section>
+                        </a>
+					</li>
+					<li>
+                        <a href="javascript:;">
+                            <section class="image">
+                                <img src="@PathHelper.UrlStatic/images/_offline/badge/7.png" class="badge" />
+                            </section>
+                            <section class="name">Aşkına Eşkiya</section>
+
+                            <section class="tooltip">
+                                <section class="fLeft fReg">
+                                    <img src="@PathHelper.UrlStatic/images/_offline/badge/7.png" />
+                                </section>
+                                <section class="fRight">
+                                    <section class="title">Aşkına Eşkiya</section>
+                                    <section class="desc">Sinema tutkunuysan bu rozet senindir demek! Sinema dünyasında 10 kahve iç kahvekolik rozetini kap!</section>
+                                </section>
+                            </section>
+                        </a>
+					</li>
+					<li>
+                        <a href="javascript:;">
+                            <section class="image">
+                                <img src="@PathHelper.UrlStatic/images/_offline/badge/8.png" class="badge" />
+                            </section>
+                            <section class="name">Festival Gurusu</section>
+
+                            <section class="tooltip">
+                                <section class="fLeft fReg">
+                                    <img src="@PathHelper.UrlStatic/images/_offline/badge/8.png" />
+                                </section>
+                                <section class="fRight">
+                                    <section class="title">Festival Gurusu</section>
+                                    <section class="desc">Sinema tutkunuysan bu rozet senindir demek! Sinema dünyasında 10 kahve iç kahvekolik rozetini kap!</section>
+                                </section>
+                            </section>
+                        </a>
+					</li>
+				</ul>
+                @*<span class="leftShadow"></span>
+                <span class="rightShadow"></span>
+                <a id="prev2" class="prev" href="#">&lt;</a>
+				<a id="next2" class="next" href="#">&gt;</a>*@
+			</section>
+			<br />
+
+        </section>
+    </section>
+</section>

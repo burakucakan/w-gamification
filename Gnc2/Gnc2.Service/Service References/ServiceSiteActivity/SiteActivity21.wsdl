@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/ws/2005/02/mex/bindings" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SiteActivity" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://schemas.microsoft.com/ws/2005/02/mex/bindings" location="http://localhost:18348/WS/SiteActivity.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:18348/WS/SiteActivity.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:18348/WS/SiteActivity.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:18348/WS/SiteActivity.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.Socialize.CustomModels" />
+      <xsd:import schemaLocation="http://localhost:18348/WS/SiteActivity.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISiteActivity_SiteLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:SiteLogin" />
+  </wsdl:message>
+  <wsdl:message name="ISiteActivity_SiteLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SiteLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteActivity_Json_x002F_SiteLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:Json_x002F_SiteLogin" />
+  </wsdl:message>
+  <wsdl:message name="ISiteActivity_Json_x002F_SiteLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Json_x002F_SiteLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteActivity_SiteRegister_InputMessage">
+    <wsdl:part name="parameters" element="tns:SiteRegister" />
+  </wsdl:message>
+  <wsdl:message name="ISiteActivity_SiteRegister_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SiteRegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISiteActivity_Json_x002F_SiteRegister_InputMessage">
+    <wsdl:part name="parameters" element="tns:Json_x002F_SiteRegister" />
+  </wsdl:message>
+  <wsdl:message name="ISiteActivity_Json_x002F_SiteRegister_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Json_x002F_SiteRegisterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISiteActivity">
+    <wsdl:operation name="SiteLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteActivity/SiteLogin" message="tns:ISiteActivity_SiteLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteActivity/SiteLoginResponse" message="tns:ISiteActivity_SiteLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Json_x002F_SiteLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteActivity/Json/SiteLogin" message="tns:ISiteActivity_Json_x002F_SiteLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteActivity/Json/SiteLoginResponse" message="tns:ISiteActivity_Json_x002F_SiteLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SiteRegister">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteActivity/SiteRegister" message="tns:ISiteActivity_SiteRegister_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteActivity/SiteRegisterResponse" message="tns:ISiteActivity_SiteRegister_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Json_x002F_SiteRegister">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISiteActivity/Json/SiteRegister" message="tns:ISiteActivity_Json_x002F_SiteRegister_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISiteActivity/Json/SiteRegisterResponse" message="tns:ISiteActivity_Json_x002F_SiteRegister_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="SiteActivity">
+    <wsdl:port name="MetadataExchangeHttpBinding_ISiteActivity" binding="i0:MetadataExchangeHttpBinding_ISiteActivity">
+      <soap12:address location="http://localhost:18348/WS/SiteActivity.svc/mex" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:18348/WS/SiteActivity.svc/mex</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

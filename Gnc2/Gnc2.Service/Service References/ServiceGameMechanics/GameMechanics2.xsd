@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:18348/GameMechanics.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" />
+  <xs:import schemaLocation="http://localhost:18348/GameMechanics.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM.CustomObjects" />
+  <xs:import schemaLocation="http://localhost:18348/GameMechanics.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="GetTopUsers">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q1:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionAttributes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Challenge" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FriendsCount" type="xs:int" />
+          <xs:element minOccurs="0" name="HttpStatusCodes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IncludeSelf" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Lang" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Period" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalCount" type="xs:int" />
+          <xs:element minOccurs="0" name="UID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VariantID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetTopUsers" nillable="true" type="tns:GetTopUsers" />
+  <xs:complexType name="GetTopUsersResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q2:BaseResponse">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM.CustomObjects" minOccurs="0" name="UserObjList" nillable="true" type="q3:ArrayOfUserObj" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetTopUsersResponse" nillable="true" type="tns:GetTopUsersResponse" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Achievements" nillable="true" type="tns:ArrayOfAchievement" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhotoURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rank" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfAchievement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Achievement" nillable="true" type="tns:Achievement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAchievement" nillable="true" type="tns:ArrayOfAchievement" />
+  <xs:complexType name="Achievement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AchievementsToNextLevel" type="xs:int" />
+      <xs:element minOccurs="0" name="BadgeURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChallengeDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChallengeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChallengeTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsNewLevel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Level" type="xs:int" />
+      <xs:element minOccurs="0" name="LevelDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LevelTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NextLevelActionURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NextLevelDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NextLevelLockedBadgeURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NextLevelTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Points7Days" type="xs:int" />
+      <xs:element minOccurs="0" name="PointsCurrent" type="xs:int" />
+      <xs:element minOccurs="0" name="PointsTotal" type="xs:int" />
+      <xs:element minOccurs="0" name="Rank" type="xs:int" />
+      <xs:element minOccurs="0" name="Rank7Days" type="xs:int" />
+      <xs:element minOccurs="0" name="RequiredAchievement" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Achievement" nillable="true" type="tns:Achievement" />
+  <xs:complexType name="GetActionConfig">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q4:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExcludeActions" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HttpStatusCodes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IncludeActions" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IncludeDisabledActions" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Lang" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetActionConfig" nillable="true" type="tns:GetActionConfig" />
+  <xs:complexType name="GetActionConfigResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q5:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Actions" nillable="true" type="tns:ArrayOfActionResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetActionConfigResponse" nillable="true" type="tns:GetActionConfigResponse" />
+  <xs:complexType name="ArrayOfActionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ActionResponse" nillable="true" type="tns:ActionResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActionResponse" nillable="true" type="tns:ArrayOfActionResponse" />
+  <xs:complexType name="ActionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DailyCap" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FreqCap" type="xs:int" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Points" type="xs:int" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TriggeringActionId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActionResponse" nillable="true" type="tns:ActionResponse" />
+  <xs:complexType name="GetActionsLog">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q6:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HttpStatusCodes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetActionsLog" nillable="true" type="tns:GetActionsLog" />
+  <xs:complexType name="GetActionsLogResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q7:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Actions" nillable="true" type="tns:ActionLogResponse" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetActionsLogResponse" nillable="true" type="tns:GetActionsLogResponse" />
+  <xs:complexType name="ActionLogResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q8:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChallengeID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Points" type="xs:int" />
+          <xs:element minOccurs="0" name="Time" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ActionLogResponse" nillable="true" type="tns:ActionLogResponse" />
+  <xs:complexType name="DeleteAction">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q9:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HttpStatusCodes" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteAction" nillable="true" type="tns:DeleteAction" />
+  <xs:complexType name="DeleteActionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q10:BaseResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteActionResponse" nillable="true" type="tns:DeleteActionResponse" />
+  <xs:complexType name="DeleteChallenge">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q11:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChallengeID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HttpStatusCodes" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteChallenge" nillable="true" type="tns:DeleteChallenge" />
+  <xs:complexType name="DeleteChallengeResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q12:BaseResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteChallengeResponse" nillable="true" type="tns:DeleteChallengeResponse" />
+  <xs:complexType name="DeleteChallengeVariant">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q13:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChallengeID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HttpStatusCodes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="VariantID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteChallengeVariant" nillable="true" type="tns:DeleteChallengeVariant" />
+  <xs:complexType name="DeleteChallengeVariantResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q14:BaseResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteChallengeVariantResponse" nillable="true" type="tns:DeleteChallengeVariantResponse" />
+  <xs:complexType name="RedeemPoints">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q15:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Challenge" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Points" type="xs:int" />
+          <xs:element minOccurs="0" name="UID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VariantID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="actionAttributes" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RedeemPoints" nillable="true" type="tns:RedeemPoints" />
+  <xs:complexType name="RedeemPointsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q16:BaseResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RedeemPointsResponse" nillable="true" type="tns:RedeemPointsResponse" />
+  <xs:complexType name="GetChallengeConfig">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q17:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExcludeChallenges" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExpandActions" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HttpStatusCodes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IncludeChallenges" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IncludeDisabledActions" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IncludeDisabledChallenges" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Lang" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetChallengeConfig" nillable="true" type="tns:GetChallengeConfig" />
+  <xs:complexType name="GetChallengeConfigResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q18:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Actions" nillable="true" type="tns:ArrayOfActionResponse" />
+          <xs:element minOccurs="0" name="Challenges" nillable="true" type="tns:ArrayOfChallenge" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetChallengeConfigResponse" nillable="true" type="tns:GetChallengeConfigResponse" />
+  <xs:complexType name="ArrayOfChallenge">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Challenge" nillable="true" type="tns:Challenge" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChallenge" nillable="true" type="tns:ArrayOfChallenge" />
+  <xs:complexType name="Challenge">
+    <xs:sequence>
+      <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Actions" nillable="true" type="q19:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ChallengeActions" nillable="true" type="tns:ArrayOfChallengeAction" />
+      <xs:element minOccurs="0" name="ChallengeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnableTimeWindow" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnableVariantTemplates" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HideUnlockedBadges" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HideUntilFirstLevel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Levels" nillable="true" type="tns:ArrayOfLevelResponse" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Challenge" nillable="true" type="tns:Challenge" />
+  <xs:complexType name="ArrayOfChallengeAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChallengeAction" nillable="true" type="tns:ChallengeAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChallengeAction" nillable="true" type="tns:ArrayOfChallengeAction" />
+  <xs:complexType name="ChallengeAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LifetimeCap" type="xs:int" />
+      <xs:element minOccurs="0" name="Points" type="xs:int" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChallengeAction" nillable="true" type="tns:ChallengeAction" />
+  <xs:complexType name="ArrayOfLevelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LevelResponse" nillable="true" type="tns:LevelResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLevelResponse" nillable="true" type="tns:ArrayOfLevelResponse" />
+  <xs:complexType name="LevelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BadgeURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bonus" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Level" type="xs:int" />
+      <xs:element minOccurs="0" name="LockedBadgeURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Points" type="xs:int" />
+      <xs:element minOccurs="0" name="RequiredActions" nillable="true" type="tns:ArrayOfRequiredAction" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LevelResponse" nillable="true" type="tns:LevelResponse" />
+  <xs:complexType name="ArrayOfRequiredAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RequiredAction" nillable="true" type="tns:RequiredAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRequiredAction" nillable="true" type="tns:ArrayOfRequiredAction" />
+  <xs:complexType name="RequiredAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequiredAction" nillable="true" type="tns:RequiredAction" />
+  <xs:complexType name="GetChallengeStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q20:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionAttributes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExcludeChallenges" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExtraFields" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HttpStatusCodes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IncludeChallenges" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Lang" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VariantID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetChallengeStatus" nillable="true" type="tns:GetChallengeStatus" />
+  <xs:complexType name="GetChallengeStatusResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q21:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Achievements" nillable="true" type="tns:ArrayOfAchievement" />
+          <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetChallengeStatusResponse" nillable="true" type="tns:GetChallengeStatusResponse" />
+  <xs:complexType name="GetChallengeVariants">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q22:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionAttributes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChallengeID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HttpStatusCodes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Limit" type="xs:int" />
+          <xs:element minOccurs="0" name="Start" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VariantID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetChallengeVariants" nillable="true" type="tns:GetChallengeVariants" />
+  <xs:complexType name="GetChallengeVariantsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q23:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Next" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Variants" nillable="true" type="tns:ArrayOfVariant" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetChallengeVariantsResponse" nillable="true" type="tns:GetChallengeVariantsResponse" />
+  <xs:complexType name="ArrayOfVariant">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Variant" nillable="true" type="tns:Variant" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVariant" nillable="true" type="tns:ArrayOfVariant" />
+  <xs:complexType name="Variant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionAttributes" nillable="true" type="tns:ActionAttributes" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VariantID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Variant" nillable="true" type="tns:Variant" />
+  <xs:complexType name="ActionAttributes">
+    <xs:sequence>
+      <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Code" nillable="true" type="q24:ArrayOfstring" />
+      <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Glee" nillable="true" type="q25:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActionAttributes" nillable="true" type="tns:ActionAttributes" />
+  <xs:complexType name="GetGlobalConfig">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q26:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HttpStatusCodes" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGlobalConfig" nillable="true" type="tns:GetGlobalConfig" />
+  <xs:complexType name="GetGlobalConfigResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q27:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowClientSideNotifyAction" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CallbackURL" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGlobalConfigResponse" nillable="true" type="tns:GetGlobalConfigResponse" />
+  <xs:complexType name="NotifyAction">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q28:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Action" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChallengeIDs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Points" type="xs:int" />
+          <xs:element minOccurs="0" name="UID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotifyAction" nillable="true" type="tns:NotifyAction" />
+  <xs:complexType name="NotifyActionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q29:BaseResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotifyActionResponse" nillable="true" type="tns:NotifyActionResponse" />
+  <xs:complexType name="ResetLevelStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q30:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CariantID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Challenges" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Msisdn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="actionAttributes" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResetLevelStatus" nillable="true" type="tns:ResetLevelStatus" />
+  <xs:complexType name="ResetLevelStatusResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q31:BaseResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResetLevelStatusResponse" nillable="true" type="tns:ResetLevelStatusResponse" />
+  <xs:complexType name="SetActionConfig">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q32="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q32:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActionID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AllowClientSideNotifyAction" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DailyCap" type="xs:int" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FreqCap" type="xs:int" />
+          <xs:element minOccurs="0" name="HttpStatusCodes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Points" type="xs:int" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TriggerActionID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetActionConfig" nillable="true" type="tns:SetActionConfig" />
+  <xs:complexType name="SetActionConfigResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q33:BaseResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetActionConfigResponse" nillable="true" type="tns:SetActionConfigResponse" />
+  <xs:complexType name="SetChallengeConfig">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q34="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q34:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Callback" nillable="true" type="xs:string" />
+          <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/w2.Service.Gigya.GM.CustomObjects" minOccurs="0" name="ChallengeActions" nillable="true" type="q35:ArrayOfChallengeObj" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnableTimeWindow" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EnableVariantTemplates" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HideUnlockedBadges" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HideUntilFirstLevel" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HttpStatusCodes" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Levels" nillable="true" type="tns:LevelRequest" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetChallengeConfig" nillable="true" type="tns:SetChallengeConfig" />
+  <xs:complexType name="LevelRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActionURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BadgeURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bonus" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Level" type="xs:int" />
+      <xs:element minOccurs="0" name="LockedBadgeURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Points" type="xs:int" />
+      <xs:element minOccurs="0" name="RequiredActions" nillable="true" type="tns:ArrayOfRequiredAction" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LevelRequest" nillable="true" type="tns:LevelRequest" />
+  <xs:complexType name="SetChallengeConfigResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q36="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q36:BaseResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetChallengeConfigResponse" nillable="true" type="tns:SetChallengeConfigResponse" />
+  <xs:complexType name="SetGlobalConfig">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q37="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q37:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AllowClientSideNotifyAction" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CallbackURL" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetGlobalConfig" nillable="true" type="tns:SetGlobalConfig" />
+  <xs:complexType name="SetGlobalConfigResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q38="http://schemas.datacontract.org/2004/07/w2.Service.Gigya" base="q38:BaseResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetGlobalConfigResponse" nillable="true" type="tns:SetGlobalConfigResponse" />
+</xs:schema>

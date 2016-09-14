@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPopup.cshtml";
+    ViewBag.Title = "Paket Yükle";
+}
+@using Gnc2.Com.Helpers
+
+<section class="packageContent">
+   
+    <section class="textPlace fReg">
+        xxx xxxx xxxx 9370 numaralı kredi kartınız <br />        ile 0535 071 5025 numaralı hatta 20.0 TL yüklenecektir.
+    </section>
+
+    <form method="post" action="/PackageLoad/Step4">
+        <section class="packageForm">
+            <section class="item">
+                <section class="left"></section>
+                <section class="right"><input type="submit" name="btnSubmit" id="btnSubmit" value="TAMAM" class="fRight" /> <input type="button" name="btnBack" id="btnBack" value="GERİ" class="btnLeft fRight" /></section>
+            </section>
+        </section>
+    </form>
+
+    <section class="stepInfo">
+        Bir sonraki adımda bankanızın ara yüzüne bağlanarak kredi kartınızın güvenli alışveriş<br />        şifresi 3D Secure ile giriş yapmanız istenecektir.        <br /><br />        Kredi kartı ile paket yüklemesi yapılan gsm numarası ilgili banka ile paylaşılacaktır.
+    </section>
+
+
+</section>

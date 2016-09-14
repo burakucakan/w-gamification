@@ -1,0 +1,70 @@
+﻿@model Gnc2.DB.Users
+@using Gnc2.Admin.Extensions;
+
+@Helper.BodyNav(Html, "User", true, true, false, false)
+
+@section Scripts {
+
+}
+
+
+@{
+   
+   string Sehir = Enum.GetName(typeof(Gnc2.DB.Virtual.Enums.Cities), Model.CityCode);
+
+   string Cinsiyet = Enum.GetName(typeof(Gnc2.DB.Virtual.Enums.Genders), Model.Gender); 
+   
+}
+
+@using (Ajax.BeginForm(null, null, new AjaxOptions { UpdateTargetId = "PageForm", LoadingElementId = "LoadingForm", OnSuccess = "FormOnSuccess" }, new { @id = "PageForm" }))
+{    
+    <aside class="panel main">
+
+        @Html.ValidationMessageFor(m => m.Name)    @Html.LabelFor(m => m.Name)    @Html.TextBoxFor(m => m.Name, new { @readonly = "readonly" })
+
+        @Html.ValidationMessageFor(m => m.Surname)    @Html.LabelFor(m => m.Surname)    @Html.TextBoxFor(m => m.Surname, new { @readonly = "readonly" })
+
+        @Html.ValidationMessageFor(m => m.BirthDate)    @Html.LabelFor(m => m.BirthDate)    @Html.TextBoxFor(m => m.BirthDate, new { @readonly = "readonly" })
+
+        @Html.ValidationMessageFor(m => m.Email)    @Html.LabelFor(m => m.Email)    @Html.TextBoxFor(m => m.Email, new { @readonly = "readonly" })
+
+        @Html.ValidationMessageFor(m => m.Gender)    @Html.LabelFor(m => m.Gender)    @Html.TextBox("Cinsiyet", Cinsiyet, new { @readonly = "readonly" })
+
+        @Html.ValidationMessageFor(m => m.LoginDate)    @Html.LabelFor(m => m.LoginDate)    @Html.TextBoxFor(m => m.LoginDate, new { @readonly = "readonly" })
+
+        @Html.ValidationMessageFor(m => m.CityCode)    @Html.LabelFor(m => m.CityCode)    @Html.TextBox("Sehir", Sehir, new { @readonly = "readonly"})
+
+        @Html.ValidationMessageFor(m => m.IsActive)    @Html.LabelFor(m => m.IsActive)    @Html.TextBoxFor(m => m.IsActive, new { @readonly = "readonly" })
+
+        @Html.ValidationMessageFor(m => m.Ispermissions)    @Html.LabelFor(m => m.Ispermissions)    @Html.TextBoxFor(m => m.Ispermissions, new { @readonly = "readonly" })
+        
+        <footer>        
+        <a class="k-button" href="/UserDetail/Default?Msisdn=@Model.Msisdn"><span class="k-icon k-i-expand-w"></span>Kullanıcı Detayı</a>
+       
+        </footer>
+
+        @Html.Partial("Common/FormFooterNotSubmit")
+    
+    </aside>
+    
+    <aside class="panel side">
+
+       <aside>
+           
+            @{Html.RenderPartial("Common/Upload", new Gnc2.Admin.Models.UploadModel {
+                  UploadElementName = "ProfileImage",
+                  FileName = (Model != null) ? Model.ProfileImage : "",
+                  ImageType = Gnc2.Com.Helpers.PathHelper.Images.Type.users,
+                  ResizeDefault = false
+                  
+              });}
+          
+
+        </aside>
+        
+        @Html.Partial("Common/DataDefaultFields")
+
+    </aside>
+    
+    
+}

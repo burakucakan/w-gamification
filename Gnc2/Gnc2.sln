@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gnc2.Web", "Gnc2.Web\Gnc2.Web.csproj", "{E8A3AB55-E3D3-4369-9C84-2B79BF2B96E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gnc2.Admin", "Gnc2.Admin\Gnc2.Admin.csproj", "{A29A119C-09D7-417A-B8B5-8BB38A20BD99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docs", "Docs\Docs.csproj", "{69F20C96-75A4-47F6-8187-933E58D0707F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LIB", "LIB\LIB.csproj", "{7E338258-5852-4955-ABA2-B357C05767B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FbHelper", "FbHelper\FbHelper.csproj", "{9F529E36-0234-4D64-94EB-9CB5E719F69B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gnc2.DB", "Gnc2.DB\Gnc2.DB.csproj", "{06B85D69-BBA3-4BAF-A13C-F4F4A1F5931F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gnc2.Service", "Gnc2.Service\Gnc2.Service.csproj", "{5C2EF67A-68B5-4848-A7CA-279E28ECCA4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gnc2.Static", "Gnc2.Static\Gnc2.Static.csproj", "{F1060F17-D922-4910-AFF0-7BFC83336A49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gnc2.Com", "Gnc2.Com\Gnc2.Com.csproj", "{21A72786-1BD3-4772-89B7-AC24C312FC89}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://jiqsaw.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Docs\\Docs.csproj
+		SccProjectName1 = Docs
+		SccLocalPath1 = Docs
+		SccProjectUniqueName2 = FbHelper\\FbHelper.csproj
+		SccProjectName2 = FbHelper
+		SccLocalPath2 = FbHelper
+		SccProjectUniqueName3 = Gnc2.Admin\\Gnc2.Admin.csproj
+		SccProjectName3 = Gnc2.Admin
+		SccLocalPath3 = Gnc2.Admin
+		SccProjectUniqueName4 = Gnc2.DB\\Gnc2.DB.csproj
+		SccProjectName4 = Gnc2.DB
+		SccLocalPath4 = Gnc2.DB
+		SccProjectUniqueName5 = Gnc2.Service\\Gnc2.Service.csproj
+		SccProjectName5 = Gnc2.Service
+		SccLocalPath5 = Gnc2.Service
+		SccProjectUniqueName6 = Gnc2.Static\\Gnc2.Static.csproj
+		SccProjectName6 = Gnc2.Static
+		SccLocalPath6 = Gnc2.Static
+		SccProjectUniqueName7 = Gnc2.Web\\Gnc2.Web.csproj
+		SccProjectName7 = Gnc2.Web
+		SccLocalPath7 = Gnc2.Web
+		SccProjectUniqueName8 = LIB\\LIB.csproj
+		SccProjectName8 = LIB
+		SccLocalPath8 = LIB
+		SccProjectUniqueName9 = Gnc2.Com\\Gnc2.Com.csproj
+		SccProjectName9 = Gnc2.Com
+		SccLocalPath9 = Gnc2.Com
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8A3AB55-E3D3-4369-9C84-2B79BF2B96E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8A3AB55-E3D3-4369-9C84-2B79BF2B96E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8A3AB55-E3D3-4369-9C84-2B79BF2B96E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8A3AB55-E3D3-4369-9C84-2B79BF2B96E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A29A119C-09D7-417A-B8B5-8BB38A20BD99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29A119C-09D7-417A-B8B5-8BB38A20BD99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29A119C-09D7-417A-B8B5-8BB38A20BD99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29A119C-09D7-417A-B8B5-8BB38A20BD99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69F20C96-75A4-47F6-8187-933E58D0707F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69F20C96-75A4-47F6-8187-933E58D0707F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69F20C96-75A4-47F6-8187-933E58D0707F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E338258-5852-4955-ABA2-B357C05767B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E338258-5852-4955-ABA2-B357C05767B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E338258-5852-4955-ABA2-B357C05767B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E338258-5852-4955-ABA2-B357C05767B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F529E36-0234-4D64-94EB-9CB5E719F69B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F529E36-0234-4D64-94EB-9CB5E719F69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F529E36-0234-4D64-94EB-9CB5E719F69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F529E36-0234-4D64-94EB-9CB5E719F69B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06B85D69-BBA3-4BAF-A13C-F4F4A1F5931F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06B85D69-BBA3-4BAF-A13C-F4F4A1F5931F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06B85D69-BBA3-4BAF-A13C-F4F4A1F5931F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06B85D69-BBA3-4BAF-A13C-F4F4A1F5931F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C2EF67A-68B5-4848-A7CA-279E28ECCA4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C2EF67A-68B5-4848-A7CA-279E28ECCA4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C2EF67A-68B5-4848-A7CA-279E28ECCA4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C2EF67A-68B5-4848-A7CA-279E28ECCA4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1060F17-D922-4910-AFF0-7BFC83336A49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1060F17-D922-4910-AFF0-7BFC83336A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1060F17-D922-4910-AFF0-7BFC83336A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1060F17-D922-4910-AFF0-7BFC83336A49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21A72786-1BD3-4772-89B7-AC24C312FC89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21A72786-1BD3-4772-89B7-AC24C312FC89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21A72786-1BD3-4772-89B7-AC24C312FC89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21A72786-1BD3-4772-89B7-AC24C312FC89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

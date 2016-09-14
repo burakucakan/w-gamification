@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Gnc2.Admin.Models.PromoCodeBounded>
+@using Gnc2.Admin.App_Manager
+
+@Helper.BodyNav(Html, "PromoCodes")
+
+@section Scripts {
+
+}
+
+<header class="gridToolBar">
+
+    @Html.Partial("HelperControls/GridRefresh")
+
+    @Html.Partial("HelperControls/GridSearch")
+
+</header>
+
+@(Html.Kendo().Grid(Model)
+    .Name(KendoManager.GridName)
+
+    .Columns(clm =>
+    {
+        clm.Bound(c => c.PromoCodeName);
+        clm.Bound(c => c.CatalogName);
+    
+
+        clm.Command(cmd =>
+        {
+          
+            cmd.Destroy().Text(HttpContext.GetGlobalResourceObject("Global", "Delete").ToString());
+        });
+    })
+
+    .DataSource(dataSource =>
+        dataSource
+            .Ajax()
+            .ServerOperation(false)
+            .Model(model => model.Id(m => m.Id))
+            .Read(r => r.Action("k_jRead", "PromoCodes"))
+            .Destroy(d => d.Action("k_jDelete", "PromoCodes"))
+            .Events(e => e.Error("kGridOnError"))
+        )
+
+    .Sortable()
+    .Pageable(KendoManager.pagerSettings)
+    .Events(e => e.DataBound("kGridOnDataBound"))
+    .Reorderable(reorder => reorder.Columns(true))
+    .Resizable(resize => resize.Columns(true))
+    .Filterable(KendoManager.filterSettings)
+)

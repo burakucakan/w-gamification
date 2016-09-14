@@ -1,0 +1,65 @@
+﻿@model Gnc2.DB.Banners
+@using Gnc2.Admin.Extensions;
+
+@Helper.BodyNav(Html, "Banners", true)
+                
+
+@section scriptsPreRender {
+    <script>
+
+        $(function () {
+            AddValReq("#PositionCode", "Banner pozisyonu seçin");
+        });
+
+    </script>
+
+}
+
+@using (Ajax.BeginForm(null, null, new AjaxOptions { UpdateTargetId = "PageForm", LoadingElementId = "LoadingForm", OnSuccess = "FormOnSuccess" }, new { @id = "PageForm" }))
+{    
+    <aside class="panel main">
+
+        @Html.ValidationMessageFor(model => model.PositionCode)   @Html.LabelFor(model => model.PositionCode)   @Html.DropDownListEnum("PositionCode", typeof(Gnc2.DB.Virtual.Enums.BannerPosition), Model==null?-1:(int)Model.PositionCode)
+
+        @Html.ValidationMessageFor(model => model.WindowTypeCode)   @Html.LabelFor(model => model.WindowTypeCode)   @Html.DropDownListEnum("WindowTypeCode", typeof(Gnc2.DB.Virtual.Enums.WindowType), Model==null?-1:(int)Model.WindowTypeCode)
+
+        <section class="columns">
+
+            <aside> @Html.LabelFor(model => model.StartDate)    @Html.Kendo().DatePickerFor(model => model.StartDate).Min(DateTime.Today).Events(e => e.Change("kDateRangeStartChange")) </aside>
+            <aside> @Html.LabelFor(model => model.EndDate)      @Html.Kendo().DatePickerFor(model => model.EndDate).Events(e => e.Change("kDateRangeEndChange")) </aside>
+
+            <ins></ins>
+        </section>
+
+        @Html.ValidationMessageFor(m => m.Title)    @Html.LabelFor(m => m.Title)    @Html.EditorFor(m => m.Title)
+
+        @Html.ValidationMessageFor(m => m.URL)    @Html.LabelFor(m => m.URL)    @Html.EditorFor(m => m.URL)
+
+        @Html.Partial("Common/FormFooter")
+            
+    </aside>
+    
+    <aside class="panel side">
+        <aside>
+
+            @{Html.RenderPartial("Common/Upload", new Gnc2.Admin.Models.UploadModel {
+                  UploadElementName = "FileName",
+                  FileName = (Model != null) ? Model.FileName : "",
+                  ImageType = Gnc2.Com.Helpers.PathHelper.Images.Type.banners,
+                  ResizeDefault = false
+                  
+              });}
+
+        </aside>
+    </aside>
+    
+    <aside class="panel side">
+
+        <aside>
+            <p class="checkbox"> @Html.EditorFor(model => model.IsActive,"Yayında") @Html.LabelFor(model => model.IsActive) </p>
+        </aside>
+
+        @Html.Partial("Common/DataDefaultFields")
+
+    </aside>
+}

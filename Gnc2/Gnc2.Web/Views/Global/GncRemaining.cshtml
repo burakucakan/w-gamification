@@ -1,0 +1,3 @@
+﻿@using Gnc2.Com.Helpers
+@using Gnc2.Web.App_Manager
+<img src="@PathHelper.UrlStatic/images/icons/header-phone.png" class="phone" /><span class="scoreNumber">@SessionManager.GetInstance().userUsingTalkTime.ToString()</span> <span class="scoreNumberSmall">DK</span> <span class="scoreName">/ @SessionManager.GetInstance().userTalkTime.ToString() DK</span>

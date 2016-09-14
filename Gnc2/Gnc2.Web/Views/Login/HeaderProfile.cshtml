@@ -1,0 +1,97 @@
+﻿@using Gnc2.Com.Helpers
+@using Gnc2.Web.App_Manager
+<script>
+    $(function () {
+        profileImage();
+        notificationAnimate();
+        profileInfo();
+    });
+
+    function notificationAnimate() {
+        $(".notification").attr("style", "margin-left: -82px; margin-top: 24px;");
+        setTimeout(function () {
+            $(".notification").animate({
+                "marginLeft": "-100px",
+                "marginTop": "-4px"
+            }, 100, function () {
+                $(".notification").css("z-index", "2");
+                $(".notification").animate({
+                    "marginLeft": "-97px",
+                    "marginTop": "6px"
+                }, 100);
+            });
+        }, 1000);
+
+        $(".notification").live("mouseover", function () {
+            $(this).animate({
+                "marginTop": "2px"
+            }, 200, function () {
+                $(this).animate({
+                    "marginTop": "6px"
+                }, 200);
+            });
+        });
+    }
+
+    function profileImage() {
+        setTimeout(function () {
+            $(".profileImage > img").animate({
+                marginTop: "0px"
+            }, 100, function () {
+                $(".notification").show();
+            });
+        }, 300);
+    }
+
+    function profileInfo() {
+        setTimeout(function () {
+            $(".profileInfo > .welcome").animate({
+                opacity: 1
+            }, 600);
+            $(".profileInfo > .name").animate({
+                opacity: 1
+            }, 600);
+
+        }, 500);
+    }
+
+    function profileBadgeIn(bIndex) {
+        setTimeout(function () {
+            $(".profileInfo > .badges > img").eq(bIndex).animate({
+                opacity: 1
+            }, bIndex * 250);
+        }, bIndex * 50);
+    }
+
+</script>
+
+<section class="headerProfile">
+    <nav class="fReg">
+        <a href="javascript:;">BİLGİLERİM</a> / <a href="/Login/logout">ÇIKIŞ YAP</a>
+    </nav>
+                
+    <section class="profileImage">
+        @*<img src="@PathHelper.UrlStatic/images/_offline/users/rabia.jpg" />*@
+        <img src="@SessionManager.GetInstance().LogonUser.ProfileImage.ToString()" />
+    </section>
+    <a href="javascript:;" class="notification">3</a>
+
+    <script>
+        partialLoad("#gncBadges", "/Global/GncBadges");
+        partialLoad("#gncScore", "/Global/GncScore");
+        partialLoad("#gncRemaining", "/Global/GncRemaining");
+    </script>
+
+    <section class="profileInfo">
+        <span class="welcome">Hoş Geldin</span>
+        <span class="name">@SessionManager.GetInstance().LogonUser.Name.ToString() @SessionManager.GetInstance().LogonUser.Surname.ToString()</span>
+        <section class="badges" id="gncBadges">
+        </section>
+    </section>
+    <ins style="height:13px;"></ins>
+    <section class="packageInfo fReg">
+        <label id="gncScore"></label> <label id="gncRemaining"></label>
+    </section>
+
+    <a href="javascript:;" class="profileLink fReg">PROFİLİM</a>
+</section>
